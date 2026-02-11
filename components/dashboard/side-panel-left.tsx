@@ -24,10 +24,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Switch } from "@/components/ui/switch";
 import {
   type SustainabilityCompany,
-  type RiskBand,
+  type PlausibilityBand,
   type FilterOptions,
+  type UnitView,
   getCountries,
-  getRiskBands,
+  getPlausibilityBands,
   fmtTCO2e,
   fmtPct,
 } from "@/data/sustainability";
@@ -39,6 +40,7 @@ interface SidePanelLeftProps {
   onSelectCompany: (company: SustainabilityCompany) => void;
   filters: FilterOptions;
   onFiltersChange: (filters: FilterOptions) => void;
+  unitView?: UnitView;
 }
 
 export function SidePanelLeft({
@@ -48,14 +50,15 @@ export function SidePanelLeft({
   onSelectCompany,
   filters,
   onFiltersChange,
+  unitView = "Canonical",
 }: SidePanelLeftProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [showCountryFilter, setShowCountryFilter] = useState(false);
-  const [showRiskFilter, setShowRiskFilter] = useState(false);
+  const [showPlausibilityFilter, setShowPlausibilityFilter] = useState(false);
   const listContainerRef = useRef<HTMLDivElement>(null);
 
   const countries = getCountries(allCompanies);
-  const riskBands = getRiskBands();
+  const plausibilityBands = getPlausibilityBands();
 
   // Scroll selected company into view
   useEffect(() => {
@@ -93,11 +96,11 @@ export function SidePanelLeft({
     onFiltersChange({ ...filters, countries: newCountries });
   };
 
-  const handleRiskToggle = (risk: RiskBand) => {
-    const newRiskBands = filters.riskBands.includes(risk)
-      ? filters.riskBands.filter((r) => r !== risk)
-      : [...filters.riskBands, risk];
-    onFiltersChange({ ...filters, riskBands: newRiskBands });
+  const handlePlausibilityToggle = (band: PlausibilityBand) => {
+    const next = filters.plausibilityBands.includes(band)
+      ? filters.plausibilityBands.filter((r) => r !== band)
+      : [...filters.plausibilityBands, band];
+    onFiltersChange({ ...filters, plausibilityBands: next });
   };
 
   const handleIncompleteToggle = (checked: boolean) => {
@@ -111,10 +114,10 @@ export function SidePanelLeft({
     });
   };
 
-  const handleRemoveRisk = (risk: RiskBand) => {
+  const handleRemovePlausibility = (band: PlausibilityBand) => {
     onFiltersChange({
       ...filters,
-      riskBands: filters.riskBands.filter((r) => r !== risk),
+      plausibilityBands: filters.plausibilityBands.filter((r) => r !== band),
     });
   };
 
@@ -122,7 +125,7 @@ export function SidePanelLeft({
     onFiltersChange({
       search: "",
       countries: [],
-      riskBands: [],
+      plausibilityBands: [],
       incompleteOnly: false,
     });
   };
@@ -130,16 +133,16 @@ export function SidePanelLeft({
   const hasActiveFilters =
     filters.search ||
     filters.countries.length > 0 ||
-    filters.riskBands.length > 0 ||
+    filters.plausibilityBands.length > 0 ||
     filters.incompleteOnly;
 
   const hasActiveFilterChips =
     filters.countries.length > 0 ||
-    filters.riskBands.length > 0 ||
+    filters.plausibilityBands.length > 0 ||
     filters.incompleteOnly;
 
-  const getRiskColor = (risk: RiskBand): string => {
-    switch (risk) {
+  const getPlausibilityColor = (band: PlausibilityBand): string => {
+    switch (band) {
       case "Good":
         return "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
       case "Watch":
@@ -245,17 +248,19 @@ export function SidePanelLeft({
                 </button>
               </Badge>
             ))}
-            {filters.riskBands.map((risk) => (
+            {filters.plausibilityBands.map((band) => (
               <Badge
-                key={`risk-${risk}`}
+                key={`plausibility-${band}`}
                 variant="outline"
-                className={`h-6 px-2 text-xs cursor-pointer flex items-center gap-1 ${getRiskColor(risk)}`}
+                className={`h-6 px-2 text-xs cursor-pointer flex items-center gap-1 ${getPlausibilityColor(band)}`}
               >
-                {risk}
+                {band}
                 <button
-                  onClick={() => handleRemoveRisk(risk)}
+                  type="button"
+                  onClick={() => handleRemovePlausibility(band)}
                   className="ml-0.5 hover:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-current rounded"
-                  aria-label={`Remove ${risk} filter`}
+                  aria-label={`Remove ${band} plausibility filter`}
+                  title={`Remove ${band} filter`}
                 >
                   <X className="h-3 w-3" />
                 </button>
@@ -277,15 +282,18 @@ export function SidePanelLeft({
                 </button>
               </Badge>
             )}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={clearFilters}
-              className="h-6 px-2 text-xs text-zinc-400 hover:text-zinc-100"
-              aria-label="Clear all filters"
-            >
-              Clear all
-            </Button>
+            {hasActiveFilterChips && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={clearFilters}
+                className="h-6 px-2 text-xs text-zinc-400 hover:text-zinc-100"
+                aria-label="Clear all filters"
+                title="Clear all filters"
+              >
+                Clear all
+              </Button>
+            )}
           </div>
         )}
       </div>
@@ -356,45 +364,48 @@ export function SidePanelLeft({
           </CollapsibleContent>
         </Collapsible>
 
-        {/* Risk Band Filter */}
-        <Collapsible open={showRiskFilter} onOpenChange={setShowRiskFilter}>
+        {/* Data Plausibility Filter */}
+        <Collapsible
+          open={showPlausibilityFilter}
+          onOpenChange={setShowPlausibilityFilter}
+        >
           <CollapsibleTrigger asChild>
             <Button
               variant="ghost"
               className="w-full justify-between h-8 px-2 text-xs text-zinc-300 hover:bg-zinc-800"
-              aria-expanded={showRiskFilter}
+              aria-expanded={showPlausibilityFilter}
             >
               <span className="flex items-center gap-2">
-                Risk Band
-                {filters.riskBands.length > 0 && (
+                Data Plausibility
+                {filters.plausibilityBands.length > 0 && (
                   <Badge
                     variant="secondary"
                     className="h-5 px-1.5 text-xs bg-zinc-700"
                   >
-                    {filters.riskBands.length}
+                    {filters.plausibilityBands.length}
                   </Badge>
                 )}
               </span>
               <ChevronRight
                 className={`h-3 w-3 transition-transform ${
-                  showRiskFilter ? "rotate-90" : ""
+                  showPlausibilityFilter ? "rotate-90" : ""
                 }`}
               />
             </Button>
           </CollapsibleTrigger>
           <CollapsibleContent className="pt-2 space-y-1">
-            {riskBands.map((risk) => (
+            {plausibilityBands.map((band) => (
               <label
-                key={risk}
+                key={band}
                 className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-zinc-800 cursor-pointer"
               >
                 <Checkbox
-                  checked={filters.riskBands.includes(risk)}
-                  onCheckedChange={() => handleRiskToggle(risk)}
+                  checked={filters.plausibilityBands.includes(band)}
+                  onCheckedChange={() => handlePlausibilityToggle(band)}
                   className="border-zinc-600 data-[state=checked]:bg-zinc-100 data-[state=checked]:border-zinc-100"
-                  aria-label={`Filter by ${risk} risk`}
+                  aria-label={`Filter by ${band} plausibility`}
                 />
-                <span className="text-xs text-zinc-300">{risk}</span>
+                <span className="text-xs text-zinc-300">{band}</span>
               </label>
             ))}
           </CollapsibleContent>
@@ -429,12 +440,20 @@ export function SidePanelLeft({
         <ScrollArea className="h-[calc(100%-32px)] px-3 pb-3">
           <div ref={listContainerRef} className="space-y-1">
             {companies.map((company) => {
-              const riskBand = company.derived.riskBand;
+              const plausibilityBand =
+                company.derived.plausibilityBand ?? company.derived.riskBand;
               return (
                 <button
+                  type="button"
                   key={company.id}
                   data-company-id={company.id}
                   onClick={() => onSelectCompany(company)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      onSelectCompany(company);
+                    }
+                  }}
                   className={`w-full flex items-start gap-3 p-2.5 rounded-md text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-1 focus-visible:ring-offset-zinc-900 ${
                     selectedCompany?.id === company.id
                       ? "bg-zinc-100 text-zinc-900"
@@ -461,9 +480,10 @@ export function SidePanelLeft({
                     <div className="flex items-center gap-2 mt-1">
                       <Badge
                         variant="outline"
-                        className={`text-[10px] px-1.5 py-0 h-4 ${getRiskColor(riskBand)}`}
+                        className={`text-[10px] px-1.5 py-0 h-4 ${getPlausibilityColor(plausibilityBand)}`}
+                        title="Data plausibility"
                       >
-                        {riskBand}
+                        {plausibilityBand}
                       </Badge>
                       {company.derived.scope12Total !== null && (
                         <span

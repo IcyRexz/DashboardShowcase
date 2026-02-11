@@ -1,7 +1,7 @@
 // ============================================================================
 // GENERATED FILE - DO NOT EDIT MANUALLY
 // Generated from master_metrics_1.csv by scripts/build-sustainability-data.ts
-// Generated at: 2026-02-06T03:02:47.459Z
+// Generated at: 2026-02-11T04:19:28.053Z
 // Total companies: 237
 // ============================================================================
 
@@ -13,6 +13,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Af Global Ltd",
     "reportName": "af_global_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3956408498977269,
@@ -123,6 +124,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 842.153,
+      "scope2TCO2e": 3220.705,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 9041111.11111111,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4062.858,
       "wasteDiversionRate": null,
@@ -138,7 +151,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -146,6 +162,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Alpina Holdings Limited",
     "reportName": "alpina_holdings_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3179068729833758,
@@ -256,6 +273,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1213,
+      "scope2TCO2e": 198,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 481748,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 59644.3,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1411,
       "wasteDiversionRate": null,
@@ -271,7 +300,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -279,6 +311,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Alset International Ltd",
     "reportName": "alset_international_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3369817853561288,
@@ -389,6 +422,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 11.84,
+      "scope2TCO2e": 133.95,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 145.79,
       "wasteDiversionRate": null,
@@ -404,7 +449,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -412,6 +460,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Aem Holdings Ltd",
     "reportName": "aem_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.304294939135734,
@@ -522,6 +571,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 27000000,
+      "scope2TCO2e": 10581000000,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 16580000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 109740,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 246.4,
+      "wasteRecycledTonnes": 24.4,
+      "wasteDisposedTonnes": 222
+    },
     "derived": {
       "scope12Total": 10608000000,
       "wasteDiversionRate": 0.09902597402597402,
@@ -537,7 +598,11 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Scope 1+2 emissions at or above 95th percentile in cohort",
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -545,6 +610,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Aims Apac Reit",
     "reportName": "secondary_aims_apac_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.369404209175245,
@@ -655,6 +721,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 3344,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 8243000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 150004,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 3344,
       "wasteDiversionRate": null,
@@ -670,7 +748,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -678,6 +759,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "3cnergy",
     "reportName": "secondary_3cnergy_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3908688590979452,
@@ -788,6 +870,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 140,
+      "scope2TCO2e": 41.6,
+      "scope3TCO2e": 6802.3,
+      "totalEnergyKwh": 1420300,
+      "waterWithdrawalM3": 5544.5,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 50.8,
+      "wasteRecycledTonnes": 23.7,
+      "wasteDisposedTonnes": 27.1
+    },
     "derived": {
       "scope12Total": 181.6,
       "wasteDiversionRate": 0.46653543307086615,
@@ -803,7 +897,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -811,6 +906,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Amara Holdings Ltd",
     "reportName": "secondary_amara_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2969141370842678,
@@ -921,6 +1017,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1602,
+      "scope2TCO2e": 12292,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 302808,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 64,
+      "wasteDisposedTonnes": 1414
+    },
     "derived": {
       "scope12Total": 13894,
       "wasteDiversionRate": null,
@@ -936,7 +1044,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -944,6 +1055,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Amos Group Ltd",
     "reportName": "amos_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3119590450145822,
@@ -1054,6 +1166,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 759,
+      "scope2TCO2e": 456,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 3966658.333333333,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 470,
+      "wasteDisposedTonnes": 0
+    },
     "derived": {
       "scope12Total": 1215,
       "wasteDiversionRate": null,
@@ -1069,7 +1193,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -1077,6 +1204,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Amplefield Limited",
     "reportName": "amplefield_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3250653443146163,
@@ -1187,6 +1315,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -1202,7 +1342,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -1210,6 +1353,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Annaik Limited",
     "reportName": "secondary_annaik_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3673164235843884,
@@ -1320,6 +1464,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 36.96,
+      "scope2TCO2e": 57.84,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 94.80000000000001,
       "wasteDiversionRate": null,
@@ -1335,7 +1491,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -1343,6 +1502,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Amcorp Global Ltd",
     "reportName": "amcorp_global_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3342877941099047,
@@ -1453,6 +1613,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 144025000000,
+      "scope2TCO2e": 1597469000000,
+      "scope3TCO2e": 8667007000000,
+      "totalEnergyKwh": 5621008000,
+      "waterWithdrawalM3": 7444773,
+      "waterConsumptionM3": 1139645,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 110151,
+      "wasteRecycledTonnes": 71518,
+      "wasteDisposedTonnes": 27405
+    },
     "derived": {
       "scope12Total": 1741494000000,
       "wasteDiversionRate": 0.6492723624842262,
@@ -1468,7 +1640,12 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Scope 1+2 emissions at or above 95th percentile in cohort",
+        "Total energy at or above 95th percentile in cohort",
+        "Water withdrawal at or above 95th percentile in cohort"
+      ]
     }
   },
   {
@@ -1476,6 +1653,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Anchun International Holding",
     "reportName": "anchun_international_holding_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3345202259593223,
@@ -1586,6 +1764,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 407,
+      "scope2TCO2e": 4039,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 9058055.555555556,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 32500,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4446,
       "wasteDiversionRate": null,
@@ -1601,7 +1791,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -1609,6 +1802,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Apac Realty",
     "reportName": "apac_realty_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4270873666941768,
@@ -1719,6 +1913,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -1734,7 +1940,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -1742,6 +1951,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Arion Entertainment Singapor",
     "reportName": "arion_entertainment_singapor_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3399703663300258,
@@ -1852,6 +2062,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -1867,7 +2089,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -1875,6 +2100,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asia Enterprises",
     "reportName": "secondary_asia_enterprises_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3034642586008247,
@@ -1985,6 +2211,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -2000,7 +2238,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -2008,6 +2249,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asia Vets Holdings Ltd",
     "reportName": "asia_vets_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3818839909339018,
@@ -2118,6 +2360,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": 19.1,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 45923,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 149,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 19.1,
       "wasteDiversionRate": null,
@@ -2133,7 +2387,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -2141,6 +2398,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Ascendas Real Estate Inv Trt",
     "reportName": "ascendas_real_estate_inv_trt_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3596506237178616,
@@ -2251,6 +2509,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 507,
+      "scope2TCO2e": 48943,
+      "scope3TCO2e": 140760,
+      "totalEnergyKwh": 137600000,
+      "waterWithdrawalM3": 1291105,
+      "waterConsumptionM3": 1291105,
+      "waterRecycledM3": 170426,
+      "wasteGeneratedTonnes": 9924,
+      "wasteRecycledTonnes": 305,
+      "wasteDisposedTonnes": 0
+    },
     "derived": {
       "scope12Total": 49450,
       "wasteDiversionRate": 0.030733575171301895,
@@ -2266,7 +2536,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -2274,6 +2547,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asiamedic Limited",
     "reportName": "secondary_asiamedic_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2801198216267309,
@@ -2384,6 +2658,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": 346,
+      "scope3TCO2e": 42.983,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 0.918,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 346,
       "wasteDiversionRate": null,
@@ -2399,7 +2685,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -2407,6 +2696,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asian Micro Holdings Ltd",
     "reportName": "secondary_asian_micro_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3980953911775529,
@@ -2517,6 +2807,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 74.2,
+      "scope2TCO2e": 7,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 295555.55555555556,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1.399,
+      "wasteRecycledTonnes": 1.399,
+      "wasteDisposedTonnes": 0
+    },
     "derived": {
       "scope12Total": 81.2,
       "wasteDiversionRate": 1,
@@ -2532,7 +2834,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -2540,6 +2843,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Ascott Residence Trust",
     "reportName": "ascott_residence_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4204272545649743,
@@ -2650,6 +2954,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2059,
+      "scope2TCO2e": 31811,
+      "scope3TCO2e": 25704,
+      "totalEnergyKwh": 82151000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 881000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3476,
+      "wasteRecycledTonnes": 372,
+      "wasteDisposedTonnes": 2852
+    },
     "derived": {
       "scope12Total": 33870,
       "wasteDiversionRate": 0.10701956271576525,
@@ -2665,7 +2981,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -2673,6 +2992,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asian Healthcare Specialists",
     "reportName": "asian_healthcare_specialists_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3770634447562131,
@@ -2783,6 +3103,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1480,
+      "scope2TCO2e": 43774,
+      "scope3TCO2e": 9956,
+      "totalEnergyKwh": 72209787,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 340562,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 710,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 45254,
       "wasteDiversionRate": null,
@@ -2798,7 +3130,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -2806,6 +3141,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asian Pay Television Trust",
     "reportName": "asian_pay_television_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3475485949596688,
@@ -2916,6 +3252,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 4159,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 8000,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 294,
+      "wasteRecycledTonnes": 73,
+      "wasteDisposedTonnes": 221
+    },
     "derived": {
       "scope12Total": 4159,
       "wasteDiversionRate": 0.24829931972789115,
@@ -2931,7 +3279,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1"
+      ]
     }
   },
   {
@@ -2939,6 +3290,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asiatic Group Holdings Ltd",
     "reportName": "asiatic_group_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2799307366790615,
@@ -3049,6 +3401,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -3064,7 +3428,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -3072,6 +3439,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asl Marine Holdings Ltd",
     "reportName": "asl_marine_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3084973803585214,
@@ -3182,6 +3550,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 15966,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 22716439,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 130702,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 15966,
       "wasteDiversionRate": null,
@@ -3197,7 +3577,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -3205,6 +3588,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Aspial Corp Ltd",
     "reportName": "aspial_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3653540271826201,
@@ -3315,6 +3699,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0.02,
+      "scope2TCO2e": 510.86,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 762175,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 510.88,
       "wasteDiversionRate": null,
@@ -3330,7 +3726,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -3338,6 +3737,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Aspen Group",
     "reportName": "aspen_group_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.312208773643833,
@@ -3448,6 +3848,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 379,
+      "scope2TCO2e": 301,
+      "scope3TCO2e": 26878,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 2.867,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 680,
       "wasteDiversionRate": null,
@@ -3463,7 +3875,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -3471,6 +3886,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Aspial Corporation",
     "reportName": "aspial_corporation_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3175381155326975,
@@ -3581,6 +3997,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0.02,
+      "scope2TCO2e": 510.86,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 762175,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 510.88,
       "wasteDiversionRate": null,
@@ -3596,7 +4024,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -3604,6 +4035,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Astaka Holdings Ltd",
     "reportName": "astaka_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3138727252349596,
@@ -3714,6 +4146,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": 107.76,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 142160,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 0,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 107.76,
       "wasteDiversionRate": null,
@@ -3729,7 +4173,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -3737,6 +4184,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asti Holdings Corporation",
     "reportName": "asti_holdings_corporation_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3584503712971625,
@@ -3847,6 +4295,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 21,
+      "scope2TCO2e": 5560,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 5581,
       "wasteDiversionRate": null,
@@ -3862,7 +4322,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -3870,6 +4333,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Asti Holdings Ltd",
     "reportName": "asti_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.308381337715882,
@@ -3980,6 +4444,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 21,
+      "scope2TCO2e": 5560,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 5581,
       "wasteDiversionRate": null,
@@ -3995,7 +4471,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -4003,6 +4482,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Aviation Plc",
     "reportName": "aviation_plc_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.305263388703024,
@@ -4113,6 +4593,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -4128,7 +4620,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -4136,6 +4631,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Avi-tech Electronics Limited",
     "reportName": "avi-tech_electronics_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4202767920459607,
@@ -4246,6 +4742,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 15.6,
+      "scope2TCO2e": 1665,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 4103000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 9388,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1.9,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1680.6,
       "wasteDiversionRate": null,
@@ -4261,7 +4769,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -4269,6 +4780,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Baker Technology Ltd",
     "reportName": "secondary_baker_technology_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4052297308571084,
@@ -4379,6 +4891,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 117,
+      "scope2TCO2e": 442,
+      "scope3TCO2e": 51,
+      "totalEnergyKwh": 1512777.7777777778,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 604.23,
+      "wasteRecycledTonnes": 430.23,
+      "wasteDisposedTonnes": 171
+    },
     "derived": {
       "scope12Total": 559,
       "wasteDiversionRate": 0.7120301871803784,
@@ -4394,7 +4918,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -4402,6 +4927,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Aztech Global Ltd",
     "reportName": "aztech_global_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3544357637259323,
@@ -4512,6 +5038,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 986.3,
+      "scope2TCO2e": 13273.1,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 21229000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 168000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 335.3,
+      "wasteRecycledTonnes": 235.5,
+      "wasteDisposedTonnes": 99.7
+    },
     "derived": {
       "scope12Total": 14259.4,
       "wasteDiversionRate": 0.7023560990158068,
@@ -4527,7 +5065,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -4535,6 +5074,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bbr Holdings",
     "reportName": "bbr_holdings_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.406141125933236,
@@ -4645,6 +5185,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 3742.2,
+      "scope2TCO2e": 345.1,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 15466861.11111111,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 30029.4,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1468.92,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4087.2999999999997,
       "wasteDiversionRate": null,
@@ -4660,7 +5212,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -4668,6 +5223,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Banyan Tree Holdings Ltd",
     "reportName": "banyan_tree_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.343265003866263,
@@ -4778,6 +5334,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 41000,
+      "scope2TCO2e": 127000,
+      "scope3TCO2e": 128000,
+      "totalEnergyKwh": 236780000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 5361000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 168000,
       "wasteDiversionRate": null,
@@ -4793,7 +5361,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -4801,6 +5372,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bbr Holdings Limited",
     "reportName": "bbr_holdings_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3550724673999681,
@@ -4911,6 +5483,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 3742.2,
+      "scope2TCO2e": 345.1,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 15466861.11111111,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 30029.4,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1468.92,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4087.2999999999997,
       "wasteDiversionRate": null,
@@ -4926,7 +5510,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -4934,6 +5521,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Beng Soon Machinery Holdings",
     "reportName": "beng_soon_machinery_holdings_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4130415851562517,
@@ -5044,6 +5632,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 4430.96,
+      "scope2TCO2e": 64.31,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 18255020,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 31813.9,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1360.71,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4495.27,
       "wasteDiversionRate": null,
@@ -5059,7 +5659,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -5067,6 +5670,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Beng Kuang Marine Ltd",
     "reportName": "beng_kuang_marine_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.297176111481012,
@@ -5177,6 +5781,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2756.6,
+      "scope2TCO2e": 1724.1,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 37844,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 18728,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4480.7,
       "wasteDiversionRate": null,
@@ -5192,7 +5808,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -5200,6 +5819,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Best World International Ltd",
     "reportName": "best_world_international_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2974708517948144,
@@ -5310,6 +5930,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 55.96,
+      "scope2TCO2e": 2674.69,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 5508000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 13.504,
+      "wasteRecycledTonnes": 11.797,
+      "wasteDisposedTonnes": 1.707
+    },
     "derived": {
       "scope12Total": 2730.65,
       "wasteDiversionRate": 0.873593009478673,
@@ -5325,7 +5957,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -5333,6 +5966,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Beverly Jcg Ltd",
     "reportName": "secondary_beverly_jcg_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.348848806535834,
@@ -5443,6 +6077,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -5458,7 +6104,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -5466,6 +6115,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bhcc Holding Ltd",
     "reportName": "secondary_bhcc_holding_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.352131409409985,
@@ -5576,6 +6226,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 4626.1,
+      "scope2TCO2e": 922.4,
+      "scope3TCO2e": 15.7,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 13496.8,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 5548.5,
       "wasteDiversionRate": null,
@@ -5591,7 +6253,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -5599,6 +6264,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Biolidics Limited",
     "reportName": "secondary_biolidics_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3873123828412914,
@@ -5709,6 +6375,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": 74.45,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 74.45,
       "wasteDiversionRate": null,
@@ -5724,7 +6402,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -5732,6 +6413,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bigl Industrial Group Limited",
     "reportName": "bigl_industrial_group_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.311278512718927,
@@ -5842,6 +6524,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 17,
+      "scope2TCO2e": 13816,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 310000,
+      "waterConsumptionM3": 117500,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 886,
+      "wasteRecycledTonnes": 643,
+      "wasteDisposedTonnes": 243
+    },
     "derived": {
       "scope12Total": 13833,
       "wasteDiversionRate": 0.7257336343115124,
@@ -5857,7 +6551,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -5865,6 +6560,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Boc Aviation Ltd",
     "reportName": "boc_aviation_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3160847365362813,
@@ -5975,6 +6671,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": 142,
+      "scope3TCO2e": 1259,
+      "totalEnergyKwh": 358998,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 142,
       "wasteDiversionRate": null,
@@ -5990,7 +6698,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -5998,6 +6709,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bh Global Corporation",
     "reportName": "bh_global_corporation_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2932817405445618,
@@ -6108,6 +6820,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 92.27,
+      "scope2TCO2e": 163.72,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 737516.6666666666,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 5358.2,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 172.72,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 255.99,
       "wasteDiversionRate": null,
@@ -6123,7 +6847,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -6131,6 +6858,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Boldtek Holdings",
     "reportName": "secondary_boldtek_holdings_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3832123240502185,
@@ -6241,6 +6969,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 6.03,
+      "scope2TCO2e": 65.97,
+      "scope3TCO2e": 21.64,
+      "totalEnergyKwh": 178285,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 197,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 4.48,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 72,
       "wasteDiversionRate": null,
@@ -6256,7 +6996,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -6264,6 +7007,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Brc Asia Limited",
     "reportName": "secondary_brc_asia_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4027900609372679,
@@ -6374,6 +7118,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 3607,
+      "scope2TCO2e": 7205,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 32518055.555555556,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 10812,
       "wasteDiversionRate": null,
@@ -6389,7 +7145,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -6397,6 +7156,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Boustead Project",
     "reportName": "boustead_project_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4016580045720999,
@@ -6507,6 +7267,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 33383333.333333332,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 148200,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -6522,7 +7294,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -6530,6 +7305,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "British And Malayan Holdings",
     "reportName": "british_and_malayan_holdings_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4141690873979584,
@@ -6640,6 +7416,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 3742.2,
+      "scope2TCO2e": 345.1,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 15466861.11111111,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 30029.4,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1468.92,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4087.2999999999997,
       "wasteDiversionRate": null,
@@ -6655,7 +7443,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -6663,6 +7454,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Broadway Industrial Grp Ltd",
     "reportName": "broadway_industrial_grp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3022184025638395,
@@ -6773,6 +7565,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 17,
+      "scope2TCO2e": 13816,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 310000,
+      "waterConsumptionM3": 117500,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 886,
+      "wasteRecycledTonnes": 643,
+      "wasteDisposedTonnes": 243
+    },
     "derived": {
       "scope12Total": 13833,
       "wasteDiversionRate": 0.7257336343115124,
@@ -6788,7 +7592,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -6796,6 +7601,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bukit Sembawang Estates Ltd",
     "reportName": "secondary_bukit_sembawang_estates_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3635256250972176,
@@ -6906,6 +7712,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 29,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 34012,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 29,
       "wasteDiversionRate": null,
@@ -6921,7 +7739,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -6929,6 +7750,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bumitama Agri Ltd",
     "reportName": "bumitama_agri_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4221997976786311,
@@ -7039,6 +7861,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -7054,7 +7888,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -7062,6 +7899,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Brook Crompton Holdings Ltd",
     "reportName": "secondary_brook_crompton_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3765899492056222,
@@ -7172,6 +8010,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 1109,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -7187,7 +8037,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -7195,6 +8048,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Capallianz Holdings Limited",
     "reportName": "capallianz_holdings_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3447229277055428,
@@ -7305,6 +8159,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 24568.9,
+      "scope2TCO2e": 573.6,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 2926361.111111111,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 4336.7,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 25142.5,
       "wasteDiversionRate": null,
@@ -7320,7 +8186,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -7328,6 +8197,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bund Center Investment Ltd",
     "reportName": "secondary_bund_center_investment_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3479928827513774,
@@ -7438,6 +8308,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 25888,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 25966000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 350000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 25888,
       "wasteDiversionRate": null,
@@ -7453,7 +8335,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -7461,6 +8346,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bw Energy Ltd",
     "reportName": "bw_energy_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3206604063995016,
@@ -7571,6 +8457,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1866950,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1866950,
       "wasteDiversionRate": null,
@@ -7586,7 +8484,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -7594,6 +8495,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Bw Lpg Ltd",
     "reportName": "bw_lpg_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3210058329188812,
@@ -7704,6 +8606,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1866950,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1866950,
       "wasteDiversionRate": null,
@@ -7719,7 +8633,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -7727,6 +8644,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Capitaland Integrated Commerical Trust",
     "reportName": "capitaland_integrated_commerical_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3899912373565981,
@@ -7837,6 +8755,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 30,
+      "scope2TCO2e": 64272,
+      "scope3TCO2e": 97967,
+      "totalEnergyKwh": 434000000,
+      "waterWithdrawalM3": 1760000,
+      "waterConsumptionM3": 1816361,
+      "waterRecycledM3": 693440,
+      "wasteGeneratedTonnes": 26732,
+      "wasteRecycledTonnes": 2171,
+      "wasteDisposedTonnes": 24561
+    },
     "derived": {
       "scope12Total": 64302,
       "wasteDiversionRate": 0.08121352685919497,
@@ -7852,7 +8782,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -7860,6 +8793,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Casa Holdings",
     "reportName": "secondary_casa_holdings_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3579382895878596,
@@ -7970,6 +8904,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 43,
+      "scope2TCO2e": 254,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 2079,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 297,
       "wasteDiversionRate": null,
@@ -7985,7 +8931,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -7993,6 +8942,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Capitaland Investment Ltd Si",
     "reportName": "capitaland_investment_ltd_si_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3107521079040723,
@@ -8103,6 +9053,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 38225,
+      "scope2TCO2e": 765973,
+      "scope3TCO2e": 1720233,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 108558,
+      "wasteRecycledTonnes": 12339,
+      "wasteDisposedTonnes": 96219
+    },
     "derived": {
       "scope12Total": 804198,
       "wasteDiversionRate": 0.11366274249709833,
@@ -8118,7 +9080,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -8126,6 +9091,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Capitaland Ascott Trust",
     "reportName": "capitaland_ascott_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3293311170750073,
@@ -8236,6 +9202,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2059,
+      "scope2TCO2e": 31811,
+      "scope3TCO2e": 25704,
+      "totalEnergyKwh": 82151000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 881000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3476,
+      "wasteRecycledTonnes": 372,
+      "wasteDisposedTonnes": 2852
+    },
     "derived": {
       "scope12Total": 33870,
       "wasteDiversionRate": 0.10701956271576525,
@@ -8251,7 +9229,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -8259,6 +9240,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Capitaland Ascendas Reit",
     "reportName": "capitaland_ascendas_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3502014920220333,
@@ -8369,6 +9351,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 507,
+      "scope2TCO2e": 48943,
+      "scope3TCO2e": 163948,
+      "totalEnergyKwh": 137600000,
+      "waterWithdrawalM3": 1291105,
+      "waterConsumptionM3": 1291105,
+      "waterRecycledM3": 170426,
+      "wasteGeneratedTonnes": 9924,
+      "wasteRecycledTonnes": 305,
+      "wasteDisposedTonnes": 0
+    },
     "derived": {
       "scope12Total": 49450,
       "wasteDiversionRate": 0.030733575171301895,
@@ -8384,7 +9378,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -8392,6 +9389,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Cdw Holding Ltd",
     "reportName": "cdw_holding_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3400418455176166,
@@ -8502,6 +9500,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -8517,7 +9527,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -8525,6 +9538,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Cdl Hospitality Trusts",
     "reportName": "secondary_cdl_hospitality_trusts_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3462763173569143,
@@ -8635,6 +9649,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 114310000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 732756,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 4010.79,
+      "wasteRecycledTonnes": 322.62,
+      "wasteDisposedTonnes": 3688.1
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": 0.08043801844524395,
@@ -8650,7 +9676,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2"
+      ]
     }
   },
   {
@@ -8658,6 +9687,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Centurion Corp Ltd",
     "reportName": "centurion_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4157390916789594,
@@ -8768,6 +9798,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 7226.88,
+      "scope2TCO2e": 3445.96,
+      "scope3TCO2e": 4810.2,
+      "totalEnergyKwh": 37407197.222222224,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 50503.73,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 4233.16,
+      "wasteRecycledTonnes": 724.74,
+      "wasteDisposedTonnes": 3508.16
+    },
     "derived": {
       "scope12Total": 10672.84,
       "wasteDiversionRate": 0.17120543518317285,
@@ -8783,7 +9825,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -8791,6 +9836,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Centurion Corporation Limited",
     "reportName": "centurion_corporation_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.406435790758205,
@@ -8901,6 +9947,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 7226.88,
+      "scope2TCO2e": 3445.96,
+      "scope3TCO2e": 4810.2,
+      "totalEnergyKwh": 123840972.22222222,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 50503.73,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 4233.16,
+      "wasteRecycledTonnes": 724.74,
+      "wasteDisposedTonnes": 3508.16
+    },
     "derived": {
       "scope12Total": 10672.84,
       "wasteDiversionRate": 0.17120543518317285,
@@ -8916,7 +9974,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -8924,6 +9985,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Challenger Technologies Ltd",
     "reportName": "secondary_challenger_technologies_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.409624843754709,
@@ -9034,6 +10096,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -9049,7 +10123,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -9057,6 +10134,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Chasen Holdings Ltd",
     "reportName": "chasen_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3670663280561528,
@@ -9167,6 +10245,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 27601.68,
+      "scope2TCO2e": 5257.46,
+      "scope3TCO2e": 32075,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 44469.16,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 0.11004000000000001,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 32859.14,
       "wasteDiversionRate": null,
@@ -9182,7 +10272,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -9190,6 +10283,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Ch Offshore Ltd",
     "reportName": "secondary_ch_offshore_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.400004197886237,
@@ -9300,6 +10394,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 48693,
+      "scope2TCO2e": null,
+      "scope3TCO2e": 234.43,
+      "totalEnergyKwh": 180596666.66666666,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 2.928,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 48693,
       "wasteDiversionRate": 1,
@@ -9315,7 +10421,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 2, Waste generated"
+      ]
     }
   },
   {
@@ -9323,6 +10432,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Charisma Energy",
     "reportName": "secondary_charisma_energy_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3063132072908317,
@@ -9433,6 +10543,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 100,
+      "scope2TCO2e": 85,
+      "scope3TCO2e": 30,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 185,
       "wasteDiversionRate": null,
@@ -9448,7 +10570,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -9456,6 +10581,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Chemical Ind",
     "reportName": "chemical_ind_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.327843361376317,
@@ -9566,6 +10692,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 4.4,
+      "scope2TCO2e": 1.8,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 574000,
+      "waterConsumptionM3": 33900,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 6.2,
       "wasteDiversionRate": 0.5175995765515417,
@@ -9581,7 +10719,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -9589,6 +10728,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "China Kunda Technology",
     "reportName": "secondary_china_kunda_technology_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.398228996716925,
@@ -9699,6 +10839,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 44.6,
+      "scope2TCO2e": 1012.5,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1057.1,
       "wasteDiversionRate": null,
@@ -9714,7 +10866,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -9722,6 +10877,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Chemical Industries Limited",
     "reportName": "chemical_industries_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4259249547246597,
@@ -9832,6 +10988,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 4503,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 298000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4503,
       "wasteDiversionRate": 0,
@@ -9847,7 +11015,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 2, Waste generated"
+      ]
     }
   },
   {
@@ -9855,6 +11026,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "China Aviation Oil Corporation",
     "reportName": "china_aviation_oil_corporation_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4205254102297928,
@@ -9965,6 +11137,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 386.29,
+      "scope2TCO2e": 273.43,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 659.72,
       "wasteDiversionRate": null,
@@ -9980,7 +11164,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -9988,6 +11175,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Chuan Holdings Ltd",
     "reportName": "chuan_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.313129376546185,
@@ -10098,6 +11286,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -10113,7 +11313,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -10121,6 +11324,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Chuan Hup Holdings Limited",
     "reportName": "chuan_hup_holdings_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3250823153709503,
@@ -10231,6 +11435,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -10246,7 +11462,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -10254,6 +11473,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "China Star Food Group Ltd",
     "reportName": "china_star_food_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4172708554704783,
@@ -10364,6 +11584,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 187156,
+      "scope2TCO2e": 2020460,
+      "scope3TCO2e": 10102062,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 2207616,
       "wasteDiversionRate": 0.38176091355589226,
@@ -10379,7 +11611,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Scope 1+2 emissions at or above 95th percentile in cohort"
+      ]
     }
   },
   {
@@ -10387,6 +11622,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "China Sunsine Chemical Hldgs",
     "reportName": "china_sunsine_chemical_hldgs_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4082265282512068,
@@ -10497,6 +11733,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 319521,
+      "scope2TCO2e": 126877,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 1834851,
+      "waterRecycledM3": 1321174,
+      "wasteGeneratedTonnes": 8883.37,
+      "wasteRecycledTonnes": 615.15,
+      "wasteDisposedTonnes": 9013.51
+    },
     "derived": {
       "scope12Total": 446398,
       "wasteDiversionRate": 0.06924736896020316,
@@ -10512,7 +11760,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -10520,6 +11771,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Clearbridge Health",
     "reportName": "secondary_clearbridge_health_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.366269593343013,
@@ -10630,6 +11882,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 201.5,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 329094,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 8.887,
+      "wasteRecycledTonnes": 0,
+      "wasteDisposedTonnes": 8.887
+    },
     "derived": {
       "scope12Total": 201.5,
       "wasteDiversionRate": 0,
@@ -10645,7 +11909,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1"
+      ]
     }
   },
   {
@@ -10653,6 +11920,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Cnmc Goldmine Holdings Ltd",
     "reportName": "secondary_cnmc_goldmine_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3554149511220928,
@@ -10763,6 +12031,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 25448.2,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 94777777.77777776,
+      "waterWithdrawalM3": 2387000,
+      "waterConsumptionM3": 380000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 5134945,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 25448.2,
       "wasteDiversionRate": null,
@@ -10778,7 +12058,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 2, Waste recycled"
+      ]
     }
   },
   {
@@ -10786,6 +12069,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Civmec Limited",
     "reportName": "secondary_civmec_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3740956886230649,
@@ -10896,6 +12180,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1662,
+      "scope2TCO2e": 5523,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 16111111.11111111,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 7185,
       "wasteDiversionRate": null,
@@ -10911,7 +12207,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -10919,6 +12218,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Civmec Ltd",
     "reportName": "secondary_civmec_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3289046409536964,
@@ -11029,6 +12329,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1662,
+      "scope2TCO2e": 5523,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 16111111.11111111,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 7185,
       "wasteDiversionRate": null,
@@ -11044,7 +12356,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -11052,6 +12367,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Cordlife Group Ltd",
     "reportName": "cordlife_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3396702355604062,
@@ -11162,6 +12478,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": 112,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 264900,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 112,
       "wasteDiversionRate": null,
@@ -11177,7 +12505,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -11185,6 +12516,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Cortina Holdings",
     "reportName": "secondary_cortina_holdings_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.307672405070575,
@@ -11295,6 +12627,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -11310,7 +12654,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -11318,6 +12665,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Combine Will International H",
     "reportName": "combine_will_international_h_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2902781165165407,
@@ -11428,6 +12776,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 988.43,
+      "scope2TCO2e": 16846.28,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 35300824,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 331680,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 115.35,
+      "wasteRecycledTonnes": 7.29,
+      "wasteDisposedTonnes": 108.06
+    },
     "derived": {
       "scope12Total": 17834.71,
       "wasteDiversionRate": 0.06319895968790637,
@@ -11443,7 +12803,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -11451,6 +12814,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Comfortdelgro Corp Ltd",
     "reportName": "comfortdelgro_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3744517764425197,
@@ -11561,6 +12925,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 835668,
+      "scope2TCO2e": 231833,
+      "scope3TCO2e": 603017,
+      "totalEnergyKwh": 3510962669,
+      "waterWithdrawalM3": 1474000,
+      "waterConsumptionM3": 1474000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 16848,
+      "wasteRecycledTonnes": 8341,
+      "wasteDisposedTonnes": 8507
+    },
     "derived": {
       "scope12Total": 1067501,
       "wasteDiversionRate": 0.4950735992402659,
@@ -11576,7 +12952,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Total energy at or above 95th percentile in cohort"
+      ]
     }
   },
   {
@@ -11584,6 +12963,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Cosco Shipping",
     "reportName": "cosco_shipping_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3155105927779274,
@@ -11694,6 +13074,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 13550499,
+      "scope2TCO2e": 2571,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 51667216000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 13553070,
       "wasteDiversionRate": null,
@@ -11709,7 +13101,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -11717,6 +13112,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Courage Investment Group Ltd",
     "reportName": "courage_investment_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3142175649204362,
@@ -11827,6 +13223,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -11842,7 +13250,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -11850,6 +13261,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Creative Technology Ltd",
     "reportName": "creative_technology_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4037599547229818,
@@ -11960,6 +13372,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -11975,7 +13399,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -11983,6 +13410,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Credit Bureau Asia Limited",
     "reportName": "secondary_credit_bureau_asia_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.399443764886773,
@@ -12093,6 +13521,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 145.5,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 313910,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 145.5,
       "wasteDiversionRate": null,
@@ -12108,7 +13548,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -12116,6 +13559,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Cosmosteel Holdings Ltd",
     "reportName": "secondary_cosmosteel_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3641663545497564,
@@ -12226,6 +13670,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 133,
+      "scope2TCO2e": 100,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 794722.2222222222,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 98.45400000000001,
+      "wasteRecycledTonnes": 32.854,
+      "wasteDisposedTonnes": 65.6
+    },
     "derived": {
       "scope12Total": 233,
       "wasteDiversionRate": 0.3336989863286408,
@@ -12241,7 +13697,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -12249,6 +13706,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Ctr Holdings Ltd",
     "reportName": "secondary_ctr_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.285073250440591,
@@ -12359,6 +13817,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 940.23,
+      "scope2TCO2e": 30.77,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 3836410,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 1510.4,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": 363.62
+    },
     "derived": {
       "scope12Total": 971,
       "wasteDiversionRate": null,
@@ -12374,7 +13844,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -12382,6 +13855,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Cromwell European Reit",
     "reportName": "cromwell_european_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2838447588637607,
@@ -12492,6 +13966,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -12507,7 +13993,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -12515,6 +14004,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Cromwell Reit Eur",
     "reportName": "secondary_cromwell_reit_eur_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3774953044495803,
@@ -12625,6 +14115,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -12640,7 +14142,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -12648,6 +14153,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Datapulse Technology",
     "reportName": "secondary_datapulse_technology_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3149533429216078,
@@ -12758,6 +14264,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -12773,7 +14291,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -12781,6 +14302,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Darco Water Technologies Ltd",
     "reportName": "secondary_darco_water_technologies_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4212015184997924,
@@ -12891,6 +14413,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 409.58,
+      "scope2TCO2e": 171.71,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 2040641.6666666667,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 78909.6,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 59.77,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 581.29,
       "wasteDiversionRate": null,
@@ -12906,7 +14440,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -12914,6 +14451,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Dbs Group Holdings Ltd",
     "reportName": "dbs_group_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3961477728188854,
@@ -13024,6 +14562,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 582,
+      "scope2TCO2e": 19712,
+      "scope3TCO2e": 33152,
+      "totalEnergyKwh": 121357000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 180724,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1311.5,
+      "wasteRecycledTonnes": 262,
+      "wasteDisposedTonnes": 954.7
+    },
     "derived": {
       "scope12Total": 20294,
       "wasteDiversionRate": 0.19977125428898207,
@@ -13039,7 +14589,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -13047,6 +14600,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Delfi Limited",
     "reportName": "delfi_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4003008251893605,
@@ -13157,6 +14711,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 14325,
+      "scope2TCO2e": 39463,
+      "scope3TCO2e": 472575,
+      "totalEnergyKwh": 172640000,
+      "waterWithdrawalM3": 164642,
+      "waterConsumptionM3": 106676,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3183.669,
+      "wasteRecycledTonnes": 2915.522,
+      "wasteDisposedTonnes": 268.147
+    },
     "derived": {
       "scope12Total": 53788,
       "wasteDiversionRate": 0.9157742215035546,
@@ -13172,7 +14738,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -13180,6 +14747,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Del Monte Pacific Ltd",
     "reportName": "del_monte_pacific_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.373069438739212,
@@ -13290,6 +14858,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 8128218.372,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 14045315,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": 26108
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -13305,7 +14885,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste recycled"
+      ]
     }
   },
   {
@@ -13313,6 +14896,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Delfi Ltd",
     "reportName": "delfi_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3532296307591694,
@@ -13423,6 +15007,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 14325,
+      "scope2TCO2e": 39463,
+      "scope3TCO2e": 472575,
+      "totalEnergyKwh": 172640,
+      "waterWithdrawalM3": 164642,
+      "waterConsumptionM3": 106676,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3183.669,
+      "wasteRecycledTonnes": 2915.523,
+      "wasteDisposedTonnes": 268.147
+    },
     "derived": {
       "scope12Total": 53788,
       "wasteDiversionRate": 0.9157745356065596,
@@ -13438,7 +15034,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -13446,6 +15043,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Design Capital Ltd",
     "reportName": "design_capital_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4207846955634338,
@@ -13556,6 +15154,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -13571,7 +15181,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -13579,6 +15192,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Don Agro International Limited",
     "reportName": "secondary_don_agro_international_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3752449764204626,
@@ -13689,6 +15303,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -13704,7 +15330,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -13712,6 +15341,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Digilife Technologies Ltd",
     "reportName": "secondary_digilife_technologies_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.356740091671081,
@@ -13822,6 +15452,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 517,
+      "scope2TCO2e": 531,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 2794000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1048,
       "wasteDiversionRate": null,
@@ -13837,7 +15479,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -13845,6 +15490,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Digital Core Reit Management",
     "reportName": "secondary_digital_core_reit_management_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4035703850402612,
@@ -13955,6 +15601,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 336,
+      "scope2TCO2e": 38064,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 160594000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 186369,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 38400,
       "wasteDiversionRate": null,
@@ -13970,7 +15628,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -13978,6 +15639,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Dyna-mac Holding",
     "reportName": "dyna-mac_holding_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4088234321757498,
@@ -14088,6 +15750,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 5132,
+      "scope2TCO2e": 4750,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 30653899.999999996,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 2504,
+      "wasteRecycledTonnes": 561,
+      "wasteDisposedTonnes": 1943
+    },
     "derived": {
       "scope12Total": 9882,
       "wasteDiversionRate": 0.2240415335463259,
@@ -14103,7 +15777,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -14111,6 +15786,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Dyna-mac Holdings Ltd",
     "reportName": "dyna-mac_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3843222607553158,
@@ -14221,6 +15897,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 5132,
+      "scope2TCO2e": 4750,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 30653899.999999996,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 2504,
+      "wasteRecycledTonnes": 561,
+      "wasteDisposedTonnes": 1943
+    },
     "derived": {
       "scope12Total": 9882,
       "wasteDiversionRate": 0.2240415335463259,
@@ -14236,7 +15924,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -14244,6 +15933,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Duty Free International Ltd",
     "reportName": "duty_free_international_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4094218290252953,
@@ -14354,6 +16044,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 236000,
+      "scope2TCO2e": 341000,
+      "scope3TCO2e": 3348000,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 67980,
+      "wasteRecycledTonnes": 36432,
+      "wasteDisposedTonnes": 31548
+    },
     "derived": {
       "scope12Total": 577000,
       "wasteDiversionRate": 0.5359223300970873,
@@ -14369,7 +16071,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -14377,6 +16080,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Eggriculture Foods Limited",
     "reportName": "eggriculture_foods_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3057071993857605,
@@ -14487,6 +16191,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1381.07,
+      "scope2TCO2e": 2481.05,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 11698130,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 71392.8,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 26909.28,
+      "wasteRecycledTonnes": 26326.54,
+      "wasteDisposedTonnes": 582.74
+    },
     "derived": {
       "scope12Total": 3862.12,
       "wasteDiversionRate": 0.9783442737969951,
@@ -14502,7 +16218,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -14510,6 +16227,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Ec World Reit",
     "reportName": "ec_world_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2788904207315497,
@@ -14620,6 +16338,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 20824999.999999996,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1365.22,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": 1365.22
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -14635,7 +16365,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste recycled"
+      ]
     }
   },
   {
@@ -14643,6 +16376,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Eindec Kyodo",
     "reportName": "secondary_eindec_kyodo_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3879527542030061,
@@ -14753,6 +16487,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 5603.4,
+      "scope2TCO2e": 2378.4,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 1596472.2222222222,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 3490,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 68.646,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 7981.799999999999,
       "wasteDiversionRate": null,
@@ -14768,7 +16514,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -14776,6 +16525,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Edition Limited",
     "reportName": "secondary_edition_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3979550306662347,
@@ -14886,6 +16636,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1245,
+      "scope2TCO2e": 5672,
+      "scope3TCO2e": 257626,
+      "totalEnergyKwh": 120921000,
+      "waterWithdrawalM3": 1331815,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 8063,
+      "wasteRecycledTonnes": 8050,
+      "wasteDisposedTonnes": 13
+    },
     "derived": {
       "scope12Total": 6917,
       "wasteDiversionRate": 0.9983876968870148,
@@ -14901,7 +16663,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -14909,6 +16672,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Elite Commercial Reit",
     "reportName": "elite_commercial_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2882135147441929,
@@ -15019,6 +16783,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 7953,
+      "scope2TCO2e": 4891,
+      "scope3TCO2e": 50.8,
+      "totalEnergyKwh": 61940000,
+      "waterWithdrawalM3": 82435,
+      "waterConsumptionM3": 82000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1622.8,
+      "wasteRecycledTonnes": 1024.1,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 12844,
       "wasteDiversionRate": 0.6310697559773231,
@@ -15034,7 +16810,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -15042,6 +16819,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Es Group",
     "reportName": "secondary_es_group_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3198331910182604,
@@ -15152,6 +16930,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 9397000000,
+      "scope2TCO2e": 209000000,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 34505813,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 31743.19,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 9606000000,
       "wasteDiversionRate": null,
@@ -15167,7 +16957,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -15175,6 +16968,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Emerging Towns & Cities Singapore Ltd",
     "reportName": "emerging_towns_&_cities_singapore_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3709676009381653,
@@ -15285,6 +17079,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 19,
+      "scope2TCO2e": 57,
+      "scope3TCO2e": 16,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 76,
       "wasteDiversionRate": null,
@@ -15300,7 +17106,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -15308,6 +17117,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Enviro-hub Holdings Limited",
     "reportName": "enviro-hub_holdings_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4114138360154171,
@@ -15418,6 +17228,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 98.48,
+      "scope2TCO2e": 800,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 92847,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 898.48,
       "wasteDiversionRate": null,
@@ -15433,7 +17255,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -15441,6 +17266,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Eurosports Global Ltd",
     "reportName": "eurosports_global_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.317943845917334,
@@ -15551,6 +17377,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 63,
+      "scope2TCO2e": 278,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 938055.5555555555,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 341,
       "wasteDiversionRate": null,
@@ -15566,7 +17404,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -15574,6 +17415,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Far East Group",
     "reportName": "far_east_group_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3765054817141888,
@@ -15684,6 +17526,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 252.634,
+      "scope2TCO2e": 302.726,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 2172000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 555.36,
       "wasteDiversionRate": null,
@@ -15699,7 +17553,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -15707,6 +17564,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Esr-logos Reit",
     "reportName": "esr-logos_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.384997475995469,
@@ -15817,6 +17675,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 456,
+      "scope2TCO2e": 17114,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 38716000,
+      "waterWithdrawalM3": 351733,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 2250,
+      "wasteRecycledTonnes": 206,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 17570,
       "wasteDiversionRate": 0.09155555555555556,
@@ -15832,7 +17702,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -15840,6 +17713,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Esr Reit",
     "reportName": "esr_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2907499099154662,
@@ -15950,6 +17824,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 456,
+      "scope2TCO2e": 16658,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 38716000,
+      "waterWithdrawalM3": 351733,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 2250,
+      "wasteRecycledTonnes": 206,
+      "wasteDisposedTonnes": 2044
+    },
     "derived": {
       "scope12Total": 17114,
       "wasteDiversionRate": 0.09155555555555556,
@@ -15965,7 +17851,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -15973,6 +17862,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Federal International",
     "reportName": "secondary_federal_international_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3567090067201477,
@@ -16083,6 +17973,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 6.858,
+      "scope2TCO2e": 85.034,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 234036,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 91.89200000000001,
       "wasteDiversionRate": null,
@@ -16098,7 +18000,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -16106,6 +18011,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Figtree Holdings Limited",
     "reportName": "figtree_holdings_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3052396508577473,
@@ -16216,6 +18122,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 11.52,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 27614,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 11.52,
       "wasteDiversionRate": null,
@@ -16231,7 +18149,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -16239,6 +18160,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Far East Orchard Ltd",
     "reportName": "far_east_orchard_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3329760740515937,
@@ -16349,6 +18271,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 68927374,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 1064178,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -16364,7 +18298,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -16372,6 +18309,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "First Real Estate Investment Trust",
     "reportName": "first_real_estate_investment_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3643609925440885,
@@ -16482,6 +18420,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": null,
+      "scope3TCO2e": 60584,
+      "totalEnergyKwh": 70500000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 0,
       "wasteDiversionRate": null,
@@ -16497,7 +18447,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -16505,6 +18458,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "First Ship Lease Trust",
     "reportName": "first_ship_lease_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3686143212903787,
@@ -16615,6 +18569,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 4.58,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 10990,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4.58,
       "wasteDiversionRate": null,
@@ -16630,7 +18596,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -16638,6 +18607,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "First Resources Ltd",
     "reportName": "secondary_first_resources_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3165604707427334,
@@ -16748,6 +18718,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 888742000000,
+      "scope2TCO2e": 19347000000,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 254843333.3333333,
+      "waterWithdrawalM3": 4684592,
+      "waterConsumptionM3": 3999543,
+      "waterRecycledM3": 1097089,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 908089000000,
       "wasteDiversionRate": null,
@@ -16763,7 +18745,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -16771,6 +18756,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Food Empire Holdings Ltd",
     "reportName": "food_empire_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3837658268587163,
@@ -16881,6 +18867,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 110,
+      "scope2TCO2e": 3602,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 3113333.3333333335,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 625.41,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 3712,
       "wasteDiversionRate": null,
@@ -16896,7 +18894,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -16904,6 +18905,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "First Sponsor Group Ltd",
     "reportName": "first_sponsor_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.319675397508017,
@@ -17014,6 +19016,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2262.66,
+      "scope2TCO2e": 5375.24,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 55063352.777777776,
+      "waterWithdrawalM3": 590852.23,
+      "waterConsumptionM3": 590852.23,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 7637.9,
       "wasteDiversionRate": null,
@@ -17029,7 +19043,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -17037,6 +19054,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Flex Limited",
     "reportName": "flex_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.296151175461027,
@@ -17147,6 +19165,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -17162,7 +19192,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -17170,6 +19203,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Flex Ltd",
     "reportName": "flex_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3596742373291177,
@@ -17280,6 +19314,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -17295,7 +19341,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -17303,6 +19352,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Forise International Limited",
     "reportName": "secondary_forise_international_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2780089075842895,
@@ -17413,6 +19463,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 0,
       "wasteDiversionRate": null,
@@ -17428,7 +19490,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -17436,6 +19501,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Fortress Minerals Ltd",
     "reportName": "secondary_fortress_minerals_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4218872139581706,
@@ -17546,6 +19612,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 12855,
+      "scope2TCO2e": 9119,
+      "scope3TCO2e": 23581,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 29298,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 34.3,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 21974,
       "wasteDiversionRate": null,
@@ -17561,7 +19639,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -17569,6 +19650,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Frencken Group Limited",
     "reportName": "frencken_group_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2903903314795842,
@@ -17679,6 +19761,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -17694,7 +19788,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -17702,6 +19799,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Frasers Hospitality Trust",
     "reportName": "frasers_hospitality_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3803369934696363,
@@ -17812,6 +19910,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": 27500,
+      "totalEnergyKwh": 63136111.11111111,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 2835,
+      "wasteRecycledTonnes": 419,
+      "wasteDisposedTonnes": 2416
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": 0.14779541446208114,
@@ -17827,7 +19937,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2"
+      ]
     }
   },
   {
@@ -17835,6 +19948,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Frasers Logistics & Commerci",
     "reportName": "frasers_logistics_&_commerci_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.370002776889423,
@@ -17945,6 +20059,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1000,
+      "scope2TCO2e": 7000,
+      "scope3TCO2e": 90000,
+      "totalEnergyKwh": 219722222.2222222,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 382000,
+      "waterRecycledM3": 4000,
+      "wasteGeneratedTonnes": 1771,
+      "wasteRecycledTonnes": 301,
+      "wasteDisposedTonnes": 1470
+    },
     "derived": {
       "scope12Total": 8000,
       "wasteDiversionRate": 0.16996047430830039,
@@ -17960,7 +20086,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -17968,6 +20097,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Frasers Centrepoint Trust",
     "reportName": "frasers_centrepoint_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3030735160338096,
@@ -18078,6 +20208,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 27,
+      "scope2TCO2e": 25168,
+      "scope3TCO2e": 46000,
+      "totalEnergyKwh": 62222222.222222224,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 903000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 17657,
+      "wasteRecycledTonnes": 2189,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 25195,
       "wasteDiversionRate": 0.12397349493118877,
@@ -18093,7 +20235,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -18101,6 +20246,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Fuji Offset Plates Mfg Ltd",
     "reportName": "fuji_offset_plates_mfg_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2912937762100498,
@@ -18211,6 +20357,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 666,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 1785000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 666,
       "wasteDiversionRate": null,
@@ -18226,7 +20384,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -18234,6 +20395,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Fu Yu Corp Ltd",
     "reportName": "fu_yu_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4085733129996059,
@@ -18344,6 +20506,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 153.6,
+      "scope2TCO2e": 22132.6,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 32356000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 97986,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 22286.199999999997,
       "wasteDiversionRate": null,
@@ -18359,7 +20533,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -18367,6 +20544,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Fuxing Group Limited",
     "reportName": "fuxing_group_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3261357301456242,
@@ -18477,6 +20655,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 273485,
+      "scope2TCO2e": 477,
+      "scope3TCO2e": 179,
+      "totalEnergyKwh": 144509000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 1167000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 817.5,
+      "wasteRecycledTonnes": 770,
+      "wasteDisposedTonnes": 47.5
+    },
     "derived": {
       "scope12Total": 273962,
       "wasteDiversionRate": 0.9418960244648318,
@@ -18492,7 +20682,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -18500,6 +20691,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Gccp Resources Limited",
     "reportName": "gccp_resources_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.393419863602712,
@@ -18610,6 +20802,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -18625,7 +20829,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -18633,6 +20840,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Fuyu Corporation",
     "reportName": "fuyu_corporation_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3614007338088683,
@@ -18743,6 +20951,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 153.6,
+      "scope2TCO2e": 22132.6,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 32356000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 97986,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 22286.199999999997,
       "wasteDiversionRate": null,
@@ -18758,7 +20978,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -18766,6 +20989,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Gallant Venture Ltd",
     "reportName": "gallant_venture_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4163420327093532,
@@ -18876,6 +21100,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 14284,
+      "scope2TCO2e": 3662,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 555000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 17946,
       "wasteDiversionRate": null,
@@ -18891,7 +21127,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -18899,6 +21138,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Gke Corp Ltd",
     "reportName": "gke_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3744324373092511,
@@ -19009,6 +21249,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2953.551,
+      "scope2TCO2e": 769.186,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 64620.00000000001,
+      "waterConsumptionM3": 64620.00000000001,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 64.657,
+      "wasteRecycledTonnes": 369.504,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 3722.737,
       "wasteDiversionRate": 1,
@@ -19024,7 +21276,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Waste recycled exceeds waste generated"
+      ]
     }
   },
   {
@@ -19032,6 +21287,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Gke Corporation Limited",
     "reportName": "gke_corporation_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4257883235318147,
@@ -19142,6 +21398,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 3594.923,
+      "scope2TCO2e": 883.724,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 64620.00000000001,
+      "waterConsumptionM3": 64620.00000000001,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 64.657,
+      "wasteRecycledTonnes": 365,
+      "wasteDisposedTonnes": 577.211
+    },
     "derived": {
       "scope12Total": 4478.647,
       "wasteDiversionRate": 0.005645173763088296,
@@ -19157,7 +21425,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Waste recycled exceeds waste generated"
+      ]
     }
   },
   {
@@ -19165,6 +21436,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Ghy Culture And Media",
     "reportName": "secondary_ghy_culture_and_media_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3201753692727762,
@@ -19275,6 +21547,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 26.392599999999998,
+      "scope2TCO2e": 401.5299,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 549027.7777777778,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 427.9225,
       "wasteDiversionRate": null,
@@ -19290,7 +21574,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -19298,6 +21585,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Genting Singapore Ltd",
     "reportName": "genting_singapore_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4137521632412515,
@@ -19408,6 +21696,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -19423,7 +21723,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -19431,6 +21734,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Global Testing Corporation Limited",
     "reportName": "global_testing_corporation_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3524847564917124,
@@ -19541,6 +21845,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 147.8517,
+      "scope2TCO2e": 17150.7204,
+      "scope3TCO2e": 263.74,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 17298.572099999998,
       "wasteDiversionRate": null,
@@ -19556,7 +21872,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -19564,6 +21883,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Global Investments Ltd",
     "reportName": "global_investments_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4136373014930812,
@@ -19674,6 +21994,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 38225,
+      "scope2TCO2e": 765973,
+      "scope3TCO2e": 1720233,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 108558,
+      "wasteRecycledTonnes": 12339,
+      "wasteDisposedTonnes": 96219
+    },
     "derived": {
       "scope12Total": 804198,
       "wasteDiversionRate": 0.11366274249709833,
@@ -19689,7 +22021,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -19697,6 +22032,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Goodland Group Limited",
     "reportName": "goodland_group_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4079898866418419,
@@ -19807,6 +22143,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 31742,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 2450,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": 0
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -19822,7 +22170,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -19830,6 +22181,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Golden Agri-resources Ltd",
     "reportName": "golden_agri-resources_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3431697383040315,
@@ -19940,6 +22292,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 7270140,
+      "scope2TCO2e": 335173,
+      "scope3TCO2e": 25102024,
+      "totalEnergyKwh": 12258333333.333334,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 21617252,
+      "waterRecycledM3": 575128,
+      "wasteGeneratedTonnes": 10813022,
+      "wasteRecycledTonnes": 10690651,
+      "wasteDisposedTonnes": 122371
+    },
     "derived": {
       "scope12Total": 7605313,
       "wasteDiversionRate": 0.988682997223163,
@@ -19955,7 +22319,12 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Scope 1+2 emissions at or above 95th percentile in cohort",
+        "Total energy at or above 95th percentile in cohort",
+        "Waste generated at or above 95th percentile in cohort"
+      ]
     }
   },
   {
@@ -19963,6 +22332,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Grand Banks Yachts Ltd",
     "reportName": "grand_banks_yachts_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.420713471113872,
@@ -20073,6 +22443,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -20088,7 +22470,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -20096,6 +22481,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Grp Limited",
     "reportName": "secondary_grp_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.300219882291985,
@@ -20206,6 +22592,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 699,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -20221,7 +22619,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -20229,6 +22630,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Grab Holdings Ltd - Cl A",
     "reportName": "grab_holdings_ltd_-_cl_a_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3922158187358307,
@@ -20339,6 +22741,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 36186,
+      "scope2TCO2e": 53549,
+      "scope3TCO2e": 2382927,
+      "totalEnergyKwh": 90496000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 7365,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 89735,
       "wasteDiversionRate": null,
@@ -20354,7 +22768,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -20362,6 +22779,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Gsh Corporation Limited",
     "reportName": "gsh_corporation_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.400485247683882,
@@ -20472,6 +22890,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -20487,7 +22917,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -20495,6 +22928,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Great Eastern Holdings Ltd",
     "reportName": "great_eastern_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3580750134480055,
@@ -20605,6 +23039,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 270.75,
+      "scope2TCO2e": 15340.29,
+      "scope3TCO2e": 507.92,
+      "totalEnergyKwh": 29254420,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 201744.5,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 108.77,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 15611.04,
       "wasteDiversionRate": null,
@@ -20620,7 +23066,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -20628,6 +23077,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Gt Steel Construction Group",
     "reportName": "gt_steel_construction_group_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.368303438765024,
@@ -20738,6 +23188,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -20753,7 +23215,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -20761,6 +23226,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Gss Energy",
     "reportName": "secondary_gss_energy_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4024179677184563,
@@ -20871,6 +23337,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 291,
+      "scope2TCO2e": 13065,
+      "scope3TCO2e": 76,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 45955,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 324,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 13356,
       "wasteDiversionRate": null,
@@ -20886,7 +23364,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -20894,6 +23375,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Guocoland Ltd",
     "reportName": "guocoland_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3181329584894044,
@@ -21004,6 +23486,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 289,
+      "scope2TCO2e": 12136,
+      "scope3TCO2e": 155961,
+      "totalEnergyKwh": 27867475,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 225820,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1536,
+      "wasteRecycledTonnes": 134,
+      "wasteDisposedTonnes": 1402
+    },
     "derived": {
       "scope12Total": 12425,
       "wasteDiversionRate": 0.08723958333333333,
@@ -21019,7 +23513,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -21027,6 +23524,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Haw Par Corp Ltd",
     "reportName": "haw_par_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2903878512261415,
@@ -21137,6 +23635,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 1654.7,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 3969980,
+      "waterWithdrawalM3": 16290,
+      "waterConsumptionM3": 5050,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1654.7,
       "wasteDiversionRate": null,
@@ -21152,7 +23662,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -21160,6 +23673,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hafary Holdings Limited",
     "reportName": "secondary_hafary_holdings_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2819847696098166,
@@ -21270,6 +23784,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 37954.34,
+      "scope2TCO2e": 11768.29,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 126270,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 49722.63,
       "wasteDiversionRate": null,
@@ -21285,7 +23811,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -21293,6 +23822,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Halcyon Agri Corp Ltd",
     "reportName": "halcyon_agri_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3245724747661527,
@@ -21403,6 +23933,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 53686.4,
+      "scope2TCO2e": 116480.6,
+      "scope3TCO2e": 5361900,
+      "totalEnergyKwh": 620999999.9999999,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 8435200,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 170167,
       "wasteDiversionRate": null,
@@ -21418,7 +23960,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -21426,6 +23971,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Gyp Properties Ltd",
     "reportName": "gyp_properties_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3533699456355677,
@@ -21536,6 +24082,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 4867,
+      "scope2TCO2e": 66408,
+      "scope3TCO2e": 2171,
+      "totalEnergyKwh": 190952222.2222222,
+      "waterWithdrawalM3": 3023400,
+      "waterConsumptionM3": 1229000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1158782.3,
+      "wasteRecycledTonnes": 23087,
+      "wasteDisposedTonnes": 1135692
+    },
     "derived": {
       "scope12Total": 71275,
       "wasteDiversionRate": 0.019923500730033586,
@@ -21551,7 +24109,11 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste generated at or above 95th percentile in cohort",
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -21559,6 +24121,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Healthbank Holdings",
     "reportName": "secondary_healthbank_holdings_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3495453149220153,
@@ -21669,6 +24232,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 0,
       "wasteDiversionRate": null,
@@ -21684,7 +24259,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -21692,6 +24270,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hg Metal Manufacturing Ltd",
     "reportName": "hg_metal_manufacturing_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3028686927156101,
@@ -21802,6 +24381,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 623.56,
+      "scope2TCO2e": 644.16,
+      "scope3TCO2e": 73283.58,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 89220,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1267.7199999999998,
       "wasteDiversionRate": null,
@@ -21817,7 +24408,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -21825,6 +24419,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Heeton Holdings Ltd",
     "reportName": "heeton_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4242780176851781,
@@ -21935,6 +24530,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 6467,
+      "scope2TCO2e": 5721,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 51710277.777777776,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 180677,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 12188,
       "wasteDiversionRate": 0.0704804347826087,
@@ -21950,7 +24557,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -21958,6 +24568,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hke Holdings Ltd",
     "reportName": "hke_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2854899057562121,
@@ -22068,6 +24679,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 10041000000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -22083,7 +24706,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -22091,6 +24717,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hl Global Enterprises Ltd",
     "reportName": "secondary_hl_global_enterprises_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.288797923018278,
@@ -22201,6 +24828,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 186,
+      "scope2TCO2e": 1246,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 2580555.555555555,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1432,
       "wasteDiversionRate": null,
@@ -22216,7 +24855,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -22224,6 +24866,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hgh Holdings Limited",
     "reportName": "hgh_holdings_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3246429324028484,
@@ -22334,6 +24977,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 403.66,
+      "scope2TCO2e": 1072.41,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 4210930,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1476.0700000000002,
       "wasteDiversionRate": null,
@@ -22349,7 +25004,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -22357,6 +25015,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hoe Leong Corporation Limited",
     "reportName": "secondary_hoe_leong_corporation_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3708774542857824,
@@ -22467,6 +25126,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1769.42,
+      "scope2TCO2e": 1769.42,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 3964000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 5690,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 88,
+      "wasteRecycledTonnes": 88,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 3538.84,
       "wasteDiversionRate": 1,
@@ -22482,7 +25153,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -22490,6 +25162,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hong Lai Huat Group Ltd",
     "reportName": "hong_lai_huat_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.312585446320354,
@@ -22600,6 +25273,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 213.99,
+      "scope2TCO2e": 369.87,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 23127.9,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 583.86,
       "wasteDiversionRate": null,
@@ -22615,7 +25300,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -22623,6 +25311,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Ho Bee Land Ltd",
     "reportName": "ho_bee_land_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.324235555982277,
@@ -22733,6 +25422,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2154,
+      "scope2TCO2e": 3130,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 45085,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1371,
+      "wasteRecycledTonnes": 669,
+      "wasteDisposedTonnes": 702
+    },
     "derived": {
       "scope12Total": 5284,
       "wasteDiversionRate": 0.487964989059081,
@@ -22748,7 +25449,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -22756,6 +25458,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hong Fok Corporation Limited",
     "reportName": "secondary_hong_fok_corporation_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3456899897147239,
@@ -22866,6 +25569,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2.7,
+      "scope2TCO2e": 2858.5,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 6858000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 109811,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 4.19,
+      "wasteDisposedTonnes": 639
+    },
     "derived": {
       "scope12Total": 2861.2,
       "wasteDiversionRate": null,
@@ -22881,7 +25596,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -22889,6 +25607,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hong Fok Corp Ltd",
     "reportName": "hong_fok_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4184813220111934,
@@ -22999,6 +25718,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2.7,
+      "scope2TCO2e": 2858.5,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 6871000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 109811,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 4.19,
+      "wasteDisposedTonnes": 639
+    },
     "derived": {
       "scope12Total": 2861.2,
       "wasteDiversionRate": null,
@@ -23014,7 +25745,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -23022,6 +25756,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hong Leong Asia Ltd",
     "reportName": "secondary_hong_leong_asia_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4093952287995122,
@@ -23132,6 +25867,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -23147,7 +25894,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -23155,6 +25905,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hong Leong Finance Ltd",
     "reportName": "hong_leong_finance_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.392347549388687,
@@ -23265,6 +26016,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 160,
+      "scope2TCO2e": 27671,
+      "scope3TCO2e": 12384,
+      "totalEnergyKwh": 37535791,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 71095,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 27831,
       "wasteDiversionRate": null,
@@ -23280,7 +26043,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -23288,6 +26054,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hotel Properties Ltd",
     "reportName": "hotel_properties_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3703417527613326,
@@ -23398,6 +26165,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 58700,
+      "scope2TCO2e": 37700,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 2878900,
+      "waterConsumptionM3": 2369300,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 96400,
       "wasteDiversionRate": null,
@@ -23413,7 +26192,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -23421,6 +26203,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hotel Royal Limited",
     "reportName": "secondary_hotel_royal_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3285310076969423,
@@ -23531,6 +26314,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0.16,
+      "scope2TCO2e": 9365,
+      "scope3TCO2e": 204597,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 320680,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 921,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 9365.16,
       "wasteDiversionRate": null,
@@ -23546,7 +26341,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -23554,6 +26352,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hr Net Group",
     "reportName": "secondary_hr_net_group_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3361093777155744,
@@ -23664,6 +26463,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 286111.11111111107,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 19.3,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -23679,7 +26490,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -23687,6 +26501,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hotung Group",
     "reportName": "secondary_hotung_group_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3489064065086764,
@@ -23797,6 +26612,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 27.326,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 54496,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 27.326,
       "wasteDiversionRate": null,
@@ -23812,7 +26639,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -23820,6 +26650,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hongkong Land Holdings Ltd",
     "reportName": "hongkong_land_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4261966834524897,
@@ -23930,6 +26761,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2107,
+      "scope2TCO2e": 131173,
+      "scope3TCO2e": 1623808,
+      "totalEnergyKwh": 242189166.66666666,
+      "waterWithdrawalM3": 2456880,
+      "waterConsumptionM3": 2456880,
+      "waterRecycledM3": 23806,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": 11284,
+      "wasteDisposedTonnes": 14245
+    },
     "derived": {
       "scope12Total": 133280,
       "wasteDiversionRate": null,
@@ -23945,7 +26788,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated"
+      ]
     }
   },
   {
@@ -23953,6 +26799,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Huationg Global",
     "reportName": "secondary_huationg_global_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.278527854183612,
@@ -24063,6 +26910,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 46508,
+      "scope2TCO2e": 804,
+      "scope3TCO2e": 2626,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 927000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 47312,
       "wasteDiversionRate": null,
@@ -24078,7 +26937,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -24086,6 +26948,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Ifast Corp Ltd",
     "reportName": "ifast_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.402849861708391,
@@ -24196,6 +27059,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -24211,7 +27086,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -24219,6 +27097,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hyphens",
     "reportName": "secondary_hyphens_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3418394655074095,
@@ -24329,6 +27208,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 911.3,
+      "scope2TCO2e": 398,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 836261,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 65.715,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 1309.3,
       "wasteDiversionRate": null,
@@ -24344,7 +27235,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -24352,6 +27246,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Jardine Cycle & Carriage Ltd",
     "reportName": "jardine_cycle_&_carriage_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3094597031970168,
@@ -24462,6 +27357,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -24477,7 +27384,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -24485,6 +27395,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Keppel Corp Ltd",
     "reportName": "keppel_corp_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3447687303858218,
@@ -24595,6 +27506,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -24610,7 +27533,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -24618,6 +27544,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Hutchison Port Holdings Trust",
     "reportName": "hutchison_port_holdings_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2897515639962691,
@@ -24728,6 +27655,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 95553,
+      "scope2TCO2e": 97124,
+      "scope3TCO2e": 228541,
+      "totalEnergyKwh": 569649722.2222222,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3142.7,
+      "wasteRecycledTonnes": 2701,
+      "wasteDisposedTonnes": 405.2
+    },
     "derived": {
       "scope12Total": 192677,
       "wasteDiversionRate": 0.8594520635122666,
@@ -24743,7 +27682,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -24751,6 +27691,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Indofood Agri Resources Ltd",
     "reportName": "indofood_agri_resources_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3721160173679707,
@@ -24861,6 +27802,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 4114722222.2222223,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 4157700,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 25409,
+      "wasteRecycledTonnes": 1407,
+      "wasteDisposedTonnes": 757
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": 0.05537408005037585,
@@ -24876,7 +27829,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2"
+      ]
     }
   },
   {
@@ -24884,6 +27840,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Keppel Dc Reit",
     "reportName": "keppel_dc_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3008234683192583,
@@ -24994,6 +27951,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 783,
+      "scope2TCO2e": 63563,
+      "scope3TCO2e": 138219,
+      "totalEnergyKwh": 483229722.2222222,
+      "waterWithdrawalM3": 514400,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": 401600,
+      "wasteGeneratedTonnes": 65.6,
+      "wasteRecycledTonnes": 6.8,
+      "wasteDisposedTonnes": 58.8
+    },
     "derived": {
       "scope12Total": 64346,
       "wasteDiversionRate": 0.10365853658536586,
@@ -25009,7 +27978,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -25017,6 +27989,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Keppel Infrastructure Trust",
     "reportName": "keppel_infrastructure_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3607341962365624,
@@ -25127,6 +28100,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2022000,
+      "scope2TCO2e": 162000,
+      "scope3TCO2e": 1401000,
+      "totalEnergyKwh": 2284166666.6666665,
+      "waterWithdrawalM3": 1623000,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": 541000,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 2184000,
       "wasteDiversionRate": null,
@@ -25142,7 +28127,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -25150,6 +28138,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Keppel Pacific Oak Us Reit",
     "reportName": "keppel_pacific_oak_us_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3268105895401547,
@@ -25260,6 +28249,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 609,
+      "scope2TCO2e": 3114,
+      "scope3TCO2e": 36588,
+      "totalEnergyKwh": 67465000,
+      "waterWithdrawalM3": 352200,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1675,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 3723,
       "wasteDiversionRate": null,
@@ -25275,7 +28276,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -25283,6 +28287,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Keppel Reit",
     "reportName": "keppel_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.348842402079144,
@@ -25393,6 +28398,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 609,
+      "scope2TCO2e": 3114,
+      "scope3TCO2e": 36588,
+      "totalEnergyKwh": 67465000,
+      "waterWithdrawalM3": 352200,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1675,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 3723,
       "wasteDiversionRate": null,
@@ -25408,7 +28425,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -25416,6 +28436,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Kulicke & Soffa Industries",
     "reportName": "kulicke_&_soffa_industries_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4261823628420003,
@@ -25526,6 +28547,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 433.3,
+      "scope2TCO2e": 16304,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 37436944.44444444,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 16737.3,
       "wasteDiversionRate": 0.5487977369165488,
@@ -25541,7 +28574,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -25549,6 +28583,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Lendlease Global Commercial",
     "reportName": "secondary_lendlease_global_commercial_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3778577840064188,
@@ -25659,6 +28694,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 27000,
+      "scope2TCO2e": 54000,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 328000000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 4942000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 81000,
       "wasteDiversionRate": 0.8680851063829788,
@@ -25674,7 +28721,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -25682,6 +28730,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Lippo Mall Trust",
     "reportName": "lippo_mall_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.288876369160225,
@@ -25792,6 +28841,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 10088.69,
+      "scope2TCO2e": 113424.72,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 144253370,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 1339858.92,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 123513.41,
       "wasteDiversionRate": null,
@@ -25807,7 +28868,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -25815,6 +28879,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Lippo Malls Indonesia Retail",
     "reportName": "lippo_malls_indonesia_retail_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.373358812307042,
@@ -25925,6 +28990,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 10088.69,
+      "scope2TCO2e": 113424.72,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 144253370,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 1339858.92,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 123513.41,
       "wasteDiversionRate": null,
@@ -25940,7 +29017,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -25948,6 +29028,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Mapletree Pan Asia Com Trust",
     "reportName": "mapletree_pan_asia_com_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3753830167166186,
@@ -26058,6 +29139,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -26073,7 +29166,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -26081,6 +29177,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Maxeon Solar Technologie",
     "reportName": "maxeon_solar_technologie_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.411882179490685,
@@ -26191,6 +29288,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 292,
+      "scope2TCO2e": 161286,
+      "scope3TCO2e": 678,
+      "totalEnergyKwh": 311102000,
+      "waterWithdrawalM3": 4448494,
+      "waterConsumptionM3": 1504000,
+      "waterRecycledM3": 84464,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 161578,
       "wasteDiversionRate": 0.8409395281755434,
@@ -26206,7 +29315,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -26214,6 +29324,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Manulife Us Reit",
     "reportName": "manulife_us_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3079896322430884,
@@ -26324,6 +29435,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2044,
+      "scope2TCO2e": 15612,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 244100,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1801,
+      "wasteRecycledTonnes": 668,
+      "wasteDisposedTonnes": 1133
+    },
     "derived": {
       "scope12Total": 17656,
       "wasteDiversionRate": 0.3709050527484731,
@@ -26339,7 +29462,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -26347,6 +29471,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Netlink Nbn Trust",
     "reportName": "secondary_netlink_nbn_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3500866533824862,
@@ -26457,6 +29582,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 340,
+      "scope2TCO2e": 324,
+      "scope3TCO2e": 37936,
+      "totalEnergyKwh": 57245000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 75240,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 713,
+      "wasteRecycledTonnes": 682,
+      "wasteDisposedTonnes": 31
+    },
     "derived": {
       "scope12Total": 664,
       "wasteDiversionRate": 0.9565217391304348,
@@ -26472,7 +29609,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -26480,6 +29618,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Mapletree Industrial Trust",
     "reportName": "mapletree_industrial_trust_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2801438433765084,
@@ -26590,6 +29729,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 13.2,
+      "scope2TCO2e": 83215,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 663343,
+      "waterConsumptionM3": 606162,
+      "waterRecycledM3": 57181,
+      "wasteGeneratedTonnes": 12066.1,
+      "wasteRecycledTonnes": 461.2,
+      "wasteDisposedTonnes": 11604.9
+    },
     "derived": {
       "scope12Total": 83228.2,
       "wasteDiversionRate": 0.03822278946801369,
@@ -26605,7 +29756,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -26613,6 +29767,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Nanofilm Technologies Intern",
     "reportName": "nanofilm_technologies_intern_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.400309116055159,
@@ -26723,6 +29878,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 78.09,
+      "scope2TCO2e": 5558.19,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 79513116.66666666,
+      "waterWithdrawalM3": 368014.51,
+      "waterConsumptionM3": 6139,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 544.29,
+      "wasteRecycledTonnes": 447.38,
+      "wasteDisposedTonnes": 96.9
+    },
     "derived": {
       "scope12Total": 5636.28,
       "wasteDiversionRate": 0.8219515331900275,
@@ -26738,7 +29905,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -26746,6 +29914,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Olam Group Ltd",
     "reportName": "olam_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3533387635186087,
@@ -26856,6 +30025,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 4.37,
+      "scope2TCO2e": 0.25,
+      "scope3TCO2e": 82.78,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 347619428,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 259911,
+      "wasteRecycledTonnes": 23987,
+      "wasteDisposedTonnes": 235924
+    },
     "derived": {
       "scope12Total": 4.62,
       "wasteDiversionRate": 0.09228928363939964,
@@ -26871,7 +30052,12 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Water withdrawal at or above 95th percentile in cohort",
+        "Waste generated at or above 95th percentile in cohort",
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -26879,6 +30065,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Oue Commercial Real Estate I",
     "reportName": "oue_commercial_real_estate_i_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3921717717481712,
@@ -26989,6 +30176,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1562.2,
+      "scope2TCO2e": 29704.8,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 95881111.1111111,
+      "waterWithdrawalM3": 550588,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3830.4,
+      "wasteRecycledTonnes": 264,
+      "wasteDisposedTonnes": 3566
+    },
     "derived": {
       "scope12Total": 31267,
       "wasteDiversionRate": 0.06892230576441102,
@@ -27004,7 +30203,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -27012,6 +30214,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Oue Ltd",
     "reportName": "oue_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3477247767533114,
@@ -27122,6 +30325,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1562.2,
+      "scope2TCO2e": 29704.8,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 95881000,
+      "waterWithdrawalM3": 550588,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3830.4,
+      "wasteRecycledTonnes": 264,
+      "wasteDisposedTonnes": 3566
+    },
     "derived": {
       "scope12Total": 31267,
       "wasteDiversionRate": 0.06892230576441102,
@@ -27137,7 +30352,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -27145,6 +30363,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Parkway Life Reit",
     "reportName": "parkway_life_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.341813077298211,
@@ -27255,6 +30474,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -27270,7 +30501,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -27278,6 +30512,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Oxley Holdings Ltd",
     "reportName": "oxley_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3517549903310553,
@@ -27388,6 +30623,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 115.15,
+      "scope2TCO2e": 0,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 7987419,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 115.15,
       "wasteDiversionRate": null,
@@ -27403,7 +30650,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -27411,6 +30661,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Parkway Reit",
     "reportName": "parkway_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3871001838620756,
@@ -27521,6 +30772,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -27536,7 +30799,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -27544,6 +30810,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Oversea-chinese Banking Corp",
     "reportName": "oversea-chinese_banking_corp_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3078740910221582,
@@ -27654,6 +30921,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 147,
+      "scope2TCO2e": 23501,
+      "scope3TCO2e": 3849,
+      "totalEnergyKwh": 116172500,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 433969,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1605,
+      "wasteRecycledTonnes": 207,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 23648,
       "wasteDiversionRate": 0.12897196261682242,
@@ -27669,7 +30948,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -27677,6 +30959,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Parkwaylife Real Estate",
     "reportName": "parkwaylife_real_estate_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3109200674377732,
@@ -27787,6 +31070,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -27802,7 +31097,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -27810,6 +31108,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Q&m",
     "reportName": "secondary_q&m_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3676753986162495,
@@ -27920,6 +31219,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -27935,7 +31246,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -27943,6 +31257,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Raffles Medical Group Ltd",
     "reportName": "secondary_raffles_medical_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4250621340726908,
@@ -28053,6 +31368,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1644.9,
+      "scope2TCO2e": 17489.2,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 161192.4,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 2544.6,
+      "wasteRecycledTonnes": 131.4,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 19134.100000000002,
       "wasteDiversionRate": 0.05163876444234851,
@@ -28068,7 +31395,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -28076,6 +31406,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Sats Ltd",
     "reportName": "secondary_sats_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3740898967369772,
@@ -28186,6 +31517,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 138,
+      "scope2TCO2e": 4397,
+      "scope3TCO2e": 41389,
+      "totalEnergyKwh": 88619000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 4535,
       "wasteDiversionRate": null,
@@ -28201,7 +31544,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -28209,6 +31555,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Prime Us Reit",
     "reportName": "prime_us_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3986313800061267,
@@ -28319,6 +31666,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1162,
+      "scope2TCO2e": 23247,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 67919000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 138000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 24409,
       "wasteDiversionRate": null,
@@ -28334,7 +31693,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -28342,6 +31704,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Sabana Industrial Real Estat",
     "reportName": "secondary_sabana_industrial_real_estat_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2778209737526183,
@@ -28452,6 +31815,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": 10639,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 25527000,
+      "waterWithdrawalM3": 161955,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 10639,
       "wasteDiversionRate": 0.07285694308488323,
@@ -28467,7 +31842,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Waste generated"
+      ]
     }
   },
   {
@@ -28475,6 +31853,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Sheng Siong Group Ltd",
     "reportName": "sheng_siong_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4112562066588268,
@@ -28585,6 +31964,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 40652,
+      "scope2TCO2e": 36439,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 153434,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 14785,
+      "wasteRecycledTonnes": 11770,
+      "wasteDisposedTonnes": 3015
+    },
     "derived": {
       "scope12Total": 77091,
       "wasteDiversionRate": 0.796077105174163,
@@ -28600,7 +31991,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -28608,6 +32000,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Sembcorp Marine Ltd",
     "reportName": "sembcorp_marine_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4224358825000578,
@@ -28718,6 +32111,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 74941,
+      "scope2TCO2e": 107713,
+      "scope3TCO2e": 648257,
+      "totalEnergyKwh": 527777777.7777778,
+      "waterWithdrawalM3": 2913000,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": 797000,
+      "wasteGeneratedTonnes": 131919,
+      "wasteRecycledTonnes": 70966,
+      "wasteDisposedTonnes": 60953
+    },
     "derived": {
       "scope12Total": 182654,
       "wasteDiversionRate": 0.5379513186121787,
@@ -28733,7 +32138,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -28741,6 +32147,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Sembcorp Industries Ltd",
     "reportName": "secondary_sembcorp_industries_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.289979828361929,
@@ -28851,6 +32258,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 10183900,
+      "scope2TCO2e": 563300,
+      "scope3TCO2e": 5922800,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 18582800,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 10747200,
       "wasteDiversionRate": 0.6522662889518414,
@@ -28866,7 +32285,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Scope 1+2 emissions at or above 95th percentile in cohort"
+      ]
     }
   },
   {
@@ -28874,6 +32296,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Sia Engineering Co Ltd",
     "reportName": "sia_engineering_co_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3374380003993611,
@@ -28984,6 +32407,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 7288,
+      "scope2TCO2e": 7416,
+      "scope3TCO2e": 3157,
+      "totalEnergyKwh": 49444444.44444444,
+      "waterWithdrawalM3": 88567,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1890,
+      "wasteRecycledTonnes": 213,
+      "wasteDisposedTonnes": 1677
+    },
     "derived": {
       "scope12Total": 14704,
       "wasteDiversionRate": 0.1126984126984127,
@@ -28999,7 +32434,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -29007,6 +32445,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Singapore Tech Engineering",
     "reportName": "secondary_singapore_tech_engineering_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2928939453995825,
@@ -29117,6 +32556,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -29132,7 +32583,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -29140,6 +32594,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Singapore Airlines Ltd",
     "reportName": "singapore_airlines_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3161904902702006,
@@ -29250,6 +32705,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 12763000,
+      "scope2TCO2e": 10007,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 176046,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3314,
+      "wasteRecycledTonnes": 467.3,
+      "wasteDisposedTonnes": 2692
+    },
     "derived": {
       "scope12Total": 12773007,
       "wasteDiversionRate": 0.14100784550392276,
@@ -29265,7 +32732,11 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Scope 1+2 emissions at or above 95th percentile in cohort",
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -29273,6 +32744,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Singapore Post Ltd",
     "reportName": "secondary_singapore_post_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.340491742415388,
@@ -29383,6 +32855,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 32361,
+      "scope2TCO2e": 17077,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 159444444.44444442,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 247013,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 5788,
+      "wasteRecycledTonnes": 1226,
+      "wasteDisposedTonnes": 4562
+    },
     "derived": {
       "scope12Total": 49438,
       "wasteDiversionRate": 0.21181755355908777,
@@ -29398,7 +32882,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -29406,6 +32891,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Singapore Telecommunications",
     "reportName": "singapore_telecommunications_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3180215974612381,
@@ -29516,6 +33002,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 6251,
+      "scope2TCO2e": 432706,
+      "scope3TCO2e": 3568342,
+      "totalEnergyKwh": 804235000,
+      "waterWithdrawalM3": 683092,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": 353584,
+      "wasteGeneratedTonnes": 4284,
+      "wasteRecycledTonnes": 1867,
+      "wasteDisposedTonnes": 1865
+    },
     "derived": {
       "scope12Total": 438957,
       "wasteDiversionRate": 0.4358076563958917,
@@ -29531,7 +33029,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Total energy at or above 95th percentile in cohort"
+      ]
     }
   },
   {
@@ -29539,6 +33040,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "St Engineering",
     "reportName": "st_engineering_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4124004152816994,
@@ -29649,6 +33151,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 37000,
+      "scope2TCO2e": 74000,
+      "scope3TCO2e": 39000,
+      "totalEnergyKwh": 350833333.3333333,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 796000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 20916,
+      "wasteRecycledTonnes": 14013.72,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 111000,
       "wasteDiversionRate": 0.6699999999999999,
@@ -29664,7 +33178,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Good"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -29672,6 +33187,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Starhub Ltd",
     "reportName": "starhub_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2791817221999664,
@@ -29782,6 +33298,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -29797,7 +33325,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -29805,6 +33336,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Straits Trading Co Ltd",
     "reportName": "straits_trading_co_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3501977499470101,
@@ -29915,6 +33447,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 596,
+      "scope2TCO2e": 6003,
+      "scope3TCO2e": 599,
+      "totalEnergyKwh": 9955296,
+      "waterWithdrawalM3": 53634,
+      "waterConsumptionM3": 53634,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 2517,
+      "wasteRecycledTonnes": 76,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 6599,
       "wasteDiversionRate": 0.030194676201827572,
@@ -29930,7 +33474,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -29938,6 +33485,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Starhill Global Reit",
     "reportName": "secondary_starhill_global_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.378089296944681,
@@ -30048,6 +33596,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 613,
+      "scope2TCO2e": 3086,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 8085277.777777778,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 1545,
+      "wasteRecycledTonnes": 173,
+      "wasteDisposedTonnes": 1372
+    },
     "derived": {
       "scope12Total": 3699,
       "wasteDiversionRate": 0.11197411003236246,
@@ -30063,7 +33623,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -30071,6 +33634,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Suntec Reit",
     "reportName": "suntec_reit_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3773145988927624,
@@ -30181,6 +33745,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 1637,
+      "scope2TCO2e": 58402.8,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 156093000,
+      "waterWithdrawalM3": 1018575,
+      "waterConsumptionM3": 875638,
+      "waterRecycledM3": 195739,
+      "wasteGeneratedTonnes": 7410,
+      "wasteRecycledTonnes": 1048,
+      "wasteDisposedTonnes": 6362
+    },
     "derived": {
       "scope12Total": 60039.8,
       "wasteDiversionRate": 0.14143049932523616,
@@ -30196,7 +33772,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -30204,6 +33783,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "United Overseas Bank Ltd",
     "reportName": "united_overseas_bank_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3750832169019573,
@@ -30314,6 +33894,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 4.83,
+      "scope2TCO2e": 1.583,
+      "scope3TCO2e": 14.066,
+      "totalEnergyKwh": 138500000,
+      "waterWithdrawalM3": 634000,
+      "waterConsumptionM3": 634000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3484,
+      "wasteRecycledTonnes": 990,
+      "wasteDisposedTonnes": 2494
+    },
     "derived": {
       "scope12Total": 6.413,
       "wasteDiversionRate": 0.28415614236509756,
@@ -30329,7 +33921,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -30337,6 +33930,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Uob",
     "reportName": "uob_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2961524146269128,
@@ -30447,6 +34041,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 4.8,
+      "scope2TCO2e": 70.215,
+      "scope3TCO2e": 14.066,
+      "totalEnergyKwh": 138500000,
+      "waterWithdrawalM3": 634000,
+      "waterConsumptionM3": 634000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3484,
+      "wasteRecycledTonnes": 990,
+      "wasteDisposedTonnes": 2494
+    },
     "derived": {
       "scope12Total": 75.015,
       "wasteDiversionRate": 0.28415614236509756,
@@ -30462,7 +34068,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -30470,6 +34077,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Wilmar International Ltd",
     "reportName": "wilmar_international_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.3770497617524868,
@@ -30580,6 +34188,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": null,
+      "scope2TCO2e": null,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": null,
       "wasteDiversionRate": null,
@@ -30595,7 +34215,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Scope 1, Scope 2, Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -30603,6 +34226,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Venture Corporation Limited",
     "reportName": "venture_corporation_limited_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.398466733725313,
@@ -30713,6 +34337,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2659,
+      "scope2TCO2e": 75803,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 722000,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 4601,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 78462,
       "wasteDiversionRate": null,
@@ -30728,7 +34364,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   },
   {
@@ -30736,6 +34375,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Uob-kay Hian Holdings Ltd",
     "reportName": "uob-kay_hian_holdings_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4151380120042902,
@@ -30846,6 +34486,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 4830,
+      "scope2TCO2e": 1583,
+      "scope3TCO2e": 14066,
+      "totalEnergyKwh": 138500000,
+      "waterWithdrawalM3": 634000,
+      "waterConsumptionM3": 634000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 3484,
+      "wasteRecycledTonnes": 990,
+      "wasteDisposedTonnes": 2494
+    },
     "derived": {
       "scope12Total": 6413,
       "wasteDiversionRate": 0.28415614236509756,
@@ -30861,7 +34513,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Good",
+      "plausibilityReasons": []
     }
   },
   {
@@ -30869,6 +34522,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Uol Group Ltd",
     "reportName": "uol_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2869395373864605,
@@ -30979,6 +34633,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 3821,
+      "scope2TCO2e": 32311,
+      "scope3TCO2e": 18361,
+      "totalEnergyKwh": 94320000,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 809000,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 7021,
+      "wasteRecycledTonnes": 475,
+      "wasteDisposedTonnes": 6546
+    },
     "derived": {
       "scope12Total": 36132,
       "wasteDiversionRate": 0.06765418031619427,
@@ -30994,7 +34660,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Watch"
+      "plausibilityBand": "Watch",
+      "plausibilityReasons": [
+        "Waste diversion rate below 20%"
+      ]
     }
   },
   {
@@ -31002,6 +34671,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Zico Holdings Inc",
     "reportName": "secondary_zico_holdings_inc_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4097598544305854,
@@ -31112,6 +34782,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 0,
+      "scope2TCO2e": 70.2,
+      "scope3TCO2e": 192.94,
+      "totalEnergyKwh": 110986,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 70.2,
       "wasteDiversionRate": null,
@@ -31127,7 +34809,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -31135,6 +34820,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Zixin Group Holdings",
     "reportName": "secondary_zixin_group_holdings_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.331551176099883,
@@ -31245,6 +34931,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 96.1,
+      "scope2TCO2e": 3459,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": 4452333.333333333,
+      "waterWithdrawalM3": 167476,
+      "waterConsumptionM3": 50547,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 3555.1,
       "wasteDiversionRate": null,
@@ -31260,7 +34958,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -31268,6 +34969,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Ying Li International Real E",
     "reportName": "ying_li_international_real_e_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.2819467521013663,
@@ -31378,6 +35080,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 2,
+      "scope2TCO2e": 13583,
+      "scope3TCO2e": 17,
+      "totalEnergyKwh": 23824444.444444444,
+      "waterWithdrawalM3": null,
+      "waterConsumptionM3": 400,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": null,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": 4031
+    },
     "derived": {
       "scope12Total": 13585,
       "wasteDiversionRate": null,
@@ -31393,7 +35107,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste generated, Waste recycled"
+      ]
     }
   },
   {
@@ -31401,6 +35118,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "name": "Yanlord Land Group Ltd",
     "reportName": "yanlord_land_group_ltd_2023_sustainability_report",
     "reportYear": 2023,
+    "industry": "General",
     "country": "Singapore",
     "city": "Singapore",
     "lat": 1.4087732885175044,
@@ -31511,6 +35229,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
       "dataQualityScore": null,
       "verifiedByHuman": null
     },
+    "normalized": {
+      "scope1TCO2e": 14964,
+      "scope2TCO2e": 66428,
+      "scope3TCO2e": null,
+      "totalEnergyKwh": null,
+      "waterWithdrawalM3": 1417913,
+      "waterConsumptionM3": null,
+      "waterRecycledM3": null,
+      "wasteGeneratedTonnes": 17426,
+      "wasteRecycledTonnes": null,
+      "wasteDisposedTonnes": null
+    },
     "derived": {
       "scope12Total": 81392,
       "wasteDiversionRate": null,
@@ -31526,7 +35256,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "dataQualityScore": null,
         "verifiedByHuman": null
       },
-      "riskBand": "Review"
+      "plausibilityBand": "Review",
+      "plausibilityReasons": [
+        "Incomplete reporting: missing Waste recycled"
+      ]
     }
   }
 ];

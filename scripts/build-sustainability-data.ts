@@ -1,12 +1,20 @@
 #!/usr/bin/env npx tsx
 /**
  * Build script to parse master_metrics_1.csv and generate sustainability.generated.ts
+ * - Canonical unit normalization (emissions, energy kWh, water m³, waste tonnes)
+ * - Data plausibility (industry-based percentiles + consistency checks) with reasons
  *
  * Run with: npx tsx scripts/build-sustainability-data.ts
  */
 
 import * as fs from "fs";
 import * as path from "path";
+import {
+  normalizeEmissions,
+  normalizeEnergyToKwh,
+  normalizeWaterToM3,
+  normalizeWasteToTonnes,
+} from "../lib/units";
 
 // ============================================================================
 // CSV PARSING
@@ -285,23 +293,180 @@ function calcCompleteness(
   };
 }
 
-type RiskBand = "Good" | "Watch" | "Review";
+type PlausibilityBand = "Good" | "Watch" | "Review";
 
-function calcRiskBand(
-  completeness: Completeness,
+const MIN_PEERS_FOR_PERCENTILE = 10;
+
+/** Sorted ascending; return value at percentile (0-100). */
+function percentile(sorted: number[], p: number): number {
+  if (sorted.length === 0) return 0;
+  const index = (p / 100) * (sorted.length - 1);
+  const lower = Math.floor(index);
+  const upper = Math.ceil(index);
+  if (lower === upper) return sorted[lower];
+  return sorted[lower] + (index - lower) * (sorted[upper] - sorted[lower]);
+}
+
+/** Consistency checks (hard rules). Returns list of reason strings if any. */
+function consistencyReasons(
+  scope1: number | null,
+  scope2: number | null,
+  wasteGen: number | null,
+  wasteRec: number | null,
+  waterWith: number | null,
+  waterRec: number | null,
   groupsFailed: number | null,
+  completenessScore: number,
   dataQualityScore: number | null,
-  wasteDiversionRate: number | null,
-): RiskBand {
-  // Review conditions
-  if (completeness.score < 4) return "Review";
-  if (dataQualityScore !== null && dataQualityScore < 50) return "Review";
-  if (groupsFailed !== null && groupsFailed > 0) return "Review";
+): string[] {
+  const reasons: string[] = [];
+  if (wasteGen != null && wasteRec != null && wasteRec > wasteGen) {
+    reasons.push("Waste recycled exceeds waste generated");
+  }
+  if (waterWith != null && waterRec != null && waterRec > waterWith) {
+    reasons.push("Water recycled exceeds water withdrawal");
+  }
+  if (
+    (scope1 != null && scope1 < 0) ||
+    (scope2 != null && scope2 < 0) ||
+    (wasteGen != null && wasteGen < 0) ||
+    (wasteRec != null && wasteRec < 0)
+  ) {
+    reasons.push("Negative value in key metric");
+  }
+  if (groupsFailed != null && groupsFailed > 0) {
+    reasons.push("Extraction had failed groups");
+  }
+  if (completenessScore < 4) {
+    const missing: string[] = [];
+    if (scope1 === null) missing.push("Scope 1");
+    if (scope2 === null) missing.push("Scope 2");
+    if (wasteGen === null) missing.push("Waste generated");
+    if (wasteRec === null) missing.push("Waste recycled");
+    reasons.push(`Incomplete reporting: missing ${missing.join(", ")}`);
+  }
+  if (dataQualityScore != null && dataQualityScore < 50) {
+    reasons.push("Data quality score below 50");
+  }
+  return reasons;
+}
 
-  // Watch conditions
-  if (wasteDiversionRate !== null && wasteDiversionRate < 0.3) return "Watch";
+/** Assign plausibility band and reasons using percentiles (global cohort) and consistency. */
+function calcPlausibility(
+  company: {
+    normalized?: {
+      scope1TCO2e: number | null;
+      scope2TCO2e: number | null;
+      scope3TCO2e: number | null;
+      totalEnergyKwh: number | null;
+      waterWithdrawalM3: number | null;
+      wasteGeneratedTonnes: number | null;
+    };
+    derived: {
+      scope12Total: number | null;
+      wasteDiversionRate: number | null;
+      completeness: Completeness;
+      trust: { extractionOk: boolean; dataQualityScore: number | null };
+    };
+    meta: { groupsFailed: number | null };
+    water: { withdrawal: QuantityRaw; recycled: QuantityRaw };
+  },
+  stats: {
+    scope12P95: number;
+    energyP95: number;
+    waterP95: number;
+    wasteP95: number;
+    diversionP10: number;
+    cohortSize: number;
+  },
+): { band: PlausibilityBand; reasons: string[] } {
+  const reasons: string[] = [];
+  const scope12 = company.derived.scope12Total;
+  const scope1 = company.normalized?.scope1TCO2e ?? null;
+  const scope2 = company.normalized?.scope2TCO2e ?? null;
+  const wasteGen = company.normalized?.wasteGeneratedTonnes ?? null;
+  const wasteRec =
+    company.normalized?.wasteRecycledTonnes ??
+    company.waste?.recycled?.value ??
+    null;
+  const waterWith =
+    company.normalized?.waterWithdrawalM3 ??
+    company.water?.withdrawal?.value ??
+    null;
+  const waterRec =
+    company.normalized?.waterRecycledM3 ??
+    company.water?.recycled?.value ??
+    null;
 
-  return "Good";
+  const consistency = consistencyReasons(
+    scope1,
+    scope2,
+    wasteGen,
+    wasteRec,
+    waterWith,
+    waterRec,
+    company.meta.groupsFailed,
+    company.derived.completeness.score,
+    company.derived.trust.dataQualityScore ?? null,
+  );
+  if (consistency.length > 0) {
+    return { band: "Review", reasons: consistency };
+  }
+
+  // Review: extraction failed or completeness < 4 (already in consistency)
+  if (!company.derived.trust.extractionOk) {
+    return { band: "Review", reasons: ["Extraction had failed groups"] };
+  }
+  if (company.derived.completeness.score < 4) {
+    return {
+      band: "Review",
+      reasons: [
+        "Incomplete reporting: missing one or more of Scope 1, Scope 2, Waste generated, Waste recycled",
+      ],
+    };
+  }
+  if (
+    company.derived.trust.dataQualityScore != null &&
+    company.derived.trust.dataQualityScore < 50
+  ) {
+    return { band: "Review", reasons: ["Data quality score below 50"] };
+  }
+
+  // Watch: high outlier or low diversion (only when enough peers)
+  const n = stats.cohortSize;
+  if (n >= MIN_PEERS_FOR_PERCENTILE) {
+    if (scope12 !== null && scope12 >= stats.scope12P95) {
+      reasons.push("Scope 1+2 emissions at or above 95th percentile in cohort");
+    }
+    const energy = company.normalized?.totalEnergyKwh;
+    if (energy !== null && energy >= stats.energyP95) {
+      reasons.push("Total energy at or above 95th percentile in cohort");
+    }
+    const water = company.normalized?.waterWithdrawalM3;
+    if (water !== null && water >= stats.waterP95) {
+      reasons.push("Water withdrawal at or above 95th percentile in cohort");
+    }
+    const waste = company.normalized?.wasteGeneratedTonnes;
+    if (waste !== null && waste >= stats.wasteP95) {
+      reasons.push("Waste generated at or above 95th percentile in cohort");
+    }
+    const div = company.derived.wasteDiversionRate;
+    if (div !== null && (div <= stats.diversionP10 || div < 0.2)) {
+      reasons.push(
+        div < 0.2
+          ? "Waste diversion rate below 20%"
+          : "Waste diversion at or below 10th percentile in cohort",
+      );
+    }
+  } else {
+    const div = company.derived.wasteDiversionRate;
+    if (div !== null && div < 0.2) {
+      reasons.push("Waste diversion rate below 20%");
+    }
+  }
+
+  if (reasons.length > 0) return { band: "Watch", reasons };
+  return { band: "Good", reasons: [] };
 }
 
 // ============================================================================
@@ -363,18 +528,62 @@ function buildSustainabilityData(): void {
       wasteRecycledValue,
     );
     const extractionOk = groupsFailed === null || groupsFailed === 0;
-    const riskBand = calcRiskBand(
-      completeness,
-      groupsFailed,
-      dataQualityScore,
-      wasteDiversionRate,
+
+    // Canonical normalization
+    const scope1TCO2e = normalizeEmissions(scope1Value, scope1Unit);
+    const scope2TCO2e = normalizeEmissions(scope2Value, scope2Unit);
+    const scope3TCO2e = normalizeEmissions(
+      parseNumber(row["scope_3_value"]),
+      parseString(row["scope_3_unit"]),
     );
+    const totalEnergyKwh = normalizeEnergyToKwh(
+      parseNumber(row["total_energy_value"]),
+      parseString(row["total_energy_unit"]),
+    );
+    const waterWithdrawalM3 = normalizeWaterToM3(
+      parseNumber(row["water_withdrawal_value"]),
+      parseString(row["water_withdrawal_unit"]),
+    );
+    const waterConsumptionM3 = normalizeWaterToM3(
+      parseNumber(row["water_consumption_value"]),
+      parseString(row["water_consumption_unit"]),
+    );
+    const waterRecycledM3 = normalizeWaterToM3(
+      parseNumber(row["water_recycled_value"]),
+      parseString(row["water_recycled_unit"]),
+    );
+    const wasteGeneratedTonnes = normalizeWasteToTonnes(
+      wasteGeneratedValue,
+      wasteGeneratedUnit,
+    );
+    const wasteRecycledTonnes = normalizeWasteToTonnes(
+      wasteRecycledValue,
+      wasteRecycledUnit,
+    );
+    const wasteDisposedTonnes = normalizeWasteToTonnes(
+      wasteDisposedValue,
+      wasteDisposedUnit,
+    );
+
+    const normalized = {
+      scope1TCO2e,
+      scope2TCO2e,
+      scope3TCO2e,
+      totalEnergyKwh,
+      waterWithdrawalM3,
+      waterConsumptionM3,
+      waterRecycledM3,
+      wasteGeneratedTonnes,
+      wasteRecycledTonnes,
+      wasteDisposedTonnes,
+    };
 
     const company = {
       id: `company_${i + 1}`,
       name,
       reportName: parseString(row["report_name"]),
       reportYear: 2023 as const,
+      industry: "General",
 
       country: "Singapore",
       city: "Singapore",
@@ -478,6 +687,8 @@ function buildSustainabilityData(): void {
         verifiedByHuman: parseBoolean(row["verified_by_human"]),
       },
 
+      normalized,
+
       derived: {
         scope12Total,
         wasteDiversionRate,
@@ -487,11 +698,81 @@ function buildSustainabilityData(): void {
           dataQualityScore,
           verifiedByHuman: parseBoolean(row["verified_by_human"]),
         },
-        riskBand,
+        plausibilityBand: "Good" as PlausibilityBand,
+        plausibilityReasons: [] as string[],
       },
     };
 
     companies.push(company);
+  }
+
+  // Compute global cohort percentiles (industry = General for all)
+  type CompanyRow = {
+    derived: { scope12Total: number | null; wasteDiversionRate: number | null };
+    normalized?: {
+      totalEnergyKwh: number | null;
+      waterWithdrawalM3: number | null;
+      wasteGeneratedTonnes: number | null;
+    };
+  };
+  const scope12Arr = (companies as CompanyRow[])
+    .map((c) => c.derived.scope12Total)
+    .filter((v): v is number => v !== null && v > 0);
+  const energyArr = (companies as CompanyRow[])
+    .map((c) => c.normalized?.totalEnergyKwh)
+    .filter((v): v is number => v !== null && v > 0);
+  const waterArr = (companies as CompanyRow[])
+    .map((c) => c.normalized?.waterWithdrawalM3)
+    .filter((v): v is number => v !== null && v > 0);
+  const wasteArr = (companies as CompanyRow[])
+    .map((c) => c.normalized?.wasteGeneratedTonnes)
+    .filter((v): v is number => v !== null && v > 0);
+  const diversionArr = (companies as CompanyRow[])
+    .map((c) => c.derived.wasteDiversionRate)
+    .filter((v): v is number => v !== null);
+
+  scope12Arr.sort((a, b) => a - b);
+  energyArr.sort((a, b) => a - b);
+  waterArr.sort((a, b) => a - b);
+  wasteArr.sort((a, b) => a - b);
+  diversionArr.sort((a, b) => a - b);
+
+  const stats = {
+    scope12P95: scope12Arr.length > 0 ? percentile(scope12Arr, 95) : Infinity,
+    energyP95: energyArr.length > 0 ? percentile(energyArr, 95) : Infinity,
+    waterP95: waterArr.length > 0 ? percentile(waterArr, 95) : Infinity,
+    wasteP95: wasteArr.length > 0 ? percentile(wasteArr, 95) : Infinity,
+    diversionP10: diversionArr.length > 0 ? percentile(diversionArr, 10) : 0,
+    cohortSize: companies.length,
+  };
+
+  // Assign plausibility band and reasons to each company
+  for (const c of companies as unknown[]) {
+    const company = c as {
+      normalized?: {
+        scope1TCO2e: number | null;
+        scope2TCO2e: number | null;
+        waterWithdrawalM3: number | null;
+        waterRecycledM3: number | null;
+        wasteGeneratedTonnes: number | null;
+        wasteRecycledTonnes: number | null;
+        totalEnergyKwh: number | null;
+      };
+      derived: {
+        scope12Total: number | null;
+        wasteDiversionRate: number | null;
+        completeness: Completeness;
+        trust: { extractionOk: boolean; dataQualityScore: number | null };
+        plausibilityBand: PlausibilityBand;
+        plausibilityReasons: string[];
+      };
+      meta: { groupsFailed: number | null };
+      water: { withdrawal: QuantityRaw; recycled: QuantityRaw };
+      waste: { recycled: QuantityRaw };
+    };
+    const { band, reasons } = calcPlausibility(company, stats);
+    company.derived.plausibilityBand = band;
+    company.derived.plausibilityReasons = reasons;
   }
 
   // Generate TypeScript output
@@ -517,10 +798,12 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = ${JSON.stringif
   console.log(`Generated ${outputPath}`);
 
   // Print summary
-  const riskCounts = companies.reduce(
+  const bandCounts = (
+    companies as { derived: { plausibilityBand: string } }[]
+  ).reduce(
     (acc, c) => {
-      const company = c as { derived: { riskBand: string } };
-      acc[company.derived.riskBand] = (acc[company.derived.riskBand] || 0) + 1;
+      const b = c.derived.plausibilityBand;
+      acc[b] = (acc[b] || 0) + 1;
       return acc;
     },
     {} as Record<string, number>,
@@ -528,10 +811,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = ${JSON.stringif
 
   console.log("\nSummary:");
   console.log(`  Total companies: ${companies.length}`);
-  console.log(`  Risk distribution:`);
-  console.log(`    Good: ${riskCounts["Good"] || 0}`);
-  console.log(`    Watch: ${riskCounts["Watch"] || 0}`);
-  console.log(`    Review: ${riskCounts["Review"] || 0}`);
+  console.log(`  Data plausibility distribution:`);
+  console.log(`    Good: ${bandCounts["Good"] || 0}`);
+  console.log(`    Watch: ${bandCounts["Watch"] || 0}`);
+  console.log(`    Review: ${bandCounts["Review"] || 0}`);
 }
 
 // Run

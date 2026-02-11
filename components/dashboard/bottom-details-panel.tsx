@@ -26,29 +26,42 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import type { SustainabilityCompany, RiskBand } from "@/data/sustainability";
+import type {
+  SustainabilityCompany,
+  PlausibilityBand,
+} from "@/data/sustainability";
 import {
   fmtTCO2e,
   fmtPct,
   fmtQuantity,
   fmtNumber,
+  fmtEnergy,
+  fmtWater,
+  fmtWaste,
+  type UnitView,
+  getPeerStrategyExamples,
 } from "@/data/sustainability";
 
 interface BottomDetailsPanelProps {
   company: SustainabilityCompany | null;
   onClear: () => void;
+  unitView?: UnitView;
+  allCompanies?: SustainabilityCompany[];
 }
 
 export function BottomDetailsPanel({
   company,
   onClear,
+  unitView = "Canonical",
+  allCompanies = [],
 }: BottomDetailsPanelProps) {
-  const [isMinimized, setIsMinimized] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(true);
   const [showTargets, setShowTargets] = useState(false);
   const [showStrategy, setShowStrategy] = useState(false);
+  const [expandedPeerId, setExpandedPeerId] = useState<string | null>(null);
 
-  const getRiskColor = (riskBand: RiskBand): string => {
-    switch (riskBand) {
+  const getPlausibilityColor = (band: PlausibilityBand): string => {
+    switch (band) {
       case "Good":
         return "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
       case "Watch":
@@ -74,8 +87,14 @@ export function BottomDetailsPanel({
     );
   }
 
-  const riskBand = company.derived.riskBand;
+  const plausibilityBand =
+    company.derived.plausibilityBand ?? company.derived.riskBand;
+  const plausibilityReasons = company.derived.plausibilityReasons ?? [];
   const completeness = company.derived.completeness;
+  const peerExamples =
+    allCompanies.length > 0
+      ? getPeerStrategyExamples(company, allCompanies)
+      : [];
 
   // Minimized state
   if (isMinimized) {
@@ -89,9 +108,10 @@ export function BottomDetailsPanel({
             </span>
             <Badge
               variant="outline"
-              className={`text-xs ${getRiskColor(riskBand)}`}
+              className={`text-xs ${getPlausibilityColor(plausibilityBand)}`}
+              title="Data plausibility"
             >
-              {riskBand}
+              {plausibilityBand}
             </Badge>
           </div>
           <div className="flex items-center gap-2">
@@ -136,8 +156,12 @@ export function BottomDetailsPanel({
               {company.reportYear}
             </p>
           </div>
-          <Badge variant="outline" className={`ml-2 ${getRiskColor(riskBand)}`}>
-            {riskBand}
+          <Badge
+            variant="outline"
+            className={`ml-2 ${getPlausibilityColor(plausibilityBand)}`}
+            title="Data plausibility"
+          >
+            {plausibilityBand}
           </Badge>
         </div>
         <div className="flex items-center gap-2">
@@ -164,6 +188,20 @@ export function BottomDetailsPanel({
         </div>
       </div>
 
+      {/* Why flagged? (Watch / Review) */}
+      {plausibilityReasons.length > 0 && (
+        <div className="px-4 py-2 border-b border-zinc-800 bg-amber-500/5 border-l-2 border-l-amber-500/50">
+          <h4 className="text-xs font-medium text-amber-400 uppercase tracking-wider mb-1.5">
+            Why flagged?
+          </h4>
+          <ul className="text-sm text-zinc-300 space-y-1 list-disc list-inside">
+            {plausibilityReasons.map((reason, i) => (
+              <li key={i}>{reason}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {/* Tabs Content */}
       <Tabs defaultValue="overview" className="w-full">
         <div className="px-4 pt-2 border-b border-zinc-800">
@@ -186,6 +224,12 @@ export function BottomDetailsPanel({
             >
               Notes & Strategy
             </TabsTrigger>
+            <TabsTrigger
+              value="peers"
+              className="data-[state=active]:bg-transparent data-[state=active]:text-zinc-100 data-[state=active]:border-b-2 data-[state=active]:border-zinc-100 rounded-none pb-2 px-0 text-zinc-500 hover:text-zinc-300"
+            >
+              Peer Examples
+            </TabsTrigger>
           </TabsList>
         </div>
 
@@ -198,7 +242,10 @@ export function BottomDetailsPanel({
                 <span className="text-xs text-zinc-500">Scope 1</span>
               </div>
               <p className="text-sm font-medium text-zinc-100">
-                {fmtQuantity(company.emissions.scope1)}
+                {unitView === "Canonical" &&
+                company.normalized?.scope1TCO2e != null
+                  ? `${fmtNumber(company.normalized.scope1TCO2e)} tCO2e`
+                  : fmtQuantity(company.emissions.scope1)}
               </p>
             </div>
 
@@ -208,7 +255,10 @@ export function BottomDetailsPanel({
                 <span className="text-xs text-zinc-500">Scope 2</span>
               </div>
               <p className="text-sm font-medium text-zinc-100">
-                {fmtQuantity(company.emissions.scope2)}
+                {unitView === "Canonical" &&
+                company.normalized?.scope2TCO2e != null
+                  ? `${fmtNumber(company.normalized.scope2TCO2e)} tCO2e`
+                  : fmtQuantity(company.emissions.scope2)}
               </p>
             </div>
 
@@ -218,7 +268,10 @@ export function BottomDetailsPanel({
                 <span className="text-xs text-zinc-500">Scope 3</span>
               </div>
               <p className="text-sm font-medium text-zinc-100">
-                {fmtQuantity(company.emissions.scope3)}
+                {unitView === "Canonical" &&
+                company.normalized?.scope3TCO2e != null
+                  ? `${fmtNumber(company.normalized.scope3TCO2e)} tCO2e`
+                  : fmtQuantity(company.emissions.scope3)}
               </p>
             </div>
 
@@ -238,7 +291,11 @@ export function BottomDetailsPanel({
                 <span className="text-xs text-zinc-500">Waste Generated</span>
               </div>
               <p className="text-sm font-medium text-zinc-100">
-                {fmtQuantity(company.waste.generated)}
+                {fmtWaste(
+                  company.waste.generated,
+                  company.normalized?.wasteGeneratedTonnes,
+                  unitView,
+                )}
               </p>
             </div>
 
@@ -248,7 +305,11 @@ export function BottomDetailsPanel({
                 <span className="text-xs text-zinc-500">Waste Recycled</span>
               </div>
               <p className="text-sm font-medium text-zinc-100">
-                {fmtQuantity(company.waste.recycled)}
+                {fmtWaste(
+                  company.waste.recycled,
+                  company.normalized?.wasteRecycledTonnes,
+                  unitView,
+                )}
               </p>
             </div>
 
@@ -258,7 +319,11 @@ export function BottomDetailsPanel({
                 <span className="text-xs text-zinc-500">Waste Disposed</span>
               </div>
               <p className="text-sm font-medium text-zinc-100">
-                {fmtQuantity(company.waste.disposed)}
+                {fmtWaste(
+                  company.waste.disposed,
+                  company.normalized?.wasteDisposedTonnes,
+                  unitView,
+                )}
               </p>
             </div>
 
@@ -288,7 +353,11 @@ export function BottomDetailsPanel({
                 <span className="text-xs text-zinc-500">Water Withdrawal</span>
               </div>
               <p className="text-sm font-medium text-zinc-100">
-                {fmtQuantity(company.water.withdrawal)}
+                {fmtWater(
+                  company.water.withdrawal,
+                  company.normalized?.waterWithdrawalM3,
+                  unitView,
+                )}
               </p>
             </div>
 
@@ -298,7 +367,11 @@ export function BottomDetailsPanel({
                 <span className="text-xs text-zinc-500">Water Consumption</span>
               </div>
               <p className="text-sm font-medium text-zinc-100">
-                {fmtQuantity(company.water.consumption)}
+                {fmtWater(
+                  company.water.consumption,
+                  company.normalized?.waterConsumptionM3,
+                  unitView,
+                )}
               </p>
             </div>
 
@@ -308,7 +381,7 @@ export function BottomDetailsPanel({
                 <span className="text-xs text-zinc-500">Total Energy</span>
               </div>
               <p className="text-sm font-medium text-zinc-100">
-                {fmtQuantity(company.energy.total)}
+                {fmtEnergy(company, unitView)}
               </p>
             </div>
 
@@ -670,6 +743,77 @@ export function BottomDetailsPanel({
                 </div>
               )}
           </div>
+        </TabsContent>
+
+        {/* Peer Strategy Examples */}
+        <TabsContent value="peers" className="m-0 p-4">
+          <p className="text-xs text-zinc-500 mb-3">
+            These are strategies extracted from similar companies in the same
+            industry. Use as references, not prescriptions.
+          </p>
+          {peerExamples.length === 0 ? (
+            <div className="text-sm text-zinc-500 py-4">
+              No peer strategy examples available.
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {peerExamples.map(
+                ({ company: peer, snippet, targetsSummary }) => {
+                  const peerBand =
+                    peer.derived.plausibilityBand ?? peer.derived.riskBand;
+                  const isExpanded = expandedPeerId === peer.id;
+                  return (
+                    <div
+                      key={peer.id}
+                      className="bg-zinc-800/50 rounded-md overflow-hidden border border-zinc-700/50"
+                    >
+                      <div className="p-3">
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="text-sm font-medium text-zinc-100">
+                            {peer.name}
+                          </span>
+                          <Badge
+                            variant="outline"
+                            className={`text-[10px] ${getPlausibilityColor(peerBand)}`}
+                          >
+                            {peerBand}
+                          </Badge>
+                        </div>
+                        <p className="text-xs text-zinc-400 line-clamp-2">
+                          {snippet}
+                        </p>
+                        {targetsSummary && (
+                          <p className="text-[11px] text-zinc-500 mt-1.5">
+                            Targets: {targetsSummary}
+                          </p>
+                        )}
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setExpandedPeerId(isExpanded ? null : peer.id)
+                          }
+                          className="text-xs text-amber-400 hover:text-amber-300 mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded"
+                          aria-expanded={isExpanded}
+                          aria-label={
+                            isExpanded ? "Show less" : "Show more strategy"
+                          }
+                        >
+                          {isExpanded ? "Show less" : "Show more"}
+                        </button>
+                      </div>
+                      {isExpanded && peer.strategy.summary && (
+                        <div className="px-3 pb-3 pt-0 border-t border-zinc-700/50 mt-0">
+                          <p className="text-xs text-zinc-400 whitespace-pre-wrap max-h-[180px] overflow-y-auto pt-2">
+                            {peer.strategy.summary}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  );
+                },
+              )}
+            </div>
+          )}
         </TabsContent>
       </Tabs>
     </div>

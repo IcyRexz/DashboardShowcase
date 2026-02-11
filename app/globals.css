@@ -161,22 +161,14 @@
   }
 }
 
-/* Reduced motion support */
+/* Reduced motion: disable decorative animation only */
 @media (prefers-reduced-motion: reduce) {
-  .marker-ping {
-    animation: none !important;
-  }
-
+  .marker-ping,
   .animate-ping {
     animation: none !important;
   }
 
-  .animate-pulse {
-    animation: none !important;
-  }
-
-  * {
+  html {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
   }
 }

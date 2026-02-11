@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 import {
   type KpiData,
+  type UnitView,
   fmtTCO2e,
   fmtPct,
   fmtNumber,
@@ -15,9 +16,11 @@ import {
 
 interface KpiRowProps {
   kpis: KpiData;
+  /** KPI values are always canonical (tCO2e, %); unitView only affects tooltip. */
+  unitView?: UnitView;
 }
 
-export function KpiRow({ kpis }: KpiRowProps) {
+export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
   const diversionIsGood =
     kpis.avgWasteDiversion !== null && kpis.avgWasteDiversion >= 0.5;
   const qualityIsGood =
@@ -44,10 +47,11 @@ export function KpiRow({ kpis }: KpiRowProps) {
         </TooltipTrigger>
         <TooltipContent
           side="bottom"
-          className="max-w-[240px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
+          className="max-w-[280px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
         >
           Companies with all 4 core metrics reported: Scope 1, Scope 2, Waste
-          Generated, and Waste Recycled
+          Generated, and Waste Recycled. Data plausibility is based on
+          completeness and peer comparison.
         </TooltipContent>
       </Tooltip>
 
@@ -64,10 +68,10 @@ export function KpiRow({ kpis }: KpiRowProps) {
         </TooltipTrigger>
         <TooltipContent
           side="bottom"
-          className="max-w-[240px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
+          className="max-w-[280px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
         >
-          Sum of direct (Scope 1) and energy indirect (Scope 2) greenhouse gas
-          emissions across all filtered companies
+          Sum of direct (Scope 1) and energy indirect (Scope 2) GHG emissions in
+          tCO2e (canonical). Excludes non-convertible rows.
         </TooltipContent>
       </Tooltip>
 
@@ -87,10 +91,10 @@ export function KpiRow({ kpis }: KpiRowProps) {
         </TooltipTrigger>
         <TooltipContent
           side="bottom"
-          className="max-w-[240px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
+          className="max-w-[280px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
         >
-          Average percentage of waste recycled vs generated. Higher is better
-          (50%+ is good, 30%- needs attention).
+          Average waste diversion (recycled / generated). Higher is better (50%+
+          good, &lt;30% may trigger Watch plausibility).
         </TooltipContent>
       </Tooltip>
 
@@ -113,10 +117,10 @@ export function KpiRow({ kpis }: KpiRowProps) {
         </TooltipTrigger>
         <TooltipContent
           side="bottom"
-          className="max-w-[240px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
+          className="max-w-[280px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
         >
-          Average data extraction quality score. Higher scores indicate more
-          reliable data extraction from sustainability reports.
+          Average extraction quality score. Low scores (&lt;50) contribute to
+          Review plausibility.
         </TooltipContent>
       </Tooltip>
     </div>

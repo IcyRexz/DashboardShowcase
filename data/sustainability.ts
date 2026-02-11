@@ -93,7 +93,11 @@ export interface ExtractionMeta {
 // DERIVED TYPES
 // ============================================================================
 
-export type RiskBand = "Good" | "Watch" | "Review";
+/** Data plausibility band: Good = consistent & comparable; Watch = unusual vs peers; Review = incomplete or suspicious */
+export type PlausibilityBand = "Good" | "Watch" | "Review";
+
+/** @deprecated Use PlausibilityBand. Kept for type compatibility. */
+export type RiskBand = PlausibilityBand;
 
 export interface Completeness {
   hasScope1: boolean;
@@ -109,12 +113,51 @@ export interface TrustMetrics {
   verifiedByHuman: boolean | null;
 }
 
+/** Canonical normalized values (build-time). Used for KPIs and unit switching. */
+export interface NormalizedMetrics {
+  scope1TCO2e: number | null;
+  scope2TCO2e: number | null;
+  scope3TCO2e: number | null;
+  totalEnergyKwh: number | null;
+  waterWithdrawalM3: number | null;
+  waterConsumptionM3: number | null;
+  waterRecycledM3: number | null;
+  wasteGeneratedTonnes: number | null;
+  wasteRecycledTonnes: number | null;
+  wasteDisposedTonnes: number | null;
+}
+
 export interface DerivedMetrics {
   scope12Total: number | null; // scope1 + scope2 (normalized to tCO2e)
   wasteDiversionRate: number | null; // recycled / generated (0-1)
   completeness: Completeness;
   trust: TrustMetrics;
-  riskBand: RiskBand;
+  /** Data plausibility (industry-relative + consistency checks). */
+  plausibilityBand?: PlausibilityBand;
+  /** Human-readable reasons when Watch or Review. */
+  plausibilityReasons?: string[];
+  /** @deprecated Use plausibilityBand. Present in older generated data. */
+  riskBand?: PlausibilityBand;
+}
+
+/** Optional normalized metrics (populated by build script). */
+export interface SustainabilityCompanyNormalized {
+  emissionsNormalized?: {
+    scope1TCO2e: number | null;
+    scope2TCO2e: number | null;
+    scope3TCO2e: number | null;
+  };
+  energyNormalized?: { totalKwh: number | null };
+  waterNormalized?: {
+    withdrawalM3: number | null;
+    consumptionM3: number | null;
+    recycledM3: number | null;
+  };
+  wasteNormalized?: {
+    generatedTonnes: number | null;
+    recycledTonnes: number | null;
+    disposedTonnes: number | null;
+  };
 }
 
 // ============================================================================
@@ -126,6 +169,9 @@ export interface SustainabilityCompany {
   name: string;
   reportName: string | null;
   reportYear: Year;
+
+  /** Industry for peer comparison (e.g. "General"). Default from build script. */
+  industry?: string;
 
   // Location (derived from company name patterns or default)
   country: string;
@@ -143,6 +189,9 @@ export interface SustainabilityCompany {
   targets: TargetsData;
   strategy: StrategyData;
   meta: ExtractionMeta;
+
+  /** Canonical normalized values (from build script). */
+  normalized?: NormalizedMetrics;
 
   // Pre-computed derived metrics
   derived: DerivedMetrics;
@@ -168,7 +217,8 @@ export interface Location {
 export interface FilterOptions {
   search: string;
   countries: string[];
-  riskBands: RiskBand[];
+  /** Data plausibility bands to include (Good / Watch / Review). */
+  plausibilityBands: PlausibilityBand[];
   incompleteOnly: boolean;
 }
 
@@ -296,34 +346,29 @@ export function calcTrust(company: SustainabilityCompany): TrustMetrics {
 }
 
 /**
- * Calculate risk band based on MVP rules:
- * - Review: incomplete (score < 4) OR dataQualityScore < 50 OR groupsFailed > 0
- * - Watch: wasteDiversion < 0.30
- * - Good: otherwise
+ * @deprecated Use plausibilityBand from build output. Fallback when plausibility not precomputed.
  */
-export function calcRiskBand(company: SustainabilityCompany): RiskBand {
+export function calcRiskBand(company: SustainabilityCompany): PlausibilityBand {
   const completeness = calcCompleteness(company);
   const trust = calcTrust(company);
   const diversion = calcWasteDiversion(company);
 
-  // Review conditions
   if (completeness.score < 4) return "Review";
-  if (trust.dataQualityScore !== null && trust.dataQualityScore < 50) {
+  if (trust.dataQualityScore !== null && trust.dataQualityScore < 50)
     return "Review";
-  }
   if (!trust.extractionOk) return "Review";
-
-  // Watch conditions
   if (diversion !== null && diversion < 0.3) return "Watch";
-
   return "Good";
 }
 
-/**
- * Get all risk bands
- */
-export function getRiskBands(): RiskBand[] {
+/** All data plausibility bands for filters. */
+export function getPlausibilityBands(): PlausibilityBand[] {
   return ["Good", "Watch", "Review"];
+}
+
+/** @deprecated Alias for getPlausibilityBands */
+export function getRiskBands(): PlausibilityBand[] {
+  return getPlausibilityBands();
 }
 
 // ============================================================================
@@ -377,12 +422,53 @@ export function fmtEmissionsValue(value: number | null): string {
 }
 
 /**
- * Format quantity with unit
+ * Format quantity with unit (raw display)
  */
 export function fmtQuantity(qty: QuantityRaw): string {
   if (qty.value === null) return "N/A";
   const formatted = fmtNumber(qty.value);
   return qty.unit ? `${formatted} ${qty.unit}` : formatted;
+}
+
+/** Display mode for metrics: canonical (tCO2e, kWh, m³, tonnes) or raw extracted. */
+export type UnitView = "Canonical" | "Raw";
+
+/** Format energy for display: canonical kWh or raw quantity */
+export function fmtEnergy(
+  company: SustainabilityCompany,
+  unitView: UnitView,
+): string {
+  if (unitView === "Raw") return fmtQuantity(company.energy.total);
+  const kwh = company.normalized?.totalEnergyKwh ?? null;
+  if (kwh === null) return fmtQuantity(company.energy.total);
+  if (kwh >= 1e9) return `${(kwh / 1e9).toFixed(2)}B kWh`;
+  if (kwh >= 1e6) return `${(kwh / 1e6).toFixed(2)}M kWh`;
+  if (kwh >= 1e3) return `${(kwh / 1e3).toFixed(2)}K kWh`;
+  return `${kwh.toFixed(0)} kWh`;
+}
+
+/** Format water for display: canonical m³ or raw */
+export function fmtWater(
+  qty: QuantityRaw,
+  canonicalM3: number | null | undefined,
+  unitView: UnitView,
+): string {
+  if (unitView === "Raw") return fmtQuantity(qty);
+  if (canonicalM3 === null || canonicalM3 === undefined)
+    return fmtQuantity(qty);
+  return `${fmtNumber(canonicalM3)} m³`;
+}
+
+/** Format waste for display: canonical tonnes or raw */
+export function fmtWaste(
+  qty: QuantityRaw,
+  canonicalTonnes: number | null | undefined,
+  unitView: UnitView,
+): string {
+  if (unitView === "Raw") return fmtQuantity(qty);
+  if (canonicalTonnes === null || canonicalTonnes === undefined)
+    return fmtQuantity(qty);
+  return `${fmtNumber(canonicalTonnes)} tonnes`;
 }
 
 // ============================================================================
@@ -400,7 +486,7 @@ export function calculateKpis(companies: SustainabilityCompany[]): KpiData {
     (c) => c.derived.completeness.score === 4,
   ).length;
 
-  // Total Scope 1+2
+  // Total Scope 1+2 (use canonical; derived.scope12Total is already tCO2e)
   const scope12Values = companies
     .map((c) => c.derived.scope12Total)
     .filter((v): v is number => v !== null);
@@ -409,7 +495,7 @@ export function calculateKpis(companies: SustainabilityCompany[]): KpiData {
       ? scope12Values.reduce((sum, v) => sum + v, 0)
       : null;
 
-  // Avg Waste Diversion
+  // Avg Waste Diversion (canonical; exclude non-convertible)
   const diversionValues = companies
     .map((c) => c.derived.wasteDiversionRate)
     .filter((v): v is number => v !== null);
@@ -466,10 +552,11 @@ export function filterCompanies(
       return false;
     }
 
-    // Risk band filter
+    // Plausibility band filter (support both new and legacy field names)
+    const band = company.derived.plausibilityBand ?? company.derived.riskBand;
     if (
-      options.riskBands.length > 0 &&
-      !options.riskBands.includes(company.derived.riskBand)
+      options.plausibilityBands.length > 0 &&
+      (band === undefined || !options.plausibilityBands.includes(band))
     ) {
       return false;
     }
@@ -516,6 +603,122 @@ export function getLocations(companies: SustainabilityCompany[]): Location[] {
   });
 
   return Array.from(locationMap.values());
+}
+
+// ============================================================================
+// PEER STRATEGY EXAMPLES (examples only, not advice)
+// ============================================================================
+
+export interface PeerStrategyExample {
+  company: SustainabilityCompany;
+  snippet: string;
+  targetsSummary: string | null;
+}
+
+/**
+ * Parse targets_json to a short summary string (target_year, baseline_year, target_reduction).
+ */
+export function parseTargetsSummary(targetsJson: string | null): string | null {
+  if (!targetsJson || targetsJson === "[]" || targetsJson.trim() === "")
+    return null;
+  try {
+    const arr = JSON.parse(targetsJson) as unknown[];
+    if (!Array.isArray(arr) || arr.length === 0) return null;
+    const parts: string[] = [];
+    for (const item of arr.slice(0, 3)) {
+      if (item && typeof item === "object" && !Array.isArray(item)) {
+        const o = item as Record<string, unknown>;
+        const reduction = o.target_reduction ?? o.target_reduction_scope;
+        const year = o.target_year ?? o.baseline_year;
+        if (reduction != null || year != null) {
+          parts.push(
+            [String(reduction ?? ""), year != null ? String(year) : ""]
+              .filter(Boolean)
+              .join(" "),
+          );
+        }
+      }
+    }
+    return parts.length > 0 ? parts.join("; ") : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Get peer companies with strategy examples (same industry, non-empty strategy_summary).
+ * Prefer Good plausibility; rank by similarity (scope12 band, diversion band, completeness).
+ * Returns top 3–5 peers.
+ */
+export function getPeerStrategyExamples(
+  selected: SustainabilityCompany,
+  allCompanies: SustainabilityCompany[],
+  maxPeers = 5,
+): PeerStrategyExample[] {
+  const industry = selected.industry ?? "General";
+  const band = selected.derived.plausibilityBand ?? selected.derived.riskBand;
+  const scope12 = selected.derived.scope12Total;
+  const diversion = selected.derived.wasteDiversionRate;
+  const score = selected.derived.completeness.score;
+
+  const scope12Band =
+    scope12 === null
+      ? "none"
+      : scope12 < 1000
+        ? "low"
+        : scope12 < 100000
+          ? "med"
+          : "high";
+  const diversionBand =
+    diversion === null
+      ? "none"
+      : diversion < 0.2
+        ? "low"
+        : diversion < 0.5
+          ? "med"
+          : "high";
+
+  const candidates = allCompanies.filter(
+    (c) =>
+      c.id !== selected.id &&
+      (c.industry ?? "General") === industry &&
+      (c.strategy.summary ?? "").trim().length > 0,
+  );
+
+  const withScore = candidates.map((c) => {
+    const pBand = c.derived.plausibilityBand ?? c.derived.riskBand;
+    const s12 = c.derived.scope12Total;
+    const div = c.derived.wasteDiversionRate;
+    const s12B =
+      s12 === null
+        ? "none"
+        : s12 < 1000
+          ? "low"
+          : s12 < 100000
+            ? "med"
+            : "high";
+    const divB =
+      div === null ? "none" : div < 0.2 ? "low" : div < 0.5 ? "med" : "high";
+    let similarity = 0;
+    if (pBand === "Good") similarity += 3;
+    else if (pBand === "Watch") similarity += 1;
+    if (s12B === scope12Band) similarity += 2;
+    if (divB === diversionBand) similarity += 2;
+    if (c.derived.completeness.score === 4) similarity += 1;
+    if (c.derived.completeness.score === score) similarity += 1;
+    return { company: c, similarity };
+  });
+
+  withScore.sort((a, b) => b.similarity - a.similarity);
+  const top = withScore.slice(0, maxPeers);
+
+  return top.map(({ company }) => {
+    const summary = company.strategy.summary ?? "";
+    const snippet =
+      summary.length > 200 ? summary.slice(0, 200).trim() + "…" : summary;
+    const targetsSummary = parseTargetsSummary(company.targets.json);
+    return { company, snippet, targetsSummary };
+  });
 }
 
 // ============================================================================

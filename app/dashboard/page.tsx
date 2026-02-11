@@ -5,15 +5,16 @@ import dynamic from "next/dynamic";
 import { X, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { KpiRow } from "@/components/dashboard/kpi-row";
+// KPI summary lives in the right panel; no top-level KPI row needed
 import { SidePanelLeft } from "@/components/dashboard/side-panel-left";
 import { SidePanelRight } from "@/components/dashboard/side-panel-right";
 import { BottomDetailsPanel } from "@/components/dashboard/bottom-details-panel";
 import {
   type SustainabilityCompany,
-  type RiskBand,
+  type PlausibilityBand,
   type FilterOptions,
   type KpiData,
+  type UnitView,
   SUSTAINABILITY_COMPANIES,
   filterCompanies,
   getLocations,
@@ -33,8 +34,8 @@ const MapView = dynamic(
   },
 );
 
-function getRiskColor(riskBand: RiskBand): string {
-  switch (riskBand) {
+function getPlausibilityColor(band: PlausibilityBand): string {
+  switch (band) {
     case "Good":
       return "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
     case "Watch":
@@ -49,10 +50,11 @@ function getRiskColor(riskBand: RiskBand): string {
 export default function DashboardPage() {
   const [selectedCompany, setSelectedCompany] =
     useState<SustainabilityCompany | null>(null);
+  const [unitView, setUnitView] = useState<UnitView>("Canonical");
   const [filters, setFilters] = useState<FilterOptions>({
     search: "",
     countries: [],
-    riskBands: [],
+    plausibilityBands: [],
     incompleteOnly: false,
   });
 
@@ -84,16 +86,18 @@ export default function DashboardPage() {
 
   const handleFiltersChange = (newFilters: FilterOptions) => {
     setFilters(newFilters);
-    // Clear selection if the selected company is no longer in filtered results
     if (selectedCompany) {
       const stillVisible = filterCompanies(allCompanies, newFilters).some(
         (c) => c.id === selectedCompany.id,
       );
-      if (!stillVisible) {
-        setSelectedCompany(null);
-      }
+      if (!stillVisible) setSelectedCompany(null);
     }
   };
+
+  const plausibilityBand = selectedCompany
+    ? (selectedCompany.derived.plausibilityBand ??
+      selectedCompany.derived.riskBand)
+    : null;
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-zinc-900">
@@ -106,14 +110,13 @@ export default function DashboardPage() {
         />
       </div>
 
-      {/* Subtle gradient overlay for better readability */}
-      <div className="absolute inset-0 z-1 pointer-events-none bg-linear-to-b from-white/30 via-transparent to-white/20" />
+      {/* Removed gradient overlay to maximize map visibility */}
 
       {/* Dashboard Content */}
       <div className="relative z-10 h-full flex flex-col p-4 pointer-events-none">
         {/* Header */}
         <header className="mb-4 pointer-events-auto">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4 flex-wrap">
             <div>
               <h1 className="text-xl md:text-2xl font-semibold text-zinc-100 tracking-tight">
                 Sustainability Monitoring Dashboard
@@ -124,42 +127,51 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            {selectedCompany && (
-              <div className="flex items-center gap-3">
-                {/* Selected Company Chip */}
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-zinc-800/90 border border-zinc-700 rounded-lg">
-                  <Building2 className="h-4 w-4 text-zinc-400" />
-                  <span className="text-sm font-medium text-zinc-100 max-w-[200px] truncate">
-                    {selectedCompany.name}
-                  </span>
-                  <Badge
+            <div className="flex items-center gap-3">
+              {selectedCompany && plausibilityBand && (
+                <>
+                  <div className="flex items-center gap-2 px-3 py-1.5 bg-zinc-800/90 border border-zinc-700 rounded-lg">
+                    <Building2 className="h-4 w-4 text-zinc-400" aria-hidden />
+                    <span className="text-sm font-medium text-zinc-100 max-w-[200px] truncate">
+                      {selectedCompany.name}
+                    </span>
+                    <Badge
+                      variant="outline"
+                      className={`text-[10px] px-1.5 py-0 h-5 ${getPlausibilityColor(plausibilityBand)}`}
+                      title="Data plausibility"
+                    >
+                      {plausibilityBand}
+                    </Badge>
+                  </div>
+                  <Button
                     variant="outline"
-                    className={`text-[10px] px-1.5 py-0 h-5 ${getRiskColor(selectedCompany.derived.riskBand)}`}
+                    size="sm"
+                    onClick={handleClearSelection}
+                    className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 bg-zinc-900/80"
+                    aria-label="Clear selection"
+                    title="Clear selection"
                   >
-                    {selectedCompany.derived.riskBand}
-                  </Badge>
-                </div>
-
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={handleClearSelection}
-                  className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 bg-zinc-900/80"
-                  aria-label="Clear selection"
-                  title="Clear selection"
+                    <X className="h-4 w-4 mr-1.5" aria-hidden />
+                    Clear
+                  </Button>
+                </>
+              )}
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-zinc-500">Units:</span>
+                <select
+                  value={unitView}
+                  onChange={(e) => setUnitView(e.target.value as UnitView)}
+                  className="bg-zinc-800 border border-zinc-700 rounded px-2 py-1 text-sm text-zinc-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+                  aria-label="Unit view: Canonical or Raw"
+                  title="Show values in canonical units (tCO2e, kWh, m³, tonnes) or raw extracted"
                 >
-                  <X className="h-4 w-4 mr-1.5" />
-                  Clear
-                </Button>
+                  <option value="Canonical">Canonical</option>
+                  <option value="Raw">Raw</option>
+                </select>
               </div>
-            )}
+            </div>
           </div>
         </header>
-
-        {/* KPI Row */}
-        <div className="mb-4 pointer-events-auto">
-          <KpiRow kpis={kpis} />
-        </div>
 
         {/* Main Content Area - Flexible center with side panels */}
         <div className="flex-1 flex gap-4 min-h-0 mb-4">
@@ -172,6 +184,7 @@ export default function DashboardPage() {
               onSelectCompany={handleSelectCompany}
               filters={filters}
               onFiltersChange={handleFiltersChange}
+              unitView={unitView}
             />
           </div>
 
@@ -180,7 +193,11 @@ export default function DashboardPage() {
 
           {/* Right Panel - Overview */}
           <div className="pointer-events-auto h-full hidden lg:block">
-            <SidePanelRight kpis={kpis} companies={filteredCompanies} />
+            <SidePanelRight
+              kpis={kpis}
+              companies={filteredCompanies}
+              unitView={unitView}
+            />
           </div>
         </div>
 
@@ -189,6 +206,8 @@ export default function DashboardPage() {
           <BottomDetailsPanel
             company={selectedCompany}
             onClear={handleClearSelection}
+            unitView={unitView}
+            allCompanies={allCompanies}
           />
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Building2, ChevronRight, Sun, Moon, X, Info } from "lucide-react";
+import { Building2, ChevronRight, Sun, Moon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import L from "leaflet";
@@ -9,7 +9,7 @@ import "leaflet/dist/leaflet.css";
 import type {
   SustainabilityCompany,
   Location,
-  RiskBand,
+  PlausibilityBand,
 } from "@/data/sustainability";
 import { fmtTCO2e, fmtPct } from "@/data/sustainability";
 
@@ -34,116 +34,7 @@ const TILE_PRESETS = {
   },
 } as const;
 
-const RISK_COLORS = {
-  Good: { bg: "#22c55e", label: "Good" },
-  Watch: { bg: "#f59e0b", label: "Watch" },
-  Review: { bg: "#ef4444", label: "Review" },
-} as const;
-
-interface MapLegendProps {
-  mapStyle: MapStyle;
-  onDismiss: () => void;
-}
-
-function MapLegend({ mapStyle, onDismiss }: MapLegendProps) {
-  const isDark = mapStyle === "dark";
-
-  return (
-    <div
-      className={`absolute bottom-20 left-4 z-1000 min-w-[180px] rounded-lg shadow-lg border ${
-        isDark
-          ? "bg-zinc-900/95 border-zinc-700 text-zinc-100"
-          : "bg-white/95 border-zinc-300 text-zinc-900"
-      } backdrop-blur-md`}
-    >
-      <div
-        className={`flex items-center justify-between p-3 border-b ${
-          isDark ? "border-zinc-700" : "border-zinc-200"
-        }`}
-      >
-        <h4 className="text-sm font-semibold flex items-center gap-1.5">
-          <Info className="h-3.5 w-3.5" />
-          Legend
-        </h4>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={onDismiss}
-          className={`h-6 w-6 ${
-            isDark
-              ? "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
-              : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100"
-          }`}
-          aria-label="Dismiss legend"
-          title="Dismiss legend"
-        >
-          <X className="h-3.5 w-3.5" />
-        </Button>
-      </div>
-
-      <div className="p-3 space-y-2">
-        <p
-          className={`text-xs font-medium mb-2 ${
-            isDark ? "text-zinc-400" : "text-zinc-600"
-          }`}
-        >
-          Risk Band
-        </p>
-        {Object.entries(RISK_COLORS).map(([risk, { bg, label }]) => (
-          <div key={risk} className="flex items-center gap-2">
-            <div
-              className="w-3 h-3 rounded-full border-2 border-white shadow-sm"
-              style={{ backgroundColor: bg }}
-            />
-            <span
-              className={`text-xs ${isDark ? "text-zinc-300" : "text-zinc-700"}`}
-            >
-              {label}
-            </span>
-          </div>
-        ))}
-
-        <div
-          className={`mt-3 pt-3 border-t text-xs ${
-            isDark
-              ? "border-zinc-700 text-zinc-500"
-              : "border-zinc-200 text-zinc-500"
-          }`}
-        >
-          <p className="mb-2">Risk is based on:</p>
-          <ul className="space-y-1 text-[10px]">
-            <li>• Data completeness</li>
-            <li>• Extraction quality</li>
-            <li>• Waste diversion rate</li>
-          </ul>
-        </div>
-
-        <div
-          className={`mt-3 pt-3 border-t ${
-            isDark ? "border-zinc-700" : "border-zinc-200"
-          }`}
-        >
-          <div className="flex items-center gap-2">
-            <div
-              className={`w-4 h-4 rounded-full flex items-center justify-center text-[8px] font-medium ${
-                isDark
-                  ? "bg-zinc-800 border border-zinc-600 text-zinc-300"
-                  : "bg-zinc-100 border border-zinc-300 text-zinc-700"
-              }`}
-            >
-              3
-            </div>
-            <span
-              className={`text-xs ${isDark ? "text-zinc-400" : "text-zinc-600"}`}
-            >
-              Companies at location
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+// Legend removed — plausibility colors used inline in getMarkerColor
 
 interface MapStyleToggleProps {
   mapStyle: MapStyle;
@@ -185,10 +76,10 @@ export function MapView({
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
   const [isMapReady, setIsMapReady] = useState(false);
   const [mapStyle, setMapStyle] = useState<MapStyle>("light");
-  const [showLegend, setShowLegend] = useState(true);
+  // Legend removed — plausibility colors are explained in the right panel
 
-  const getRiskColor = (riskBand: RiskBand): string => {
-    switch (riskBand) {
+  const getPlausibilityColor = (band: PlausibilityBand): string => {
+    switch (band) {
       case "Good":
         return "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
       case "Watch":
@@ -201,26 +92,20 @@ export function MapView({
   };
 
   const getMarkerColor = (location: Location): string => {
-    // Get worst risk band among companies at this location
-    const hasReview = location.companies.some(
-      (c) => c.derived.riskBand === "Review",
-    );
-    const hasWatch = location.companies.some(
-      (c) => c.derived.riskBand === "Watch",
-    );
-
-    if (hasReview) return "#ef4444"; // red
-    if (hasWatch) return "#f59e0b"; // amber
-    return "#22c55e"; // green
+    const band = (c: SustainabilityCompany) =>
+      c.derived.plausibilityBand ?? c.derived.riskBand;
+    const hasReview = location.companies.some((c) => band(c) === "Review");
+    const hasWatch = location.companies.some((c) => band(c) === "Watch");
+    if (hasReview) return "#ef4444";
+    if (hasWatch) return "#f59e0b";
+    return "#22c55e";
   };
 
   const handleToggleMapStyle = useCallback(() => {
     setMapStyle((prev) => (prev === "light" ? "dark" : "light"));
   }, []);
 
-  const handleDismissLegend = useCallback(() => {
-    setShowLegend(false);
-  }, []);
+  // Legend removed
 
   // Initialize map
   useEffect(() => {
@@ -399,17 +284,16 @@ export function MapView({
     });
   }, [locations, selectedCompany, isMapReady]);
 
-  // Pan to selected company
+  // Pan to selected company (respect prefers-reduced-motion)
   useEffect(() => {
     if (!mapInstanceRef.current || !selectedCompany || !isMapReady) return;
-
+    const reducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     mapInstanceRef.current.setView(
       [selectedCompany.lat, selectedCompany.lng],
       13,
-      {
-        animate: true,
-        duration: 0.5,
-      },
+      { animate: !reducedMotion, duration: reducedMotion ? 0 : 0.5 },
     );
   }, [selectedCompany, isMapReady]);
 
@@ -427,10 +311,7 @@ export function MapView({
       {/* Map Style Toggle */}
       <MapStyleToggle mapStyle={mapStyle} onToggle={handleToggleMapStyle} />
 
-      {/* Map Legend */}
-      {showLegend && (
-        <MapLegend mapStyle={mapStyle} onDismiss={handleDismissLegend} />
-      )}
+      {/* Legend removed to reduce UI clutter */}
 
       {/* Custom Popup */}
       {activePopup && isMapReady && (
@@ -469,10 +350,12 @@ export function MapView({
           <div className="p-2 max-h-[300px] overflow-y-auto scrollbar-thin">
             <div className="space-y-1">
               {activePopup.companies.map((company) => {
-                const riskBand = company.derived.riskBand;
+                const plausibilityBand =
+                  company.derived.plausibilityBand ?? company.derived.riskBand;
                 return (
                   <button
                     key={company.id}
+                    type="button"
                     onClick={() => handleCompanyClick(company)}
                     className={`w-full flex items-start gap-2.5 p-2 rounded-md text-left transition-all focus-visible:ring-2 focus-visible:ring-offset-1 ${
                       selectedCompany?.id === company.id
@@ -512,9 +395,10 @@ export function MapView({
                       <div className="flex items-center gap-1.5 mt-1">
                         <Badge
                           variant="outline"
-                          className={`text-[10px] px-1 py-0 h-4 ${getRiskColor(riskBand)}`}
+                          className={`text-[10px] px-1 py-0 h-4 ${getPlausibilityColor(plausibilityBand)}`}
+                          title="Data plausibility"
                         >
-                          {riskBand}
+                          {plausibilityBand}
                         </Badge>
                         {company.derived.scope12Total !== null && (
                           <span

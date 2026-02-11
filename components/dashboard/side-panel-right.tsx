@@ -13,7 +13,8 @@ import { Button } from "@/components/ui/button";
 import {
   type KpiData,
   type SustainabilityCompany,
-  type RiskBand,
+  type PlausibilityBand,
+  type UnitView,
   fmtTCO2e,
   fmtPct,
 } from "@/data/sustainability";
@@ -21,19 +22,25 @@ import {
 interface SidePanelRightProps {
   kpis: KpiData;
   companies: SustainabilityCompany[];
+  unitView?: UnitView;
 }
 
-export function SidePanelRight({ kpis, companies }: SidePanelRightProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+export function SidePanelRight({
+  kpis,
+  companies,
+  unitView = "Canonical",
+}: SidePanelRightProps) {
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
-  // Calculate risk breakdown
-  const riskBreakdown = companies.reduce(
+  const band = (c: SustainabilityCompany) =>
+    c.derived.plausibilityBand ?? c.derived.riskBand;
+  const plausibilityBreakdown = companies.reduce(
     (acc, company) => {
-      const risk = company.derived.riskBand;
-      acc[risk] = (acc[risk] || 0) + 1;
+      const b = band(company);
+      acc[b] = (acc[b] || 0) + 1;
       return acc;
     },
-    {} as Record<RiskBand, number>,
+    {} as Record<PlausibilityBand, number>,
   );
 
   // Calculate completeness breakdown
@@ -57,8 +64,8 @@ export function SidePanelRight({ kpis, companies }: SidePanelRightProps) {
     {} as Record<string, number>,
   );
 
-  const getRiskColor = (risk: RiskBand): string => {
-    switch (risk) {
+  const getPlausibilityColor = (b: PlausibilityBand): string => {
+    switch (b) {
       case "Good":
         return "bg-emerald-500";
       case "Watch":
@@ -191,29 +198,29 @@ export function SidePanelRight({ kpis, companies }: SidePanelRightProps) {
           </div>
         </div>
 
-        {/* Risk Distribution */}
+        {/* Data Plausibility Distribution */}
         <div className="space-y-3">
           <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider">
-            Risk Distribution
+            Data Plausibility
           </h3>
           <div className="space-y-2">
-            {(["Good", "Watch", "Review"] as RiskBand[]).map((risk) => {
-              const count = riskBreakdown[risk] || 0;
+            {(["Good", "Watch", "Review"] as PlausibilityBand[]).map((band) => {
+              const count = plausibilityBreakdown[band] || 0;
               const percentage =
                 companies.length > 0
                   ? Math.round((count / companies.length) * 100)
                   : 0;
               return (
-                <div key={risk} className="space-y-1">
+                <div key={band} className="space-y-1">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-zinc-400">{risk}</span>
+                    <span className="text-zinc-400">{band}</span>
                     <span className="text-zinc-300">
                       {count} ({percentage}%)
                     </span>
                   </div>
                   <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
                     <div
-                      className={`h-full ${getRiskColor(risk)} rounded-full transition-all duration-500`}
+                      className={`h-full ${getPlausibilityColor(band)} rounded-full transition-all duration-500`}
                       style={{ width: `${percentage}%` }}
                     />
                   </div>
