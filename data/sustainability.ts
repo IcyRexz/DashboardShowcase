@@ -582,27 +582,17 @@ export function getCountries(companies: SustainabilityCompany[]): string[] {
 // ============================================================================
 
 /**
- * Group companies by location (city + country)
+ * Create one Location per company so each gets its own map marker.
  */
 export function getLocations(companies: SustainabilityCompany[]): Location[] {
-  const locationMap = new Map<string, Location>();
-
-  companies.forEach((company) => {
-    const key = `${company.city}-${company.country}`;
-    if (!locationMap.has(key)) {
-      locationMap.set(key, {
-        id: key,
-        city: company.city,
-        country: company.country,
-        lat: company.lat,
-        lng: company.lng,
-        companies: [],
-      });
-    }
-    locationMap.get(key)!.companies.push(company);
-  });
-
-  return Array.from(locationMap.values());
+  return companies.map((company) => ({
+    id: company.id,
+    city: company.city,
+    country: company.country,
+    lat: company.lat,
+    lng: company.lng,
+    companies: [company],
+  }));
 }
 
 // ============================================================================

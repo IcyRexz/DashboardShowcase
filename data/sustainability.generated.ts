@@ -1,7 +1,7 @@
 // ============================================================================
 // GENERATED FILE - DO NOT EDIT MANUALLY
 // Generated from master_metrics_1.csv by scripts/build-sustainability-data.ts
-// Generated at: 2026-02-11T04:19:28.053Z
+// Generated at: 2026-02-22T17:06:19.946Z
 // Total companies: 237
 // ============================================================================
 
@@ -15,9 +15,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3956408498977269,
-    "lng": 103.85864132327103,
+    "city": "Queenstown",
+    "lat": 1.297022178661212,
+    "lng": 103.80147153724113,
     "emissions": {
       "scope1": {
         "value": 842153,
@@ -164,9 +164,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3179068729833758,
-    "lng": 103.76996904812135,
+    "city": "Punggol",
+    "lat": 1.4014763665591135,
+    "lng": 103.89954234923313,
     "emissions": {
       "scope1": {
         "value": 1213,
@@ -313,9 +313,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3369817853561288,
-    "lng": 103.83332291782504,
+    "city": "Orchard",
+    "lat": 1.3039936952189934,
+    "lng": 103.832521222284,
     "emissions": {
       "scope1": {
         "value": 11.84,
@@ -462,9 +462,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.304294939135734,
-    "lng": 103.88849300055658,
+    "city": "Buona Vista",
+    "lat": 1.3041503967539059,
+    "lng": 103.79366362669636,
     "emissions": {
       "scope1": {
         "value": 27,
@@ -612,9 +612,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.369404209175245,
-    "lng": 103.82613379116152,
+    "city": "Raffles Place",
+    "lat": 1.2848228911560131,
+    "lng": 103.85183780219528,
     "emissions": {
       "scope1": {
         "value": null,
@@ -761,9 +761,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3908688590979452,
-    "lng": 103.86007178498764,
+    "city": "Pasir Ris",
+    "lat": 1.3755676724852237,
+    "lng": 103.95204782853267,
     "emissions": {
       "scope1": {
         "value": 140,
@@ -908,9 +908,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2969141370842678,
-    "lng": 103.77928948976484,
+    "city": "Jurong East",
+    "lat": 1.3304567539778276,
+    "lng": 103.74053943945412,
     "emissions": {
       "scope1": {
         "value": 1602,
@@ -1057,9 +1057,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3119590450145822,
-    "lng": 103.83919899504691,
+    "city": "Clementi",
+    "lat": 1.3130591490674444,
+    "lng": 103.76603461306917,
     "emissions": {
       "scope1": {
         "value": 759,
@@ -1206,9 +1206,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3250653443146163,
-    "lng": 103.79826390445989,
+    "city": "Clementi",
+    "lat": 1.3137581516967796,
+    "lng": 103.76385140823785,
     "emissions": {
       "scope1": {
         "value": null,
@@ -1355,9 +1355,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3673164235843884,
-    "lng": 103.89314437832651,
+    "city": "Changi",
+    "lat": 1.3652115425911675,
+    "lng": 103.99541170017741,
     "emissions": {
       "scope1": {
         "value": 36960,
@@ -1504,9 +1504,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3342877941099047,
-    "lng": 103.7820007265336,
+    "city": "Raffles Place",
+    "lat": 1.2829500156858615,
+    "lng": 103.84948403874846,
     "emissions": {
       "scope1": {
         "value": 144025,
@@ -1655,9 +1655,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3345202259593223,
-    "lng": 103.81822765917879,
+    "city": "Jurong West",
+    "lat": 1.3390624120511638,
+    "lng": 103.70891614182287,
     "emissions": {
       "scope1": {
         "value": 407,
@@ -1804,9 +1804,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4270873666941768,
-    "lng": 103.81309039518003,
+    "city": "Bugis",
+    "lat": 1.3044993262236895,
+    "lng": 103.8551421544096,
     "emissions": {
       "scope1": {
         "value": null,
@@ -1953,9 +1953,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3399703663300258,
-    "lng": 103.74556989574063,
+    "city": "Woodlands",
+    "lat": 1.437553086204268,
+    "lng": 103.78514106110617,
     "emissions": {
       "scope1": {
         "value": null,
@@ -2102,9 +2102,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3034642586008247,
-    "lng": 103.80505124065455,
+    "city": "Novena",
+    "lat": 1.317806093792044,
+    "lng": 103.84301339950157,
     "emissions": {
       "scope1": {
         "value": null,
@@ -2251,9 +2251,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3818839909339018,
-    "lng": 103.74555314360538,
+    "city": "Tanjong Pagar",
+    "lat": 1.2765884795164746,
+    "lng": 103.83884016765894,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -2400,9 +2400,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3596506237178616,
-    "lng": 103.77912715580958,
+    "city": "Buona Vista",
+    "lat": 1.3071026999316193,
+    "lng": 103.78783078164318,
     "emissions": {
       "scope1": {
         "value": 507,
@@ -2549,9 +2549,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2801198216267309,
-    "lng": 103.86160193534467,
+    "city": "Changi",
+    "lat": 1.3605610571534257,
+    "lng": 103.99372943655172,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -2698,9 +2698,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3980953911775529,
-    "lng": 103.82148536784138,
+    "city": "Queenstown",
+    "lat": 1.2971530875294695,
+    "lng": 103.79948988628487,
     "emissions": {
       "scope1": {
         "value": 74.2,
@@ -2845,9 +2845,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4204272545649743,
-    "lng": 103.75684903605855,
+    "city": "Punggol",
+    "lat": 1.4069441202434654,
+    "lng": 103.89884261525646,
     "emissions": {
       "scope1": {
         "value": 2059,
@@ -2994,9 +2994,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3770634447562131,
-    "lng": 103.79348732587411,
+    "city": "Tuas",
+    "lat": 1.3213313837203313,
+    "lng": 103.63859665737995,
     "emissions": {
       "scope1": {
         "value": 1480,
@@ -3143,9 +3143,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3475485949596688,
-    "lng": 103.88974783865048,
+    "city": "Jurong West",
+    "lat": 1.339757258397849,
+    "lng": 103.7127305513947,
     "emissions": {
       "scope1": {
         "value": null,
@@ -3292,9 +3292,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2799307366790615,
-    "lng": 103.84432350340487,
+    "city": "Tuas",
+    "lat": 1.3161509726228833,
+    "lng": 103.64130792018159,
     "emissions": {
       "scope1": {
         "value": null,
@@ -3441,9 +3441,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3084973803585214,
-    "lng": 103.75446204733673,
+    "city": "Pasir Ris",
+    "lat": 1.3711745269524545,
+    "lng": 103.9464153091913,
     "emissions": {
       "scope1": {
         "value": null,
@@ -3590,9 +3590,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3653540271826201,
-    "lng": 103.86357210081346,
+    "city": "Clementi",
+    "lat": 1.3159068814497397,
+    "lng": 103.76733451204339,
     "emissions": {
       "scope1": {
         "value": 0.02,
@@ -3739,9 +3739,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.312208773643833,
-    "lng": 103.80476551306461,
+    "city": "Tampines",
+    "lat": 1.3508724679276711,
+    "lng": 103.94389816069678,
     "emissions": {
       "scope1": {
         "value": 379,
@@ -3888,9 +3888,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3175381155326975,
-    "lng": 103.88084176602284,
+    "city": "Buona Vista",
+    "lat": 1.3048566994950772,
+    "lng": 103.79325556085456,
     "emissions": {
       "scope1": {
         "value": 0.02,
@@ -4037,9 +4037,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3138727252349596,
-    "lng": 103.80935496298167,
+    "city": "Bishan",
+    "lat": 1.3483612120125312,
+    "lng": 103.84744293135903,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -4186,9 +4186,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3584503712971625,
-    "lng": 103.75585112014662,
+    "city": "Ang Mo Kio",
+    "lat": 1.3694386864691819,
+    "lng": 103.84198939307448,
     "emissions": {
       "scope1": {
         "value": 21,
@@ -4335,9 +4335,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.308381337715882,
-    "lng": 103.84236919601864,
+    "city": "Ang Mo Kio",
+    "lat": 1.3667683380115137,
+    "lng": 103.84660369045433,
     "emissions": {
       "scope1": {
         "value": 21,
@@ -4484,9 +4484,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.305263388703024,
-    "lng": 103.82473971788846,
+    "city": "Clementi",
+    "lat": 1.3127020473974946,
+    "lng": 103.76526345162073,
     "emissions": {
       "scope1": {
         "value": null,
@@ -4633,9 +4633,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4202767920459607,
-    "lng": 103.79374354177922,
+    "city": "Raffles Place",
+    "lat": 1.2875360955757846,
+    "lng": 103.85011032222823,
     "emissions": {
       "scope1": {
         "value": 15.6,
@@ -4782,9 +4782,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4052297308571084,
-    "lng": 103.87858088187583,
+    "city": "Tampines",
+    "lat": 1.3558335856457124,
+    "lng": 103.94783498036671,
     "emissions": {
       "scope1": {
         "value": 117,
@@ -4929,9 +4929,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3544357637259323,
-    "lng": 103.83022647741194,
+    "city": "Shenton Way",
+    "lat": 1.276524574065383,
+    "lng": 103.8473560787953,
     "emissions": {
       "scope1": {
         "value": 986.3,
@@ -5076,9 +5076,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.406141125933236,
-    "lng": 103.86528541646895,
+    "city": "Novena",
+    "lat": 1.323282193383106,
+    "lng": 103.84622588887835,
     "emissions": {
       "scope1": {
         "value": 3742.2,
@@ -5225,9 +5225,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.343265003866263,
-    "lng": 103.7557125515276,
+    "city": "Jurong East",
+    "lat": 1.3329288002062005,
+    "lng": 103.73928200274814,
     "emissions": {
       "scope1": {
         "value": 41,
@@ -5374,9 +5374,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3550724673999681,
-    "lng": 103.75575417836986,
+    "city": "Shenton Way",
+    "lat": 1.276558531594665,
+    "lng": 103.8433842228464,
     "emissions": {
       "scope1": {
         "value": 3742.2,
@@ -5523,9 +5523,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4130415851562517,
-    "lng": 103.81972736581999,
+    "city": "Serangoon",
+    "lat": 1.352950217875,
+    "lng": 103.87149612617706,
     "emissions": {
       "scope1": {
         "value": 4430.96,
@@ -5672,9 +5672,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.297176111481012,
-    "lng": 103.88902935043194,
+    "city": "Queenstown",
+    "lat": 1.291770725945654,
+    "lng": 103.80309223202305,
     "emissions": {
       "scope1": {
         "value": 2756.6,
@@ -5821,9 +5821,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2974708517948144,
-    "lng": 103.83735217195577,
+    "city": "Queenstown",
+    "lat": 1.2917864454290566,
+    "lng": 103.80033611583765,
     "emissions": {
       "scope1": {
         "value": 55.96,
@@ -5968,9 +5968,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.348848806535834,
-    "lng": 103.84161374773981,
+    "city": "Clementi",
+    "lat": 1.3150266030152444,
+    "lng": 103.76616339987946,
     "emissions": {
       "scope1": {
         "value": null,
@@ -6117,9 +6117,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.352131409409985,
-    "lng": 103.88445061082642,
+    "city": "Raffles Place",
+    "lat": 1.2839016751685326,
+    "lng": 103.85494803257741,
     "emissions": {
       "scope1": {
         "value": 4626.1,
@@ -6266,9 +6266,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3873123828412914,
-    "lng": 103.84447492021016,
+    "city": "Paya Lebar",
+    "lat": 1.3198779937515357,
+    "lng": 103.89431599574455,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -6415,9 +6415,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.311278512718927,
-    "lng": 103.80350061902764,
+    "city": "Orchard",
+    "lat": 1.302622854011676,
+    "lng": 103.83093069968147,
     "emissions": {
       "scope1": {
         "value": 17,
@@ -6562,9 +6562,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3160847365362813,
-    "lng": 103.88181298705427,
+    "city": "Bugis",
+    "lat": 1.2985791859486016,
+    "lng": 103.85880735930957,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -6711,9 +6711,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2932817405445618,
-    "lng": 103.80442167112894,
+    "city": "Queenstown",
+    "lat": 1.2915630261623765,
+    "lng": 103.79857982246021,
     "emissions": {
       "scope1": {
         "value": 92.27,
@@ -6860,9 +6860,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3832123240502185,
-    "lng": 103.80813896655852,
+    "city": "Marina Bay",
+    "lat": 1.2828593239493449,
+    "lng": 103.85807807821645,
     "emissions": {
       "scope1": {
         "value": 6.03,
@@ -7009,9 +7009,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4027900609372679,
-    "lng": 103.79012553023746,
+    "city": "Jurong East",
+    "lat": 1.3361034699166543,
+    "lng": 103.74111736161267,
     "emissions": {
       "scope1": {
         "value": 3607,
@@ -7158,9 +7158,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4016580045720999,
-    "lng": 103.78252801463093,
+    "city": "Raffles Place",
+    "lat": 1.2865430935771787,
+    "lng": 103.84951216078032,
     "emissions": {
       "scope1": {
         "value": null,
@@ -7307,9 +7307,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4141690873979584,
-    "lng": 103.76832392207349,
+    "city": "Jurong East",
+    "lat": 1.336710351327891,
+    "lng": 103.73995460917725,
     "emissions": {
       "scope1": {
         "value": 3742.2,
@@ -7456,9 +7456,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3022184025638395,
-    "lng": 103.82815658265405,
+    "city": "Hougang",
+    "lat": 1.358539648136738,
+    "lng": 103.88664568440822,
     "emissions": {
       "scope1": {
         "value": 17,
@@ -7603,9 +7603,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3635256250972176,
-    "lng": 103.88178924443224,
+    "city": "Tuas",
+    "lat": 1.3206093666718517,
+    "lng": 103.64330609303639,
     "emissions": {
       "scope1": {
         "value": null,
@@ -7752,9 +7752,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4221997976786311,
-    "lng": 103.75474198245944,
+    "city": "Orchard",
+    "lat": 1.3085386558761936,
+    "lng": 103.8283302390645,
     "emissions": {
       "scope1": {
         "value": null,
@@ -7901,9 +7901,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3765899492056222,
-    "lng": 103.86770448475455,
+    "city": "Serangoon",
+    "lat": 1.3510061306242998,
+    "lng": 103.87405490585357,
     "emissions": {
       "scope1": {
         "value": null,
@@ -8050,9 +8050,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3447229277055428,
-    "lng": 103.83396830692135,
+    "city": "Novena",
+    "lat": 1.3200065561442955,
+    "lng": 103.8445556430358,
     "emissions": {
       "scope1": {
         "value": 24568.9,
@@ -8199,9 +8199,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3479928827513774,
-    "lng": 103.80343928761589,
+    "city": "Buona Vista",
+    "lat": 1.3064809537467401,
+    "lng": 103.78912742867286,
     "emissions": {
       "scope1": {
         "value": null,
@@ -8348,9 +8348,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3206604063995016,
-    "lng": 103.80869238303355,
+    "city": "Jurong West",
+    "lat": 1.3383232216746401,
+    "lng": 103.70840759376179,
     "emissions": {
       "scope1": {
         "value": 1866950,
@@ -8497,9 +8497,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3210058329188812,
-    "lng": 103.80660327653258,
+    "city": "Pasir Ris",
+    "lat": 1.3718416444223402,
+    "lng": 103.94919617474841,
     "emissions": {
       "scope1": {
         "value": 1866950,
@@ -8646,9 +8646,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3899912373565981,
-    "lng": 103.8553848652325,
+    "city": "Punggol",
+    "lat": 1.405320865992352,
+    "lng": 103.90409785947907,
     "emissions": {
       "scope1": {
         "value": 30,
@@ -8795,9 +8795,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3579382895878596,
-    "lng": 103.7473100303956,
+    "city": "Clementi",
+    "lat": 1.3155113754446857,
+    "lng": 103.76113386828777,
     "emissions": {
       "scope1": {
         "value": 43,
@@ -8944,9 +8944,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3107521079040723,
-    "lng": 103.88344530770134,
+    "city": "Marina Bay",
+    "lat": 1.278994779088217,
+    "lng": 103.86209441641074,
     "emissions": {
       "scope1": {
         "value": 38225,
@@ -9093,9 +9093,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3293311170750073,
-    "lng": 103.87742733678157,
+    "city": "Marina Bay",
+    "lat": 1.2799856595773336,
+    "lng": 103.86177345796169,
     "emissions": {
       "scope1": {
         "value": 2059,
@@ -9242,9 +9242,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3502014920220333,
-    "lng": 103.74979913501072,
+    "city": "Clementi",
+    "lat": 1.315098746241175,
+    "lng": 103.7612666205339,
     "emissions": {
       "scope1": {
         "value": 507,
@@ -9391,9 +9391,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3400418455176166,
-    "lng": 103.75622335539366,
+    "city": "Tanjong Pagar",
+    "lat": 1.2743568984276061,
+    "lng": 103.839409245621,
     "emissions": {
       "scope1": {
         "value": null,
@@ -9540,9 +9540,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3462763173569143,
-    "lng": 103.83329485073715,
+    "city": "Ang Mo Kio",
+    "lat": 1.3687894035923687,
+    "lng": 103.84611972537265,
     "emissions": {
       "scope1": {
         "value": null,
@@ -9689,9 +9689,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4157390916789594,
-    "lng": 103.79974040250464,
+    "city": "Serangoon",
+    "lat": 1.3530940848895443,
+    "lng": 103.87043015480025,
     "emissions": {
       "scope1": {
         "value": 7226.88,
@@ -9838,9 +9838,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.406435790758205,
-    "lng": 103.88762496581087,
+    "city": "Jurong West",
+    "lat": 1.3428979088404376,
+    "lng": 103.71261733150992,
     "emissions": {
       "scope1": {
         "value": 7226.88,
@@ -9987,9 +9987,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.409624843754709,
-    "lng": 103.88894353406678,
+    "city": "Orchard",
+    "lat": 1.3078679916669178,
+    "lng": 103.83548765515023,
     "emissions": {
       "scope1": {
         "value": null,
@@ -10136,9 +10136,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3670663280561528,
-    "lng": 103.85152042311653,
+    "city": "Jurong West",
+    "lat": 1.3407982041629949,
+    "lng": 103.71069175589955,
     "emissions": {
       "scope1": {
         "value": 27601.68,
@@ -10285,9 +10285,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.400004197886237,
-    "lng": 103.75861737827606,
+    "city": "Ang Mo Kio",
+    "lat": 1.3716548905539325,
+    "lng": 103.84213692684139,
     "emissions": {
       "scope1": {
         "value": 48693,
@@ -10434,9 +10434,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3063132072908317,
-    "lng": 103.85588490785837,
+    "city": "Clementi",
+    "lat": 1.3127580377221777,
+    "lng": 103.76692452841911,
     "emissions": {
       "scope1": {
         "value": 100,
@@ -10583,9 +10583,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.327843361376317,
-    "lng": 103.78779791369982,
+    "city": "Changi",
+    "lat": 1.3631063126067369,
+    "lng": 103.989793222064,
     "emissions": {
       "scope1": {
         "value": 4.4,
@@ -10730,9 +10730,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.398228996716925,
-    "lng": 103.79384150769967,
+    "city": "Tuas",
+    "lat": 1.3224602131582361,
+    "lng": 103.63861554707732,
     "emissions": {
       "scope1": {
         "value": 44.6,
@@ -10879,9 +10879,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4259249547246597,
-    "lng": 103.7478303876914,
+    "city": "Novena",
+    "lat": 1.3243373309186486,
+    "lng": 103.83996162067687,
     "emissions": {
       "scope1": {
         "value": 4503,
@@ -11028,9 +11028,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4205254102297928,
-    "lng": 103.77842665588497,
+    "city": "Tampines",
+    "lat": 1.3566493552122556,
+    "lng": 103.9424934216472,
     "emissions": {
       "scope1": {
         "value": 386.29,
@@ -11177,9 +11177,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.313129376546185,
-    "lng": 103.78488879192152,
+    "city": "Shenton Way",
+    "lat": 1.2743215667491299,
+    "lng": 103.84493806890248,
     "emissions": {
       "scope1": {
         "value": null,
@@ -11326,9 +11326,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3250823153709503,
-    "lng": 103.78707438512453,
+    "city": "Paya Lebar",
+    "lat": 1.316559056819784,
+    "lng": 103.8912546338733,
     "emissions": {
       "scope1": {
         "value": null,
@@ -11475,9 +11475,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4172708554704783,
-    "lng": 103.8303166818028,
+    "city": "Ang Mo Kio",
+    "lat": 1.3725757789584254,
+    "lng": 103.84596088969614,
     "emissions": {
       "scope1": {
         "value": 187156,
@@ -11624,9 +11624,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4082265282512068,
-    "lng": 103.81043063163635,
+    "city": "Tuas",
+    "lat": 1.3229934148400644,
+    "lng": 103.63950030035394,
     "emissions": {
       "scope1": {
         "value": 319521,
@@ -11773,9 +11773,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.366269593343013,
-    "lng": 103.88497659776446,
+    "city": "Queenstown",
+    "lat": 1.2954557116449605,
+    "lng": 103.80287608521411,
     "emissions": {
       "scope1": {
         "value": null,
@@ -11922,9 +11922,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3554149511220928,
-    "lng": 103.81425653341245,
+    "city": "Changi",
+    "lat": 1.3645767973931784,
+    "lng": 103.99120434844866,
     "emissions": {
       "scope1": {
         "value": 25448.2,
@@ -12071,9 +12071,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3740956886230649,
-    "lng": 103.79274812992368,
+    "city": "Bugis",
+    "lat": 1.30167310339323,
+    "lng": 103.85405723359594,
     "emissions": {
       "scope1": {
         "value": 1662,
@@ -12220,9 +12220,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3289046409536964,
-    "lng": 103.79417793352829,
+    "city": "Punggol",
+    "lat": 1.4020629141841972,
+    "lng": 103.90083348978817,
     "emissions": {
       "scope1": {
         "value": 1662,
@@ -12369,9 +12369,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3396702355604062,
-    "lng": 103.75231476603132,
+    "city": "Jurong West",
+    "lat": 1.3393370792298884,
+    "lng": 103.70540078752167,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -12518,9 +12518,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.307672405070575,
-    "lng": 103.75900170169949,
+    "city": "Hougang",
+    "lat": 1.3588305282704307,
+    "lng": 103.88295742409065,
     "emissions": {
       "scope1": {
         "value": null,
@@ -12667,9 +12667,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2902781165165407,
-    "lng": 103.7752602306946,
+    "city": "Paya Lebar",
+    "lat": 1.3147028328808823,
+    "lng": 103.89062454563705,
     "emissions": {
       "scope1": {
         "value": 988.43,
@@ -12816,9 +12816,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3744517764425197,
-    "lng": 103.8421018532951,
+    "city": "Marina Bay",
+    "lat": 1.282392094743601,
+    "lng": 103.85988943217573,
     "emissions": {
       "scope1": {
         "value": 835668,
@@ -12965,9 +12965,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3155105927779274,
-    "lng": 103.79206612100496,
+    "city": "Buona Vista",
+    "lat": 1.304748564948156,
+    "lng": 103.78852085978694,
     "emissions": {
       "scope1": {
         "value": 13550499,
@@ -13114,9 +13114,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3142175649204362,
-    "lng": 103.77978184763293,
+    "city": "Paya Lebar",
+    "lat": 1.3159796034624234,
+    "lng": 103.89086569854042,
     "emissions": {
       "scope1": {
         "value": null,
@@ -13263,9 +13263,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4037599547229818,
-    "lng": 103.87280752590202,
+    "city": "Tampines",
+    "lat": 1.3557551975852256,
+    "lng": 103.9475270680481,
     "emissions": {
       "scope1": {
         "value": null,
@@ -13412,9 +13412,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.399443764886773,
-    "lng": 103.79894804437906,
+    "city": "Queenstown",
+    "lat": 1.2972250007939612,
+    "lng": 103.79828789570023,
     "emissions": {
       "scope1": {
         "value": null,
@@ -13561,9 +13561,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3641663545497564,
-    "lng": 103.87672610141645,
+    "city": "Shenton Way",
+    "lat": 1.2770435389093204,
+    "lng": 103.84983605874221,
     "emissions": {
       "scope1": {
         "value": 133,
@@ -13708,9 +13708,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.285073250440591,
-    "lng": 103.87000220028546,
+    "city": "Jurong East",
+    "lat": 1.329825240023498,
+    "lng": 103.74537745068189,
     "emissions": {
       "scope1": {
         "value": 940.23,
@@ -13857,9 +13857,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2838447588637607,
-    "lng": 103.87761016424331,
+    "city": "Hougang",
+    "lat": 1.3575597204727339,
+    "lng": 103.88928320875965,
     "emissions": {
       "scope1": {
         "value": null,
@@ -14006,9 +14006,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3774953044495803,
-    "lng": 103.78821325054102,
+    "city": "Jurong West",
+    "lat": 1.341354416237311,
+    "lng": 103.70731537336219,
     "emissions": {
       "scope1": {
         "value": null,
@@ -14155,9 +14155,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3149533429216078,
-    "lng": 103.80449435675165,
+    "city": "Tanjong Pagar",
+    "lat": 1.273018844955819,
+    "lng": 103.84198369902676,
     "emissions": {
       "scope1": {
         "value": null,
@@ -14304,9 +14304,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4212015184997924,
-    "lng": 103.84587332966554,
+    "city": "Tuas",
+    "lat": 1.323685414319989,
+    "lng": 103.64139057758216,
     "emissions": {
       "scope1": {
         "value": 409.58,
@@ -14453,9 +14453,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3961477728188854,
-    "lng": 103.81948833020849,
+    "city": "Changi",
+    "lat": 1.3667492145503406,
+    "lng": 103.99148337761112,
     "emissions": {
       "scope1": {
         "value": 582,
@@ -14602,9 +14602,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4003008251893605,
-    "lng": 103.87591915893132,
+    "city": "Pasir Ris",
+    "lat": 1.3760707106767658,
+    "lng": 103.95289302180967,
     "emissions": {
       "scope1": {
         "value": 14325,
@@ -14749,9 +14749,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.373069438739212,
-    "lng": 103.81811420405394,
+    "city": "Orchard",
+    "lat": 1.3059183700660912,
+    "lng": 103.83171009088288,
     "emissions": {
       "scope1": {
         "value": null,
@@ -14898,9 +14898,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3532296307591694,
-    "lng": 103.84936159109135,
+    "city": "Pasir Ris",
+    "lat": 1.3735602469738224,
+    "lng": 103.95147661819153,
     "emissions": {
       "scope1": {
         "value": 14325,
@@ -15045,9 +15045,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4207846955634338,
-    "lng": 103.75858921195285,
+    "city": "Jurong West",
+    "lat": 1.3436631837633832,
+    "lng": 103.70573542463748,
     "emissions": {
       "scope1": {
         "value": null,
@@ -15194,9 +15194,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3752449764204626,
-    "lng": 103.83062508057543,
+    "city": "Punggol",
+    "lat": 1.4045343987424246,
+    "lng": 103.90277733763068,
     "emissions": {
       "scope1": {
         "value": null,
@@ -15343,9 +15343,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.356740091671081,
-    "lng": 103.89043863403433,
+    "city": "Orchard",
+    "lat": 1.305047471555791,
+    "lng": 103.83556739381517,
     "emissions": {
       "scope1": {
         "value": 517,
@@ -15492,9 +15492,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4035703850402612,
-    "lng": 103.75571051883395,
+    "city": "Woodlands",
+    "lat": 1.4409450872021472,
+    "lng": 103.78568189433781,
     "emissions": {
       "scope1": {
         "value": 336,
@@ -15641,9 +15641,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4088234321757498,
-    "lng": 103.88863195286245,
+    "city": "Bishan",
+    "lat": 1.35342524971604,
+    "lng": 103.851671037486,
     "emissions": {
       "scope1": {
         "value": 5132,
@@ -15788,9 +15788,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3843222607553158,
-    "lng": 103.80035929802676,
+    "city": "Changi",
+    "lat": 1.3661185205736168,
+    "lng": 103.99046316256143,
     "emissions": {
       "scope1": {
         "value": 5132,
@@ -15935,9 +15935,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4094218290252953,
-    "lng": 103.87484443416244,
+    "city": "Tampines",
+    "lat": 1.3560571642146824,
+    "lng": 103.94763570315533,
     "emissions": {
       "scope1": {
         "value": 236,
@@ -16082,9 +16082,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3057071993857605,
-    "lng": 103.74601877776927,
+    "city": "Marina Bay",
+    "lat": 1.2787257173005737,
+    "lng": 103.85476500148103,
     "emissions": {
       "scope1": {
         "value": 1381.07,
@@ -16229,9 +16229,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2788904207315497,
-    "lng": 103.84866172584513,
+    "city": "Tuas",
+    "lat": 1.3160954891056826,
+    "lng": 103.64153929204508,
     "emissions": {
       "scope1": {
         "value": null,
@@ -16378,9 +16378,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3879527542030061,
-    "lng": 103.82586082133277,
+    "city": "Woodlands",
+    "lat": 1.440112146890827,
+    "lng": 103.78942324380442,
     "emissions": {
       "scope1": {
         "value": 5603.4,
@@ -16527,9 +16527,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3979550306662347,
-    "lng": 103.83897312669848,
+    "city": "Punggol",
+    "lat": 1.4057456016355325,
+    "lng": 103.90322256675725,
     "emissions": {
       "scope1": {
         "value": 1245,
@@ -16674,9 +16674,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2882135147441929,
-    "lng": 103.86837135234178,
+    "city": "Tanjong Pagar",
+    "lat": 1.2715927207863569,
+    "lng": 103.84539047212489,
     "emissions": {
       "scope1": {
         "value": 7953,
@@ -16821,9 +16821,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3198331910182604,
-    "lng": 103.8406749832459,
+    "city": "Tanjong Pagar",
+    "lat": 1.2732791035209738,
+    "lng": 103.84391333243978,
     "emissions": {
       "scope1": {
         "value": 9397,
@@ -16970,9 +16970,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3709676009381653,
-    "lng": 103.82705970964723,
+    "city": "Paya Lebar",
+    "lat": 1.3190062720500355,
+    "lng": 103.89338718451452,
     "emissions": {
       "scope1": {
         "value": 19,
@@ -17119,9 +17119,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4114138360154171,
-    "lng": 103.76625435566527,
+    "city": "Pasir Ris",
+    "lat": 1.3766634045874888,
+    "lng": 103.94704423230215,
     "emissions": {
       "scope1": {
         "value": 98.48,
@@ -17268,9 +17268,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.317943845917334,
-    "lng": 103.84963675327823,
+    "city": "Bugis",
+    "lat": 1.2986783384489244,
+    "lng": 103.85709129350818,
     "emissions": {
       "scope1": {
         "value": 63,
@@ -17417,9 +17417,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3765054817141888,
-    "lng": 103.83933058450113,
+    "city": "Tuas",
+    "lat": 1.3213016256914234,
+    "lng": 103.6410416311734,
     "emissions": {
       "scope1": {
         "value": 252634,
@@ -17566,9 +17566,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.384997475995469,
-    "lng": 103.8402020588375,
+    "city": "Paya Lebar",
+    "lat": 1.3197545320530917,
+    "lng": 103.89408810980467,
     "emissions": {
       "scope1": {
         "value": 456,
@@ -17715,9 +17715,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2907499099154662,
-    "lng": 103.84741651502223,
+    "city": "Punggol",
+    "lat": 1.4000279951954915,
+    "lng": 103.90367288080118,
     "emissions": {
       "scope1": {
         "value": 456,
@@ -17864,9 +17864,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3567090067201477,
-    "lng": 103.88167585321149,
+    "city": "Bishan",
+    "lat": 1.3506458136917412,
+    "lng": 103.85130004550462,
     "emissions": {
       "scope1": {
         "value": 6858,
@@ -18013,9 +18013,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3052396508577473,
-    "lng": 103.85926132118271,
+    "city": "Bishan",
+    "lat": 1.34790078137908,
+    "lng": 103.85010460379641,
     "emissions": {
       "scope1": {
         "value": null,
@@ -18162,9 +18162,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3329760740515937,
-    "lng": 103.76496360176586,
+    "city": "Paya Lebar",
+    "lat": 1.3169800572827517,
+    "lng": 103.89007539209418,
     "emissions": {
       "scope1": {
         "value": null,
@@ -18311,9 +18311,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3643609925440885,
-    "lng": 103.79205250051047,
+    "city": "Raffles Place",
+    "lat": 1.2845539196023514,
+    "lng": 103.85002013336056,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -18460,9 +18460,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3686143212903787,
-    "lng": 103.86639053165479,
+    "city": "Shenton Way",
+    "lat": 1.2772807638021535,
+    "lng": 103.84928482835493,
     "emissions": {
       "scope1": {
         "value": null,
@@ -18609,9 +18609,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3165604707427334,
-    "lng": 103.88984397273661,
+    "city": "Paya Lebar",
+    "lat": 1.3161045584396125,
+    "lng": 103.89673567854595,
     "emissions": {
       "scope1": {
         "value": 888742,
@@ -18758,9 +18758,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3837658268587163,
-    "lng": 103.77865559858944,
+    "city": "Tuas",
+    "lat": 1.3216888440991317,
+    "lng": 103.63780563192476,
     "emissions": {
       "scope1": {
         "value": 110,
@@ -18907,9 +18907,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.319675397508017,
-    "lng": 103.86360916685508,
+    "city": "Shenton Way",
+    "lat": 1.2746706878670941,
+    "lng": 103.84913648889894,
     "emissions": {
       "scope1": {
         "value": 2262.66,
@@ -19056,9 +19056,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.296151175461027,
-    "lng": 103.8521074959958,
+    "city": "Jurong West",
+    "lat": 1.3370160626912548,
+    "lng": 103.71072306645311,
     "emissions": {
       "scope1": {
         "value": null,
@@ -19205,9 +19205,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3596742373291177,
-    "lng": 103.84187268240719,
+    "city": "Paya Lebar",
+    "lat": 1.3184039593242196,
+    "lng": 103.89417720972838,
     "emissions": {
       "scope1": {
         "value": null,
@@ -19354,9 +19354,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2780089075842895,
-    "lng": 103.78778033923987,
+    "city": "Ang Mo Kio",
+    "lat": 1.365148475071162,
+    "lng": 103.84369228475946,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -19503,9 +19503,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4218872139581706,
-    "lng": 103.79421706160589,
+    "city": "Bedok",
+    "lat": 1.327721984744436,
+    "lng": 103.92583557661898,
     "emissions": {
       "scope1": {
         "value": 12855,
@@ -19652,9 +19652,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2903903314795842,
-    "lng": 103.85173848577412,
+    "city": "Tampines",
+    "lat": 1.3497088176789112,
+    "lng": 103.94640338590796,
     "emissions": {
       "scope1": {
         "value": null,
@@ -19801,9 +19801,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3803369934696363,
-    "lng": 103.81830770094444,
+    "city": "Marina Bay",
+    "lat": 1.2827059729850472,
+    "lng": 103.85862041071704,
     "emissions": {
       "scope1": {
         "value": null,
@@ -19950,9 +19950,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.370002776889423,
-    "lng": 103.78955078700447,
+    "city": "Marina Bay",
+    "lat": 1.2821548147674358,
+    "lng": 103.85708670864024,
     "emissions": {
       "scope1": {
         "value": 1,
@@ -20099,9 +20099,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3030735160338096,
-    "lng": 103.83884343788269,
+    "city": "Punggol",
+    "lat": 1.4006852541884698,
+    "lng": 103.9032156500204,
     "emissions": {
       "scope1": {
         "value": 27,
@@ -20248,9 +20248,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2912937762100498,
-    "lng": 103.86651471556563,
+    "city": "Woodlands",
+    "lat": 1.4349570013978692,
+    "lng": 103.79159145149684,
     "emissions": {
       "scope1": {
         "value": null,
@@ -20397,9 +20397,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4085733129996059,
-    "lng": 103.77869804524532,
+    "city": "Pasir Ris",
+    "lat": 1.3765119100266456,
+    "lng": 103.94770789574642,
     "emissions": {
       "scope1": {
         "value": 153.6,
@@ -20546,9 +20546,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3261357301456242,
-    "lng": 103.86668590244787,
+    "city": "Novena",
+    "lat": 1.3190152389411,
+    "lng": 103.8463005814639,
     "emissions": {
       "scope1": {
         "value": 273485,
@@ -20693,9 +20693,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.393419863602712,
-    "lng": 103.7999721258239,
+    "city": "Serangoon",
+    "lat": 1.3519037260588112,
+    "lng": 103.87044251337727,
     "emissions": {
       "scope1": {
         "value": null,
@@ -20842,9 +20842,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3614007338088683,
-    "lng": 103.82622558216733,
+    "city": "Tampines",
+    "lat": 1.353496039136473,
+    "lng": 103.94504269771559,
     "emissions": {
       "scope1": {
         "value": 153.6,
@@ -20991,9 +20991,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4163420327093532,
-    "lng": 103.86556026110108,
+    "city": "Queenstown",
+    "lat": 1.2981262417444988,
+    "lng": 103.80184054725873,
     "emissions": {
       "scope1": {
         "value": 14284,
@@ -21140,9 +21140,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3744324373092511,
-    "lng": 103.89010106275263,
+    "city": "Ang Mo Kio",
+    "lat": 1.37029106332316,
+    "lng": 103.84914939001347,
     "emissions": {
       "scope1": {
         "value": 2953551,
@@ -21289,9 +21289,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4257883235318147,
-    "lng": 103.88469479387858,
+    "city": "Tampines",
+    "lat": 1.3569300439216967,
+    "lng": 103.94816105567352,
     "emissions": {
       "scope1": {
         "value": 3594923,
@@ -21438,9 +21438,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3201753692727762,
-    "lng": 103.84227548353289,
+    "city": "Bishan",
+    "lat": 1.3486973530278814,
+    "lng": 103.84919869245509,
     "emissions": {
       "scope1": {
         "value": 26392.6,
@@ -21587,9 +21587,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4137521632412515,
-    "lng": 103.80842097344109,
+    "city": "Pasir Ris",
+    "lat": 1.3767881153728667,
+    "lng": 103.94929311858353,
     "emissions": {
       "scope1": {
         "value": null,
@@ -21736,9 +21736,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3524847564917124,
-    "lng": 103.8572233702872,
+    "city": "Paya Lebar",
+    "lat": 1.3180205203462247,
+    "lng": 103.89499591308198,
     "emissions": {
       "scope1": {
         "value": 147.8517,
@@ -21885,9 +21885,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4136373014930812,
-    "lng": 103.79981456345419,
+    "city": "Punggol",
+    "lat": 1.4065819894129643,
+    "lng": 103.90113411005089,
     "emissions": {
       "scope1": {
         "value": 38225,
@@ -22034,9 +22034,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4079898866418419,
-    "lng": 103.79450246934458,
+    "city": "Tampines",
+    "lat": 1.3559807939542314,
+    "lng": 103.94335079836505,
     "emissions": {
       "scope1": {
         "value": null,
@@ -22183,9 +22183,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3431697383040315,
-    "lng": 103.77611273184418,
+    "city": "Bedok",
+    "lat": 1.323523719376215,
+    "lng": 103.92487001236502,
     "emissions": {
       "scope1": {
         "value": 7270140,
@@ -22334,9 +22334,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.420713471113872,
-    "lng": 103.81041019979097,
+    "city": "Bugis",
+    "lat": 1.304159385126073,
+    "lng": 103.85499921065552,
     "emissions": {
       "scope1": {
         "value": null,
@@ -22483,9 +22483,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.300219882291985,
-    "lng": 103.81900944674932,
+    "city": "Queenstown",
+    "lat": 1.2919330603889059,
+    "lng": 103.79935783715997,
     "emissions": {
       "scope1": {
         "value": null,
@@ -22632,9 +22632,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3922158187358307,
-    "lng": 103.83287322497833,
+    "city": "Novena",
+    "lat": 1.3225395103325777,
+    "lng": 103.84449723866551,
     "emissions": {
       "scope1": {
         "value": 36186,
@@ -22781,9 +22781,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.400485247683882,
-    "lng": 103.88648086019253,
+    "city": "Shenton Way",
+    "lat": 1.2789805465431403,
+    "lng": 103.85035631254361,
     "emissions": {
       "scope1": {
         "value": null,
@@ -22930,9 +22930,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3580750134480055,
-    "lng": 103.89065309352905,
+    "city": "Orchard",
+    "lat": 1.3051186673838935,
+    "lng": 103.83557883165489,
     "emissions": {
       "scope1": {
         "value": 270.75,
@@ -23079,9 +23079,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.368303438765024,
-    "lng": 103.87316685876083,
+    "city": "Ang Mo Kio",
+    "lat": 1.3699641834008012,
+    "lng": 103.84824623246725,
     "emissions": {
       "scope1": {
         "value": null,
@@ -23228,9 +23228,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4024179677184563,
-    "lng": 103.85754996719821,
+    "city": "Buona Vista",
+    "lat": 1.3093836249449844,
+    "lng": 103.79201333158392,
     "emissions": {
       "scope1": {
         "value": 291,
@@ -23377,9 +23377,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3181329584894044,
-    "lng": 103.86875639333172,
+    "city": "Pasir Ris",
+    "lat": 1.3716884244527683,
+    "lng": 103.95251100764436,
     "emissions": {
       "scope1": {
         "value": 289,
@@ -23526,9 +23526,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2903878512261415,
-    "lng": 103.86545841465019,
+    "city": "Tampines",
+    "lat": 1.3497086853987275,
+    "lng": 103.947135115448,
     "emissions": {
       "scope1": {
         "value": null,
@@ -23675,9 +23675,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2819847696098166,
-    "lng": 103.79279048525314,
+    "city": "Bishan",
+    "lat": 1.3466605210458569,
+    "lng": 103.84655949254683,
     "emissions": {
       "scope1": {
         "value": 37954.34,
@@ -23824,9 +23824,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3245724747661527,
-    "lng": 103.7547591847296,
+    "city": "Tanjong Pagar",
+    "lat": 1.2735318653208614,
+    "lng": 103.83933115651891,
     "emissions": {
       "scope1": {
         "value": 53686.4,
@@ -23973,9 +23973,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3533699456355677,
-    "lng": 103.74482960561392,
+    "city": "Tampines",
+    "lat": 1.353067730433897,
+    "lng": 103.94070157896607,
     "emissions": {
       "scope1": {
         "value": 4867,
@@ -24123,9 +24123,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3495453149220153,
-    "lng": 103.85826752999952,
+    "city": "Sengkang",
+    "lat": 1.3920637501291742,
+    "lng": 103.89735160159998,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -24272,9 +24272,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3028686927156101,
-    "lng": 103.76757284687298,
+    "city": "Raffles Place",
+    "lat": 1.281274330278166,
+    "lng": 103.84871455183323,
     "emissions": {
       "scope1": {
         "value": 623.56,
@@ -24421,9 +24421,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4242780176851781,
-    "lng": 103.83149257749923,
+    "city": "Bishan",
+    "lat": 1.3542494942765428,
+    "lng": 103.8486236041333,
     "emissions": {
       "scope1": {
         "value": 6467,
@@ -24570,9 +24570,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2854899057562121,
-    "lng": 103.77021726690947,
+    "city": "Woodlands",
+    "lat": 1.4346474616403313,
+    "lng": 103.78645558756851,
     "emissions": {
       "scope1": {
         "value": null,
@@ -24719,9 +24719,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.288797923018278,
-    "lng": 103.84526129300853,
+    "city": "Marina Bay",
+    "lat": 1.2778238892276415,
+    "lng": 103.86005793562713,
     "emissions": {
       "scope1": {
         "value": 186,
@@ -24868,9 +24868,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3246429324028484,
-    "lng": 103.85625144551997,
+    "city": "Hougang",
+    "lat": 1.3597356230614852,
+    "lng": 103.8881440770944,
     "emissions": {
       "scope1": {
         "value": 403.66,
@@ -25017,9 +25017,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3708774542857824,
-    "lng": 103.86540155758327,
+    "city": "Paya Lebar",
+    "lat": 1.3190014642285752,
+    "lng": 103.89543208307111,
     "emissions": {
       "scope1": {
         "value": 1769.42,
@@ -25164,9 +25164,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.312585446320354,
-    "lng": 103.80205477030583,
+    "city": "Shenton Way",
+    "lat": 1.2742925571370856,
+    "lng": 103.84585358774964,
     "emissions": {
       "scope1": {
         "value": 213.99,
@@ -25313,9 +25313,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.324235555982277,
-    "lng": 103.78970840818653,
+    "city": "Serangoon",
+    "lat": 1.3482138963190546,
+    "lng": 103.86989511510328,
     "emissions": {
       "scope1": {
         "value": 2154,
@@ -25460,9 +25460,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3456899897147239,
-    "lng": 103.87485189128454,
+    "city": "Jurong East",
+    "lat": 1.3330581327847852,
+    "lng": 103.74563610086851,
     "emissions": {
       "scope1": {
         "value": 2.7,
@@ -25609,9 +25609,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4184813220111934,
-    "lng": 103.78832993907723,
+    "city": "Punggol",
+    "lat": 1.4068403371739302,
+    "lng": 103.90052159675078,
     "emissions": {
       "scope1": {
         "value": 2.7,
@@ -25758,9 +25758,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4093952287995122,
-    "lng": 103.83237202804982,
+    "city": "Woodlands",
+    "lat": 1.4412557455359738,
+    "lng": 103.78977050816266,
     "emissions": {
       "scope1": {
         "value": null,
@@ -25907,9 +25907,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.392347549388687,
-    "lng": 103.8459418902387,
+    "city": "Changi",
+    "lat": 1.3665465359673967,
+    "lng": 103.99289423414606,
     "emissions": {
       "scope1": {
         "value": 160,
@@ -26056,9 +26056,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3703417527613326,
-    "lng": 103.76718763333234,
+    "city": "Tampines",
+    "lat": 1.3539728934806043,
+    "lng": 103.94189400711106,
     "emissions": {
       "scope1": {
         "value": 58.7,
@@ -26205,9 +26205,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3285310076969423,
-    "lng": 103.7685964232053,
+    "city": "Jurong East",
+    "lat": 1.3321429870771702,
+    "lng": 103.73996914257094,
     "emissions": {
       "scope1": {
         "value": 0.16,
@@ -26354,9 +26354,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3361093777155744,
-    "lng": 103.86926266341531,
+    "city": "Serangoon",
+    "lat": 1.3488471668114972,
+    "lng": 103.87413800871548,
     "emissions": {
       "scope1": {
         "value": null,
@@ -26503,9 +26503,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3489064065086764,
-    "lng": 103.83011891143484,
+    "city": "Clementi",
+    "lat": 1.315029675013796,
+    "lng": 103.7655503419432,
     "emissions": {
       "scope1": {
         "value": 27326,
@@ -26652,9 +26652,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4261966834524897,
-    "lng": 103.84786186513348,
+    "city": "Marina Bay",
+    "lat": 1.2851518231174661,
+    "lng": 103.86019663280712,
     "emissions": {
       "scope1": {
         "value": 2107,
@@ -26801,9 +26801,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.278527854183612,
-    "lng": 103.87710682130154,
+    "city": "Queenstown",
+    "lat": 1.290776152223126,
+    "lng": 103.80245636380276,
     "emissions": {
       "scope1": {
         "value": 46508,
@@ -26950,9 +26950,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.402849861708391,
-    "lng": 103.82563829849548,
+    "city": "Punggol",
+    "lat": 1.4060066592911142,
+    "lng": 103.90251137591976,
     "emissions": {
       "scope1": {
         "value": null,
@@ -27099,9 +27099,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3418394655074095,
-    "lng": 103.86905175748039,
+    "city": "Jurong East",
+    "lat": 1.3328527714937284,
+    "lng": 103.74532676039895,
     "emissions": {
       "scope1": {
         "value": 911.3,
@@ -27248,9 +27248,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3094597031970168,
-    "lng": 103.76563091267404,
+    "city": "Raffles Place",
+    "lat": 1.2816258508371743,
+    "lng": 103.84861098200929,
     "emissions": {
       "scope1": {
         "value": null,
@@ -27397,9 +27397,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3447687303858218,
-    "lng": 103.83963967806767,
+    "city": "Changi",
+    "lat": 1.3640089989539106,
+    "lng": 103.99255811616361,
     "emissions": {
       "scope1": {
         "value": null,
@@ -27546,9 +27546,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2897515639962691,
-    "lng": 103.78018517408405,
+    "city": "Orchard",
+    "lat": 1.301474750079801,
+    "lng": 103.82968720928449,
     "emissions": {
       "scope1": {
         "value": 95553,
@@ -27693,9 +27693,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3721160173679707,
-    "lng": 103.83485442409953,
+    "city": "Hougang",
+    "lat": 1.3622675209262918,
+    "lng": 103.88700290261865,
     "emissions": {
       "scope1": {
         "value": null,
@@ -27842,9 +27842,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3008234683192583,
-    "lng": 103.88414260752158,
+    "city": "Ang Mo Kio",
+    "lat": 1.3663652516436937,
+    "lng": 103.84883160573449,
     "emissions": {
       "scope1": {
         "value": 783,
@@ -27991,9 +27991,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3607341962365624,
-    "lng": 103.89212082458673,
+    "city": "Tanjong Pagar",
+    "lat": 1.27546049046595,
+    "lng": 103.84665711064463,
     "emissions": {
       "scope1": {
         "value": 2022000,
@@ -28140,9 +28140,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3268105895401547,
-    "lng": 103.87695394457866,
+    "city": "Serangoon",
+    "lat": 1.3483512314421415,
+    "lng": 103.87454821037753,
     "emissions": {
       "scope1": {
         "value": 609,
@@ -28289,9 +28289,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.348842402079144,
-    "lng": 103.75923668116467,
+    "city": "Orchard",
+    "lat": 1.304626261444221,
+    "lng": 103.82856995632878,
     "emissions": {
       "scope1": {
         "value": 609,
@@ -28438,9 +28438,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4261823628420003,
-    "lng": 103.84714632514212,
+    "city": "Tampines",
+    "lat": 1.3569510593515732,
+    "lng": 103.94615847067425,
     "emissions": {
       "scope1": {
         "value": 433.3,
@@ -28585,9 +28585,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3778577840064188,
-    "lng": 103.78764865093022,
+    "city": "Hougang",
+    "lat": 1.3625737484803422,
+    "lng": 103.88448526138295,
     "emissions": {
       "scope1": {
         "value": 27,
@@ -28732,9 +28732,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.288876369160225,
-    "lng": 103.87837174268513,
+    "city": "Bugis",
+    "lat": 1.2971280730218786,
+    "lng": 103.85862382627654,
     "emissions": {
       "scope1": {
         "value": 10088.69,
@@ -28881,9 +28881,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.373358812307042,
-    "lng": 103.8416602529978,
+    "city": "Queenstown",
+    "lat": 1.295833803323042,
+    "lng": 103.8005658801599,
     "emissions": {
       "scope1": {
         "value": 10088.69,
@@ -29030,9 +29030,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3753830167166186,
-    "lng": 103.86747810313229,
+    "city": "Queenstown",
+    "lat": 1.2959417608915529,
+    "lng": 103.80194283216706,
     "emissions": {
       "scope1": {
         "value": null,
@@ -29179,9 +29179,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.411882179490685,
-    "lng": 103.81040310222694,
+    "city": "Pasir Ris",
+    "lat": 1.3766883829061698,
+    "lng": 103.94939883211877,
     "emissions": {
       "scope1": {
         "value": 292,
@@ -29326,9 +29326,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3079896322430884,
-    "lng": 103.86482282000604,
+    "city": "Ang Mo Kio",
+    "lat": 1.3667474470529646,
+    "lng": 103.84780121706699,
     "emissions": {
       "scope1": {
         "value": 2044,
@@ -29473,9 +29473,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3500866533824862,
-    "lng": 103.88801568462291,
+    "city": "Shenton Way",
+    "lat": 1.2762926215137325,
+    "lng": 103.85043816984656,
     "emissions": {
       "scope1": {
         "value": 340,
@@ -29620,9 +29620,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2801438433765084,
-    "lng": 103.8362763765566,
+    "city": "Jurong West",
+    "lat": 1.3361623383134138,
+    "lng": 103.70987874008303,
     "emissions": {
       "scope1": {
         "value": 13.2,
@@ -29769,9 +29769,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.400309116055159,
-    "lng": 103.87647273661011,
+    "city": "Tampines",
+    "lat": 1.355571152856275,
+    "lng": 103.94772254595253,
     "emissions": {
       "scope1": {
         "value": 78.09,
@@ -29916,9 +29916,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3533387635186087,
-    "lng": 103.88211469095528,
+    "city": "Bishan",
+    "lat": 1.3504660673876592,
+    "lng": 103.85132345018428,
     "emissions": {
       "scope1": {
         "value": 4.37,
@@ -30067,9 +30067,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3921717717481712,
-    "lng": 103.74820288788762,
+    "city": "Paya Lebar",
+    "lat": 1.3201371611599024,
+    "lng": 103.88918148735401,
     "emissions": {
       "scope1": {
         "value": 1562.2,
@@ -30216,9 +30216,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3477247767533114,
-    "lng": 103.7770108843166,
+    "city": "Punggol",
+    "lat": 1.4030666547601767,
+    "lng": 103.89991791383021,
     "emissions": {
       "scope1": {
         "value": 1562.2,
@@ -30365,9 +30365,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.341813077298211,
-    "lng": 103.87349384174647,
+    "city": "Ang Mo Kio",
+    "lat": 1.3685513641225713,
+    "lng": 103.8482636715598,
     "emissions": {
       "scope1": {
         "value": null,
@@ -30514,9 +30514,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3517549903310553,
-    "lng": 103.81858697157001,
+    "city": "Jurong West",
+    "lat": 1.339981599484323,
+    "lng": 103.7089353051504,
     "emissions": {
       "scope1": {
         "value": 115.15,
@@ -30663,9 +30663,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3871001838620756,
-    "lng": 103.84108681223344,
+    "city": "Woodlands",
+    "lat": 1.440066676472644,
+    "lng": 103.79023529665245,
     "emissions": {
       "scope1": {
         "value": null,
@@ -30812,9 +30812,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3078740910221582,
-    "lng": 103.771895260121,
+    "city": "Shenton Way",
+    "lat": 1.274041284854515,
+    "lng": 103.84424508053979,
     "emissions": {
       "scope1": {
         "value": 147,
@@ -30961,9 +30961,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3109200674377732,
-    "lng": 103.78380936649164,
+    "city": "Raffles Place",
+    "lat": 1.2817037369300146,
+    "lng": 103.84958049954622,
     "emissions": {
       "scope1": {
         "value": null,
@@ -31110,9 +31110,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3676753986162495,
-    "lng": 103.85971991315907,
+    "city": "Orchard",
+    "lat": 1.3056306879261999,
+    "lng": 103.83392906203515,
     "emissions": {
       "scope1": {
         "value": null,
@@ -31259,9 +31259,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4250621340726908,
-    "lng": 103.85262241850998,
+    "city": "Queenstown",
+    "lat": 1.29859131381721,
+    "lng": 103.80115052898721,
     "emissions": {
       "scope1": {
         "value": 1644.9,
@@ -31408,9 +31408,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3740898967369772,
-    "lng": 103.88918936635334,
+    "city": "Jurong West",
+    "lat": 1.3411727944926388,
+    "lng": 103.71270076620551,
     "emissions": {
       "scope1": {
         "value": 138,
@@ -31557,9 +31557,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3986313800061267,
-    "lng": 103.87239736694934,
+    "city": "Novena",
+    "lat": 1.3228816736003268,
+    "lng": 103.84660519290397,
     "emissions": {
       "scope1": {
         "value": 1162,
@@ -31706,9 +31706,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2778209737526183,
-    "lng": 103.76345808327166,
+    "city": "Ang Mo Kio",
+    "lat": 1.365138451933473,
+    "lng": 103.84239509777449,
     "emissions": {
       "scope1": {
         "value": null,
@@ -31855,9 +31855,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4112562066588268,
-    "lng": 103.74995994346452,
+    "city": "Tanjong Pagar",
+    "lat": 1.2781549976884707,
+    "lng": 103.83907519698477,
     "emissions": {
       "scope1": {
         "value": 40652,
@@ -32002,9 +32002,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4224358825000578,
-    "lng": 103.78690028100957,
+    "city": "Bishan",
+    "lat": 1.35415124706667,
+    "lng": 103.84624534832051,
     "emissions": {
       "scope1": {
         "value": 74941,
@@ -32149,9 +32149,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.289979828361929,
-    "lng": 103.78587924832279,
+    "city": "Bishan",
+    "lat": 1.3470869241793029,
+    "lng": 103.84619089324389,
     "emissions": {
       "scope1": {
         "value": 10183.9,
@@ -32298,9 +32298,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3374380003993611,
-    "lng": 103.8296300708919,
+    "city": "Raffles Place",
+    "lat": 1.283118026687966,
+    "lng": 103.85202427044757,
     "emissions": {
       "scope1": {
         "value": 7288,
@@ -32447,9 +32447,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2928939453995825,
-    "lng": 103.835303246656,
+    "city": "Tampines",
+    "lat": 1.3498423437546443,
+    "lng": 103.94552683982165,
     "emissions": {
       "scope1": {
         "value": null,
@@ -32596,9 +32596,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3161904902702006,
-    "lng": 103.8568688008802,
+    "city": "Pasir Ris",
+    "lat": 1.371584826147744,
+    "lng": 103.95187700271362,
     "emissions": {
       "scope1": {
         "value": 12763000,
@@ -32746,9 +32746,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.340491742415388,
-    "lng": 103.87022304194122,
+    "city": "Buona Vista",
+    "lat": 1.3060808929288206,
+    "lng": 103.79268922890354,
     "emissions": {
       "scope1": {
         "value": 32361,
@@ -32893,9 +32893,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3180215974612381,
-    "lng": 103.83420007059564,
+    "city": "Tuas",
+    "lat": 1.3181824851979327,
+    "lng": 103.6407680037651,
     "emissions": {
       "scope1": {
         "value": 6251,
@@ -33042,9 +33042,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4124004152816994,
-    "lng": 103.84269356639668,
+    "city": "Shenton Way",
+    "lat": 1.2796160221483572,
+    "lng": 103.84802099020783,
     "emissions": {
       "scope1": {
         "value": 37000,
@@ -33189,9 +33189,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2791817221999664,
-    "lng": 103.84483144919297,
+    "city": "Clementi",
+    "lat": 1.3113110251839981,
+    "lng": 103.76633501062362,
     "emissions": {
       "scope1": {
         "value": null,
@@ -33338,9 +33338,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3501977499470101,
-    "lng": 103.75541367075677,
+    "city": "Tuas",
+    "lat": 1.3198985466638407,
+    "lng": 103.63656606244037,
     "emissions": {
       "scope1": {
         "value": 596,
@@ -33487,9 +33487,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.378089296944681,
-    "lng": 103.83208557498862,
+    "city": "Jurong East",
+    "lat": 1.3347860958370497,
+    "lng": 103.74335523066605,
     "emissions": {
       "scope1": {
         "value": 613,
@@ -33636,9 +33636,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3773145988927624,
-    "lng": 103.85373364361686,
+    "city": "Ang Mo Kio",
+    "lat": 1.370444778607614,
+    "lng": 103.84720979432623,
     "emissions": {
       "scope1": {
         "value": 1637,
@@ -33785,9 +33785,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3750832169019573,
-    "lng": 103.8454935417693,
+    "city": "Tanjong Pagar",
+    "lat": 1.2762257715681042,
+    "lng": 103.8441703222277,
     "emissions": {
       "scope1": {
         "value": 4.83,
@@ -33932,9 +33932,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2961524146269128,
-    "lng": 103.87589502444563,
+    "city": "Raffles Place",
+    "lat": 1.280916128780102,
+    "lng": 103.85449173463711,
     "emissions": {
       "scope1": {
         "value": 4.8,
@@ -34079,9 +34079,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.3770497617524868,
-    "lng": 103.804384994937,
+    "city": "Punggol",
+    "lat": 1.4046306539601325,
+    "lng": 103.90137786639663,
     "emissions": {
       "scope1": {
         "value": null,
@@ -34228,9 +34228,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.398466733725313,
-    "lng": 103.8275515955888,
+    "city": "Sengkang",
+    "lat": 1.3946728924653502,
+    "lng": 103.89571341843141,
     "emissions": {
       "scope1": {
         "value": 2659,
@@ -34377,9 +34377,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4151380120042902,
-    "lng": 103.74483922388286,
+    "city": "Punggol",
+    "lat": 1.4066620273068955,
+    "lng": 103.89820209194042,
     "emissions": {
       "scope1": {
         "value": 4830,
@@ -34524,9 +34524,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2869395373864605,
-    "lng": 103.78866980203651,
+    "city": "Punggol",
+    "lat": 1.399824775327278,
+    "lng": 103.90053972277528,
     "emissions": {
       "scope1": {
         "value": 3821,
@@ -34673,9 +34673,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4097598544305854,
-    "lng": 103.8325952453773,
+    "city": "Ang Mo Kio",
+    "lat": 1.372175192236298,
+    "lng": 103.84608241308679,
     "emissions": {
       "scope1": {
         "value": 0,
@@ -34822,9 +34822,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.331551176099883,
-    "lng": 103.84911439024151,
+    "city": "Hougang",
+    "lat": 1.3601040627253271,
+    "lng": 103.88776343414622,
     "emissions": {
       "scope1": {
         "value": 96.1,
@@ -34971,9 +34971,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.2819467521013663,
-    "lng": 103.8128138223659,
+    "city": "Shenton Way",
+    "lat": 1.2726584934454062,
+    "lng": 103.84642740385952,
     "emissions": {
       "scope1": {
         "value": 2,
@@ -35120,9 +35120,9 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     "reportYear": 2023,
     "industry": "General",
     "country": "Singapore",
-    "city": "Singapore",
-    "lat": 1.4087732885175044,
-    "lng": 103.77812794366751,
+    "city": "Hougang",
+    "lat": 1.3642225753876003,
+    "lng": 103.88397749032893,
     "emissions": {
       "scope1": {
         "value": 14964,

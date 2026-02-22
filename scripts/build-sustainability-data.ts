@@ -145,18 +145,44 @@ interface Coords {
   lng: number;
 }
 
-// Singapore-centric companies (SGX listed) - default coordinates
-const SINGAPORE_COORDS: Coords = { lat: 1.3521, lng: 103.8198 };
+interface LocationInfo {
+  coords: Coords;
+  district: string;
+}
 
-// Seeded random for deterministic jitter
+const SINGAPORE_DISTRICTS: { name: string; lat: number; lng: number }[] = [
+  { name: "Marina Bay", lat: 1.2812, lng: 103.8587 },
+  { name: "Raffles Place", lat: 1.2839, lng: 103.8515 },
+  { name: "Tanjong Pagar", lat: 1.275, lng: 103.8428 },
+  { name: "Shenton Way", lat: 1.2764, lng: 103.8468 },
+  { name: "Bugis", lat: 1.3005, lng: 103.8555 },
+  { name: "Orchard", lat: 1.3048, lng: 103.8318 },
+  { name: "Novena", lat: 1.3204, lng: 103.8438 },
+  { name: "Bishan", lat: 1.3504, lng: 103.848 },
+  { name: "Ang Mo Kio", lat: 1.3691, lng: 103.8454 },
+  { name: "Woodlands", lat: 1.4382, lng: 103.7891 },
+  { name: "Jurong East", lat: 1.3334, lng: 103.7427 },
+  { name: "Jurong West", lat: 1.34, lng: 103.709 },
+  { name: "Tuas", lat: 1.32, lng: 103.64 },
+  { name: "Clementi", lat: 1.3152, lng: 103.765 },
+  { name: "Buona Vista", lat: 1.3067, lng: 103.79 },
+  { name: "Queenstown", lat: 1.2947, lng: 103.7994 },
+  { name: "Changi", lat: 1.3644, lng: 103.9915 },
+  { name: "Tampines", lat: 1.353, lng: 103.9447 },
+  { name: "Pasir Ris", lat: 1.3735, lng: 103.9499 },
+  { name: "Bedok", lat: 1.324, lng: 103.9272 },
+  { name: "Sengkang", lat: 1.3922, lng: 103.8953 },
+  { name: "Punggol", lat: 1.4033, lng: 103.9022 },
+  { name: "Hougang", lat: 1.3612, lng: 103.8862 },
+  { name: "Serangoon", lat: 1.3497, lng: 103.8715 },
+  { name: "Paya Lebar", lat: 1.318, lng: 103.893 },
+];
+
 function seededRandom(seed: number): number {
   const x = Math.sin(seed * 9999) * 10000;
   return x - Math.floor(x);
 }
 
-/**
- * Hash a string to a number for seeding
- */
 function hashString(str: string): number {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
@@ -167,19 +193,20 @@ function hashString(str: string): number {
   return Math.abs(hash);
 }
 
-/**
- * Get coordinates for a company with deterministic jitter
- */
-function getCoordinates(companyName: string): Coords {
-  // All companies are Singapore-based (SGX listed)
-  // Add jitter to spread markers
+function getCoordinates(companyName: string): LocationInfo {
   const seed = hashString(companyName);
-  const jitterLat = (seededRandom(seed) - 0.5) * 0.15;
-  const jitterLng = (seededRandom(seed + 1) - 0.5) * 0.15;
+  const districtIndex = seed % SINGAPORE_DISTRICTS.length;
+  const district = SINGAPORE_DISTRICTS[districtIndex];
+
+  const jitterLat = (seededRandom(seed) - 0.5) * 0.008;
+  const jitterLng = (seededRandom(seed + 1) - 0.5) * 0.008;
 
   return {
-    lat: SINGAPORE_COORDS.lat + jitterLat,
-    lng: SINGAPORE_COORDS.lng + jitterLng,
+    coords: {
+      lat: district.lat + jitterLat,
+      lng: district.lng + jitterLng,
+    },
+    district: district.name,
   };
 }
 
@@ -494,7 +521,7 @@ function buildSustainabilityData(): void {
     // Extract values
     const rawName = row["company_name"] || `unknown_${i}`;
     const name = formatCompanyName(rawName);
-    const coords = getCoordinates(rawName);
+    const locationInfo = getCoordinates(rawName);
 
     const scope1Value = parseNumber(row["scope_1_value"]);
     const scope1Unit = parseString(row["scope_1_unit"]);
@@ -586,9 +613,9 @@ function buildSustainabilityData(): void {
       industry: "General",
 
       country: "Singapore",
-      city: "Singapore",
-      lat: coords.lat,
-      lng: coords.lng,
+      city: locationInfo.district,
+      lat: locationInfo.coords.lat,
+      lng: locationInfo.coords.lng,
 
       emissions: {
         scope1: { value: scope1Value, unit: scope1Unit },

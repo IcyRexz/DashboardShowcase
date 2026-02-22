@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
-import { Building2, ChevronRight, Sun, Moon } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Building2, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import type {
@@ -19,49 +18,11 @@ interface MapViewProps {
   onSelectCompany: (company: SustainabilityCompany) => void;
 }
 
-type MapStyle = "light" | "dark";
-
-const TILE_PRESETS = {
-  light: {
-    url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-  },
-  dark: {
-    url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-  },
+const DARK_TILES = {
+  url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
 } as const;
-
-// Legend removed — plausibility colors used inline in getMarkerColor
-
-interface MapStyleToggleProps {
-  mapStyle: MapStyle;
-  onToggle: () => void;
-}
-
-function MapStyleToggle({ mapStyle, onToggle }: MapStyleToggleProps) {
-  const isDark = mapStyle === "dark";
-  const ariaLabel = isDark ? "Switch to light map" : "Switch to dark map";
-
-  return (
-    <Button
-      variant="outline"
-      size="icon"
-      onClick={onToggle}
-      className={`absolute top-4 right-4 z-1000 h-9 w-9 shadow-md ${
-        isDark
-          ? "bg-zinc-800/90 border-zinc-700 text-zinc-100 hover:bg-zinc-700"
-          : "bg-white/90 border-zinc-300 text-zinc-900 hover:bg-zinc-100"
-      }`}
-      aria-label={ariaLabel}
-      title={ariaLabel}
-    >
-      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-    </Button>
-  );
-}
 
 export function MapView({
   locations,
@@ -75,8 +36,6 @@ export function MapView({
   const [activePopup, setActivePopup] = useState<Location | null>(null);
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
   const [isMapReady, setIsMapReady] = useState(false);
-  const [mapStyle, setMapStyle] = useState<MapStyle>("light");
-  // Legend removed — plausibility colors are explained in the right panel
 
   const getPlausibilityColor = (band: PlausibilityBand): string => {
     switch (band) {
@@ -101,35 +60,22 @@ export function MapView({
     return "#22c55e";
   };
 
-  const handleToggleMapStyle = useCallback(() => {
-    setMapStyle((prev) => (prev === "light" ? "dark" : "light"));
-  }, []);
-
-  // Legend removed
-
-  // Initialize map
   useEffect(() => {
     if (typeof window === "undefined" || !mapRef.current) return;
 
     const container = mapRef.current;
-
-    // Track if this effect instance is still mounted
     let isMounted = true;
     let mapInstance: L.Map | null = null;
 
     const initMap = async () => {
-      // Double check we haven't been unmounted or already initialized
       if (!isMounted) return;
       if (mapInstanceRef.current) return;
 
-      // Check if container already has a Leaflet map (from HMR or Strict Mode)
       const leafletContainer = container as HTMLElement & {
         _leaflet_id?: number;
       };
       if (leafletContainer._leaflet_id) {
-        // Container already has a map, try to clean it up first
         try {
-          // Remove the old map instance by clearing the container
           delete leafletContainer._leaflet_id;
           container.innerHTML = "";
         } catch {
@@ -140,21 +86,18 @@ export function MapView({
       try {
         await import("leaflet/dist/leaflet.css");
 
-        // Final check before creating map
         if (!isMounted || mapInstanceRef.current) return;
 
-        // Center on Singapore since all companies are Singapore-based
         mapInstance = L.map(container, {
-          center: [1.35, 103.82],
+          center: [1.3521, 103.8198],
           zoom: 11,
           zoomControl: false,
           attributionControl: false,
         });
 
-        const tilePreset = TILE_PRESETS[mapStyle];
-        const tileLayer = L.tileLayer(tilePreset.url, {
+        const tileLayer = L.tileLayer(DARK_TILES.url, {
           maxZoom: 19,
-          attribution: tilePreset.attribution,
+          attribution: DARK_TILES.attribution,
         }).addTo(mapInstance);
 
         tileLayerRef.current = tileLayer;
@@ -167,7 +110,6 @@ export function MapView({
           setIsMapReady(true);
         }
 
-        // Close popup when clicking on map (but not markers)
         mapInstance.on("click", () => {
           setActivePopup(null);
         });
@@ -181,7 +123,6 @@ export function MapView({
     return () => {
       isMounted = false;
 
-      // Clean up map instance
       if (mapInstanceRef.current) {
         try {
           mapInstanceRef.current.off();
@@ -193,7 +134,6 @@ export function MapView({
         tileLayerRef.current = null;
       }
 
-      // Also try to clean up if mapInstance was created but not assigned to ref
       if (mapInstance && mapInstance !== mapInstanceRef.current) {
         try {
           mapInstance.off();
@@ -205,60 +145,31 @@ export function MapView({
     };
   }, []);
 
-  // Update tile layer when mapStyle changes
-  useEffect(() => {
-    if (!mapInstanceRef.current || !tileLayerRef.current || !isMapReady) return;
-
-    const map = mapInstanceRef.current;
-    const tilePreset = TILE_PRESETS[mapStyle];
-
-    // Remove old tile layer
-    tileLayerRef.current.remove();
-
-    // Add new tile layer
-    const newTileLayer = L.tileLayer(tilePreset.url, {
-      maxZoom: 19,
-      attribution: tilePreset.attribution,
-    }).addTo(map);
-
-    tileLayerRef.current = newTileLayer;
-
-    // Update container class for CSS variable switching
-    if (mapRef.current) {
-      if (mapStyle === "dark") {
-        mapRef.current.classList.add("map-dark");
-      } else {
-        mapRef.current.classList.remove("map-dark");
-      }
-    }
-  }, [mapStyle, isMapReady]);
-
-  // Update markers when locations change
   useEffect(() => {
     if (!mapInstanceRef.current || !isMapReady) return;
 
     const map = mapInstanceRef.current;
 
-    // Remove existing markers
     markersRef.current.forEach((marker) => marker.remove());
     markersRef.current = [];
 
-    // Add new markers
     locations.forEach((location) => {
       const color = getMarkerColor(location);
       const isSelected =
         selectedCompany &&
         location.companies.some((c) => c.id === selectedCompany.id);
 
-      // Updated marker with white border and shadow for light map visibility
       const markerIcon = L.divIcon({
         className: "custom-marker",
         html: `
           <div class="relative cursor-pointer group">
             <div class="w-4 h-4 rounded-full border-2 border-white transition-all duration-300 ${isSelected ? "scale-125" : ""}" 
                  style="background-color: ${color}; box-shadow: 0 2px 8px rgba(0,0,0,0.25);"></div>
-            <div class="absolute -top-1 -left-1 w-6 h-6 rounded-full animate-ping opacity-30 marker-ping" 
-                 style="background-color: ${color};"></div>
+            ${
+              isSelected
+                ? `<div class="absolute -top-1 -left-1 w-6 h-6 rounded-full animate-ping opacity-30" style="background-color: ${color};"></div>`
+                : ""
+            }
             ${
               location.companies.length > 1
                 ? `<div class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-white border border-zinc-300 rounded-full flex items-center justify-center text-[9px] text-zinc-700 font-medium shadow-sm">${location.companies.length}</div>`
@@ -275,16 +186,20 @@ export function MapView({
       }).addTo(map);
 
       marker.on("click", (e) => {
-        const containerPoint = map.latLngToContainerPoint(e.latlng);
-        setPopupPosition({ x: containerPoint.x, y: containerPoint.y });
-        setActivePopup(location);
+        if (location.companies.length === 1) {
+          onSelectCompany(location.companies[0]);
+          setActivePopup(null);
+        } else {
+          const containerPoint = map.latLngToContainerPoint(e.latlng);
+          setPopupPosition({ x: containerPoint.x, y: containerPoint.y });
+          setActivePopup(location);
+        }
       });
 
       markersRef.current.push(marker);
     });
   }, [locations, selectedCompany, isMapReady]);
 
-  // Pan to selected company (respect prefers-reduced-motion)
   useEffect(() => {
     if (!mapInstanceRef.current || !selectedCompany || !isMapReady) return;
     const reducedMotion =
@@ -292,7 +207,7 @@ export function MapView({
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     mapInstanceRef.current.setView(
       [selectedCompany.lat, selectedCompany.lng],
-      13,
+      14,
       { animate: !reducedMotion, duration: reducedMotion ? 0 : 0.5 },
     );
   }, [selectedCompany, isMapReady]);
@@ -302,46 +217,24 @@ export function MapView({
     setActivePopup(null);
   };
 
-  const isDark = mapStyle === "dark";
-
   return (
     <div className="relative w-full h-full">
       <div ref={mapRef} className="w-full h-full" />
 
-      {/* Map Style Toggle */}
-      <MapStyleToggle mapStyle={mapStyle} onToggle={handleToggleMapStyle} />
-
-      {/* Legend removed to reduce UI clutter */}
-
-      {/* Custom Popup */}
       {activePopup && isMapReady && (
         <div
-          className={`absolute z-1000 min-w-[280px] max-w-[340px] backdrop-blur-md border rounded-lg shadow-xl ${
-            isDark
-              ? "bg-zinc-900/95 border-zinc-700"
-              : "bg-white/95 border-zinc-300"
-          }`}
+          className="absolute z-1000 min-w-[280px] max-w-[340px] backdrop-blur-md border rounded-lg shadow-xl bg-zinc-900/95 border-zinc-700"
           style={{
             left: Math.min(popupPosition.x + 15, window.innerWidth - 360),
             top: popupPosition.y - 10,
             transform: "translateY(-50%)",
           }}
         >
-          <div
-            className={`p-3 border-b ${
-              isDark ? "border-zinc-800" : "border-zinc-200"
-            }`}
-          >
-            <h4
-              className={`text-sm font-semibold ${
-                isDark ? "text-zinc-100" : "text-zinc-900"
-              }`}
-            >
+          <div className="p-3 border-b border-zinc-800">
+            <h4 className="text-sm font-semibold text-zinc-100">
               {activePopup.city}
             </h4>
-            <p
-              className={`text-xs ${isDark ? "text-zinc-500" : "text-zinc-600"}`}
-            >
+            <p className="text-xs text-zinc-500">
               {activePopup.country} · {activePopup.companies.length}{" "}
               {activePopup.companies.length === 1 ? "company" : "companies"}
             </p>
@@ -359,35 +252,23 @@ export function MapView({
                     onClick={() => handleCompanyClick(company)}
                     className={`w-full flex items-start gap-2.5 p-2 rounded-md text-left transition-all focus-visible:ring-2 focus-visible:ring-offset-1 ${
                       selectedCompany?.id === company.id
-                        ? isDark
-                          ? "bg-zinc-100 text-zinc-900 focus-visible:ring-zinc-400"
-                          : "bg-zinc-900 text-zinc-100 focus-visible:ring-zinc-600"
-                        : isDark
-                          ? "hover:bg-zinc-800 text-zinc-100 focus-visible:ring-zinc-500"
-                          : "hover:bg-zinc-100 text-zinc-900 focus-visible:ring-zinc-400"
+                        ? "bg-zinc-100 text-zinc-900 focus-visible:ring-zinc-400"
+                        : "hover:bg-zinc-800 text-zinc-100 focus-visible:ring-zinc-500"
                     }`}
                   >
                     <Building2
                       className={`h-4 w-4 mt-0.5 shrink-0 ${
                         selectedCompany?.id === company.id
-                          ? isDark
-                            ? "text-zinc-700"
-                            : "text-zinc-400"
-                          : isDark
-                            ? "text-zinc-500"
-                            : "text-zinc-500"
+                          ? "text-zinc-700"
+                          : "text-zinc-500"
                       }`}
                     />
                     <div className="flex-1 min-w-0">
                       <p
                         className={`text-sm font-medium truncate ${
                           selectedCompany?.id === company.id
-                            ? isDark
-                              ? "text-zinc-900"
-                              : "text-zinc-100"
-                            : isDark
-                              ? "text-zinc-100"
-                              : "text-zinc-900"
+                            ? "text-zinc-900"
+                            : "text-zinc-100"
                         }`}
                       >
                         {company.name}
@@ -404,12 +285,8 @@ export function MapView({
                           <span
                             className={`text-[10px] ${
                               selectedCompany?.id === company.id
-                                ? isDark
-                                  ? "text-zinc-600"
-                                  : "text-zinc-400"
-                                : isDark
-                                  ? "text-zinc-500"
-                                  : "text-zinc-500"
+                                ? "text-zinc-600"
+                                : "text-zinc-500"
                             }`}
                           >
                             {fmtTCO2e(company.derived.scope12Total)}
@@ -419,12 +296,8 @@ export function MapView({
                           <span
                             className={`text-[10px] ${
                               selectedCompany?.id === company.id
-                                ? isDark
-                                  ? "text-zinc-600"
-                                  : "text-zinc-400"
-                                : isDark
-                                  ? "text-zinc-500"
-                                  : "text-zinc-500"
+                                ? "text-zinc-600"
+                                : "text-zinc-500"
                             }`}
                           >
                             · {fmtPct(company.derived.wasteDiversionRate)} div
@@ -432,15 +305,7 @@ export function MapView({
                         )}
                       </div>
                     </div>
-                    <ChevronRight
-                      className={`h-4 w-4 shrink-0 ${
-                        selectedCompany?.id === company.id
-                          ? isDark
-                            ? "text-zinc-600"
-                            : "text-zinc-400"
-                          : "text-zinc-600"
-                      }`}
-                    />
+                    <ChevronRight className="h-4 w-4 shrink-0 text-zinc-600" />
                   </button>
                 );
               })}

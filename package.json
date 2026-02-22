@@ -7,7 +7,8 @@
     "build:data": "npx tsx scripts/build-sustainability-data.ts",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "test": "vitest run"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -72,6 +73,7 @@
     "tailwindcss": "^4.1.9",
     "tsx": "^4.21.0",
     "tw-animate-css": "1.3.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.0.18"
   }
 }
