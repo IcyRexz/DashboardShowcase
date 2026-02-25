@@ -84,8 +84,6 @@ export function MapView({
       }
 
       try {
-        await import("leaflet/dist/leaflet.css");
-
         if (!isMounted || mapInstanceRef.current) return;
 
         mapInstance = L.map(container, {
@@ -244,7 +242,7 @@ export function MapView({
             <div className="space-y-1">
               {activePopup.companies.map((company) => {
                 const plausibilityBand =
-                  company.derived.plausibilityBand ?? company.derived.riskBand;
+                  company.derived.plausibilityBand ?? company.derived.riskBand ?? "Review" as const;
                 return (
                   <button
                     key={company.id}

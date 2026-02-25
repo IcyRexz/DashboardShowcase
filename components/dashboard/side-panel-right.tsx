@@ -15,9 +15,17 @@ import {
   type SustainabilityCompany,
   type PlausibilityBand,
   type UnitView,
-  fmtTCO2e,
   fmtPct,
 } from "@/data/sustainability";
+
+function fmtCompact(value: number | null): string {
+  if (value === null) return "N/A";
+  if (value >= 1e9) return `${(value / 1e9).toFixed(1)}B`;
+  if (value >= 1e6) return `${(value / 1e6).toFixed(1)}M`;
+  if (value >= 1e4) return `${(value / 1e3).toFixed(0)}K`;
+  if (value >= 1e3) return `${(value / 1e3).toFixed(1)}K`;
+  return value.toFixed(0);
+}
 
 interface SidePanelRightProps {
   kpis: KpiData;
@@ -43,7 +51,6 @@ export function SidePanelRight({
     {} as Record<PlausibilityBand, number>,
   );
 
-  // Calculate completeness breakdown
   const completenessBreakdown = companies.reduce(
     (acc, company) => {
       const score = company.derived.completeness.score;
@@ -54,7 +61,6 @@ export function SidePanelRight({
     {} as Record<string, number>,
   );
 
-  // Calculate extraction status breakdown
   const extractionBreakdown = companies.reduce(
     (acc, company) => {
       const key = company.derived.trust.extractionOk ? "Success" : "Issues";
@@ -151,21 +157,28 @@ export function SidePanelRight({
             Summary
           </h3>
           <div className="grid grid-cols-2 gap-2">
-            <div className="bg-zinc-800/50 rounded-md p-3">
-              <p className="text-2xl font-bold text-zinc-100">
+            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
+              <p className="text-2xl font-bold text-zinc-100 truncate">
                 {kpis.reportingComplete}
               </p>
-              <p className="text-xs text-zinc-500">Complete</p>
+              <p className="text-xs text-zinc-500 truncate">Complete</p>
             </div>
-            <div className="bg-zinc-800/50 rounded-md p-3">
-              <p className="text-lg font-bold text-zinc-100">
-                {fmtTCO2e(kpis.totalScope12).replace(" tCO2e", "")}
-              </p>
-              <p className="text-xs text-zinc-500">Scope 1+2</p>
-            </div>
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
               <p
-                className={`text-lg font-bold ${
+                className="text-lg font-bold text-zinc-100 truncate"
+                title={
+                  kpis.totalScope12 !== null
+                    ? `${kpis.totalScope12.toLocaleString()} tCO2e`
+                    : "N/A"
+                }
+              >
+                {fmtCompact(kpis.totalScope12)}
+              </p>
+              <p className="text-xs text-zinc-500 truncate">Scope 1+2</p>
+            </div>
+            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
+              <p
+                className={`text-lg font-bold truncate ${
                   kpis.avgWasteDiversion !== null &&
                   kpis.avgWasteDiversion >= 0.5
                     ? "text-emerald-400"
@@ -177,11 +190,11 @@ export function SidePanelRight({
               >
                 {fmtPct(kpis.avgWasteDiversion)}
               </p>
-              <p className="text-xs text-zinc-500">Avg Diversion</p>
+              <p className="text-xs text-zinc-500 truncate">Avg Diversion</p>
             </div>
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
               <p
-                className={`text-lg font-bold ${
+                className={`text-lg font-bold truncate ${
                   kpis.avgDataQuality !== null && kpis.avgDataQuality >= 70
                     ? "text-emerald-400"
                     : kpis.avgDataQuality !== null && kpis.avgDataQuality < 50
@@ -193,7 +206,7 @@ export function SidePanelRight({
                   ? `${kpis.avgDataQuality.toFixed(0)}`
                   : "N/A"}
               </p>
-              <p className="text-xs text-zinc-500">Avg Quality</p>
+              <p className="text-xs text-zinc-500 truncate">Avg Quality</p>
             </div>
           </div>
         </div>
@@ -212,9 +225,9 @@ export function SidePanelRight({
                   : 0;
               return (
                 <div key={band} className="space-y-1">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-zinc-400">{band}</span>
-                    <span className="text-zinc-300">
+                  <div className="flex items-center justify-between text-xs min-w-0">
+                    <span className="text-zinc-400 shrink-0">{band}</span>
+                    <span className="text-zinc-300 truncate ml-2">
                       {count} ({percentage}%)
                     </span>
                   </div>
@@ -258,9 +271,9 @@ export function SidePanelRight({
                       : "bg-red-500";
                 return (
                   <div key={status} className="space-y-1">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-zinc-400">{status}</span>
-                      <span className="text-zinc-300">
+                    <div className="flex items-center justify-between text-xs min-w-0">
+                      <span className="text-zinc-400 shrink-0">{status}</span>
+                      <span className="text-zinc-300 truncate ml-2">
                         {count} ({percentage}%)
                       </span>
                     </div>
@@ -283,7 +296,7 @@ export function SidePanelRight({
           </h3>
           <div className="space-y-2">
             {Object.entries(extractionBreakdown)
-              .sort(([a], [b]) => (a === "Success" ? -1 : 1))
+              .sort(([a]) => (a === "Success" ? -1 : 1))
               .map(([status, count]) => {
                 const percentage =
                   companies.length > 0
@@ -293,9 +306,9 @@ export function SidePanelRight({
                   status === "Success" ? "bg-emerald-500" : "bg-amber-500";
                 return (
                   <div key={status} className="space-y-1">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-zinc-400">{status}</span>
-                      <span className="text-zinc-300">
+                    <div className="flex items-center justify-between text-xs min-w-0">
+                      <span className="text-zinc-400 shrink-0">{status}</span>
+                      <span className="text-zinc-300 truncate ml-2">
                         {count} ({percentage}%)
                       </span>
                     </div>
