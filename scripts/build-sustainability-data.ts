@@ -15,6 +15,7 @@ import {
   normalizeWaterToM3,
   normalizeWasteToTonnes,
 } from "../lib/units";
+import type { Year } from "../data/sustainability";
 
 // ============================================================================
 // CSV PARSING
@@ -178,6 +179,39 @@ const SINGAPORE_DISTRICTS: { name: string; lat: number; lng: number }[] = [
   { name: "Paya Lebar", lat: 1.318, lng: 103.893 },
 ];
 
+const MALAYSIA_DISTRICTS: { name: string; lat: number; lng: number }[] = [
+  { name: "Kuala Lumpur", lat: 3.139, lng: 101.6869 },
+  { name: "Petaling Jaya", lat: 3.1073, lng: 101.6067 },
+  { name: "Shah Alam", lat: 3.0738, lng: 101.5183 },
+  { name: "Subang Jaya", lat: 3.043, lng: 101.5805 },
+  { name: "Johor Bahru", lat: 1.4927, lng: 103.7414 },
+  { name: "Penang Island", lat: 5.4164, lng: 100.3327 },
+  { name: "Ipoh", lat: 4.5975, lng: 101.0901 },
+  { name: "Kuching", lat: 1.5533, lng: 110.3593 },
+  { name: "Kota Kinabalu", lat: 5.9804, lng: 116.0735 },
+];
+
+const INDONESIA_DISTRICTS: { name: string; lat: number; lng: number }[] = [
+  { name: "Jakarta", lat: -6.2088, lng: 106.8456 },
+  { name: "Surabaya", lat: -7.2575, lng: 112.7521 },
+  { name: "Bandung", lat: -6.9175, lng: 107.6191 },
+  { name: "Medan", lat: 3.5952, lng: 98.6722 },
+  { name: "Semarang", lat: -6.9667, lng: 110.4167 },
+  { name: "Makassar", lat: -5.1477, lng: 119.4327 },
+  { name: "Balikpapan", lat: -1.2379, lng: 116.8523 },
+  { name: "Denpasar", lat: -8.65, lng: 115.2167 },
+  { name: "Palembang", lat: -2.9909, lng: 104.7566 },
+];
+
+function getCountryDistricts(
+  country: string,
+): { name: string; lat: number; lng: number }[] {
+  const upper = country.toUpperCase();
+  if (upper === "MALAYSIA") return MALAYSIA_DISTRICTS;
+  if (upper === "INDONESIA") return INDONESIA_DISTRICTS;
+  return SINGAPORE_DISTRICTS;
+}
+
 function seededRandom(seed: number): number {
   const x = Math.sin(seed * 9999) * 10000;
   return x - Math.floor(x);
@@ -193,10 +227,11 @@ function hashString(str: string): number {
   return Math.abs(hash);
 }
 
-function getCoordinates(companyName: string): LocationInfo {
-  const seed = hashString(companyName);
-  const districtIndex = seed % SINGAPORE_DISTRICTS.length;
-  const district = SINGAPORE_DISTRICTS[districtIndex];
+function getCoordinates(companyName: string, country: string): LocationInfo {
+  const seed = hashString(`${companyName}|${country}`);
+  const districts = getCountryDistricts(country);
+  const districtIndex = seed % districts.length;
+  const district = districts[districtIndex];
 
   const jitterLat = (seededRandom(seed) - 0.5) * 0.008;
   const jitterLng = (seededRandom(seed + 1) - 0.5) * 0.008;
@@ -503,234 +538,261 @@ function calcPlausibility(
 function buildSustainabilityData(): void {
   console.log("Building sustainability data from CSV...");
 
-  // Read CSV
-  const csvPath = path.join(process.cwd(), "master_metrics_1.csv");
-  const csvContent = fs.readFileSync(csvPath, "utf-8");
-  console.log(`Read CSV file: ${csvPath}`);
-
-  // Parse CSV
-  const rows = parseCsv(csvContent);
-  console.log(`Parsed ${rows.length} companies from CSV`);
+  // CSV sources: keep master_metrics_1.csv as canonical SG 2023,
+  // then add all other country/year CSVs from CSV Data, excluding singapore-2023 to avoid double-counting.
+  const csvSources: { relativePath: string; country: string }[] = [
+    { relativePath: path.join("CSV Data", "master_metrics_1.csv"), country: "Singapore" },
+    { relativePath: path.join("CSV Data", "singapore-2021.csv"), country: "Singapore" },
+    { relativePath: path.join("CSV Data", "singapore-2022.csv"), country: "Singapore" },
+    { relativePath: path.join("CSV Data", "singapore-2024.csv"), country: "Singapore" },
+    { relativePath: path.join("CSV Data", "malaysia-2022.csv"), country: "Malaysia" },
+    { relativePath: path.join("CSV Data", "malaysia-2024.csv"), country: "Malaysia" },
+    { relativePath: path.join("CSV Data", "indonesia-2022.csv"), country: "Indonesia" },
+    { relativePath: path.join("CSV Data", "indonesia-2023.csv"), country: "Indonesia" },
+    { relativePath: path.join("CSV Data", "indonesia-2024.csv"), country: "Indonesia" },
+  ];
 
   // Transform to SustainabilityCompany objects
   const companies: unknown[] = [];
 
-  for (let i = 0; i < rows.length; i++) {
-    const row = rows[i];
+  let companyIndex = 0;
 
-    // Extract values
-    const rawName = row["company_name"] || `unknown_${i}`;
-    const name = formatCompanyName(rawName);
-    const locationInfo = getCoordinates(rawName);
+  for (const source of csvSources) {
+    const csvPath = path.join(process.cwd(), source.relativePath);
+    if (!fs.existsSync(csvPath)) {
+      console.warn(`CSV file not found, skipping: ${csvPath}`);
+      continue;
+    }
 
-    const scope1Value = parseNumber(row["scope_1_value"]);
-    const scope1Unit = parseString(row["scope_1_unit"]);
-    const scope2Value = parseNumber(row["scope_2_value"]);
-    const scope2Unit = parseString(row["scope_2_unit"]);
-    const scope3Value = parseNumber(row["scope_3_value"]);
-    const scope3Unit = parseString(row["scope_3_unit"]);
+    const csvContent = fs.readFileSync(csvPath, "utf-8");
+    console.log(`Read CSV file: ${csvPath}`);
 
-    const wasteGeneratedValue = parseNumber(row["waste_generated_value"]);
-    const wasteGeneratedUnit = parseString(row["waste_generated_unit"]);
-    const wasteDisposedValue = parseNumber(row["waste_disposed_value"]);
-    const wasteDisposedUnit = parseString(row["waste_disposed_unit"]);
-    const wasteRecycledValue = parseNumber(row["waste_recycled_value"]);
-    const wasteRecycledUnit = parseString(row["waste_recycled_unit"]);
+    // Parse CSV
+    const rows = parseCsv(csvContent);
+    console.log(`Parsed ${rows.length} rows from ${csvPath}`);
 
-    const groupsFailed = parseNumber(row["total_groups_failed"]);
-    const dataQualityScore = parseNumber(row["data_quality_score"]);
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
 
-    // Calculate derived metrics
-    const scope1: QuantityRaw = { value: scope1Value, unit: scope1Unit };
-    const scope2: QuantityRaw = { value: scope2Value, unit: scope2Unit };
-    const scope12Total = calcScope12(scope1, scope2);
-    const wasteDiversionRate = calcWasteDiversion(
-      wasteGeneratedValue,
-      wasteRecycledValue,
-    );
-    const completeness = calcCompleteness(
-      scope1Value,
-      scope2Value,
-      wasteGeneratedValue,
-      wasteRecycledValue,
-    );
-    const extractionOk = groupsFailed === null || groupsFailed === 0;
+      // Extract values
+      const rawName = row["company_name"] || `unknown_${companyIndex}`;
+      const name = formatCompanyName(rawName);
+      const locationInfo = getCoordinates(rawName, source.country);
 
-    // Canonical normalization
-    const scope1TCO2e = normalizeEmissions(scope1Value, scope1Unit);
-    const scope2TCO2e = normalizeEmissions(scope2Value, scope2Unit);
-    const scope3TCO2e = normalizeEmissions(
-      parseNumber(row["scope_3_value"]),
-      parseString(row["scope_3_unit"]),
-    );
-    const totalEnergyKwh = normalizeEnergyToKwh(
-      parseNumber(row["total_energy_value"]),
-      parseString(row["total_energy_unit"]),
-    );
-    const waterWithdrawalM3 = normalizeWaterToM3(
-      parseNumber(row["water_withdrawal_value"]),
-      parseString(row["water_withdrawal_unit"]),
-    );
-    const waterConsumptionM3 = normalizeWaterToM3(
-      parseNumber(row["water_consumption_value"]),
-      parseString(row["water_consumption_unit"]),
-    );
-    const waterRecycledM3 = normalizeWaterToM3(
-      parseNumber(row["water_recycled_value"]),
-      parseString(row["water_recycled_unit"]),
-    );
-    const wasteGeneratedTonnes = normalizeWasteToTonnes(
-      wasteGeneratedValue,
-      wasteGeneratedUnit,
-    );
-    const wasteRecycledTonnes = normalizeWasteToTonnes(
-      wasteRecycledValue,
-      wasteRecycledUnit,
-    );
-    const wasteDisposedTonnes = normalizeWasteToTonnes(
-      wasteDisposedValue,
-      wasteDisposedUnit,
-    );
+      const reportYearNumber = parseNumber(row["report_year"]);
+      const reportYear: Year =
+        (reportYearNumber as Year | null) ?? (2023 as Year);
 
-    const normalized = {
-      scope1TCO2e,
-      scope2TCO2e,
-      scope3TCO2e,
-      totalEnergyKwh,
-      waterWithdrawalM3,
-      waterConsumptionM3,
-      waterRecycledM3,
-      wasteGeneratedTonnes,
-      wasteRecycledTonnes,
-      wasteDisposedTonnes,
-    };
+      const scope1Value = parseNumber(row["scope_1_value"]);
+      const scope1Unit = parseString(row["scope_1_unit"]);
+      const scope2Value = parseNumber(row["scope_2_value"]);
+      const scope2Unit = parseString(row["scope_2_unit"]);
+      const scope3Value = parseNumber(row["scope_3_value"]);
+      const scope3Unit = parseString(row["scope_3_unit"]);
 
-    const company = {
-      id: `company_${i + 1}`,
-      name,
-      reportName: parseString(row["report_name"]),
-      reportYear: 2023 as const,
-      industry: "General",
+      const wasteGeneratedValue = parseNumber(row["waste_generated_value"]);
+      const wasteGeneratedUnit = parseString(row["waste_generated_unit"]);
+      const wasteDisposedValue = parseNumber(row["waste_disposed_value"]);
+      const wasteDisposedUnit = parseString(row["waste_disposed_unit"]);
+      const wasteRecycledValue = parseNumber(row["waste_recycled_value"]);
+      const wasteRecycledUnit = parseString(row["waste_recycled_unit"]);
 
-      country: "Singapore",
-      city: locationInfo.district,
-      lat: locationInfo.coords.lat,
-      lng: locationInfo.coords.lng,
+      const groupsFailed = parseNumber(row["total_groups_failed"]);
+      const dataQualityScore = parseNumber(row["data_quality_score"]);
 
-      emissions: {
-        scope1: { value: scope1Value, unit: scope1Unit },
-        scope2: { value: scope2Value, unit: scope2Unit },
-        scope3: { value: scope3Value, unit: scope3Unit },
-        calculation: parseString(row["emissions_calculation"]),
-        notes: parseString(row["emissions_notes"]),
-        status: parseString(row["emissions_status"]),
-      },
+      // Calculate derived metrics
+      const scope1: QuantityRaw = { value: scope1Value, unit: scope1Unit };
+      const scope2: QuantityRaw = { value: scope2Value, unit: scope2Unit };
+      const scope12Total = calcScope12(scope1, scope2);
+      const wasteDiversionRate = calcWasteDiversion(
+        wasteGeneratedValue,
+        wasteRecycledValue,
+      );
+      const completeness = calcCompleteness(
+        scope1Value,
+        scope2Value,
+        wasteGeneratedValue,
+        wasteRecycledValue,
+      );
+      const extractionOk = groupsFailed === null || groupsFailed === 0;
 
-      waste: {
-        generated: { value: wasteGeneratedValue, unit: wasteGeneratedUnit },
-        disposed: { value: wasteDisposedValue, unit: wasteDisposedUnit },
-        recycled: { value: wasteRecycledValue, unit: wasteRecycledUnit },
-        calculation: parseString(row["waste_calculation"]),
-        notes: parseString(row["waste_notes"]),
-        status: parseString(row["waste_status"]),
-      },
+      // Canonical normalization
+      const scope1TCO2e = normalizeEmissions(scope1Value, scope1Unit);
+      const scope2TCO2e = normalizeEmissions(scope2Value, scope2Unit);
+      const scope3TCO2e = normalizeEmissions(
+        parseNumber(row["scope_3_value"]),
+        parseString(row["scope_3_unit"]),
+      );
+      const totalEnergyKwh = normalizeEnergyToKwh(
+        parseNumber(row["total_energy_value"]),
+        parseString(row["total_energy_unit"]),
+      );
+      const waterWithdrawalM3 = normalizeWaterToM3(
+        parseNumber(row["water_withdrawal_value"]),
+        parseString(row["water_withdrawal_unit"]),
+      );
+      const waterConsumptionM3 = normalizeWaterToM3(
+        parseNumber(row["water_consumption_value"]),
+        parseString(row["water_consumption_unit"]),
+      );
+      const waterRecycledM3 = normalizeWaterToM3(
+        parseNumber(row["water_recycled_value"]),
+        parseString(row["water_recycled_unit"]),
+      );
+      const wasteGeneratedTonnes = normalizeWasteToTonnes(
+        wasteGeneratedValue,
+        wasteGeneratedUnit,
+      );
+      const wasteRecycledTonnes = normalizeWasteToTonnes(
+        wasteRecycledValue,
+        wasteRecycledUnit,
+      );
+      const wasteDisposedTonnes = normalizeWasteToTonnes(
+        wasteDisposedValue,
+        wasteDisposedUnit,
+      );
 
-      water: {
-        withdrawal: {
-          value: parseNumber(row["water_withdrawal_value"]),
-          unit: parseString(row["water_withdrawal_unit"]),
+      const normalized = {
+        scope1TCO2e,
+        scope2TCO2e,
+        scope3TCO2e,
+        totalEnergyKwh,
+        waterWithdrawalM3,
+        waterConsumptionM3,
+        waterRecycledM3,
+        wasteGeneratedTonnes,
+        wasteRecycledTonnes,
+        wasteDisposedTonnes,
+      };
+
+      const company = {
+        id: `company_${companyIndex + 1}`,
+        name,
+        reportName: parseString(row["report_name"]),
+        reportYear,
+        industry: "General",
+
+        country: source.country,
+        city: locationInfo.district,
+        lat: locationInfo.coords.lat,
+        lng: locationInfo.coords.lng,
+
+        emissions: {
+          scope1: { value: scope1Value, unit: scope1Unit },
+          scope2: { value: scope2Value, unit: scope2Unit },
+          scope3: { value: scope3Value, unit: scope3Unit },
+          calculation: parseString(row["emissions_calculation"]),
+          notes: parseString(row["emissions_notes"]),
+          status: parseString(row["emissions_status"]),
         },
-        discharge: {
-          value: parseNumber(row["water_discharge_value"]),
-          unit: parseString(row["water_discharge_unit"]),
+
+        waste: {
+          generated: { value: wasteGeneratedValue, unit: wasteGeneratedUnit },
+          disposed: { value: wasteDisposedValue, unit: wasteDisposedUnit },
+          recycled: { value: wasteRecycledValue, unit: wasteRecycledUnit },
+          calculation: parseString(row["waste_calculation"]),
+          notes: parseString(row["waste_notes"]),
+          status: parseString(row["waste_status"]),
         },
-        consumption: {
-          value: parseNumber(row["water_consumption_value"]),
-          unit: parseString(row["water_consumption_unit"]),
+
+        water: {
+          withdrawal: {
+            value: parseNumber(row["water_withdrawal_value"]),
+            unit: parseString(row["water_withdrawal_unit"]),
+          },
+          discharge: {
+            value: parseNumber(row["water_discharge_value"]),
+            unit: parseString(row["water_discharge_unit"]),
+          },
+          consumption: {
+            value: parseNumber(row["water_consumption_value"]),
+            unit: parseString(row["water_consumption_unit"]),
+          },
+          recycled: {
+            value: parseNumber(row["water_recycled_value"]),
+            unit: parseString(row["water_recycled_unit"]),
+          },
+          calculation: parseString(row["water_calculation"]),
+          notes: parseString(row["water_notes"]),
+          status: parseString(row["water_status"]),
         },
-        recycled: {
-          value: parseNumber(row["water_recycled_value"]),
-          unit: parseString(row["water_recycled_unit"]),
+
+        energy: {
+          total: {
+            value: parseNumber(row["total_energy_value"]),
+            unit: parseString(row["total_energy_unit"]),
+          },
+          breakdown: parseString(row["energy_breakdown"]),
+          calculation: parseString(row["energy_calculation"]),
+          notes: parseString(row["energy_notes"]),
+          status: parseString(row["energy_status"]),
         },
-        calculation: parseString(row["water_calculation"]),
-        notes: parseString(row["water_notes"]),
-        status: parseString(row["water_status"]),
-      },
 
-      energy: {
-        total: {
-          value: parseNumber(row["total_energy_value"]),
-          unit: parseString(row["total_energy_unit"]),
+        fuel: {
+          consumption: {
+            value: parseNumber(row["fuel_consumption_value"]),
+            unit: parseString(row["fuel_consumption_unit"]),
+          },
+          breakdown: parseString(row["fuel_breakdown"]),
+          calculation: parseString(row["fuel_calculation"]),
+          notes: parseString(row["fuel_notes"]),
+          status: parseString(row["fuel_status"]),
         },
-        breakdown: parseString(row["energy_breakdown"]),
-        calculation: parseString(row["energy_calculation"]),
-        notes: parseString(row["energy_notes"]),
-        status: parseString(row["energy_status"]),
-      },
 
-      fuel: {
-        consumption: {
-          value: parseNumber(row["fuel_consumption_value"]),
-          unit: parseString(row["fuel_consumption_unit"]),
+        gfa: {
+          value: {
+            value: parseNumber(row["gfa_value"]),
+            unit: parseString(row["gfa_unit"]),
+          },
+          calculation: parseString(row["gfa_calculation"]),
+          notes: parseString(row["gfa_notes"]),
+          status: parseString(row["gfa_status"]),
         },
-        breakdown: parseString(row["fuel_breakdown"]),
-        calculation: parseString(row["fuel_calculation"]),
-        notes: parseString(row["fuel_notes"]),
-        status: parseString(row["fuel_status"]),
-      },
 
-      gfa: {
-        value: {
-          value: parseNumber(row["gfa_value"]),
-          unit: parseString(row["gfa_unit"]),
+        targets: {
+          json: parseString(row["targets_json"]),
+          notes: parseString(row["targets_notes"]),
+          status: parseString(row["targets_status"]),
         },
-        calculation: parseString(row["gfa_calculation"]),
-        notes: parseString(row["gfa_notes"]),
-        status: parseString(row["gfa_status"]),
-      },
 
-      targets: {
-        json: parseString(row["targets_json"]),
-        notes: parseString(row["targets_notes"]),
-        status: parseString(row["targets_status"]),
-      },
+        strategy: {
+          summary: parseString(row["strategy_summary"]),
+          notes: parseString(row["strategy_notes"]),
+          status: parseString(row["strategy_status"]),
+        },
 
-      strategy: {
-        summary: parseString(row["strategy_summary"]),
-        notes: parseString(row["strategy_notes"]),
-        status: parseString(row["strategy_status"]),
-      },
-
-      meta: {
-        extractionId: parseString(row["extraction_id"]),
-        extractionDate: parseString(row["extraction_date"]),
-        sourceImagesPrefix: parseString(row["source_images_prefix"]),
-        processingSeconds: parseNumber(row["processing_duration_seconds"]),
-        groupsExtracted: parseNumber(row["total_groups_extracted"]),
-        groupsFailed: groupsFailed,
-        groupsSkipped: parseNumber(row["total_groups_skipped"]),
-        rawJsonPath: parseString(row["raw_json_s3_path"]),
-        dataQualityScore: dataQualityScore,
-        verifiedByHuman: parseBoolean(row["verified_by_human"]),
-      },
-
-      normalized,
-
-      derived: {
-        scope12Total,
-        wasteDiversionRate,
-        completeness,
-        trust: {
-          extractionOk,
-          dataQualityScore,
+        meta: {
+          extractionId: parseString(row["extraction_id"]),
+          extractionDate: parseString(row["extraction_date"]),
+          sourceImagesPrefix: parseString(row["source_images_prefix"]),
+          processingSeconds: parseNumber(row["processing_duration_seconds"]),
+          groupsExtracted: parseNumber(row["total_groups_extracted"]),
+          groupsFailed: groupsFailed,
+          groupsSkipped: parseNumber(row["total_groups_skipped"]),
+          rawJsonPath: parseString(row["raw_json_s3_path"]),
+          dataQualityScore: dataQualityScore,
           verifiedByHuman: parseBoolean(row["verified_by_human"]),
         },
-        plausibilityBand: "Good" as PlausibilityBand,
-        plausibilityReasons: [] as string[],
-      },
-    };
 
-    companies.push(company);
+        normalized,
+
+        derived: {
+          scope12Total,
+          wasteDiversionRate,
+          completeness,
+          trust: {
+            extractionOk,
+            dataQualityScore,
+            verifiedByHuman: parseBoolean(row["verified_by_human"]),
+          },
+          plausibilityBand: "Good" as PlausibilityBand,
+          plausibilityReasons: [] as string[],
+        },
+      };
+
+      companies.push(company);
+      companyIndex += 1;
+    }
   }
 
   // Compute global cohort percentiles (industry = General for all)

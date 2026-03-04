@@ -56,6 +56,7 @@ export default function DashboardPage() {
     countries: [],
     plausibilityBands: [],
     incompleteOnly: false,
+    industries: [],
   });
 
   // All companies from generated data
@@ -122,8 +123,8 @@ export default function DashboardPage() {
                 Sustainability Monitoring Dashboard
               </h1>
               <p className="text-sm text-zinc-500 mt-0.5">
-                ESG metrics for {allCompanies.length} SGX-listed companies
-                (2023)
+                ESG metrics for {allCompanies.length} listed companies across
+                Singapore, Malaysia, and Indonesia (2021–2024)
               </p>
             </div>
 

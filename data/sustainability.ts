@@ -2,7 +2,7 @@
 // SUSTAINABILITY MONITORING DATA MODEL (Real Dataset)
 // ============================================================================
 
-export type Year = 2023; // Single year only (no time-series data available)
+export type Year = 2021 | 2022 | 2023 | 2024;
 
 // ============================================================================
 // RAW DATA TYPES (matching CSV structure)
@@ -220,6 +220,8 @@ export interface FilterOptions {
   /** Data plausibility bands to include (Good / Watch / Review). */
   plausibilityBands: PlausibilityBand[];
   incompleteOnly: boolean;
+  /** Industries to include (empty = all industries). */
+  industries: string[];
 }
 
 export interface KpiData {
@@ -552,6 +554,14 @@ export function filterCompanies(
       return false;
     }
 
+    // Industry filter
+    if (options.industries.length > 0) {
+      const industry = company.industry?.trim();
+      if (!industry || !options.industries.includes(industry)) {
+        return false;
+      }
+    }
+
     // Plausibility band filter (support both new and legacy field names)
     const band = company.derived.plausibilityBand ?? company.derived.riskBand;
     if (
@@ -575,6 +585,22 @@ export function filterCompanies(
  */
 export function getCountries(companies: SustainabilityCompany[]): string[] {
   return [...new Set(companies.map((c) => c.country))].sort();
+}
+
+/**
+ * Get unique industries from companies (non-empty, sorted)
+ */
+export function getIndustries(
+  companies: SustainabilityCompany[],
+): string[] {
+  const industries = new Set<string>();
+  for (const company of companies) {
+    const industry = company.industry?.trim();
+    if (industry) {
+      industries.add(industry);
+    }
+  }
+  return [...industries].sort();
 }
 
 // ============================================================================

@@ -29,6 +29,7 @@ import {
   type UnitView,
   getCountries,
   getPlausibilityBands,
+  getIndustries,
   fmtTCO2e,
   fmtPct,
 } from "@/data/sustainability";
@@ -55,10 +56,12 @@ export function SidePanelLeft({
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [showCountryFilter, setShowCountryFilter] = useState(false);
   const [showPlausibilityFilter, setShowPlausibilityFilter] = useState(false);
+  const [showIndustryFilter, setShowIndustryFilter] = useState(false);
   const listContainerRef = useRef<HTMLDivElement>(null);
 
   const countries = getCountries(allCompanies);
   const plausibilityBands = getPlausibilityBands();
+  const industries = getIndustries(allCompanies);
 
   // Scroll selected company into view
   useEffect(() => {
@@ -107,6 +110,13 @@ export function SidePanelLeft({
     onFiltersChange({ ...filters, incompleteOnly: checked });
   };
 
+  const handleIndustryToggle = (industry: string) => {
+    const next = filters.industries.includes(industry)
+      ? filters.industries.filter((i) => i !== industry)
+      : [...filters.industries, industry];
+    onFiltersChange({ ...filters, industries: next });
+  };
+
   const handleRemoveCountry = (country: string) => {
     onFiltersChange({
       ...filters,
@@ -121,12 +131,20 @@ export function SidePanelLeft({
     });
   };
 
+  const handleRemoveIndustry = (industry: string) => {
+    onFiltersChange({
+      ...filters,
+      industries: filters.industries.filter((i) => i !== industry),
+    });
+  };
+
   const clearFilters = () => {
     onFiltersChange({
       search: "",
       countries: [],
       plausibilityBands: [],
       incompleteOnly: false,
+       industries: [],
     });
   };
 
@@ -134,12 +152,14 @@ export function SidePanelLeft({
     filters.search ||
     filters.countries.length > 0 ||
     filters.plausibilityBands.length > 0 ||
-    filters.incompleteOnly;
+    filters.incompleteOnly ||
+    filters.industries.length > 0;
 
   const hasActiveFilterChips =
     filters.countries.length > 0 ||
     filters.plausibilityBands.length > 0 ||
-    filters.incompleteOnly;
+    filters.incompleteOnly ||
+    filters.industries.length > 0;
 
   const getPlausibilityColor = (band: PlausibilityBand): string => {
     switch (band) {
@@ -243,6 +263,22 @@ export function SidePanelLeft({
                   onClick={() => handleRemoveCountry(country)}
                   className="ml-0.5 hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400 rounded"
                   aria-label={`Remove ${country} filter`}
+                >
+                  <X className="h-3 w-3" />
+                </button>
+              </Badge>
+            ))}
+            {filters.industries.map((industry) => (
+              <Badge
+                key={`industry-${industry}`}
+                variant="secondary"
+                className="h-6 px-2 text-xs bg-zinc-700/80 text-zinc-200 hover:bg-zinc-600 cursor-pointer flex items-center gap-1"
+              >
+                {industry}
+                <button
+                  onClick={() => handleRemoveIndustry(industry)}
+                  className="ml-0.5 hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400 rounded"
+                  aria-label={`Remove ${industry} industry filter`}
                 >
                   <X className="h-3 w-3" />
                 </button>
@@ -359,6 +395,53 @@ export function SidePanelLeft({
                   aria-label={`Filter by ${country}`}
                 />
                 <span className="text-xs text-zinc-300">{country}</span>
+              </label>
+            ))}
+          </CollapsibleContent>
+        </Collapsible>
+
+        {/* Industry Filter */}
+        <Collapsible
+          open={showIndustryFilter}
+          onOpenChange={setShowIndustryFilter}
+        >
+          <CollapsibleTrigger asChild>
+            <Button
+              variant="ghost"
+              className="w-full justify-between h-8 px-2 text-xs text-zinc-300 hover:bg-zinc-800"
+              aria-expanded={showIndustryFilter}
+            >
+              <span className="flex items-center gap-2">
+                Industry
+                {filters.industries.length > 0 && (
+                  <Badge
+                    variant="secondary"
+                    className="h-5 px-1.5 text-xs bg-zinc-700"
+                  >
+                    {filters.industries.length}
+                  </Badge>
+                )}
+              </span>
+              <ChevronRight
+                className={`h-3 w-3 transition-transform ${
+                  showIndustryFilter ? "rotate-90" : ""
+                }`}
+              />
+            </Button>
+          </CollapsibleTrigger>
+          <CollapsibleContent className="pt-2 space-y-1">
+            {industries.map((industry) => (
+              <label
+                key={industry}
+                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-zinc-800 cursor-pointer"
+              >
+                <Checkbox
+                  checked={filters.industries.includes(industry)}
+                  onCheckedChange={() => handleIndustryToggle(industry)}
+                  className="border-zinc-600 data-[state=checked]:bg-zinc-100 data-[state=checked]:border-zinc-100"
+                  aria-label={`Filter by ${industry} industry`}
+                />
+                <span className="text-xs text-zinc-300">{industry}</span>
               </label>
             ))}
           </CollapsibleContent>

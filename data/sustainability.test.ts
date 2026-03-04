@@ -16,6 +16,7 @@ import {
   fmtQuantity,
   getCountries,
   getPlausibilityBands,
+  getIndustries,
   parseTargetsSummary,
   type SustainabilityCompany,
   type FilterOptions,
@@ -195,6 +196,7 @@ describe("filterCompanies", () => {
       countries: [],
       plausibilityBands: [],
       incompleteOnly: false,
+      industries: [],
     };
     expect(filterCompanies(companies, opts)).toHaveLength(3);
   });
@@ -205,6 +207,7 @@ describe("filterCompanies", () => {
       countries: [],
       plausibilityBands: [],
       incompleteOnly: false,
+      industries: [],
     };
     const result = filterCompanies(companies, opts);
     expect(result).toHaveLength(1);
@@ -217,6 +220,7 @@ describe("filterCompanies", () => {
       countries: [],
       plausibilityBands: ["Review"],
       incompleteOnly: false,
+      industries: [],
     };
     const result = filterCompanies(companies, opts);
     expect(result).toHaveLength(1);
@@ -229,9 +233,61 @@ describe("filterCompanies", () => {
       countries: [],
       plausibilityBands: ["Good", "Watch"],
       incompleteOnly: false,
+      industries: [],
     };
     const result = filterCompanies(companies, opts);
     expect(result).toHaveLength(2);
+  });
+
+  it("filters by single industry", () => {
+    const companiesWithIndustries = [
+      makeCompany({ id: "c1", name: "Alpha Corp", industry: "Utilities" }),
+      makeCompany({ id: "c2", name: "Beta Ltd", industry: "Financials" }),
+      makeCompany({ id: "c3", name: "Gamma Inc", industry: "Utilities" }),
+      makeCompany({ id: "c4", name: "Delta Co", industry: undefined }),
+    ];
+    const opts: FilterOptions = {
+      search: "",
+      countries: [],
+      plausibilityBands: [],
+      incompleteOnly: false,
+      industries: ["Utilities"],
+    };
+    const result = filterCompanies(companiesWithIndustries, opts);
+    expect(result.map((c) => c.id).sort()).toEqual(["c1", "c3"]);
+  });
+
+  it("filters by multiple industries (OR logic)", () => {
+    const companiesWithIndustries = [
+      makeCompany({ id: "c1", name: "Alpha Corp", industry: "Utilities" }),
+      makeCompany({ id: "c2", name: "Beta Ltd", industry: "Financials" }),
+      makeCompany({ id: "c3", name: "Gamma Inc", industry: "Industrials" }),
+    ];
+    const opts: FilterOptions = {
+      search: "",
+      countries: [],
+      plausibilityBands: [],
+      incompleteOnly: false,
+      industries: ["Utilities", "Industrials"],
+    };
+    const result = filterCompanies(companiesWithIndustries, opts);
+    expect(result.map((c) => c.id).sort()).toEqual(["c1", "c3"]);
+  });
+
+  it("excludes companies with undefined industry when industry filter is active", () => {
+    const companiesWithIndustries = [
+      makeCompany({ id: "c1", name: "Alpha Corp", industry: "Utilities" }),
+      makeCompany({ id: "c2", name: "Beta Ltd", industry: undefined }),
+    ];
+    const opts: FilterOptions = {
+      search: "",
+      countries: [],
+      plausibilityBands: [],
+      incompleteOnly: false,
+      industries: ["Utilities"],
+    };
+    const result = filterCompanies(companiesWithIndustries, opts);
+    expect(result.map((c) => c.id)).toEqual(["c1"]);
   });
 });
 
@@ -482,6 +538,18 @@ describe("getCountries", () => {
       makeCompany({ country: "Singapore" }),
     ];
     expect(getCountries(companies)).toEqual(["Malaysia", "Singapore"]);
+  });
+});
+
+describe("getIndustries", () => {
+  it("returns unique sorted industries and skips empty", () => {
+    const companies = [
+      makeCompany({ industry: "Utilities" }),
+      makeCompany({ industry: "Financials" }),
+      makeCompany({ industry: "Utilities" }),
+      makeCompany({ industry: undefined }),
+    ];
+    expect(getIndustries(companies)).toEqual(["Financials", "Utilities"]);
   });
 });
 
