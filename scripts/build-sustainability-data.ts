@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * Build script to parse master_metrics_1.csv and generate sustainability.generated.ts
+ * Build script to parse singapore_2024_merged_with_coverage_rank.csv and generate sustainability.generated.ts
  * - Canonical unit normalization (emissions, energy kWh, water m³, waste tonnes)
  * - Data plausibility (industry-based percentiles + consistency checks) with reasons
  *
@@ -800,10 +800,10 @@ function buildSustainabilityData(): void {
 
       fuel: {
         consumption: {
-          value: parseNumber(getRow(row, "fuel_consumption_value")),
-          unit: parseString(getRow(row, "fuel_consumption_unit")),
+          value: parseNumber(getRow(row, "fuel_total_value", "fuel_consumption_value")),
+          unit: parseString(getRow(row, "fuel_total_unit", "fuel_consumption_unit")),
         },
-        breakdown: parseString(getRow(row, "fuel_breakdown")),
+        breakdown: parseString(getRow(row, "fuel_type_breakdown", "fuel_breakdown")),
         calculation: parseString(getRow(row, "fuel_calculation")),
         notes: parseString(getRow(row, "fuel_notes")),
         status: parseString(getRow(row, "fuel_status")),

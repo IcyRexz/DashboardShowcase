@@ -15,7 +15,6 @@ import {
   type KpiData,
   type SustainabilityCompany,
   type PlausibilityBand,
-  type UnitView,
   fmtPct,
 } from "@/data/sustainability";
 
@@ -31,7 +30,6 @@ function fmtCompact(value: number | null): string {
 interface SidePanelRightProps {
   kpis: KpiData;
   companies: SustainabilityCompany[];
-  unitView?: UnitView;
 }
 
 export function SidePanelRight({
@@ -102,7 +100,7 @@ export function SidePanelRight({
       case "Review":
         return "bg-red-500";
       default:
-        return "bg-zinc-500";
+        return "bg-gray-400";
     }
   };
 
@@ -113,17 +111,17 @@ export function SidePanelRight({
           variant="ghost"
           size="icon"
           onClick={() => setIsCollapsed(false)}
-          className="h-8 w-8 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+          className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           aria-label="Expand panel"
           title="Expand panel"
         >
           <ChevronLeft className="h-4 w-4" />
         </Button>
-        <div className="h-px w-6 bg-zinc-700" />
+        <div className="h-px w-6 bg-gray-200" />
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+          className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           aria-label="Overview"
           title="Overview"
         >
@@ -132,7 +130,7 @@ export function SidePanelRight({
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+          className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           aria-label="Emissions"
           title="Emissions"
         >
@@ -141,7 +139,7 @@ export function SidePanelRight({
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+          className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           aria-label="Waste"
           title="Waste"
         >
@@ -154,16 +152,16 @@ export function SidePanelRight({
   return (
     <div className="w-72 h-full panel-glass rounded-lg flex flex-col transition-all duration-300 overflow-hidden">
       {/* Header */}
-      <div className="p-4 border-b border-zinc-800">
+      <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-zinc-100">
+          <h2 className="text-sm font-semibold text-gray-900">
             Overview (2024)
           </h2>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsCollapsed(true)}
-            className="h-7 w-7 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+            className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
             aria-label="Collapse panel"
             title="Collapse panel"
           >
@@ -176,25 +174,25 @@ export function SidePanelRight({
       <div className="flex-1 overflow-y-auto scrollbar-thin p-4 space-y-6">
         {/* Summary Stats */}
         <div className="space-y-3">
-          <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider">
+          <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
             Summary
           </h3>
           <div className="grid grid-cols-2 gap-2">
-            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
-              <p className="text-2xl font-bold text-zinc-100 truncate">
+            <div className="bg-gray-50 rounded-md p-3 overflow-hidden">
+              <p className="text-2xl font-bold text-gray-900 truncate">
                 {kpis.totalCompanies}
               </p>
-              <p className="text-xs text-zinc-500 truncate">Companies</p>
+              <p className="text-xs text-gray-500 truncate">Companies</p>
             </div>
-            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
-              <p className="text-2xl font-bold text-zinc-100 truncate">
+            <div className="bg-gray-50 rounded-md p-3 overflow-hidden">
+              <p className="text-2xl font-bold text-gray-900 truncate">
                 {sectorBreakdown.length}
               </p>
-              <p className="text-xs text-zinc-500 truncate">Sectors</p>
+              <p className="text-xs text-gray-500 truncate">Sectors</p>
             </div>
-            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
+            <div className="bg-gray-50 rounded-md p-3 overflow-hidden">
               <p
-                className="text-lg font-bold text-zinc-100 truncate"
+                className="text-lg font-bold text-gray-900 truncate"
                 title={
                   kpis.totalScope12 !== null
                     ? `${kpis.totalScope12.toLocaleString()} tCO2e`
@@ -203,68 +201,68 @@ export function SidePanelRight({
               >
                 {fmtCompact(kpis.totalScope12)}
               </p>
-              <p className="text-xs text-zinc-500 truncate">Scope 1+2 tCO2e</p>
+              <p className="text-xs text-gray-500 truncate">Scope 1+2 tCO2e</p>
             </div>
-            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
+            <div className="bg-gray-50 rounded-md p-3 overflow-hidden">
               <p
                 className={`text-lg font-bold truncate ${
                   kpis.avgWasteDiversion !== null &&
                   kpis.avgWasteDiversion >= 0.5
-                    ? "text-emerald-400"
+                    ? "text-emerald-600"
                     : kpis.avgWasteDiversion !== null &&
                         kpis.avgWasteDiversion < 0.3
-                      ? "text-amber-400"
-                      : "text-zinc-100"
+                      ? "text-amber-600"
+                      : "text-gray-900"
                 }`}
               >
                 {fmtPct(kpis.avgWasteDiversion)}
               </p>
-              <p className="text-xs text-zinc-500 truncate">Avg Waste Div.</p>
+              <p className="text-xs text-gray-500 truncate">Avg Waste Div.</p>
             </div>
           </div>
         </div>
 
         {/* Coverage Distribution */}
         <div className="space-y-3">
-          <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+          <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
             <TrendingUp className="h-3 w-3" />
             Coverage Score
           </h3>
           <div className="grid grid-cols-2 gap-2">
-            <div className="bg-zinc-800/50 rounded-md p-2.5">
-              <p className="text-lg font-bold text-zinc-100">{coverageStats.avg}%</p>
-              <p className="text-[10px] text-zinc-500">Average</p>
+            <div className="bg-gray-50 rounded-md p-2.5">
+              <p className="text-lg font-bold text-gray-900">{coverageStats.avg}%</p>
+              <p className="text-[10px] text-gray-500">Average</p>
             </div>
-            <div className="bg-zinc-800/50 rounded-md p-2.5">
-              <p className="text-lg font-bold text-zinc-100">{coverageStats.median}%</p>
-              <p className="text-[10px] text-zinc-500">Median</p>
+            <div className="bg-gray-50 rounded-md p-2.5">
+              <p className="text-lg font-bold text-gray-900">{coverageStats.median}%</p>
+              <p className="text-[10px] text-gray-500">Median</p>
             </div>
-            <div className="bg-zinc-800/50 rounded-md p-2.5">
-              <p className="text-lg font-bold text-emerald-400">{coverageStats.high}</p>
-              <p className="text-[10px] text-zinc-500">High (60%+)</p>
+            <div className="bg-gray-50 rounded-md p-2.5">
+              <p className="text-lg font-bold text-emerald-600">{coverageStats.high}</p>
+              <p className="text-[10px] text-gray-500">High (60%+)</p>
             </div>
-            <div className="bg-zinc-800/50 rounded-md p-2.5">
-              <p className="text-lg font-bold text-red-400">{coverageStats.low}</p>
-              <p className="text-[10px] text-zinc-500">Low (&lt;30%)</p>
+            <div className="bg-gray-50 rounded-md p-2.5">
+              <p className="text-lg font-bold text-red-600">{coverageStats.low}</p>
+              <p className="text-[10px] text-gray-500">Low (&lt;30%)</p>
             </div>
           </div>
         </div>
 
         {/* Top 5 by Coverage */}
         <div className="space-y-3">
-          <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider">
+          <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
             Top 5 by Coverage
           </h3>
           <div className="space-y-1.5">
             {topCompanies.map((c, idx) => (
               <div key={c.id} className="flex items-center gap-2 text-xs">
-                <span className="text-zinc-600 font-mono w-5 text-right shrink-0">
+                <span className="text-gray-400 font-mono w-5 text-right shrink-0">
                   {idx + 1}.
                 </span>
-                <span className="text-zinc-300 truncate flex-1" title={c.name}>
+                <span className="text-gray-700 truncate flex-1" title={c.name}>
                   {c.name}
                 </span>
-                <span className="text-zinc-400 shrink-0 tabular-nums">
+                <span className="text-gray-500 shrink-0 tabular-nums">
                   {c.derived.coverageScore ?? 0}%
                 </span>
               </div>
@@ -274,7 +272,7 @@ export function SidePanelRight({
 
         {/* Data Plausibility Distribution */}
         <div className="space-y-3">
-          <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider">
+          <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
             Data Plausibility
           </h3>
           <div className="space-y-2">
@@ -287,12 +285,12 @@ export function SidePanelRight({
               return (
                 <div key={b} className="space-y-1">
                   <div className="flex items-center justify-between text-xs min-w-0">
-                    <span className="text-zinc-400 shrink-0">{b}</span>
-                    <span className="text-zinc-300 truncate ml-2">
+                    <span className="text-gray-500 shrink-0">{b}</span>
+                    <span className="text-gray-700 truncate ml-2">
                       {count} ({percentage}%)
                     </span>
                   </div>
-                  <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                     <div
                       className={`h-full ${getPlausibilityColor(b)} rounded-full transition-all duration-500`}
                       style={{ width: `${percentage}%` }}
@@ -306,7 +304,7 @@ export function SidePanelRight({
 
         {/* Sector Breakdown */}
         <div className="space-y-3">
-          <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+          <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
             <ShieldCheck className="h-3 w-3" />
             By Sector
           </h3>
@@ -319,14 +317,14 @@ export function SidePanelRight({
               return (
                 <div key={sector} className="space-y-1">
                   <div className="flex items-center justify-between text-xs min-w-0">
-                    <span className="text-zinc-400 truncate flex-1">{sector}</span>
-                    <span className="text-zinc-500 shrink-0 ml-2 tabular-nums">
+                    <span className="text-gray-500 truncate flex-1">{sector}</span>
+                    <span className="text-gray-400 shrink-0 ml-2 tabular-nums">
                       {count} · {avgCoverage}% cov
                     </span>
                   </div>
-                  <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-blue-500/70 rounded-full transition-all duration-500"
+                      className="h-full bg-blue-500 rounded-full transition-all duration-500"
                       style={{ width: `${pct}%` }}
                     />
                   </div>

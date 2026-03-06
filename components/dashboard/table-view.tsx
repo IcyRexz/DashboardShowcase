@@ -35,13 +35,13 @@ const PLAUSIBILITY_ORDER: Record<string, number> = {
 function getPlausibilityColor(band: PlausibilityBand): string {
   switch (band) {
     case "Good":
-      return "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
+      return "bg-emerald-100 text-emerald-700 border-emerald-300";
     case "Watch":
-      return "bg-amber-500/20 text-amber-400 border-amber-500/30";
+      return "bg-amber-100 text-amber-700 border-amber-300";
     case "Review":
-      return "bg-red-500/20 text-red-400 border-red-500/30";
+      return "bg-red-100 text-red-700 border-red-300";
     default:
-      return "bg-zinc-500/20 text-zinc-400 border-zinc-500/30";
+      return "bg-gray-100 text-gray-600 border-gray-300";
   }
 }
 
@@ -124,23 +124,23 @@ export function TableView({
 
   const SortIcon = ({ field }: { field: SortField }) => {
     if (sortField !== field)
-      return <ArrowUpDown className="h-3 w-3 text-zinc-600" />;
+      return <ArrowUpDown className="h-3 w-3 text-gray-400" />;
     return sortDir === "asc" ? (
-      <ArrowUp className="h-3 w-3 text-zinc-300" />
+      <ArrowUp className="h-3 w-3 text-gray-700" />
     ) : (
-      <ArrowDown className="h-3 w-3 text-zinc-300" />
+      <ArrowDown className="h-3 w-3 text-gray-700" />
     );
   };
 
   return (
     <div className="h-full flex flex-col panel-glass rounded-lg overflow-hidden">
       {/* Header */}
-      <div className="px-4 py-3 border-b border-zinc-800 flex items-center gap-2">
-        <Building2 className="h-4 w-4 text-zinc-400" />
-        <span className="text-sm font-semibold text-zinc-100">
+      <div className="px-4 py-3 border-b border-gray-200 flex items-center gap-2">
+        <Building2 className="h-4 w-4 text-gray-500" />
+        <span className="text-sm font-semibold text-gray-900">
           Companies Ranked by Coverage
         </span>
-        <span className="text-xs text-zinc-500 ml-auto">
+        <span className="text-xs text-gray-500 ml-auto">
           {companies.length} companies
         </span>
       </div>
@@ -148,8 +148,8 @@ export function TableView({
       {/* Table */}
       <div className="flex-1 overflow-auto scrollbar-thin">
         <table className="w-full text-sm">
-          <thead className="sticky top-0 z-10 bg-zinc-900/95 backdrop-blur">
-            <tr className="border-b border-zinc-800">
+          <thead className="sticky top-0 z-10 bg-white/95 backdrop-blur">
+            <tr className="border-b border-gray-200">
               {(
                 [
                   { field: "rank" as SortField, label: "#", width: "w-12" },
@@ -166,7 +166,7 @@ export function TableView({
                   <button
                     type="button"
                     onClick={() => toggleSort(field)}
-                    className="flex items-center gap-1 text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors"
+                    className="flex items-center gap-1 text-xs font-medium text-gray-500 hover:text-gray-900 transition-colors"
                   >
                     {label}
                     <SortIcon field={field} />
@@ -187,26 +187,26 @@ export function TableView({
                 <tr
                   key={company.id}
                   onClick={() => onSelectCompany(company)}
-                  className={`cursor-pointer border-b border-zinc-800/50 transition-colors ${
+                  className={`cursor-pointer border-b border-gray-100 transition-colors ${
                     isSelected
-                      ? "bg-zinc-100/10"
-                      : "hover:bg-zinc-800/50"
+                      ? "bg-blue-50"
+                      : "hover:bg-gray-50"
                   }`}
                 >
                   {/* Rank */}
-                  <td className="px-3 py-2.5 text-xs font-mono text-zinc-500">
+                  <td className="px-3 py-2.5 text-xs font-mono text-gray-400">
                     {company.derived.coverageRank ?? "—"}
                   </td>
 
                   {/* Company name */}
                   <td className="px-3 py-2.5">
                     <div className="flex items-center gap-2">
-                      <Building2 className="h-3.5 w-3.5 text-zinc-500 shrink-0" />
+                      <Building2 className="h-3.5 w-3.5 text-gray-400 shrink-0" />
                       <span
                         className={`text-sm truncate max-w-[220px] ${
                           isSelected
-                            ? "text-zinc-100 font-medium"
-                            : "text-zinc-300"
+                            ? "text-gray-900 font-medium"
+                            : "text-gray-700"
                         }`}
                         title={company.name}
                       >
@@ -217,7 +217,7 @@ export function TableView({
 
                   {/* Sector */}
                   <td className="px-3 py-2.5">
-                    <span className="text-xs text-zinc-400 truncate max-w-[120px] block">
+                    <span className="text-xs text-gray-500 truncate max-w-[120px] block">
                       {company.industry ?? "—"}
                     </span>
                   </td>
@@ -225,20 +225,20 @@ export function TableView({
                   {/* Coverage */}
                   <td className="px-3 py-2.5">
                     <div className="flex items-center gap-2">
-                      <div className="flex-1 h-1.5 rounded-full bg-zinc-800 overflow-hidden max-w-[60px]">
+                      <div className="flex-1 h-1.5 rounded-full bg-gray-100 overflow-hidden max-w-[60px]">
                         <div
                           className={`h-full rounded-full ${coverageBarColor(covScore)}`}
                           style={{ width: `${covScore}%` }}
                         />
                       </div>
-                      <span className="text-xs text-zinc-400 tabular-nums">
+                      <span className="text-xs text-gray-600 tabular-nums">
                         {covScore}%
                       </span>
                     </div>
                   </td>
 
                   {/* Percentile */}
-                  <td className="px-3 py-2.5 text-xs text-zinc-400 tabular-nums">
+                  <td className="px-3 py-2.5 text-xs text-gray-500 tabular-nums">
                     {company.derived.coveragePercentile != null
                       ? `${company.derived.coveragePercentile}th`
                       : "—"}
@@ -255,7 +255,7 @@ export function TableView({
                   </td>
 
                   {/* Scope 1+2 */}
-                  <td className="px-3 py-2.5 text-xs text-zinc-400 tabular-nums">
+                  <td className="px-3 py-2.5 text-xs text-gray-500 tabular-nums">
                     {company.derived.scope12Total !== null
                       ? fmtTCO2e(company.derived.scope12Total)
                       : "—"}
@@ -267,16 +267,16 @@ export function TableView({
                       <span
                         className={
                           company.derived.wasteDiversionRate >= 0.5
-                            ? "text-emerald-400"
+                            ? "text-emerald-600"
                             : company.derived.wasteDiversionRate < 0.2
-                              ? "text-red-400"
-                              : "text-zinc-400"
+                              ? "text-red-600"
+                              : "text-gray-500"
                         }
                       >
                         {fmtPct(company.derived.wasteDiversionRate)}
                       </span>
                     ) : (
-                      <span className="text-zinc-600">—</span>
+                      <span className="text-gray-300">—</span>
                     )}
                   </td>
                 </tr>

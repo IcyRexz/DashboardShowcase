@@ -21,28 +21,28 @@ interface MapViewProps {
   onSelectCompany: (company: SustainabilityCompany) => void;
 }
 
-const DARK_TILES = {
-  url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+const LIGHT_TILES = {
+  url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
   attribution:
     '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
 } as const;
 
 const BAND_COLORS: Record<PlausibilityBand, string> = {
-  Good: "#22c55e",
-  Watch: "#f59e0b",
-  Review: "#ef4444",
+  Good: "#16a34a",
+  Watch: "#d97706",
+  Review: "#dc2626",
 };
 
 function getPlausibilityColor(band: PlausibilityBand): string {
   switch (band) {
     case "Good":
-      return "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
+      return "bg-emerald-100 text-emerald-700 border-emerald-300";
     case "Watch":
-      return "bg-amber-500/20 text-amber-400 border-amber-500/30";
+      return "bg-amber-100 text-amber-700 border-amber-300";
     case "Review":
-      return "bg-red-500/20 text-red-400 border-red-500/30";
+      return "bg-red-100 text-red-700 border-red-300";
     default:
-      return "bg-zinc-500/20 text-zinc-400 border-zinc-500/30";
+      return "bg-gray-100 text-gray-600 border-gray-300";
   }
 }
 
@@ -84,7 +84,6 @@ export function MapView({
     }
   }, []);
 
-  // Initialize map
   useEffect(() => {
     if (typeof window === "undefined" || !mapRef.current) return;
 
@@ -117,9 +116,9 @@ export function MapView({
           attributionControl: false,
         });
 
-        const tileLayer = L.tileLayer(DARK_TILES.url, {
+        const tileLayer = L.tileLayer(LIGHT_TILES.url, {
           maxZoom: 19,
-          attribution: DARK_TILES.attribution,
+          attribution: LIGHT_TILES.attribution,
         }).addTo(mapInstance);
 
         tileLayerRef.current = tileLayer;
@@ -159,7 +158,6 @@ export function MapView({
     };
   }, []);
 
-  // Render clustered markers
   useEffect(() => {
     if (!mapInstanceRef.current || !isMapReady) return;
     const map = mapInstanceRef.current;
@@ -197,13 +195,13 @@ export function MapView({
             background:${conicGradient};
             border-radius:50%;
             display:flex;align-items:center;justify-content:center;
-            box-shadow:0 2px 12px rgba(0,0,0,0.4);
+            box-shadow:0 2px 8px rgba(0,0,0,0.15);
           "><div style="
             width:${inner}px;height:${inner}px;
-            background:rgba(24,24,27,0.88);
+            background:rgba(255,255,255,0.92);
             border-radius:50%;
             display:flex;align-items:center;justify-content:center;
-            color:#fff;font-weight:600;font-size:${count < 10 ? 13 : 12}px;
+            color:#18181b;font-weight:600;font-size:${count < 10 ? 13 : 12}px;
           ">${count}</div></div>`,
           className: "custom-cluster-icon",
           iconSize: L.point(size, size),
@@ -226,10 +224,10 @@ export function MapView({
         html: `
           <div class="relative cursor-pointer group">
             <div class="w-4 h-4 rounded-full border-2 border-white transition-all duration-300 ${isSelected ? "scale-125" : ""}" 
-                 style="background-color: ${color}; box-shadow: 0 2px 8px rgba(0,0,0,0.25);"></div>
+                 style="background-color: ${color}; box-shadow: 0 1px 6px rgba(0,0,0,0.2);"></div>
             ${
               isSelected
-                ? `<div class="absolute -top-1 -left-1 w-6 h-6 rounded-full animate-ping opacity-30" style="background-color: ${color};"></div>`
+                ? `<div class="absolute -top-1 -left-1 w-6 h-6 rounded-full animate-ping opacity-25" style="background-color: ${color};"></div>`
                 : ""
             }
           </div>
@@ -266,7 +264,6 @@ export function MapView({
     clusterGroupRef.current = cluster;
   }, [locations, selectedCompany, isMapReady, clearLayers, onSelectCompany]);
 
-  // Pan to selected company — gentle: only pan, don't change zoom unless too far out
   useEffect(() => {
     if (!mapInstanceRef.current || !selectedCompany || !isMapReady) return;
     const map = mapInstanceRef.current;
@@ -304,7 +301,7 @@ export function MapView({
 
       {activePopup && isMapReady && (
         <div
-          className="absolute z-1000 min-w-[280px] max-w-[340px] backdrop-blur-md border rounded-lg shadow-xl bg-zinc-900/95 border-zinc-700"
+          className="absolute z-1000 min-w-[280px] max-w-[340px] backdrop-blur-md border rounded-lg shadow-xl bg-white/95 border-gray-200"
           style={{
             left: Math.min(
               popupPosition.x + 15,
@@ -314,11 +311,11 @@ export function MapView({
             transform: "translateY(-50%)",
           }}
         >
-          <div className="p-3 border-b border-zinc-800">
-            <h4 className="text-sm font-semibold text-zinc-100">
+          <div className="p-3 border-b border-gray-200">
+            <h4 className="text-sm font-semibold text-gray-900">
               {activePopup.title}
             </h4>
-            <p className="text-xs text-zinc-500">{activePopup.subtitle}</p>
+            <p className="text-xs text-gray-500">{activePopup.subtitle}</p>
           </div>
 
           <div className="p-2 max-h-[300px] overflow-y-auto scrollbar-thin">
@@ -335,23 +332,23 @@ export function MapView({
                     onClick={() => handleCompanyClick(company)}
                     className={`w-full flex items-start gap-2.5 p-2 rounded-md text-left transition-all focus-visible:ring-2 focus-visible:ring-offset-1 ${
                       selectedCompany?.id === company.id
-                        ? "bg-zinc-100 text-zinc-900 focus-visible:ring-zinc-400"
-                        : "hover:bg-zinc-800 text-zinc-100 focus-visible:ring-zinc-500"
+                        ? "bg-blue-50 text-gray-900 focus-visible:ring-blue-400"
+                        : "hover:bg-gray-100 text-gray-800 focus-visible:ring-gray-400"
                     }`}
                   >
                     <Building2
                       className={`h-4 w-4 mt-0.5 shrink-0 ${
                         selectedCompany?.id === company.id
-                          ? "text-zinc-700"
-                          : "text-zinc-500"
+                          ? "text-blue-600"
+                          : "text-gray-400"
                       }`}
                     />
                     <div className="flex-1 min-w-0">
                       <p
                         className={`text-sm font-medium truncate ${
                           selectedCompany?.id === company.id
-                            ? "text-zinc-900"
-                            : "text-zinc-100"
+                            ? "text-gray-900"
+                            : "text-gray-800"
                         }`}
                       >
                         {company.name}
@@ -365,30 +362,18 @@ export function MapView({
                           {plausibilityBand}
                         </Badge>
                         {company.derived.coverageScore != null && (
-                          <span
-                            className={`text-[10px] ${
-                              selectedCompany?.id === company.id
-                                ? "text-zinc-600"
-                                : "text-zinc-500"
-                            }`}
-                          >
+                          <span className="text-[10px] text-gray-500">
                             {company.derived.coverageScore}% cov
                           </span>
                         )}
                         {company.derived.scope12Total !== null && (
-                          <span
-                            className={`text-[10px] ${
-                              selectedCompany?.id === company.id
-                                ? "text-zinc-600"
-                                : "text-zinc-500"
-                            }`}
-                          >
+                          <span className="text-[10px] text-gray-500">
                             {fmtTCO2e(company.derived.scope12Total)}
                           </span>
                         )}
                       </div>
                     </div>
-                    <ChevronRight className="h-4 w-4 shrink-0 text-zinc-600" />
+                    <ChevronRight className="h-4 w-4 shrink-0 text-gray-400" />
                   </button>
                 );
               })}

@@ -63,21 +63,20 @@ export function BottomDetailsPanel({
   const getPlausibilityColor = (band: PlausibilityBand): string => {
     switch (band) {
       case "Good":
-        return "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
+        return "bg-emerald-100 text-emerald-700 border-emerald-300";
       case "Watch":
-        return "bg-amber-500/20 text-amber-400 border-amber-500/30";
+        return "bg-amber-100 text-amber-700 border-amber-300";
       case "Review":
-        return "bg-red-500/20 text-red-400 border-red-500/30";
+        return "bg-red-100 text-red-700 border-red-300";
       default:
-        return "bg-zinc-500/20 text-zinc-400 border-zinc-500/30";
+        return "bg-gray-100 text-gray-600 border-gray-300";
     }
   };
 
-  // Empty state
   if (!company) {
     return (
       <div className="w-full panel-glass rounded-lg p-6">
-        <div className="flex items-center justify-center h-24 text-zinc-500">
+        <div className="flex items-center justify-center h-24 text-gray-400">
           <Building2 className="h-5 w-5 mr-2" />
           <span className="text-sm">
             Select a marker or company to view sustainability details
@@ -88,7 +87,7 @@ export function BottomDetailsPanel({
   }
 
   const plausibilityBand =
-    company.derived.plausibilityBand ?? company.derived.riskBand;
+    company.derived.plausibilityBand ?? company.derived.riskBand ?? "Review";
   const plausibilityReasons = company.derived.plausibilityReasons ?? [];
   const completeness = company.derived.completeness;
   const peerExamples =
@@ -96,14 +95,13 @@ export function BottomDetailsPanel({
       ? getPeerStrategyExamples(company, allCompanies)
       : [];
 
-  // Minimized state
   if (isMinimized) {
     return (
       <div className="w-full panel-glass rounded-lg p-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Building2 className="h-4 w-4 text-zinc-400" />
-            <span className="text-sm font-medium text-zinc-100">
+            <Building2 className="h-4 w-4 text-gray-500" />
+            <span className="text-sm font-medium text-gray-900">
               {company.name}
             </span>
             <Badge
@@ -119,7 +117,7 @@ export function BottomDetailsPanel({
               variant="ghost"
               size="icon"
               onClick={() => setIsMinimized(false)}
-              className="h-7 w-7 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+              className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
               aria-label="Expand panel"
               title="Expand panel"
             >
@@ -129,7 +127,7 @@ export function BottomDetailsPanel({
               variant="ghost"
               size="icon"
               onClick={onClear}
-              className="h-7 w-7 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+              className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
               aria-label="Close panel"
               title="Close panel"
             >
@@ -144,14 +142,14 @@ export function BottomDetailsPanel({
   return (
     <div className="w-full panel-glass rounded-lg overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-zinc-800">
+      <div className="flex items-center justify-between p-4 border-b border-gray-200">
         <div className="flex items-center gap-3">
-          <Building2 className="h-5 w-5 text-zinc-400" />
+          <Building2 className="h-5 w-5 text-gray-500" />
           <div>
-            <h3 className="text-base font-semibold text-zinc-100">
+            <h3 className="text-base font-semibold text-gray-900">
               {company.name}
             </h3>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-gray-500">
               {company.city}, {company.country} · Report Year{" "}
               {company.reportYear}
             </p>
@@ -169,7 +167,7 @@ export function BottomDetailsPanel({
             variant="ghost"
             size="icon"
             onClick={() => setIsMinimized(true)}
-            className="h-7 w-7 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+            className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
             aria-label="Minimize panel"
             title="Minimize panel"
           >
@@ -179,7 +177,7 @@ export function BottomDetailsPanel({
             variant="ghost"
             size="icon"
             onClick={onClear}
-            className="h-7 w-7 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+            className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
             aria-label="Close panel"
             title="Close panel"
           >
@@ -188,13 +186,13 @@ export function BottomDetailsPanel({
         </div>
       </div>
 
-      {/* Why flagged? (Watch / Review) */}
+      {/* Why flagged? */}
       {plausibilityReasons.length > 0 && (
-        <div className="px-4 py-2 border-b border-zinc-800 bg-amber-500/5 border-l-2 border-l-amber-500/50">
-          <h4 className="text-xs font-medium text-amber-400 uppercase tracking-wider mb-1.5">
+        <div className="px-4 py-2 border-b border-gray-200 bg-amber-50 border-l-2 border-l-amber-400">
+          <h4 className="text-xs font-medium text-amber-700 uppercase tracking-wider mb-1.5">
             Why flagged?
           </h4>
-          <ul className="text-sm text-zinc-300 space-y-1 list-disc list-inside">
+          <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
             {plausibilityReasons.map((reason, i) => (
               <li key={i}>{reason}</li>
             ))}
@@ -204,29 +202,29 @@ export function BottomDetailsPanel({
 
       {/* Tabs Content */}
       <Tabs defaultValue="overview" className="w-full">
-        <div className="px-4 pt-2 border-b border-zinc-800">
+        <div className="px-4 pt-2 border-b border-gray-200">
           <TabsList className="bg-transparent h-9 p-0 gap-4">
             <TabsTrigger
               value="overview"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-zinc-100 data-[state=active]:border-b-2 data-[state=active]:border-zinc-100 rounded-none pb-2 px-0 text-zinc-500 hover:text-zinc-300"
+              className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
             >
               Overview
             </TabsTrigger>
             <TabsTrigger
               value="data-quality"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-zinc-100 data-[state=active]:border-b-2 data-[state=active]:border-zinc-100 rounded-none pb-2 px-0 text-zinc-500 hover:text-zinc-300"
+              className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
             >
               Data Quality
             </TabsTrigger>
             <TabsTrigger
               value="notes"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-zinc-100 data-[state=active]:border-b-2 data-[state=active]:border-zinc-100 rounded-none pb-2 px-0 text-zinc-500 hover:text-zinc-300"
+              className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
             >
               Notes & Strategy
             </TabsTrigger>
             <TabsTrigger
               value="peers"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-zinc-100 data-[state=active]:border-b-2 data-[state=active]:border-zinc-100 rounded-none pb-2 px-0 text-zinc-500 hover:text-zinc-300"
+              className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
             >
               Peer Examples
             </TabsTrigger>
@@ -236,12 +234,11 @@ export function BottomDetailsPanel({
         {/* Overview Tab */}
         <TabsContent value="overview" className="m-0 p-4">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {/* Scope 1 */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Scope 1</span>
+                <span className="text-xs text-gray-500">Scope 1</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {unitView === "Canonical" &&
                 company.normalized?.scope1TCO2e != null
                   ? `${fmtNumber(company.normalized.scope1TCO2e)} tCO2e`
@@ -249,12 +246,11 @@ export function BottomDetailsPanel({
               </p>
             </div>
 
-            {/* Scope 2 */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Scope 2</span>
+                <span className="text-xs text-gray-500">Scope 2</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {unitView === "Canonical" &&
                 company.normalized?.scope2TCO2e != null
                   ? `${fmtNumber(company.normalized.scope2TCO2e)} tCO2e`
@@ -262,12 +258,11 @@ export function BottomDetailsPanel({
               </p>
             </div>
 
-            {/* Scope 3 */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Scope 3</span>
+                <span className="text-xs text-gray-500">Scope 3</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {unitView === "Canonical" &&
                 company.normalized?.scope3TCO2e != null
                   ? `${fmtNumber(company.normalized.scope3TCO2e)} tCO2e`
@@ -275,22 +270,20 @@ export function BottomDetailsPanel({
               </p>
             </div>
 
-            {/* Total Scope 1+2 */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Scope 1+2 Total</span>
+                <span className="text-xs text-gray-500">Scope 1+2 Total</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {fmtTCO2e(company.derived.scope12Total)}
               </p>
             </div>
 
-            {/* Waste Generated */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Waste Generated</span>
+                <span className="text-xs text-gray-500">Waste Generated</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {fmtWaste(
                   company.waste.generated,
                   company.normalized?.wasteGeneratedTonnes,
@@ -299,12 +292,11 @@ export function BottomDetailsPanel({
               </p>
             </div>
 
-            {/* Waste Recycled */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Waste Recycled</span>
+                <span className="text-xs text-gray-500">Waste Recycled</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {fmtWaste(
                   company.waste.recycled,
                   company.normalized?.wasteRecycledTonnes,
@@ -313,12 +305,11 @@ export function BottomDetailsPanel({
               </p>
             </div>
 
-            {/* Waste Disposed */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Waste Disposed</span>
+                <span className="text-xs text-gray-500">Waste Disposed</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {fmtWaste(
                   company.waste.disposed,
                   company.normalized?.wasteDisposedTonnes,
@@ -327,32 +318,30 @@ export function BottomDetailsPanel({
               </p>
             </div>
 
-            {/* Waste Diversion Rate */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Diversion Rate</span>
+                <span className="text-xs text-gray-500">Diversion Rate</span>
               </div>
               <p
                 className={`text-sm font-medium ${
                   company.derived.wasteDiversionRate !== null &&
                   company.derived.wasteDiversionRate >= 0.5
-                    ? "text-emerald-400"
+                    ? "text-emerald-600"
                     : company.derived.wasteDiversionRate !== null &&
                         company.derived.wasteDiversionRate < 0.3
-                      ? "text-amber-400"
-                      : "text-zinc-100"
+                      ? "text-amber-600"
+                      : "text-gray-900"
                 }`}
               >
                 {fmtPct(company.derived.wasteDiversionRate)}
               </p>
             </div>
 
-            {/* Water Withdrawal */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Water Withdrawal</span>
+                <span className="text-xs text-gray-500">Water Withdrawal</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {fmtWater(
                   company.water.withdrawal,
                   company.normalized?.waterWithdrawalM3,
@@ -361,12 +350,11 @@ export function BottomDetailsPanel({
               </p>
             </div>
 
-            {/* Water Consumption */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Water Consumption</span>
+                <span className="text-xs text-gray-500">Water Consumption</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {fmtWater(
                   company.water.consumption,
                   company.normalized?.waterConsumptionM3,
@@ -375,58 +363,56 @@ export function BottomDetailsPanel({
               </p>
             </div>
 
-            {/* Total Energy */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Total Energy</span>
+                <span className="text-xs text-gray-500">Total Energy</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {fmtEnergy(company, unitView)}
               </p>
             </div>
 
-            {/* Fuel Consumption */}
-            <div className="bg-zinc-800/50 rounded-md p-3">
+            <div className="bg-gray-50 rounded-md p-3">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-zinc-500">Fuel Consumption</span>
+                <span className="text-xs text-gray-500">Fuel Consumption</span>
               </div>
-              <p className="text-sm font-medium text-zinc-100">
+              <p className="text-sm font-medium text-gray-900">
                 {fmtQuantity(company.fuel.consumption)}
               </p>
             </div>
           </div>
 
           {/* Completeness Summary */}
-          <div className="mt-4 p-3 bg-zinc-800/30 rounded-md">
+          <div className="mt-4 p-3 bg-gray-50 rounded-md">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <span className="text-xs text-zinc-500">
+                <span className="text-xs text-gray-500">
                   Data Completeness:
                 </span>
                 <Badge
                   variant="outline"
                   className={
                     completeness.score === 4
-                      ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30"
+                      ? "bg-emerald-100 text-emerald-700 border-emerald-300"
                       : completeness.score >= 2
-                        ? "bg-amber-500/20 text-amber-400 border-amber-500/30"
-                        : "bg-red-500/20 text-red-400 border-red-500/30"
+                        ? "bg-amber-100 text-amber-700 border-amber-300"
+                        : "bg-red-100 text-red-700 border-red-300"
                   }
                 >
                   {completeness.score}/4 fields
                 </Badge>
               </div>
-              <div className="flex items-center gap-2 text-xs text-zinc-500">
+              <div className="flex items-center gap-2 text-xs text-gray-500">
                 <span
                   className={
-                    completeness.hasScope1 ? "text-emerald-400" : "text-red-400"
+                    completeness.hasScope1 ? "text-emerald-600" : "text-red-600"
                   }
                 >
                   Scope 1 {completeness.hasScope1 ? "✓" : "✗"}
                 </span>
                 <span
                   className={
-                    completeness.hasScope2 ? "text-emerald-400" : "text-red-400"
+                    completeness.hasScope2 ? "text-emerald-600" : "text-red-600"
                   }
                 >
                   Scope 2 {completeness.hasScope2 ? "✓" : "✗"}
@@ -434,8 +420,8 @@ export function BottomDetailsPanel({
                 <span
                   className={
                     completeness.hasWasteGenerated
-                      ? "text-emerald-400"
-                      : "text-red-400"
+                      ? "text-emerald-600"
+                      : "text-red-600"
                   }
                 >
                   Waste Gen {completeness.hasWasteGenerated ? "✓" : "✗"}
@@ -443,8 +429,8 @@ export function BottomDetailsPanel({
                 <span
                   className={
                     completeness.hasWasteRecycled
-                      ? "text-emerald-400"
-                      : "text-red-400"
+                      ? "text-emerald-600"
+                      : "text-red-600"
                   }
                 >
                   Waste Rec {completeness.hasWasteRecycled ? "✓" : "✗"}
@@ -453,27 +439,27 @@ export function BottomDetailsPanel({
             </div>
           </div>
 
-          {/* Coverage (Option A: key ESG fields) */}
+          {/* Coverage */}
           {(company.derived.coverageScore != null ||
             company.derived.coverageRank != null ||
             company.derived.coveragePercentile != null) && (
-            <div className="mt-4 p-3 bg-zinc-800/30 rounded-md">
+            <div className="mt-4 p-3 bg-gray-50 rounded-md">
               <div className="flex items-center gap-4 flex-wrap">
-                <span className="text-xs text-zinc-500">
+                <span className="text-xs text-gray-500">
                   Coverage (key ESG fields):
                 </span>
                 {company.derived.coverageScore != null && (
-                  <span className="text-sm font-medium text-zinc-100">
+                  <span className="text-sm font-medium text-gray-900">
                     {company.derived.coverageScore}%
                   </span>
                 )}
                 {company.derived.coverageRank != null && (
-                  <span className="text-xs text-zinc-400">
+                  <span className="text-xs text-gray-500">
                     Rank #{company.derived.coverageRank}
                   </span>
                 )}
                 {company.derived.coveragePercentile != null && (
-                  <span className="text-xs text-zinc-400">
+                  <span className="text-xs text-gray-500">
                     {company.derived.coveragePercentile}th percentile
                   </span>
                 )}
@@ -485,9 +471,8 @@ export function BottomDetailsPanel({
         {/* Data Quality Tab */}
         <TabsContent value="data-quality" className="m-0 p-4">
           <div className="space-y-6">
-            {/* Field Checklist */}
             <div>
-              <h4 className="text-sm font-medium text-zinc-300 mb-3">
+              <h4 className="text-sm font-medium text-gray-700 mb-3">
                 Core Field Completeness
               </h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -510,22 +495,21 @@ export function BottomDetailsPanel({
               </div>
             </div>
 
-            {/* Data Quality Score */}
             {company.meta.dataQualityScore !== null && (
               <div>
-                <h4 className="text-sm font-medium text-zinc-300 mb-3">
+                <h4 className="text-sm font-medium text-gray-700 mb-3">
                   Data Quality Score
                 </h4>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-zinc-400">Extraction Quality</span>
+                    <span className="text-gray-500">Extraction Quality</span>
                     <span
                       className={`font-medium ${
                         company.meta.dataQualityScore >= 80
-                          ? "text-emerald-400"
+                          ? "text-emerald-600"
                           : company.meta.dataQualityScore >= 50
-                            ? "text-amber-400"
-                            : "text-red-400"
+                            ? "text-amber-600"
+                            : "text-red-600"
                       }`}
                     >
                       {company.meta.dataQualityScore}/100
@@ -533,36 +517,35 @@ export function BottomDetailsPanel({
                   </div>
                   <Progress
                     value={company.meta.dataQualityScore}
-                    className="h-2 bg-zinc-800"
+                    className="h-2 bg-gray-100"
                   />
                 </div>
               </div>
             )}
 
-            {/* Extraction Metadata */}
             <div>
-              <h4 className="text-sm font-medium text-zinc-300 mb-3">
+              <h4 className="text-sm font-medium text-gray-700 mb-3">
                 Extraction Metadata
               </h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {company.reportName && (
-                  <div className="bg-zinc-800/50 rounded-md p-3">
+                  <div className="bg-gray-50 rounded-md p-3">
                     <div className="flex items-center gap-2 mb-1">
-                      <FileText className="h-3.5 w-3.5 text-zinc-500" />
-                      <span className="text-xs text-zinc-500">Report</span>
+                      <FileText className="h-3.5 w-3.5 text-gray-400" />
+                      <span className="text-xs text-gray-500">Report</span>
                     </div>
-                    <p className="text-sm font-medium text-zinc-100 truncate">
+                    <p className="text-sm font-medium text-gray-900 truncate">
                       {company.reportName.replace(/_/g, " ")}
                     </p>
                   </div>
                 )}
                 {company.meta.extractionDate && (
-                  <div className="bg-zinc-800/50 rounded-md p-3">
+                  <div className="bg-gray-50 rounded-md p-3">
                     <div className="flex items-center gap-2 mb-1">
-                      <Calendar className="h-3.5 w-3.5 text-zinc-500" />
-                      <span className="text-xs text-zinc-500">Extracted</span>
+                      <Calendar className="h-3.5 w-3.5 text-gray-400" />
+                      <span className="text-xs text-gray-500">Extracted</span>
                     </div>
-                    <p className="text-sm font-medium text-zinc-100">
+                    <p className="text-sm font-medium text-gray-900">
                       {new Date(
                         company.meta.extractionDate,
                       ).toLocaleDateString()}
@@ -570,42 +553,42 @@ export function BottomDetailsPanel({
                   </div>
                 )}
                 {company.meta.processingSeconds !== null && (
-                  <div className="bg-zinc-800/50 rounded-md p-3">
+                  <div className="bg-gray-50 rounded-md p-3">
                     <div className="flex items-center gap-2 mb-1">
-                      <Clock className="h-3.5 w-3.5 text-zinc-500" />
-                      <span className="text-xs text-zinc-500">
+                      <Clock className="h-3.5 w-3.5 text-gray-400" />
+                      <span className="text-xs text-gray-500">
                         Processing Time
                       </span>
                     </div>
-                    <p className="text-sm font-medium text-zinc-100">
+                    <p className="text-sm font-medium text-gray-900">
                       {company.meta.processingSeconds.toFixed(1)}s
                     </p>
                   </div>
                 )}
                 {company.meta.groupsExtracted !== null && (
-                  <div className="bg-zinc-800/50 rounded-md p-3">
+                  <div className="bg-gray-50 rounded-md p-3">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs text-zinc-500">
+                      <span className="text-xs text-gray-500">
                         Groups Extracted
                       </span>
                     </div>
-                    <p className="text-sm font-medium text-zinc-100">
+                    <p className="text-sm font-medium text-gray-900">
                       {company.meta.groupsExtracted}
                     </p>
                   </div>
                 )}
                 {company.meta.groupsFailed !== null && (
-                  <div className="bg-zinc-800/50 rounded-md p-3">
+                  <div className="bg-gray-50 rounded-md p-3">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs text-zinc-500">
+                      <span className="text-xs text-gray-500">
                         Groups Failed
                       </span>
                     </div>
                     <p
                       className={`text-sm font-medium ${
                         company.meta.groupsFailed > 0
-                          ? "text-amber-400"
-                          : "text-emerald-400"
+                          ? "text-amber-600"
+                          : "text-emerald-600"
                       }`}
                     >
                       {company.meta.groupsFailed}
@@ -613,13 +596,13 @@ export function BottomDetailsPanel({
                   </div>
                 )}
                 {company.meta.groupsSkipped !== null && (
-                  <div className="bg-zinc-800/50 rounded-md p-3">
+                  <div className="bg-gray-50 rounded-md p-3">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs text-zinc-500">
+                      <span className="text-xs text-gray-500">
                         Groups Skipped
                       </span>
                     </div>
-                    <p className="text-sm font-medium text-zinc-100">
+                    <p className="text-sm font-medium text-gray-900">
                       {company.meta.groupsSkipped}
                     </p>
                   </div>
@@ -628,16 +611,16 @@ export function BottomDetailsPanel({
             </div>
 
             {/* Verification Status */}
-            <div className="p-3 bg-zinc-800/30 rounded-md">
+            <div className="p-3 bg-gray-50 rounded-md">
               <div className="flex items-center gap-2">
                 {company.meta.verifiedByHuman ? (
                   <>
-                    <ShieldCheck className="h-5 w-5 text-emerald-400" />
+                    <ShieldCheck className="h-5 w-5 text-emerald-600" />
                     <div>
-                      <p className="text-sm font-medium text-emerald-400">
+                      <p className="text-sm font-medium text-emerald-600">
                         Human Verified
                       </p>
-                      <p className="text-xs text-zinc-500">
+                      <p className="text-xs text-gray-500">
                         This data has been reviewed and verified by a human
                         analyst.
                       </p>
@@ -645,12 +628,12 @@ export function BottomDetailsPanel({
                   </>
                 ) : (
                   <>
-                    <AlertCircle className="h-5 w-5 text-amber-400" />
+                    <AlertCircle className="h-5 w-5 text-amber-600" />
                     <div>
-                      <p className="text-sm font-medium text-amber-400">
+                      <p className="text-sm font-medium text-amber-600">
                         Not Verified
                       </p>
-                      <p className="text-xs text-zinc-500">
+                      <p className="text-xs text-gray-500">
                         This data was extracted automatically and has not been
                         verified by a human.
                       </p>
@@ -665,44 +648,41 @@ export function BottomDetailsPanel({
         {/* Notes & Strategy Tab */}
         <TabsContent value="notes" className="m-0 p-4">
           <div className="space-y-4">
-            {/* Emissions Notes */}
             {company.emissions.notes && (
-              <div className="bg-zinc-800/30 rounded-md p-3">
-                <h4 className="text-sm font-medium text-zinc-300 mb-2">
+              <div className="bg-gray-50 rounded-md p-3">
+                <h4 className="text-sm font-medium text-gray-700 mb-2">
                   Emissions Notes
                 </h4>
-                <p className="text-xs text-zinc-400 whitespace-pre-wrap">
+                <p className="text-xs text-gray-500 whitespace-pre-wrap">
                   {company.emissions.notes}
                 </p>
               </div>
             )}
 
-            {/* Waste Notes */}
             {company.waste.notes && (
-              <div className="bg-zinc-800/30 rounded-md p-3">
-                <h4 className="text-sm font-medium text-zinc-300 mb-2">
+              <div className="bg-gray-50 rounded-md p-3">
+                <h4 className="text-sm font-medium text-gray-700 mb-2">
                   Waste Notes
                 </h4>
-                <p className="text-xs text-zinc-400 whitespace-pre-wrap">
+                <p className="text-xs text-gray-500 whitespace-pre-wrap">
                   {company.waste.notes}
                 </p>
               </div>
             )}
 
-            {/* Strategy Summary */}
             {company.strategy.summary && (
               <Collapsible open={showStrategy} onOpenChange={setShowStrategy}>
-                <div className="bg-zinc-800/30 rounded-md overflow-hidden">
+                <div className="bg-gray-50 rounded-md overflow-hidden">
                   <CollapsibleTrigger asChild>
-                    <button className="w-full flex items-center justify-between p-3 text-left hover:bg-zinc-800/50 transition-colors">
+                    <button className="w-full flex items-center justify-between p-3 text-left hover:bg-gray-100 transition-colors">
                       <div className="flex items-center gap-2">
-                        <Target className="h-4 w-4 text-zinc-500" />
-                        <h4 className="text-sm font-medium text-zinc-300">
+                        <Target className="h-4 w-4 text-gray-400" />
+                        <h4 className="text-sm font-medium text-gray-700">
                           Strategy Summary
                         </h4>
                       </div>
                       <ChevronDown
-                        className={`h-4 w-4 text-zinc-500 transition-transform ${
+                        className={`h-4 w-4 text-gray-400 transition-transform ${
                           showStrategy ? "rotate-180" : ""
                         }`}
                       />
@@ -710,7 +690,7 @@ export function BottomDetailsPanel({
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <div className="px-3 pb-3">
-                      <p className="text-xs text-zinc-400 whitespace-pre-wrap max-h-[200px] overflow-y-auto">
+                      <p className="text-xs text-gray-500 whitespace-pre-wrap max-h-[200px] overflow-y-auto">
                         {company.strategy.summary}
                       </p>
                     </div>
@@ -719,20 +699,19 @@ export function BottomDetailsPanel({
               </Collapsible>
             )}
 
-            {/* Targets JSON */}
             {company.targets.json && company.targets.json !== "[]" && (
               <Collapsible open={showTargets} onOpenChange={setShowTargets}>
-                <div className="bg-zinc-800/30 rounded-md overflow-hidden">
+                <div className="bg-gray-50 rounded-md overflow-hidden">
                   <CollapsibleTrigger asChild>
-                    <button className="w-full flex items-center justify-between p-3 text-left hover:bg-zinc-800/50 transition-colors">
+                    <button className="w-full flex items-center justify-between p-3 text-left hover:bg-gray-100 transition-colors">
                       <div className="flex items-center gap-2">
-                        <FileJson className="h-4 w-4 text-zinc-500" />
-                        <h4 className="text-sm font-medium text-zinc-300">
+                        <FileJson className="h-4 w-4 text-gray-400" />
+                        <h4 className="text-sm font-medium text-gray-700">
                           Targets Data
                         </h4>
                       </div>
                       <ChevronDown
-                        className={`h-4 w-4 text-zinc-500 transition-transform ${
+                        className={`h-4 w-4 text-gray-400 transition-transform ${
                           showTargets ? "rotate-180" : ""
                         }`}
                       />
@@ -740,7 +719,7 @@ export function BottomDetailsPanel({
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <div className="px-3 pb-3">
-                      <pre className="text-xs text-zinc-400 overflow-x-auto bg-zinc-900/50 p-2 rounded max-h-[200px] overflow-y-auto">
+                      <pre className="text-xs text-gray-600 overflow-x-auto bg-white p-2 rounded border border-gray-200 max-h-[200px] overflow-y-auto">
                         {(() => {
                           try {
                             return JSON.stringify(
@@ -759,12 +738,11 @@ export function BottomDetailsPanel({
               </Collapsible>
             )}
 
-            {/* No Notes Fallback */}
             {!company.emissions.notes &&
               !company.waste.notes &&
               !company.strategy.summary &&
               (!company.targets.json || company.targets.json === "[]") && (
-                <div className="flex items-center justify-center h-24 text-zinc-500">
+                <div className="flex items-center justify-center h-24 text-gray-400">
                   <span className="text-sm">
                     No notes or strategy data available
                   </span>
@@ -775,12 +753,12 @@ export function BottomDetailsPanel({
 
         {/* Peer Strategy Examples */}
         <TabsContent value="peers" className="m-0 p-4">
-          <p className="text-xs text-zinc-500 mb-3">
+          <p className="text-xs text-gray-500 mb-3">
             These are strategies extracted from similar companies in the same
             industry. Use as references, not prescriptions.
           </p>
           {peerExamples.length === 0 ? (
-            <div className="text-sm text-zinc-500 py-4">
+            <div className="text-sm text-gray-400 py-4">
               No peer strategy examples available.
             </div>
           ) : (
@@ -788,16 +766,16 @@ export function BottomDetailsPanel({
               {peerExamples.map(
                 ({ company: peer, snippet, targetsSummary }) => {
                   const peerBand =
-                    peer.derived.plausibilityBand ?? peer.derived.riskBand;
+                    peer.derived.plausibilityBand ?? peer.derived.riskBand ?? "Review";
                   const isExpanded = expandedPeerId === peer.id;
                   return (
                     <div
                       key={peer.id}
-                      className="bg-zinc-800/50 rounded-md overflow-hidden border border-zinc-700/50"
+                      className="bg-gray-50 rounded-md overflow-hidden border border-gray-200"
                     >
                       <div className="p-3">
                         <div className="flex items-center justify-between gap-2 mb-1.5">
-                          <span className="text-sm font-medium text-zinc-100">
+                          <span className="text-sm font-medium text-gray-900">
                             {peer.name}
                           </span>
                           <Badge
@@ -807,11 +785,11 @@ export function BottomDetailsPanel({
                             {peerBand}
                           </Badge>
                         </div>
-                        <p className="text-xs text-zinc-400 line-clamp-2">
+                        <p className="text-xs text-gray-500 line-clamp-2">
                           {snippet}
                         </p>
                         {targetsSummary && (
-                          <p className="text-[11px] text-zinc-500 mt-1.5">
+                          <p className="text-[11px] text-gray-400 mt-1.5">
                             Targets: {targetsSummary}
                           </p>
                         )}
@@ -820,7 +798,7 @@ export function BottomDetailsPanel({
                           onClick={() =>
                             setExpandedPeerId(isExpanded ? null : peer.id)
                           }
-                          className="text-xs text-amber-400 hover:text-amber-300 mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded"
+                          className="text-xs text-blue-600 hover:text-blue-500 mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
                           aria-expanded={isExpanded}
                           aria-label={
                             isExpanded ? "Show less" : "Show more strategy"
@@ -830,8 +808,8 @@ export function BottomDetailsPanel({
                         </button>
                       </div>
                       {isExpanded && peer.strategy.summary && (
-                        <div className="px-3 pb-3 pt-0 border-t border-zinc-700/50 mt-0">
-                          <p className="text-xs text-zinc-400 whitespace-pre-wrap max-h-[180px] overflow-y-auto pt-2">
+                        <div className="px-3 pb-3 pt-0 border-t border-gray-200 mt-0">
+                          <p className="text-xs text-gray-500 whitespace-pre-wrap max-h-[180px] overflow-y-auto pt-2">
                             {peer.strategy.summary}
                           </p>
                         </div>
@@ -857,16 +835,16 @@ function FieldCheckItem({ label, isPresent }: FieldCheckItemProps) {
   return (
     <div
       className={`flex items-center gap-2 p-2 rounded-md ${
-        isPresent ? "bg-emerald-500/10" : "bg-red-500/10"
+        isPresent ? "bg-emerald-50" : "bg-red-50"
       }`}
     >
       {isPresent ? (
-        <Check className="h-4 w-4 text-emerald-400" />
+        <Check className="h-4 w-4 text-emerald-600" />
       ) : (
-        <X className="h-4 w-4 text-red-400" />
+        <X className="h-4 w-4 text-red-600" />
       )}
       <span
-        className={`text-xs ${isPresent ? "text-emerald-400" : "text-red-400"}`}
+        className={`text-xs ${isPresent ? "text-emerald-700" : "text-red-700"}`}
       >
         {label}
       </span>

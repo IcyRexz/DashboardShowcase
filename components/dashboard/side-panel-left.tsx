@@ -63,16 +63,13 @@ export function SidePanelLeft({
   const plausibilityBands = getPlausibilityBands();
   const industries = getIndustries(allCompanies);
 
-  // Scroll selected company into view
   useEffect(() => {
     if (selectedCompany && listContainerRef.current) {
-      // Small delay to ensure DOM is ready
       const timeoutId = setTimeout(() => {
         const element = listContainerRef.current?.querySelector(
           `[data-company-id="${selectedCompany.id}"]`,
         );
         if (element) {
-          // Check for reduced motion preference
           const prefersReducedMotion =
             typeof window !== "undefined" &&
             window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -164,13 +161,13 @@ export function SidePanelLeft({
   const getPlausibilityColor = (band: PlausibilityBand): string => {
     switch (band) {
       case "Good":
-        return "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
+        return "bg-emerald-100 text-emerald-700 border-emerald-300";
       case "Watch":
-        return "bg-amber-500/20 text-amber-400 border-amber-500/30";
+        return "bg-amber-100 text-amber-700 border-amber-300";
       case "Review":
-        return "bg-red-500/20 text-red-400 border-red-500/30";
+        return "bg-red-100 text-red-700 border-red-300";
       default:
-        return "bg-zinc-500/20 text-zinc-400 border-zinc-500/30";
+        return "bg-gray-100 text-gray-600 border-gray-300";
     }
   };
 
@@ -181,17 +178,17 @@ export function SidePanelLeft({
           variant="ghost"
           size="icon"
           onClick={() => setIsCollapsed(false)}
-          className="h-8 w-8 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+          className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           aria-label="Expand panel"
           title="Expand panel"
         >
           <ChevronRight className="h-4 w-4" />
         </Button>
-        <div className="h-px w-6 bg-zinc-700" />
+        <div className="h-px w-6 bg-gray-200" />
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+          className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           aria-label="Locations"
           title="Locations"
         >
@@ -200,7 +197,7 @@ export function SidePanelLeft({
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+          className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           aria-label="Companies"
           title="Companies"
         >
@@ -209,7 +206,7 @@ export function SidePanelLeft({
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+          className="h-8 w-8 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
           aria-label="Filters"
           title="Filters"
         >
@@ -222,14 +219,14 @@ export function SidePanelLeft({
   return (
     <div className="w-72 h-full panel-glass rounded-lg flex flex-col transition-all duration-300">
       {/* Header */}
-      <div className="p-4 border-b border-zinc-800">
+      <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between mb-3">
-          <h2 className="text-sm font-semibold text-zinc-100">Companies</h2>
+          <h2 className="text-sm font-semibold text-gray-900">Companies</h2>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsCollapsed(true)}
-            className="h-7 w-7 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
+            className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
             aria-label="Collapse panel"
             title="Collapse panel"
           >
@@ -239,12 +236,12 @@ export function SidePanelLeft({
 
         {/* Search */}
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
           <Input
             placeholder="Search companies..."
             value={filters.search}
             onChange={(e) => handleSearchChange(e.target.value)}
-            className="pl-9 bg-zinc-800/50 border-zinc-700 text-zinc-100 placeholder:text-zinc-500 focus:border-zinc-600 h-9"
+            className="pl-9 bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-gray-400 h-9"
             aria-label="Search companies"
           />
         </div>
@@ -256,12 +253,12 @@ export function SidePanelLeft({
               <Badge
                 key={`country-${country}`}
                 variant="secondary"
-                className="h-6 px-2 text-xs bg-zinc-700/80 text-zinc-200 hover:bg-zinc-600 cursor-pointer flex items-center gap-1"
+                className="h-6 px-2 text-xs bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer flex items-center gap-1"
               >
                 {country}
                 <button
                   onClick={() => handleRemoveCountry(country)}
-                  className="ml-0.5 hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400 rounded"
+                  className="ml-0.5 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-400 rounded"
                   aria-label={`Remove ${country} filter`}
                 >
                   <X className="h-3 w-3" />
@@ -272,12 +269,12 @@ export function SidePanelLeft({
               <Badge
                 key={`industry-${industry}`}
                 variant="secondary"
-                className="h-6 px-2 text-xs bg-zinc-700/80 text-zinc-200 hover:bg-zinc-600 cursor-pointer flex items-center gap-1"
+                className="h-6 px-2 text-xs bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer flex items-center gap-1"
               >
                 {industry}
                 <button
                   onClick={() => handleRemoveIndustry(industry)}
-                  className="ml-0.5 hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400 rounded"
+                  className="ml-0.5 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-400 rounded"
                   aria-label={`Remove ${industry} industry filter`}
                 >
                   <X className="h-3 w-3" />
@@ -305,7 +302,7 @@ export function SidePanelLeft({
             {filters.incompleteOnly && (
               <Badge
                 variant="outline"
-                className="h-6 px-2 text-xs cursor-pointer flex items-center gap-1 border-amber-500/30 text-amber-400 bg-amber-500/10"
+                className="h-6 px-2 text-xs cursor-pointer flex items-center gap-1 border-amber-300 text-amber-700 bg-amber-50"
               >
                 <AlertCircle className="h-3 w-3" />
                 Incomplete
@@ -323,7 +320,7 @@ export function SidePanelLeft({
                 variant="ghost"
                 size="sm"
                 onClick={clearFilters}
-                className="h-6 px-2 text-xs text-zinc-400 hover:text-zinc-100"
+                className="h-6 px-2 text-xs text-gray-500 hover:text-gray-900"
                 aria-label="Clear all filters"
                 title="Clear all filters"
               >
@@ -335,9 +332,9 @@ export function SidePanelLeft({
       </div>
 
       {/* Filters */}
-      <div className="p-3 border-b border-zinc-800 space-y-2">
+      <div className="p-3 border-b border-gray-200 space-y-2">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-zinc-400 uppercase tracking-wider">
+          <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
             Filters
           </span>
           {hasActiveFilters && !hasActiveFilterChips && (
@@ -345,7 +342,7 @@ export function SidePanelLeft({
               variant="ghost"
               size="sm"
               onClick={clearFilters}
-              className="h-6 px-2 text-xs text-zinc-400 hover:text-zinc-100"
+              className="h-6 px-2 text-xs text-gray-500 hover:text-gray-900"
               aria-label="Clear all filters"
             >
               Clear all
@@ -361,7 +358,7 @@ export function SidePanelLeft({
           <CollapsibleTrigger asChild>
             <Button
               variant="ghost"
-              className="w-full justify-between h-8 px-2 text-xs text-zinc-300 hover:bg-zinc-800"
+              className="w-full justify-between h-8 px-2 text-xs text-gray-700 hover:bg-gray-100"
               aria-expanded={showCountryFilter}
             >
               <span className="flex items-center gap-2">
@@ -369,7 +366,7 @@ export function SidePanelLeft({
                 {filters.countries.length > 0 && (
                   <Badge
                     variant="secondary"
-                    className="h-5 px-1.5 text-xs bg-zinc-700"
+                    className="h-5 px-1.5 text-xs bg-gray-200"
                   >
                     {filters.countries.length}
                   </Badge>
@@ -386,15 +383,15 @@ export function SidePanelLeft({
             {countries.map((country) => (
               <label
                 key={country}
-                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-zinc-800 cursor-pointer"
+                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-100 cursor-pointer"
               >
                 <Checkbox
                   checked={filters.countries.includes(country)}
                   onCheckedChange={() => handleCountryToggle(country)}
-                  className="border-zinc-600 data-[state=checked]:bg-zinc-100 data-[state=checked]:border-zinc-100"
+                  className="border-gray-300 data-[state=checked]:bg-gray-900 data-[state=checked]:border-gray-900"
                   aria-label={`Filter by ${country}`}
                 />
-                <span className="text-xs text-zinc-300">{country}</span>
+                <span className="text-xs text-gray-700">{country}</span>
               </label>
             ))}
           </CollapsibleContent>
@@ -408,7 +405,7 @@ export function SidePanelLeft({
           <CollapsibleTrigger asChild>
             <Button
               variant="ghost"
-              className="w-full justify-between h-8 px-2 text-xs text-zinc-300 hover:bg-zinc-800"
+              className="w-full justify-between h-8 px-2 text-xs text-gray-700 hover:bg-gray-100"
               aria-expanded={showIndustryFilter}
             >
               <span className="flex items-center gap-2">
@@ -416,7 +413,7 @@ export function SidePanelLeft({
                 {filters.industries.length > 0 && (
                   <Badge
                     variant="secondary"
-                    className="h-5 px-1.5 text-xs bg-zinc-700"
+                    className="h-5 px-1.5 text-xs bg-gray-200"
                   >
                     {filters.industries.length}
                   </Badge>
@@ -433,15 +430,15 @@ export function SidePanelLeft({
             {industries.map((industry) => (
               <label
                 key={industry}
-                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-zinc-800 cursor-pointer"
+                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-100 cursor-pointer"
               >
                 <Checkbox
                   checked={filters.industries.includes(industry)}
                   onCheckedChange={() => handleIndustryToggle(industry)}
-                  className="border-zinc-600 data-[state=checked]:bg-zinc-100 data-[state=checked]:border-zinc-100"
+                  className="border-gray-300 data-[state=checked]:bg-gray-900 data-[state=checked]:border-gray-900"
                   aria-label={`Filter by ${industry} industry`}
                 />
-                <span className="text-xs text-zinc-300">{industry}</span>
+                <span className="text-xs text-gray-700">{industry}</span>
               </label>
             ))}
           </CollapsibleContent>
@@ -455,7 +452,7 @@ export function SidePanelLeft({
           <CollapsibleTrigger asChild>
             <Button
               variant="ghost"
-              className="w-full justify-between h-8 px-2 text-xs text-zinc-300 hover:bg-zinc-800"
+              className="w-full justify-between h-8 px-2 text-xs text-gray-700 hover:bg-gray-100"
               aria-expanded={showPlausibilityFilter}
             >
               <span className="flex items-center gap-2">
@@ -463,7 +460,7 @@ export function SidePanelLeft({
                 {filters.plausibilityBands.length > 0 && (
                   <Badge
                     variant="secondary"
-                    className="h-5 px-1.5 text-xs bg-zinc-700"
+                    className="h-5 px-1.5 text-xs bg-gray-200"
                   >
                     {filters.plausibilityBands.length}
                   </Badge>
@@ -480,15 +477,15 @@ export function SidePanelLeft({
             {plausibilityBands.map((band) => (
               <label
                 key={band}
-                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-zinc-800 cursor-pointer"
+                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-100 cursor-pointer"
               >
                 <Checkbox
                   checked={filters.plausibilityBands.includes(band)}
                   onCheckedChange={() => handlePlausibilityToggle(band)}
-                  className="border-zinc-600 data-[state=checked]:bg-zinc-100 data-[state=checked]:border-zinc-100"
+                  className="border-gray-300 data-[state=checked]:bg-gray-900 data-[state=checked]:border-gray-900"
                   aria-label={`Filter by ${band} plausibility`}
                 />
-                <span className="text-xs text-zinc-300">{band}</span>
+                <span className="text-xs text-gray-700">{band}</span>
               </label>
             ))}
           </CollapsibleContent>
@@ -498,9 +495,9 @@ export function SidePanelLeft({
         <div className="flex items-center justify-between px-2 py-1.5">
           <label
             htmlFor="incomplete-toggle"
-            className="text-xs text-zinc-300 cursor-pointer flex items-center gap-2"
+            className="text-xs text-gray-700 cursor-pointer flex items-center gap-2"
           >
-            <AlertCircle className="h-3 w-3 text-amber-400" />
+            <AlertCircle className="h-3 w-3 text-amber-600" />
             Incomplete only
           </label>
           <Switch
@@ -516,7 +513,7 @@ export function SidePanelLeft({
       {/* Company List */}
       <div className="flex-1 overflow-hidden">
         <div className="p-3 pb-1">
-          <span className="text-xs font-medium text-zinc-400 uppercase tracking-wider">
+          <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
             Companies ({companies.length})
           </span>
         </div>
@@ -537,25 +534,25 @@ export function SidePanelLeft({
                       onSelectCompany(company);
                     }
                   }}
-                  className={`w-full flex items-start gap-3 p-2.5 rounded-md text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-1 focus-visible:ring-offset-zinc-900 ${
+                  className={`w-full flex items-start gap-3 p-2.5 rounded-md text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-1 focus-visible:ring-offset-white ${
                     selectedCompany?.id === company.id
-                      ? "bg-zinc-100 text-zinc-900"
-                      : "hover:bg-zinc-800 text-zinc-100"
+                      ? "bg-gray-900 text-white"
+                      : "hover:bg-gray-100 text-gray-900"
                   }`}
                 >
                   <Building2
                     className={`h-4 w-4 mt-0.5 shrink-0 ${
                       selectedCompany?.id === company.id
-                        ? "text-zinc-700"
-                        : "text-zinc-500"
+                        ? "text-gray-300"
+                        : "text-gray-400"
                     }`}
                   />
                   <div className="flex-1 min-w-0">
                     <p
                       className={`text-sm font-medium truncate ${
                         selectedCompany?.id === company.id
-                          ? "text-zinc-900"
-                          : "text-zinc-100"
+                          ? "text-white"
+                          : "text-gray-900"
                       }`}
                     >
                       {company.name}
@@ -572,8 +569,8 @@ export function SidePanelLeft({
                         <span
                           className={`text-[10px] ${
                             selectedCompany?.id === company.id
-                              ? "text-zinc-600"
-                              : "text-zinc-500"
+                              ? "text-gray-400"
+                              : "text-gray-500"
                           }`}
                           title="Coverage score (key ESG fields present)"
                         >
@@ -586,8 +583,8 @@ export function SidePanelLeft({
                         <span
                           className={`text-[10px] ${
                             selectedCompany?.id === company.id
-                              ? "text-zinc-600"
-                              : "text-zinc-500"
+                              ? "text-gray-400"
+                              : "text-gray-500"
                           }`}
                         >
                           {fmtTCO2e(company.derived.scope12Total)}
@@ -598,8 +595,8 @@ export function SidePanelLeft({
                       <p
                         className={`text-[10px] mt-0.5 ${
                           selectedCompany?.id === company.id
-                            ? "text-zinc-600"
-                            : "text-zinc-500"
+                            ? "text-gray-400"
+                            : "text-gray-500"
                         }`}
                       >
                         {fmtPct(company.derived.wasteDiversionRate)} waste

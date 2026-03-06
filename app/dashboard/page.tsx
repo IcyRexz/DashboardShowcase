@@ -26,8 +26,8 @@ const MapView = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="w-full h-full flex items-center justify-center bg-zinc-900">
-        <div className="text-zinc-400 animate-pulse">Loading Map...</div>
+      <div className="w-full h-full flex items-center justify-center bg-gray-50">
+        <div className="text-gray-400 animate-pulse">Loading Map...</div>
       </div>
     ),
   },
@@ -38,13 +38,13 @@ type ViewMode = "map" | "table";
 function getPlausibilityColor(band: PlausibilityBand): string {
   switch (band) {
     case "Good":
-      return "bg-emerald-500/20 text-emerald-400 border-emerald-500/30";
+      return "bg-emerald-100 text-emerald-700 border-emerald-300";
     case "Watch":
-      return "bg-amber-500/20 text-amber-400 border-amber-500/30";
+      return "bg-amber-100 text-amber-700 border-amber-300";
     case "Review":
-      return "bg-red-500/20 text-red-400 border-red-500/30";
+      return "bg-red-100 text-red-700 border-red-300";
     default:
-      return "bg-zinc-500/20 text-zinc-400 border-zinc-500/30";
+      return "bg-gray-100 text-gray-600 border-gray-300";
   }
 }
 
@@ -106,8 +106,8 @@ export default function DashboardPage() {
   const isMapView = viewMode === "map";
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-zinc-900">
-      {/* Map Background (always rendered for cluster/bubble, hidden for table) */}
+    <div className="relative h-screen w-full overflow-hidden bg-gray-50">
+      {/* Map Background */}
       <div
         className={`absolute inset-0 z-0 ${isMapView ? "" : "invisible"}`}
       >
@@ -118,7 +118,7 @@ export default function DashboardPage() {
         />
       </div>
 
-      {/* Table View — fills the area below the header, above the bottom panel */}
+      {/* Table View */}
       {!isMapView && (
         <div className="absolute inset-x-0 top-[76px] bottom-0 z-5 px-4 pb-4 overflow-hidden">
           <TableView
@@ -135,18 +135,21 @@ export default function DashboardPage() {
         <header className="mb-4 pointer-events-auto">
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div>
-              <h1 className="text-xl md:text-2xl font-semibold text-zinc-100 tracking-tight">
+              <h1 className="text-xl md:text-2xl font-semibold text-gray-900 tracking-tight">
                 Sustainability Monitoring Dashboard
               </h1>
-              <p className="text-sm text-zinc-500 mt-0.5">
-                ESG metrics for {allCompanies.length} listed companies across
-                Singapore (2024)
+              <p className="text-sm text-gray-500 mt-0.5">
+                ESG metrics for{" "}
+                {filteredCompanies.length < allCompanies.length
+                  ? `${filteredCompanies.length} of ${allCompanies.length}`
+                  : `${allCompanies.length}`}{" "}
+                listed companies across Singapore (2024)
               </p>
             </div>
 
             <div className="flex items-center gap-3">
               {/* View Mode Toggle */}
-              <div className="flex items-center bg-zinc-800/90 border border-zinc-700 rounded-lg p-0.5">
+              <div className="flex items-center bg-white/90 border border-gray-200 rounded-lg p-0.5 shadow-sm">
                 {VIEW_OPTIONS.map(({ mode, label, icon: Icon }) => (
                   <button
                     key={mode}
@@ -154,8 +157,8 @@ export default function DashboardPage() {
                     onClick={() => setViewMode(mode)}
                     className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all ${
                       viewMode === mode
-                        ? "bg-zinc-700 text-zinc-100 shadow-sm"
-                        : "text-zinc-400 hover:text-zinc-200"
+                        ? "bg-gray-900 text-white shadow-sm"
+                        : "text-gray-500 hover:text-gray-700"
                     }`}
                     title={label}
                     aria-label={`Switch to ${label}`}
@@ -168,9 +171,9 @@ export default function DashboardPage() {
 
               {selectedCompany && plausibilityBand && (
                 <>
-                  <div className="flex items-center gap-2 px-3 py-1.5 bg-zinc-800/90 border border-zinc-700 rounded-lg">
-                    <Building2 className="h-4 w-4 text-zinc-400" aria-hidden />
-                    <span className="text-sm font-medium text-zinc-100 max-w-[200px] truncate">
+                  <div className="flex items-center gap-2 px-3 py-1.5 bg-white/90 border border-gray-200 rounded-lg shadow-sm">
+                    <Building2 className="h-4 w-4 text-gray-400" aria-hidden />
+                    <span className="text-sm font-medium text-gray-900 max-w-[200px] truncate">
                       {selectedCompany.name}
                     </span>
                     <Badge
@@ -185,7 +188,7 @@ export default function DashboardPage() {
                     variant="outline"
                     size="sm"
                     onClick={handleClearSelection}
-                    className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 bg-zinc-900/80"
+                    className="border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-gray-900 bg-white/90 shadow-sm"
                     aria-label="Clear selection"
                     title="Clear selection"
                   >
@@ -195,11 +198,11 @@ export default function DashboardPage() {
                 </>
               )}
               <div className="flex items-center gap-2">
-                <span className="text-xs text-zinc-500">Units:</span>
+                <span className="text-xs text-gray-500">Units:</span>
                 <select
                   value={unitView}
                   onChange={(e) => setUnitView(e.target.value as UnitView)}
-                  className="bg-zinc-800 border border-zinc-700 rounded px-2 py-1 text-sm text-zinc-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+                  className="bg-white border border-gray-200 rounded px-2 py-1 text-sm text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 shadow-sm"
                   aria-label="Unit view: Canonical or Raw"
                   title="Show values in canonical units (tCO2e, kWh, m3, tonnes) or raw extracted"
                 >
@@ -228,17 +231,16 @@ export default function DashboardPage() {
             </div>
           )}
 
-          {/* Center - Spacer for map visibility / table takes full width */}
+          {/* Center - Spacer */}
           <div className="flex-1" />
 
           {/* Right Panel - Overview (hidden in table view) */}
           {isMapView && (
             <div className="pointer-events-auto h-full hidden lg:block">
-              <SidePanelRight
-                kpis={kpis}
-                companies={filteredCompanies}
-                unitView={unitView}
-              />
+            <SidePanelRight
+              kpis={kpis}
+              companies={filteredCompanies}
+            />
             </div>
           )}
         </div>

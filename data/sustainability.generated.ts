@@ -1,7 +1,7 @@
 // ============================================================================
 // GENERATED FILE - DO NOT EDIT MANUALLY
 // Generated from CSV Data/singapore_2024_merged_with_coverage_rank.csv by scripts/build-sustainability-data.ts
-// Generated at: 2026-03-06T02:57:01.697Z
+// Generated at: 2026-03-06T03:24:14.524Z
 // Total companies: 391
 // ============================================================================
 
@@ -90,10 +90,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 691350,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"415366\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"8157\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Furnace Oil\", \"value\": \"195\", \"unit\": \"GJ\"}, {\"fuel_type\": \"LPG\", \"value\": \"0\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Biomass\", \"value\": \"72178\", \"unit\": \"GJ\"}]",
       "calculation": "Natural gas (415366 GJ) + Diesel (8157 GJ) + Furnace Oil (195 GJ) + LPG (0 GJ) + Biomass (72178 GJ) = 495896 GJ OR Total Non-Renewable Energy (619172 GJ) + Biomass (72178 GJ) = 691350 GJ",
       "notes": "Data extracted from Energy Consumption Within Midas Safety table in Image 2. Total fuel consumption calculated as Total Non-Renewable Energy (619172 GJ) + Biomass (72178 GJ) = 691350 GJ. Mobile and stationary fuel consumption not explicitly broken down in the provided images. Fuel types reported in GJ (Gigajoules) rather than volume/mass units. Electricity consumption (195454 GJ) not included as it's an energy carrier, not a fuel.",
       "status": null
@@ -248,7 +248,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Unleaded petrol\", \"value\": \"98570.5\", \"unit\": \"L\"}, {\"fuel_type\": \"Diesel\", \"value\": \"201402.52\", \"unit\": \"L\"}, {\"fuel_type\": \"Bioethanol\", \"value\": \"2284\", \"unit\": \"L\"}, {\"fuel_type\": \"LPG\", \"value\": \"N/A\", \"unit\": \"L\"}]",
       "calculation": "98570.5 (Unleaded petrol) + 201402.52 (Diesel) + 2284 (Bioethanol) = 302257.02",
       "notes": "Mobile fuel consumption data extracted from Automotive section (Image 2). Total fuel consumption not explicitly stated in reports. Stationary fuel consumption metrics not directly reported (heating data shows energy output in kWh, not fuel consumption). LPG consumption for motor vehicles shown but no 2024 value provided. Note: 'Actual fuel consumption data in litres is derived from fuel card invoicing and refers to 99.43% of the Group fuel cost. The conversion factors used were calculated by DEFRA 2024.'",
       "status": null
@@ -402,10 +402,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 471.3119999999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"11881\", \"unit\": \"L\"}, {\"fuel_type\": \"Diesel\", \"value\": \"1211\", \"unit\": \"L\"}]",
       "calculation": "Petrol (11881 L) + Diesel (1211 L) = 13092 L",
       "notes": "Extracted from Scope 1 emissions section in page 19: 'consumption of all transportation fuels, including 11,881 litres of petrol and 1,211 litres of diesel'. No stationary fuel consumption data reported. Total fuel consumption calculated as sum of mobile fuel types since no explicit total stated and no stationary data available.",
       "status": null
@@ -559,8 +559,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 347400,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "151.0 TJ + 196.4 TJ = 347.4 TJ",
@@ -716,10 +716,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 505740,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural Gas\", \"value\": \"427.65\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Liquid Fuels (Diesel, Petrol)\", \"value\": \"57.85\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Solid Fuels (Coal)\", \"value\": \"20.24\", \"unit\": \"TJ\"}]",
       "calculation": "Natural Gas (427.65 TJ) + Liquid Fuels (57.85 TJ) + Solid Fuels (20.24 TJ) = Total Fuel Consumption (505.74 TJ)",
       "notes": "Data extracted from GRI 302-1 (2016) Energy Consumption Inside the Organisation table (page 28). Total fuel consumption calculated as sum of non-renewable energy sources (fossil fuels) for Total Group 2024. Mobile and stationary fuel consumption not disaggregated in source report. Fuel type breakdown provided in Terajoules (TJ) for non-renewable energy sources only.",
       "status": null
@@ -873,8 +873,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 9291,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 9291 GJ",
@@ -1028,10 +1028,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 9599.86229,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"9599862.29\", \"unit\": \"MJ\"}]",
       "calculation": "Diesel (9599862.29 MJ) = Total fuel consumption (9599862.29 MJ)",
       "notes": "Extracted from 'HG Metal Energy Consumption' table (page 40). Only diesel reported as fuel consumption; no breakdown by mobile/stationary provided. Electricity and solar energy reported separately but not classified as fuel. Total fuel consumption equals diesel consumption as no other fuels disclosed.",
       "status": null
@@ -1185,10 +1185,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 5675.111999999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"157642\", \"unit\": \"L\"}]",
       "calculation": "Diesel (157642 L) = Total shown",
       "notes": "Total fuel consumption reported as diesel only. Data sourced from Image 2 (page 151) performance table: '157,642 litres of fuel were consumed' in 2024. Image 3 (page 169) shows 157.6 '000 litre (157,600 L) but Image 2 provides precise value. No mobile/stationary breakdown provided. Fuel type breakdown only includes diesel as primary fuel source. No other fuel types reported.",
       "status": null
@@ -1342,8 +1342,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 441299,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 441299 GJ (Thermal energy fossil fuel consumption)",
@@ -1499,10 +1499,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 6718.2,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"6048.4\", \"unit\": \"GJ\"}, {\"fuel_type\": \"LPG\", \"value\": \"177.1\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"492.7\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (6048.4 GJ) + LPG (177.1 GJ) + Petrol (492.7 GJ) = 6718.2 GJ",
       "notes": "Fuel consumption data extracted from Energy Management section (page 21). Total fuel consumption calculated as sum of fossil fuel types (diesel, LPG, petrol) excluding electricity. Mobile/stationary breakdown not provided. Data reported in GJ units with one decimal precision. Total energy consumption (16,763.1 GJ) includes electricity (10,044.9 GJ) which is excluded per fuel consumption definition.",
       "status": null
@@ -1656,10 +1656,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 810.5759999999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Non-renewable\", \"value\": \"22516\", \"unit\": \"L\"}]",
       "calculation": "17222 (Singapore non-renewable) + 5294 (Malaysia non-renewable) = 22516",
       "notes": "Data extracted from 'Energy consumption from fuel use (litres)' table on page 21. Geographical breakdown (Singapore, Malaysia) for non-renewable fuel. No mobile/stationary or specific fuel type (diesel, petrol) breakdown provided. Renewable fuel use reported as N/A for FY2024.",
       "status": null
@@ -1813,10 +1813,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 11386.7,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"840.6\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"3079.6\", \"unit\": \"GJ\"}, {\"fuel_type\": \"LPG\", \"value\": \"7466.4\", \"unit\": \"GJ\"}]",
       "calculation": "Petrol (840.6 GJ) + Diesel (3079.6 GJ) + LPG (7466.4 GJ) = 11386.6 GJ (vs stated total 11386.7 GJ; rounding difference)",
       "notes": "Total fuel consumption extracted from 'ENERGY CONSUMED FROM NON-RENEWABLE SOURCES' table (GRI 302-1) on page 17. Breakdown by fuel type provided for Group total. No mobile/stationary breakdown available in report. Values from FY2024 Group column. Fuel types: Petrol, Diesel, LPG. Total verified against sum of fuel types with minor rounding difference (11386.6 vs 11386.7).",
       "status": null
@@ -2127,8 +2127,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 109109,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 109109 GJ",
@@ -2284,10 +2284,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 0.4688603999999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"127557\", \"unit\": \"kWh\"}, {\"fuel_type\": \"Liquefied petroleum gas\", \"value\": \"2682\", \"unit\": \"kWh\"}]",
       "calculation": "Petrol (127557 kWh) + Liquefied petroleum gas (2682 kWh) = 130239 kWh",
       "notes": "Data extracted from FY2024 Resource Usage table (Image 2). Only petrol and LPG consumption reported as fuel types. Mobile/stationary breakdown not provided. Electricity consumption (701306 kWh) excluded as not classified as fuel in source. Total calculated by summing visible fuel segments as no company-wide total stated.",
       "status": null
@@ -2444,7 +2444,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"N/A\", \"unit\": \"GJ\"}]",
       "calculation": null,
       "notes": "Total energy consumption reported as 426.00 GJ (mix of natural gas combustion and purchased electricity), but no specific fuel consumption split provided. Mobile fuel consumption explicitly stated as 0 (no vehicles). Stationary fuel consumption not quantified; report states no local power generation facilities but mentions natural gas combustion as part of energy sources without numerical breakdown.",
       "status": null
@@ -2755,8 +2755,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 467632.8,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 129898 MWh",
@@ -4014,7 +4014,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"644\", \"unit\": \"MWh\"}]",
       "calculation": "Diesel (644 MWh) from Energy Consumption table",
       "notes": "Fuel consumption metrics were reported in energy units (MWh) rather than volume units (liters/gallons) as requested. From Image 2 (page 99), diesel consumption was reported as 644 MWh under 'Total energy consumption within the organisation'. Image 3 (page 100) shows Scope 1 emissions data for vehicles (86 tCO2e) and generators (77 tCO2e), but these are emissions units, not fuel volume measurements. The documents do not provide fuel consumption in standard volume units (liters, gallons, etc.) as required by the extraction criteria. Note (a) in Image 2 mentions a diesel conversion factor from liters to MWh was used, but the specific factor and original volume measurements are not provided in the report.",
       "status": null
@@ -4168,10 +4168,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 434.31,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol/Gasoline\", \"value\": \"434.31\", \"unit\": \"GJ\"}]",
       "calculation": "Motor Gasoline (Singapore: 116.68 GJ) + Motor Gasoline (PRC: 317.63 GJ) = 434.31 GJ",
       "notes": "Fuel consumption reported as Motor Gasoline (mobile fuel) for Singapore and PRC; Grid Electricity is energy consumption not classified as fuel consumption; No stationary fuel consumption data reported",
       "status": null
@@ -4799,7 +4799,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"2375\", \"unit\": \"L\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"N/A\", \"unit\": \"L\"}]",
       "calculation": "Diesel (2375 L) + Gasoline (N/A) = N/A (Gasoline data not available for FY2024)",
       "notes": "Data from Sustainability Report page 39. FY2024 data excludes Modi Indonesia due to disposal (per table note). Gasoline consumption shown as '—' in table, interpreted as N/A per data disclosure rules. No mobile/stationary breakdown provided. Total fuel consumption not explicitly stated and cannot be calculated due to missing gasoline data. Electricity data (MWh) not considered fuel consumption.",
       "status": null
@@ -5895,10 +5895,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 7515.3,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"145.0\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"2813.2\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"4557.1\", \"unit\": \"GJ\"}]",
       "calculation": "Natural gas (4557.1 GJ) + Gasoline (2813.2 GJ) + Diesel (145.0 GJ) = 7515.3 GJ",
       "notes": "Data extracted from 'Non-renewable Sources Fuel Types' table in 7.1.3 Energy Consumption section (page 126). Mobile fuel consumption includes gasoline and diesel (used in company vehicles per section 5.1.2). Stationary fuel consumption includes natural gas (used in building facilities and cafeterias per section 5.1.2). Total Energy Consumption for 2024 is explicitly stated as 7,515.3 GJ in the table. Report shows only these three non-renewable fuel types with no other fuel types reported for 2024.",
       "status": null
@@ -6050,8 +6050,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 11034,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 11034 GJ",
@@ -6205,10 +6205,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 22071.312,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"601908\", \"unit\": \"litre\"}, {\"fuel_type\": \"Petrol\", \"value\": \"11184\", \"unit\": \"litre\"}]",
       "calculation": "601908 + 11184 = 613092",
       "notes": "Fuel consumption data extracted from Image 3 (page 21) 'ENVIRONMENTAL CARE' section. Only Scope 1 fuels (diesel and petrol) reported as 'litre' volumes. No mobile/stationary breakdown provided. Total calculated by summing diesel and petrol volumes. Electricity and renewable energy data (Mwh/GJ) not considered as fuel consumption per critical terminology.",
       "status": null
@@ -6360,10 +6360,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 6.2585136,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1032592\", \"unit\": \"kWh\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"633167\", \"unit\": \"kWh\"}, {\"fuel_type\": \"LPG\", \"value\": \"72717\", \"unit\": \"kWh\"}]",
       "calculation": "Diesel (1032592 kWh) + Gasoline (633167 kWh) + LPG (72717 kWh) = 1738476 kWh",
       "notes": "Fuel consumption data for 2024 extracted from page 43 (section 04 Environmental Stewardship). Report provides breakdown by fuel type (Diesel, Gasoline, LPG) in kWh. No mobile/stationary split provided. Total Fuel Consumption calculated as sum of listed fuel types. Total Energy Consumption (47698069 kWh) includes electricity and fuel consumption.",
       "status": null
@@ -6515,10 +6515,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 203163,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"203163\", \"unit\": \"GJ\"}]",
       "calculation": "Natural gas (203163 GJ) = Total fuel consumption",
       "notes": "Only natural gas reported as fossil fuel consumption; electricity from renewable sources (42251 GJ) excluded from fuel consumption metrics. No mobile fuel consumption data provided in the report. Stationary fuel consumption corresponds to natural gas used in hotel operations.",
       "status": null
@@ -6827,10 +6827,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 4177,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"344\", \"unit\": \"GJ\"}, {\"fuel_type\": \"LPG\", \"value\": \"3833\", \"unit\": \"GJ\"}]",
       "calculation": "Town gas (344 GJ) + LPG (3833 GJ) = 4177 GJ",
       "notes": "Fuel consumption metrics extracted from Energy Consumption table in second image. Town gas and LPG are the only fuel types reported. Electricity consumption (110090 GJ) excluded as it is not a fuel. Mobile fuel consumption data not found in provided images. Stationary fuel consumption equals total fuel consumption as all reported fuel types are used in stationary equipment.",
       "status": null
@@ -6984,10 +6984,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 4124.951999999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"86465\", \"unit\": \"litre\"}, {\"fuel_type\": \"Unleaded petrol\", \"value\": \"28117\", \"unit\": \"litre\"}]",
       "calculation": "Diesel (86465 litre) + Unleaded petrol (28117 litre) = 114582 litre",
       "notes": "Data extracted from Sustainability Report (page 32) Scope 1 Emissions table. Fuel consumption reported as 'Fuel Used' and 'Fuel Consumed (litre)' with identical values. Total calculated by summing diesel and unleaded petrol. Mobile/stationary breakdown not provided in report. Unit 'litre' preserved as in source. No continuing/discontinued operations distinction in fuel data.",
       "status": null
@@ -7141,8 +7141,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 0.0001314,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total: 36.5 kWh",
@@ -7606,10 +7606,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1750.0679999999998,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"20079\", \"unit\": \"L\"}, {\"fuel_type\": \"Diesel\", \"value\": \"28534\", \"unit\": \"L\"}]",
       "calculation": "Petrol (12024 L + 2135 L + 5920 L = 20079 L) + Diesel (6762 L + 11819 L + 9953 L = 28534 L) = Total 48613 L",
       "notes": "Data extracted from Scope 1 - Fuel Consumption table on page 16. Report provides total fuel consumption by fuel type (petrol and diesel) but does not explicitly separate mobile vs. stationary fuel consumption. Total petrol consumption (20079 L) and total diesel consumption (28534 L) are shown in the 'Total' row of the table. The report mentions diesel was used for forklifts (mobile) and power generators (stationary) but does not quantify the breakdown. No other fuel types are reported in the document.",
       "status": null
@@ -7764,7 +7764,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"707902\", \"unit\": \"litre\"}, {\"fuel_type\": \"Petrol\", \"value\": \"10855\", \"unit\": \"litre\"}, {\"fuel_type\": \"Natural Gas\", \"value\": \"14367\", \"unit\": \"mmBTU\"}, {\"fuel_type\": \"LPG\", \"value\": \"4800\", \"unit\": \"litre\"}]",
       "calculation": "Diesel (707902 litre) + Petrol (10855 litre) + Natural Gas (14367 mmBTU) + LPG (4800 litre) = Total fuel consumption (no aggregated total provided)",
       "notes": "Data extracted from Table 8 (page 41) for Scope 1 fuel consumption. Mobile/Stationary breakdown not available as diesel consumption is combined for machines and company vehicles. Total fuel consumption not explicitly stated as single aggregated value. Scope 2 energy sources (electricity) excluded as not fuel consumption. Units preserved per fuel type as reported.",
       "status": null
@@ -8071,10 +8071,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 32025.6,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"LPG\", \"value\": \"8691\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Diesel\", \"value\": \"205\", \"unit\": \"MWh\"}]",
       "calculation": "LPG (8691 MWh) + Diesel (205 MWh) = Total fuel consumption (8896 MWh). Electricity (5405 MWh) excluded as non-fuel energy source per reporting context",
       "notes": "Fuel consumption reported in energy units (MWh). Electricity (5405 MWh) excluded from fuel metrics as it's not a fuel source per report description: 'LPG' and 'Diesel' are fuels while 'Electricity' is non-fuel energy source. Mobile fuel identified as Diesel (transportation use). Stationary fuel identified as LPG (cooking). Total fuel calculated by summing LPG and Diesel. No stated total fuel consumption value provided; calculated from segment data. Data from Energy Consumption chart (Image 2, page 67).",
       "status": null
@@ -8231,7 +8231,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"159176\", \"unit\": \"litres\"}, {\"fuel_type\": \"LPG\", \"value\": \"1156252\", \"unit\": \"kg\"}]",
       "calculation": "Mobile: Diesel (159176 litres); Stationary: LPG (1156252 kg). No aggregated total due to different units (litres vs kg).",
       "notes": "Data from Image 3 (page 24) for FY2024 (1 Oct 2023-30 Sep 2024). Diesel explicitly stated as 'used for the Group's vehicles' (mobile). LPG explicitly stated as 'used for cooking' (stationary). No other fuel types reported. Units differ (litres for diesel, kg for LPG) preventing total calculation. No single 'total fuel consumption' metric provided in reports.",
       "status": null
@@ -8388,7 +8388,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"162811.2\", \"unit\": \"litres\"}, {\"fuel_type\": \"Petrol\", \"value\": \"15876.6\", \"unit\": \"litres\"}, {\"fuel_type\": \"LPG\", \"value\": \"55271.3\", \"unit\": \"kg\"}]",
       "calculation": "Diesel (162811.2 litres) + Petrol (15876.6 litres) = Mobile total (178687.8 litres); LPG (55271.3 kg) = Stationary total",
       "notes": "Fuel consumption data extracted from 'Energy and Emissions' section (page 15). Mobile fuel includes diesel and petrol for company vehicles. Stationary fuel includes LPG for factory cooking. Total fuel consumption not reported as single value due to mixed units (litres vs kg). Purchased electricity excluded as it is not fuel.",
       "status": null
@@ -8542,10 +8542,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1818.713,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"LNG\", \"value\": \"N/A\", \"unit\": \"MJ\"}, {\"fuel_type\": \"city gas\", \"value\": \"N/A\", \"unit\": \"MJ\"}, {\"fuel_type\": \"diesel\", \"value\": \"N/A\", \"unit\": \"MJ\"}]",
       "calculation": "Stated total: 1818713 MJ",
       "notes": "Total fuel consumption of 1818713 MJ explicitly stated in page 38 text; no mobile/stationary breakdown or numerical fuel type values provided in the images. Fuel types (LNG, city gas, diesel) mentioned but no quantities disclosed.",
       "status": null
@@ -8699,10 +8699,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 16,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"16\", \"unit\": \"GJ\"}]",
       "calculation": "Petrol (16 GJ) = Total shown",
       "notes": "Only petrol consumption reported as fuel; electricity is purchased energy not fuel; no stationary fuel consumption data; fuel metrics limited to energy consumption table in Sustainability Report (page 64)",
       "status": null
@@ -8856,10 +8856,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 12.55104,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"348.64\", \"unit\": \"L\"}]",
       "calculation": "Diesel (348.64 L) = Total shown",
       "notes": "Only diesel fuel consumption data provided in Table 1 of Image 3. No breakdown between mobile and stationary fuel consumption. Electricity consumption data (1,393,673.00 kWh) was also provided but is not considered fuel consumption. Total energy consumption shown as 5,030.65 GJ but this includes both diesel energy equivalent and electricity. Only volume measurement for fuel (diesel) is available as 348.64 L.",
       "status": null
@@ -9016,7 +9016,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"562061\", \"unit\": \"m3\"}, {\"fuel_type\": \"Diesel\", \"value\": \"143182\", \"unit\": \"L\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"210526\", \"unit\": \"L\"}]",
       "calculation": "Diesel (143182 L) + Gasoline (210526 L) = Mobile fuel consumption 353708 L; Natural gas (562061 m3) = Stationary fuel consumption",
       "notes": "Total fuel consumption not calculable due to different units (m3 vs L). Mobile fuel consumption calculated from Diesel and Gasoline (assumed for vehicles based on context of 'Fuel Cards and Vehicles' mentioned in page 112). Natural gas assumed for stationary use. Data sourced from Energy Consumption table on page 114. No specific breakdown between continuing/discontinued operations provided.",
       "status": null
@@ -9327,10 +9327,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 3594.1021199999996,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"64531.38\", \"unit\": \"L\"}, {\"fuel_type\": \"Diesel\", \"value\": \"35304.79\", \"unit\": \"L\"}]",
       "calculation": "Petrol (12413.60 L + 31096.28 L + 21021.50 L) + Diesel (0 L + 29992.83 L + 5311.96 L) = 99836.17 L",
       "notes": "Data from Table 5 in ENVIRONMENTAL section (page 40). Fuel consumption reported only as total petrol and diesel in liters (L) for scope 1 emissions. No breakdown between mobile/stationary provided. Values aggregated across Singapore, Malaysia, and China for FY2024. Diesel value for Singapore shown as '-' (treated as 0).",
       "status": null
@@ -9487,7 +9487,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"789.22\", \"unit\": \"thousand litres\"}, {\"fuel_type\": \"Motor Gasoline\", \"value\": \"196.37\", \"unit\": \"thousand litres\"}, {\"fuel_type\": \"Biodiesel & Others\", \"value\": \"23.32\", \"unit\": \"thousand litres\"}]",
       "calculation": "Diesel (572.70 + 121.97 + 95.55) = 789.22 thousand litres; Motor Gasoline (43.75 + 131.61 + 21.01) = 196.37 thousand litres; Biodiesel & Others (N.A. + 23.32 + N.A.) = 23.32 thousand litres (N.A. treated as 0 for calculation but explicitly marked as missing in source)",
       "notes": "Fuel consumption data extracted from page 12 table (2024 column). Biodiesel & Others data missing (N.A.) for Major Distribution and Manufacturing segments. Total fuel consumption not explicitly stated and cannot be fully verified due to missing data in two segments. Mobile/stationary breakdown not provided in source. Fuel type breakdown calculated by summing segments with N.A. treated as 0 for calculation only (per source context that N.A. indicates no consumption in those segments), but total is marked N/A due to missing data. Report states: 'N.A.' for Biodiesel & Others in Major Distribution and Manufacturing, but text indicates biodiesel only consumed in non-major subsidiaries due to Wheelworld inclusion.",
       "status": null
@@ -9641,10 +9641,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 56.13,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"56.13\", \"unit\": \"GJ\"}]",
       "calculation": "Petrol (56.13 GJ) = Total fuel consumption. No other fuel types reported. Total energy consumption (12,870.37 GJ) includes electricity (12,814.24 GJ) which is not classified as fuel consumption per reporting standards.",
       "notes": "Only petrol consumption reported as fuel (56.13 GJ) in 'Types of Resources' table (page 12). Petrol is explicitly linked to vehicle fleet in narrative. Electricity (12,814.24 GJ) is reported as energy but not classified as fuel consumption. No stationary fuel consumption data provided. Total energy consumption (12,870.37 GJ) includes non-fuel energy sources. Fuel type breakdown only shows petrol. Mobile fuel consumption inferred from fleet vehicle context. No separate stationary fuel consumption reported.",
       "status": null
@@ -9955,8 +9955,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 613.764,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 17049 L",
@@ -10112,10 +10112,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 4928.4117,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"132129\", \"unit\": \"m3\"}]",
       "calculation": "Natural gas (132129 m3) = Total fuel consumption shown",
       "notes": "Scope 1 emissions table for FY2024 shows natural gas as the only fuel type; mobile fuel consumption not reported in the document; Scope 1 emissions attributed to natural gas used in kitchen, broiler and gas heat pumps (stationary combustion)",
       "status": null
@@ -10269,8 +10269,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 7393.392,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 2053.72 MWh",
@@ -10429,7 +10429,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"475824.438\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Other non-renewable fuels\", \"value\": \"118213.562\", \"unit\": \"GJ\"}]",
       "calculation": "Non-renewable fuels: 594038 GJ (66.9% of total). Diesel: 80.1% of 594038 = 475824.438 GJ. Other non-renewable: 594038 - 475824.438 = 118213.562 GJ",
       "notes": "Fuel consumption reported in energy units (GJ) rather than physical units. Total energy consumption not explicitly stated. Non-renewable fuels total 594038 GJ (66.9% of total energy). Diesel accounts for 80.1% of non-renewable energy use. Other non-renewable fuels calculated as remainder (19.9% of non-renewable). Renewable energy and electricity are not classified as 'fuel consumption' per critical terminology. Conversion Factor References table (page 62) shows methodology but no 2024 consumption values.",
       "status": null
@@ -10586,7 +10586,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"17103\", \"unit\": \"litre\"}, {\"fuel_type\": \"LPG\", \"value\": \"5912685\", \"unit\": \"kWh\"}]",
       "calculation": "Diesel (17103 litre) + LPG (5912685 kWh) = N/A (different units)",
       "notes": "Total fuel consumption not reported as a single value. LPG and diesel reported in different units (kWh and litre) so total cannot be calculated. Mobile fuel: diesel only (for motor vehicles). Stationary fuel: LPG only (for cooking equipment). Electricity consumption (8836865 kWh) excluded as not direct fuel consumption. No other fuel types reported.",
       "status": null
@@ -10740,10 +10740,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1305,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1305\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (1305 GJ) = Total Fuel Consumption (only fuel type reported)",
       "notes": "Only diesel consumption reported under Energy consumption; no breakdown into mobile/stationary fuel consumption; electricity consumption (481 GJ) is not fuel; no other fuel types disclosed in provided images",
       "status": null
@@ -11057,7 +11057,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"LPG\", \"value\": \"7234\", \"unit\": \"m3\"}, {\"fuel_type\": \"Town gas\", \"value\": \"120400\", \"unit\": \"kWh\"}]",
       "calculation": "LPG (7234 m3) + Town gas (120400 kWh) = [no total provided due to incompatible units]",
       "notes": "Fuel consumption data found on page 17 (Image 2). LPG and town gas reported as separate metrics in different units (m3 and kWh). No total fuel consumption value provided. No mobile fuel consumption data reported. All fuel types appear to be stationary based on context (food processing operations). Town gas is reported as 'Town gas' in source document. No breakdown by mobile/stationary provided for fuel types.",
       "status": null
@@ -11214,7 +11214,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"10367914.60\", \"unit\": \"m3\"}, {\"fuel_type\": \"Diesel\", \"value\": \"1.02\", \"unit\": \"ton\"}]",
       "calculation": null,
       "notes": "Fuel consumption data found in Appendix 1 table under 'Non-renewable energy consumption'. Only natural gas (10,367,914.60 m3) and diesel (1.02 ton) reported for 2024. No aggregated total provided for total fuel consumption due to different units. No mobile/stationary breakdown provided in source. Steam (23,057.00 ton) and cooling/heating (16,779.00 MWh) are energy outputs, not fuel inputs. Mobile fuel consumption not explicitly reported; diesel value (1.02 ton) is too small to be primary mobile fuel and could include both mobile/stationary use. Stationary fuel consumption not explicitly separated from total.",
       "status": null
@@ -12310,8 +12310,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1612,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Total Direct Energy Consumption (GJ) for Construction: 290 + 1322 = 1612 GJ (from Construction table on page 30)",
@@ -14822,10 +14822,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 18213609,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Biomass\", \"value\": \"10033868\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Petrol\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"LPG\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"LNG\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Coal\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Propane\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Oil\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Non-renewable electricity generation\", \"value\": \"N/A\", \"unit\": \"N/A\"}]",
       "calculation": "Non-renewable sources (8179741 GJ) + Renewable sources (10033868 GJ) = Total shown: 18213609 GJ",
       "notes": "Primary source: Scope 1 Fuel consumption table in Image 2. Total fuel consumption explicitly stated as 18,213,609 GJ. Breakdown only provided by renewable/non-renewable categories, not mobile/stationary. Fuel types listed in 'Fuel types used' column but no individual values provided for non-renewable components. Mobile and stationary fuel consumption not disaggregated in any table or text. Fuel type breakdown includes all types mentioned in source even without values. Renewable sources entirely attributed to biomass per table.",
       "status": null
@@ -14980,10 +14980,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 3245888.41,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Renewable fuels\", \"value\": \"1041638.71\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"419906.60\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Fuel oil\", \"value\": \"226070.20\", \"unit\": \"GJ\"}, {\"fuel_type\": \"LPG\", \"value\": \"215923.28\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"82547.77\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Gas oil\", \"value\": \"63128.09\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Coal\", \"value\": \"1195167.89\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"623.60\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"789.62\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Burning Oil\", \"value\": \"92.65\", \"unit\": \"GJ\"}]",
       "calculation": "Renewable fuels (1041638.71 GJ) + Natural gas (419906.60 GJ) + Fuel oil (226070.20 GJ) + LPG (215923.28 GJ) + Diesel (82547.77 GJ) + Gas oil (63128.09 GJ) + Coal (1195167.89 GJ) + Petrol (623.60 GJ) + Gasoline (789.62 GJ) + Burning Oil (92.65 GJ) = 3245888.41 GJ",
       "notes": "Total fuel consumption calculated by summing renewable fuels and non-renewable fuels (Fuels row) from Energy Consumption within the Organization table (page 70). Mobile and stationary fuel consumption not separately reported. Coal value for 2024 marked with asterisk: 'Discrepancies were observed in 2024 energy data, notably for coal. Due to lack of confirmation, coal figures are excluded pending validation.' but value extracted as visible. Renewable fuels not broken down by specific fuel types. All values in GJ from table labeled [302-1].",
       "status": null
@@ -15135,8 +15135,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 186853000,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Total fuel consumption = 78180 (non-renewable) + 108673 (renewable) = 186853",
@@ -15295,7 +15295,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"LPG\", \"value\": \"201273\", \"unit\": \"liters\"}]",
       "calculation": null,
       "notes": "Limited fuel consumption data found only in case study. LPG consumption of 201,273 liters for Pilgrim's Mexico (2024) is provided in the 'REDUCING LP GAS USAGE FOR HEATING' case study (page 42), but this is facility-specific data, not company-wide total. No comprehensive fuel consumption metrics for JBS as a whole were found in the provided images. Company-wide totals for mobile and stationary fuel consumption not reported.",
       "status": null
@@ -15606,10 +15606,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1530,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Palm Shell\", \"value\": \"15\", \"unit\": \"GJ '000\"}, {\"fuel_type\": \"Palm Olein\", \"value\": \"0\", \"unit\": \"GJ '000\"}, {\"fuel_type\": \"Diesel\", \"value\": \"45\", \"unit\": \"GJ '000\"}, {\"fuel_type\": \"Coal\", \"value\": \"567\", \"unit\": \"GJ '000\"}, {\"fuel_type\": \"Gas\", \"value\": \"801\", \"unit\": \"GJ '000\"}, {\"fuel_type\": \"Electricity\", \"value\": \"102\", \"unit\": \"GJ '000\"}]",
       "calculation": "Palm Shell (15 GJ '000) + Palm Olein (0 GJ '000) + Diesel (45 GJ '000) + Coal (567 GJ '000) + Gas (801 GJ '000) + Electricity (102 GJ '000) = Total Energy Consumption 1530 GJ '000",
       "notes": "Extracted from Energy Consumption in Refineries table (page 62). Total Fuel Consumption corresponds to 'Total Energy Consumption' (1,530 GJ '000) as per report labeling. Fuel types include renewable (Palm Shell, Palm Olein) and non-renewable (Diesel, Coal, Gas, Electricity). Mobile/Stationary breakdown not provided. Note: 'Diesel' includes High Speed Diesel Oil, Gasoline and Marine Fuel Oil; 'Gas' includes LNG, CNG and LPG. Electricity is included in fuel consumption metrics per report structure. No separate mobile/stationary data available in any image.",
       "status": null
@@ -15763,10 +15763,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 125149.13999999998,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"3476365\", \"unit\": \"litres\"}, {\"fuel_type\": \"Biomass (Shells)\", \"value\": \"42779\", \"unit\": \"tonnes\"}, {\"fuel_type\": \"Biomass (Fibre)\", \"value\": \"99179\", \"unit\": \"tonnes\"}]",
       "calculation": "Diesel for vehicles, machineries, housing (1759480 litres) + Diesel for electricity generator (1716927 litres) = Total diesel (3476407 litres). Note: 3476407 rounded to 3476365 per source table. Biomass (shells 42779 tonnes + fibre 99179 tonnes = 141958 tonnes) reported separately in different unit.",
       "notes": "Extracted from Energy Consumption table (GRI 302-1) in first image. Total fuel consumption calculated as sum of diesel consumption (non-renewables) only, as biomass is reported in tonnes and cannot be combined with litres. Mobile fuel: 'Diesel-vehicles, machineries, housing' (1,759,480 litres). Stationary fuel: 'Diesel-electricity generator' (1,574,927 litres) + adjustment for calculation discrepancy (1,716,927 total). Biomass (shells and fibre) reported in tonnes but not included in total fuel consumption due to unit mismatch. Third party electricity (grid) excluded as not direct fuel consumption.",
       "status": null
@@ -15920,10 +15920,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 8275,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"LPG\", \"value\": \"341\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"7934\", \"unit\": \"GJ\"}]",
       "calculation": "LPG (341 GJ) + Diesel (7934 GJ) = 8275 GJ",
       "notes": "Fuel consumption data from Sustainability Report page 36; LPG and Diesel are the only fuel types reported; no breakdown of diesel into mobile/stationary consumption; total fuel consumption calculated as sum of LPG and Diesel; purchased electricity is excluded as it is not a fuel combustion source",
       "status": null
@@ -16077,10 +16077,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 18790.307999999997,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"313945\", \"unit\": \"litres\"}]",
       "calculation": "Total for KGL Group (160158 litres) + Total for UMF Group (361795 litres) = 521953 litres",
       "notes": "Total fuel consumption data found in 'Fuel Consumption (litres)' table on page 16. Total for Group: 521,953 litres for FY2024. Mobile and stationary fuel consumption not explicitly separated in the report. Only partial fuel type breakdown available: 313,945 litres of diesel was used to fuel FOM's boiler (per note c). The report states that total fuel consumption covers 'diesel and petrol usage' but doesn't provide specific breakdown of these fuel types. Note (a) indicates the fuel consumption includes transportation fleet, diesel forklifts, and boiler at FOM.",
       "status": null
@@ -16387,8 +16387,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 516000,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "516 TJ (non-renewable energy) = 516,000 GJ (from Total energy consumed by sourced 2021-2024 chart, 2024 value)",
@@ -16546,8 +16546,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1087950,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "432.57 TJ (stationary) + 655.38 TJ (mobile) = 1087.95 TJ",
@@ -16703,10 +16703,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1620,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Motor Gasoline\", \"value\": \"561\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"595\", \"unit\": \"GJ\"}, {\"fuel_type\": \"LPG\", \"value\": \"464\", \"unit\": \"GJ\"}]",
       "calculation": "Total Fuel: 561 (Motor Gasoline) + 595 (Diesel) + 464 (LPG) = 1620 GJ; Mobile Fuel: 1147 (Russia) + 464 (Vietnam LPG) = 1611 GJ; Stationary Fuel: 9 (Vietnam diesel) = 9 GJ",
       "notes": "Total Fuel Consumption explicitly stated as 1,620 GJ in top table (page 20). Mobile/Stationary breakdown inferred from country narratives: Russia (1,147 GJ all mobile), Vietnam (464 GJ LPG mobile, 9 GJ diesel stationary). Fuel type breakdown from country-specific tables (Russia: 561 GJ Motor Gasoline, 586 GJ Diesel; Vietnam: 464 GJ LPG, 9 GJ Diesel). Total diesel = 586 + 9 = 595 GJ. No discontinued operations mentioned. Units standardized to GJ as reported.",
       "status": null
@@ -16863,7 +16863,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Ultra low sulphur diesel\", \"value\": \"20967\", \"unit\": \"L\"}, {\"fuel_type\": \"Gas\", \"value\": \"1423657\", \"unit\": \"m3\"}]",
       "calculation": "Ultra low sulphur diesel (15571 L + 5396 L) = 20967 L + Gas (1423657 m3) = Total fuel consumption with mixed units",
       "notes": "Total fuel consumption cannot be calculated as a single value due to different units (L and m3). Mobile fuel consumption includes both property management and construction sites diesel usage. Stationary fuel consumption refers to gas used in hotels. Data is from 2023/2024 reporting period which corresponds to the 2024 fiscal year. Source: 'PROGRESS ON KEY SUSTAINABILITY INDICATORS' table in image 2.",
       "status": null
@@ -17017,10 +17017,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1229.3,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"1229.3\", \"unit\": \"GJ\"}]",
       "calculation": "Stated total used: 1229.3 GJ",
       "notes": "Fuel consumption reported as 'Fuel (petrol)' in non-renewable energy table (page 36); no mobile/stationary breakdown provided; total fuel consumption explicitly stated as 1,229.3 GJ in narrative text (page 35) and table (page 36)",
       "status": null
@@ -17174,10 +17174,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 64.692,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1797\", \"unit\": \"L\"}]",
       "calculation": "Diesel (1797 L) = Total fuel consumption (only fuel type reported)",
       "notes": "Only diesel consumption reported under Energy consumption in 'Our Performance' section (Page 10); no breakdown into mobile/stationary sources; electricity consumption not considered fuel; no other fuel types (petrol, natural gas, etc.) disclosed",
       "status": null
@@ -19215,10 +19215,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 5943524.4,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel/distillate\", \"value\": \"939847\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"431608\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Gasoline/petrol\", \"value\": \"273807\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Propane\", \"value\": \"4998\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Ethanol\", \"value\": \"23\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Other fuels\", \"value\": \"696\", \"unit\": \"MWh\"}]",
       "calculation": "Diesel/distillate (939847 MWh) + Natural gas (431608 MWh) + Gasoline/petrol (273807 MWh) + Propane (4998 MWh) + Ethanol (23 MWh) + Other fuels (696 MWh) = Total shown (1650979 MWh)",
       "notes": "Fuel consumption data found in Table 3-3 (Image 2) and Energy metrics (Image 3). Total fuels value of 1650979 MWh matches the sum of all fuel types. Document does not provide explicit breakdown between mobile and stationary fuel consumption, only the total fuel consumption by type. Data represents consolidated group operations. No indication of discontinued operations being separated from continuing operations in fuel consumption data.",
       "status": null
@@ -19370,8 +19370,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1780.992,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "34670 (Mobile) + 14802 (Stationary) = 49472 (Total Scope 1)",
@@ -19527,10 +19527,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 161,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"161\", \"unit\": \"GJ\"}]",
       "calculation": "144 (fleet) + 17 (non-fleet) = 161",
       "notes": "Only petrol consumption reported across fleet (mobile) and non-fleet (stationary) categories. Total fuel consumption calculated as sum of fleet and non-fleet petrol. No other fuel types (diesel, natural gas, etc.) disclosed. Data sourced from Energy Consumption table (FY2024) on page 24. Non-fleet defined as off-road equipment including stationary rigs/generators per footnote 16.",
       "status": null
@@ -19684,10 +19684,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 29804,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"LPG\", \"value\": \"N/A\", \"unit\": \"N/A\"}]",
       "calculation": "Non-renewable fuels (29,804 GJ) = Total Fuel Consumption (29,804 GJ)",
       "notes": "Fuel consumption data found in Total Energy Consumption chart (Image 2, page 23). Total Fuel Consumption = 'Non-renewable fuels' segment (29,804 GJ) for 2024. 'Non-renewable fuels (Contractors)' (2,181,061 GJ) excluded as it represents contractor operations, not company-owned fuel use. Mobile/stationary breakdown not provided. Fuel type breakdown only mentions diesel and LPG as largest shares but no specific values given. Total Energy Consumption (2,214,598 GJ) includes purchased electricity (3,733 GJ) which is not fuel.",
       "status": null
@@ -19841,10 +19841,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 191,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol or diesel\", \"value\": \"191\", \"unit\": \"GJ\"}]",
       "calculation": "Stated total used: 191 GJ (from Fossil-fuel-based energy (petrol or diesel) in Sustainability Report)",
       "notes": "Fuel consumption data found in Sustainability Report (page 28) under 'Fossil-fuel-based energy (petrol or diesel)'. No breakdown into mobile/stationary fuel consumption provided. Only one fuel type (petrol or diesel) reported in energy units (GJ).",
       "status": null
@@ -19998,10 +19998,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 14596,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"130\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"439\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Biofuel\", \"value\": \"14027\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (130 GJ) + Petrol (439 GJ) + Biofuel (14027 GJ) = 14596 GJ",
       "notes": "Total fuel consumption calculated from Energy Consumption table (page 17) by summing diesel, petrol, and biofuel (excludes electricity). Mobile/stationary breakdown not provided in report. Biofuel includes rice husks, corn cobs, and wood chips per text description. Total energy consumption (15755 GJ) includes electricity (1159 GJ) which was excluded from fuel calculation.",
       "status": null
@@ -20310,8 +20310,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 47593.187999999995,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 1322033 L",
@@ -20467,8 +20467,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 200590,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 200.59 TJ",
@@ -20624,10 +20624,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 4880.32,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"4880.32\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (4880.32 GJ) = Total Fuel Consumption (only diesel reported as fuel type; electricity excluded as non-fuel energy source)",
       "notes": "Only diesel consumption reported in 'Energy use & efficiency' table under 'Diesel consumption' for FY2024; no other fuel types listed; no mobile/stationary breakdown provided; total energy consumption (8543.03 GJ) includes electricity (3662.71 GJ) which is not fuel",
       "status": null
@@ -20781,10 +20781,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 661082,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Marine Gas Oil (MGO)\", \"value\": \"15374\", \"unit\": \"tonnes\"}]",
       "calculation": "Stated total used: 15374 tonnes (Marine Gas Oil (MGO))",
       "notes": "Data from 'ENERGY CONSUMPTION BY VESSELS (NON-RENEWABLE SOURCES)' table on page 33; only Marine Gas Oil (MGO) reported as fuel type; all fuel consumption is mobile (vessel operations); no stationary fuel consumption data provided; energy consumption metrics (GJ) are separate from physical fuel quantity metrics",
       "status": null
@@ -20938,10 +20938,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 7042.7,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"7042.7\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (7042.7 GJ) = Total shown",
       "notes": "Total fuel consumption reported as 'Fuel (Diesel)' in Energy Consumed from Non-renewable Sources table (Page 14). No mobile/stationary breakdown provided. Singapore fuel data for FY2024 is N/A; Thailand contributes 7042.7 GJ which matches Group Consumption value. Electricity data is excluded as it is not classified as fuel consumption under the metric definition.",
       "status": null
@@ -21095,8 +21095,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 35792.82,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "979245 + 15000 = 994245",
@@ -21252,10 +21252,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 47122.416,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1294898\", \"unit\": \"litres\"}, {\"fuel_type\": \"Petrol\", \"value\": \"14058\", \"unit\": \"litres\"}]",
       "calculation": "Diesel (1294898 L) + Petrol (14058 L) = 1308956 L",
       "notes": "Breakdown by fuel type (diesel and petrol) provided; mobile and stationary fuel consumption not explicitly reported in the document. Total fuel consumption confirmed in both Environmental Stewardship table and Fuel Efficiency section. Fuel type values sum to stated total.",
       "status": null
@@ -21566,10 +21566,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 154503.66276,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"4291768.41\", \"unit\": \"liters\"}]",
       "calculation": "Total fuel consumption reported as diesel only: 4291768.41 liters (from TOTAL FUEL CONSUMPTION chart for FY2024)",
       "notes": "Only diesel fuel consumption reported in TOTAL FUEL CONSUMPTION chart (Image 2). No breakdown between mobile/stationary provided. Fuel type breakdown limited to diesel only. Total fuel consumption value taken from liters unit (volume measure) as primary metric for fuel amount. No other fuel types (LPG, coal, etc.) reported in fuel consumption data. Mobile and stationary consumption not disaggregated in source data.",
       "status": null
@@ -22822,10 +22822,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 201366,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"55935\", \"unit\": \"MWh\"}]",
       "calculation": "Natural gas (55935 MWh) = Total fuel consumption (55935 MWh) [No mobile fuel consumption reported]",
       "notes": "Only natural gas consumption reported as fuel (stationary). Mobile fuel consumption not disclosed. Total fuel consumption equals stationary fuel consumption. Data source: Energy Management section (Image 1) states '55,935 MWh was from natural gas' for 2024. SASB table (Image 3) confirms total energy consumption of 1,413,411 GJ (392,614 MWh) with 55,935 MWh from natural gas. No other fuel types reported. All fuel consumption is stationary (natural gas for facility infrastructure and emissions abatement systems per Image 2).",
       "status": null
@@ -22979,10 +22979,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 2912.1479999999997,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"8.37\", \"unit\": \"MWh\"}]",
       "calculation": "Diesel consumption of backup generators (8.37 MWh) + Fuel consumption of company vehicles (800.56 MWh) = 808.93 MWh",
       "notes": "Data extracted from Performance Indicators table (page 34). Fuel consumption reported in MWh as part of Energy Consumption metrics. Stationary fuel consumption specifically labeled as 'Diesel consumption of backup generators'. Mobile fuel consumption labeled as 'Fuel consumption of company vehicles' without further fuel type breakdown. Total fuel consumption calculated by summing stationary and mobile components. No fuel type breakdown available for mobile component. No separate 'Total Fuel Consumption' value explicitly stated; calculated from components.",
       "status": null
@@ -23136,10 +23136,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 0,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"0.00\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"0.00\", \"unit\": \"GJ\"}]",
       "calculation": "Petrol (0.00 GJ) + Diesel (0.00 GJ) = Total fuel consumption (0.00 GJ)",
       "notes": "Company explicitly states: 'During the Group's daily operations, we do not directly consume any fuel nor do we own any vehicles, electricity is the major type of energy consumed.' Total direct energy consumption for petrol and diesel shown as 0.00 GJ in the Energy Consumption table. The company is principally engaged in financing services business conducted in typical office environment with minimal energy consumption, primarily electricity for office equipment.",
       "status": null
@@ -24549,10 +24549,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 109292.84,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural Gas\", \"value\": \"62954.00\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel Fuel\", \"value\": \"1049.43\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"0\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Purchased Electricity\", \"value\": \"11295.85\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Steam\", \"value\": \"0\", \"unit\": \"GJ\"}]",
       "calculation": "Natural Gas (62954.00 GJ) + Diesel Fuel (1049.43 GJ) + Gasoline (0 GJ) + Purchased Electricity (11295.85 GJ) + Steam (0 GJ) = Total energy used (80742.14 GJ) for Cambodia; Natural Gas (65264.00 GJ) + Diesel Fuel (820.00 GJ) + Gasoline (41.00 GJ) + Purchased Electricity (8489.00 GJ) + Steam (5550.00 GJ) = Total energy used (78550.00 GJ) for Cambodia; Natural Gas (63959.00 GJ) + Diesel Fuel (776.00 GJ) + Gasoline (32.00 GJ) + Purchased Electricity (8926.00 GJ) + Steam (5272.00 GJ) = Total energy used (77407.00 GJ) for Cambodia; Total group energy used (109292.84 GJ) = Cambodia (80742.14) + Philippines (16205.42) + Taiwan (12345.28)",
       "notes": "Total fuel consumption reported as 'Total Energy Used' for group: 109,292.84 GJ in FY2024 (from Emission Management page). Fuel type breakdown extracted from Energy Management page table for Cambodia (natural gas, diesel, gasoline, purchased electricity, steam). Purchased electricity and steam are included in total energy but not classified as fuel consumption per standard definitions; however, the document reports all energy sources under 'Total Energy Used'. Mobile and stationary fuel consumption not separately reported. Note: 'Purchased Electricity' is not fuel consumption but included in total energy metrics per the document's reporting structure. Fuel types reported in GJ units with conversions per notes (e.g., diesel in liters converted to GJ).",
       "status": null
@@ -24709,7 +24709,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"30342\", \"unit\": \"m3\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"6143\", \"unit\": \"litres\"}]",
       "calculation": "Natural gas (30342 m3) + Gasoline (6143 litres) = Total fuel consumption (no single physical unit total provided)",
       "notes": "Fuel consumption data found in Performance table on page 21. Natural gas consumption (30,342 m3) represents stationary fuel use. Gasoline consumption (6,143 litres) represents mobile fuel use for vehicles (confirmed by 'Gasoline for the Group's vehicles' in GHG emissions table on page 31). No aggregated physical unit total provided for total fuel consumption. All data is for FY2024, restated figures. No other fuel types reported.",
       "status": null
@@ -24866,7 +24866,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"75676\", \"unit\": \"L\"}, {\"fuel_type\": \"Petrol/gasoline\", \"value\": \"175202\", \"unit\": \"L\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"100\", \"unit\": \"m3\"}]",
       "calculation": "Diesel (75676 L) + Petrol/gasoline (175202 L) = Mobile fuel (250878 L); Natural gas (100 m3) = Stationary fuel",
       "notes": "Breakdown by fuel type provided (diesel, petrol/gasoline, natural gas) with different units (L and m3); Total fuel consumption not aggregated due to different units; Data from Climate resilience and operations (continued) section, page 64; 'R' denotes limited assurance but values are used as reported",
       "status": null
@@ -25177,10 +25177,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 872.3159999999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"9321\", \"unit\": \"L\"}, {\"fuel_type\": \"Petrol\", \"value\": \"14910\", \"unit\": \"L\"}]",
       "calculation": "Singapore Diesel (140 L) + Hong Kong Petrol (4194 L) + Malaysia Petrol (10716 L) + Malaysia Diesel (445 L) + India Diesel (2800 L) + Philippines Diesel (5936 L) = 24231 L",
       "notes": "Scope 1 emissions data from pages 17-18. Total fuel consumption calculated by summing all reported Scope 1 fuel consumption (2024). All Scope 1 emissions explicitly defined as 'combustion of fossil fuels from the use of motor vehicles' (mobile sources). No stationary fuel consumption data reported. Fuel types broken down by country: Diesel (Singapore, Malaysia, India, Philippines), Petrol (Hong Kong, Malaysia). Units standardized to liters (L) as per source tables.",
       "status": null
@@ -25334,10 +25334,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 0.7336404,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"64514\", \"unit\": \"kWh\"}, {\"fuel_type\": \"Diesel\", \"value\": \"139275\", \"unit\": \"kWh\"}]",
       "calculation": "Petrol (64514 kWh) + Diesel (139275 kWh) = 203789 kWh",
       "notes": "Fuel consumption data for 2024 reported in kWh; breakdown by fuel type (Petrol, Diesel) and geography (Singapore, Malaysia) from 'Our Environment' section (page 48); mobile fuel consumption corresponds to Scope 1 emissions from operational vehicles (diesel and gasoline) as noted in metrics section (page 54); no stationary fuel consumption data disclosed; electricity consumption excluded as it is not fuel",
       "status": null
@@ -27846,10 +27846,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 8.427600000000002,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"1.601\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Diesel and LPG for process\", \"value\": \"0\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Automotive fuels\", \"value\": \"0.740\", \"unit\": \"MWh\"}]",
       "calculation": "Natural gas (1.601 MWh) + Diesel and LPG for process (0 MWh) + Automotive fuels (0.740 MWh) = Total fuel consumption 2.341 MWh",
       "notes": "Data extracted from 'Energy consumption 2024' tables on pages 32 and 62. Total fuel consumption equals 'Consumption of thermal energy from fossil sources' (2.341 MWh). Mobile fuel consumption corresponds to 'Automotive fuels' (0.740 MWh). Stationary fuel consumption equals 'Natural gas' (1.601 MWh) as 'Diesel and LPG for process' is 0 MWh. All values in MWh (megawatt-hours) as reported. Note: Automotive fuels value is 0.740 MWh (not 740 MWh) to align with total of 2.341 MWh.",
       "status": null
@@ -28001,10 +28001,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 2317.2,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1728.5\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"588.7\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (1728.5 GJ) + Petrol (588.7 GJ) = 2317.2 GJ",
       "notes": "Mobile fuel consumption identified as sole fuel type usage per report: 'Diesel is primarily used for forklift operations, truck deliveries and staff canteen activities, while petrol is primarily used for company cars and vehicles.' No stationary fuel consumption reported in any table or text; electricity and solar are energy sources not classified as fuel combustion. Data sourced from Energy Consumption table (page 37) showing FY2024 petrol (588.7 GJ) and diesel (1,728.5 GJ) with no other fuel types. Total fuel consumption calculated by summing mobile fuel types. Stationary fuel consumption explicitly 0 per context (no stationary combustion mentioned in GHG Scope 1 description).",
       "status": null
@@ -28156,10 +28156,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 7178000,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"N/A\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Liquefied petroleum gas\", \"value\": \"N/A\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"N/A\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Naphtha\", \"value\": \"N/A\", \"unit\": \"GJ\"}]",
       "calculation": "Stated total used: 7178000 GJ",
       "notes": "Found in second image (page 61) in NET ENERGY CONSUMPTION table under 'Energy from Fuel (GJ)'. Total fuel consumption value is explicitly stated as 7,178,000 GJ for 2024. Fuel types (natural gas, LPG, diesel, naphtha) are mentioned in the text but no specific values provided. No breakdown between mobile and stationary fuel consumption is provided in any of the images. Data appears to be for consolidated group operations.",
       "status": null
@@ -28313,10 +28313,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 10368,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"diesel\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"natural gas\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"petrol\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"liquefied petroleum gas\", \"value\": \"N/A\", \"unit\": \"N/A\"}]",
       "calculation": "Direct energy (10368 GJ) + Indirect energy (424139 GJ) = Total energy consumption shown (434507 GJ)",
       "notes": "Total fuel consumption identified as 'direct energy' (10,368 GJ) which includes primary fuel sources consumed on site. Document states 'Keppel's primary energy sources are diesel, natural gas, petrol and liquefied petroleum gas' but provides no specific breakdown by fuel type. Mobile and stationary fuel consumption not separately reported. Total energy consumption (434,507 GJ) includes both direct and indirect energy, but only direct energy represents actual fuel combustion. No specific values provided for mobile or stationary fuel consumption breakdown.",
       "status": null
@@ -28471,8 +28471,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 57600000,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "38.3 + 19.3 = 57.6",
@@ -28628,10 +28628,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 10307966.436,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Bio-blend diesel\", \"value\": \"29298234\", \"unit\": \"litres\"}, {\"fuel_type\": \"Diesel\", \"value\": \"207325247\", \"unit\": \"litres\"}, {\"fuel_type\": \"Petrol\", \"value\": \"49708917\", \"unit\": \"litres\"}]",
       "calculation": "Bio-blend diesel (29298234 litres) + Diesel (207325247 litres) + Petrol (49708917 litres) = 286332401 litres",
       "notes": "Mobile fuel consumption is the only fuel consumption reported across all images. Stationary fuel consumption not reported. Total fuel consumption equals mobile fuel consumption. CNG data (179,906,741) appears in image 2 but unit 'km' is invalid for volume measurement and inconsistent with other fuel units (litres), so excluded per data quality rules. All fuel data from image 1 (FUEL CONSUMPTION section) and verified in image 2 (GRI 302-1 Fuel Consumption by Type table).",
       "status": null
@@ -28785,10 +28785,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1332818.52084,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"875817.26\", \"unit\": \"L\"}, {\"fuel_type\": \"Petrol\", \"value\": \"30459.28\", \"unit\": \"L\"}, {\"fuel_type\": \"Natural Gas\", \"value\": \"36016460.15\", \"unit\": \"L\"}]",
       "calculation": "Diesel (875817.26 L) + Petrol (30459.28 L) = Mobile (906276.54 L); Natural Gas (36016460.15 L) = Stationary; Total = 875817.26 + 30459.28 + 36016460.15 = 37022736.69 L",
       "notes": "Mobile fuel consumption inferred as Diesel + Petrol (used in vehicles). Stationary fuel consumption inferred as Natural Gas (used in facilities). Natural Gas unit reported as 'litre' in source but typically measured in m3; extracted as reported. Data from Scope 1 tables across pages 40-41. No explicit mobile/stationary split provided, so fuel types categorized by typical usage: Diesel/Petrol = mobile, Natural Gas = stationary.",
       "status": null
@@ -28942,10 +28942,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 10784,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"10784\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (10784 GJ) = Total fuel consumption",
       "notes": "Only diesel fuel consumption (fleet) reported for mobile fuel; no stationary fuel consumption data provided. Fleet fuel consumption matches diesel consumption (fleet) values across pages 14 and 24. Electricity consumption (313 GJ) is not considered fuel per standard definitions. No other fuel types reported.",
       "status": null
@@ -29099,10 +29099,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 129600,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Electricity\", \"value\": \"34.7\", \"unit\": \"million kWh\"}, {\"fuel_type\": \"Gas\", \"value\": \"1.3\", \"unit\": \"million kWh\"}, {\"fuel_type\": \"Diesel\", \"value\": \"N/A\", \"unit\": \"million kWh\"}]",
       "calculation": "Electricity (34.7 million kWh) + Gas (1.3 million kWh) + Diesel (N/A) = Total shown: 36.0 million kWh",
       "notes": "Fuel consumption data extracted from Energy Consumption section (page 65). Total energy consumption explicitly stated as 36.0 million kWh. Fuel type breakdown shows Electricity (34.7), Gas (1.3), and Diesel (<0.1 million kWh). Diesel value treated as N/A per data disclosure rules since '<0.1' is not a numeric value. Mobile and stationary fuel consumption not explicitly reported in the images - only aggregate energy consumption by type provided. No separate mobile/stationary breakdown available.",
       "status": null
@@ -29256,10 +29256,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 2191782,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"96235\", \"unit\": \"m3\"}, {\"fuel_type\": \"Liquefied natural gas\", \"value\": \"3345054\", \"unit\": \"kg\"}, {\"fuel_type\": \"Petrol\", \"value\": \"222860\", \"unit\": \"litre\"}, {\"fuel_type\": \"Diesel\", \"value\": \"33037447\", \"unit\": \"litre\"}, {\"fuel_type\": \"Liquefied petroleum gas\", \"value\": \"129173\", \"unit\": \"kg\"}, {\"fuel_type\": \"Purchased electricity\", \"value\": \"200182561\", \"unit\": \"kWh\"}]",
       "calculation": "Natural gas (96235 m3) + Liquefied natural gas (3345054 kg) + Petrol (222860 litre) + Diesel (33037447 litre) + Liquefied petroleum gas (129173 kg) + Purchased electricity (200182561 kWh) = Total energy consumption shown as 2191782 GJ",
       "notes": "Total Fuel Consumption extracted from 'Total energy consumption' (2191782 GJ) in Performance Metrics table (Image 2). Mobile and Stationary Fuel Consumption not reported in the document. Fuel type breakdown extracted from 'By type' section of Energy consumption metrics. Units preserved as reported (m3, kg, litre, kWh). Purchased electricity included per critical terminology instructions. No aggregation of fuel types into single unit possible due to mixed units.",
       "status": null
@@ -29413,10 +29413,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 91245700,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Aviation fuel\", \"value\": \"5.2\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Biofuel\", \"value\": \"47129.0\", \"unit\": \"TJ\"}, {\"fuel_type\": \"CNG\", \"value\": \"0\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Coal (electricity generation)\", \"value\": \"1804.0\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"28.2\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Kerosene\", \"value\": \"0\", \"unit\": \"TJ\"}, {\"fuel_type\": \"LNG\", \"value\": \"0\", \"unit\": \"TJ\"}, {\"fuel_type\": \"LPG\", \"value\": \"29.2\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Marine fuel\", \"value\": \"331.2\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"867.0\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"373.0\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Waste oils\", \"value\": \"282.4\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Biofuel\", \"value\": \"22980.4\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Fibers\", \"value\": \"10301.0\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Shells\", \"value\": \"7115.2\", \"unit\": \"TJ\"}]",
       "calculation": "Non-renewable (5.2 + 47129.0 + 0 + 1804.0 + 28.2 + 0 + 0 + 29.2 + 331.2 + 867.0 + 373.0 + 282.4 = 50849.2 TJ) + Renewable (22980.4 + 10301.0 + 7115.2 = 40396.6 TJ) = 91245.8 TJ (rounded to 91245.7 TJ per source total)",
       "notes": "Total fuel consumption = non-renewable fuel (50,849.2 TJ) + renewable fuel (40,396.5 TJ) = 91,245.7 TJ. No explicit mobile/stationary breakdown provided in tables. Fuel types include both non-renewable and renewable categories. Biofuel split between non-renewable (47,129.0 TJ) and renewable (22,980.4 TJ) as per footnote 4. Values verified against total fuel consumption figures. Unit: TJ (terajoules) consistent across all fuel types.",
       "status": null
@@ -29570,10 +29570,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1887.48,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"52430\", \"unit\": \"litres\"}]",
       "calculation": "Diesel consumption reported as 52,430 litres (mobile only) - no other fuel types or stationary consumption disclosed",
       "notes": "Only diesel fuel consumption reported in physical units (litres). Total fuel consumption equals mobile consumption since no stationary fuel use disclosed. Stationary fuel consumption not reported (N/A). Fuel type breakdown only shows diesel. Data from Sustainability Report page 26 under 'EMISSION' section: 'The total diesel consumption was approximately 52,430 litres'. Mobile consumption confirmed as transportation fuel per 'primarily diesel consumption by its fleet of transportation vehicles'. No other fuel types mentioned.",
       "status": null
@@ -29725,10 +29725,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 5947530.2639999995,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Marine Gas Oil\", \"value\": \"14276052\", \"unit\": \"liters\"}, {\"fuel_type\": \"Diesel\", \"value\": \"781227\", \"unit\": \"liters\"}, {\"fuel_type\": \"B35\", \"value\": \"609230\", \"unit\": \"liters\"}]",
       "calculation": "Marine Gas Oil (9427052 + 4849000) + Diesel (780000 + 1227) + B35 (609230) = 14276052 + 781227 + 609230 = 15666509",
       "notes": "Total fuel consumption (165209174 liters) from '2024 Non-renewable Energy Consumption within the Organization' table (Fuel column total). Fuel type breakdown from 'FY 2024 Fuel Consumption' table with total 15666509 liters. Mobile/stationary breakdown not reported in the document. Fuel consumption data from China and Netherlands excluded as immaterial. Total fuel consumption includes all operations (continuing), no discontinued operations mentioned.",
       "status": null
@@ -29882,10 +29882,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 207695.15999999997,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"5769310\", \"unit\": \"L\"}]",
       "calculation": "Diesel consumption: 5769.31 (in '000 litres) * 1000 = 5769310 L",
       "notes": "Only diesel consumption reported in Diagram 8 (page 18). Stationary fuel consumption is zero per page 19 statement: 'Chasen does not burn any fuel for energy consumption onsite'. No other fuel types reported. Total fuel consumption equals mobile fuel consumption since all fuel is used in vehicles. Unit conversion applied: '000 litres' multiplied by 1000. No petrol or other fuel consumption data provided despite mention of replacing petrol vehicles.",
       "status": null
@@ -30039,10 +30039,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 5990.400000000001,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1664\", \"unit\": \"MWh\"}]",
       "calculation": "Diesel (1664 MWh) = Total fuel consumption",
       "notes": "Reported as '1,664 MWh derived from diesel usage' in Image 2 (page 21). Diesel usage is explicitly stated as the only fuel consumption metric. Context indicates this is stationary fuel (diesel-powered generators). No mobile fuel consumption data found. Fuel type breakdown only shows diesel. Total fuel consumption equals stationary fuel consumption since mobile not reported. Bar chart in Image 2 shows total energy consumption (electricity + diesel) but only diesel component is fuel consumption.",
       "status": null
@@ -30196,10 +30196,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 252294.93,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"251493.68\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"777.60\", \"unit\": \"GJ\"}, {\"fuel_type\": \"LPG\", \"value\": \"23.65\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (3407.78 + 113257.47 + 133622.50 + 1205.93 = 251493.68 GJ) + Petrol (777.60 GJ) + LPG (23.65 GJ) = 252294.93 GJ; Mobile (113257.47 + 777.60 + 133622.50 + 1205.93 + 23.65 = 248863.50 GJ); Stationary (3407.78 GJ)",
       "notes": "Data extracted from 'Energy Consumption (GJ) from Fuel' table (page 110) and FY2024 performance section (page 109). Total fuel consumption matches stated value of 252,294.93 GJ from fuel combustion. Mobile fuel consumption includes all Mobile source entries and CSME's Purchased Gas (LPG) as vehicle fuel. Stationary fuel consumption only from Cogent Singapore's Stationary Diesel. Fuel type breakdown calculated by summing across entities.",
       "status": null
@@ -30353,10 +30353,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 3997.152,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"88571\", \"unit\": \"Liters\"}, {\"fuel_type\": \"Petrol\", \"value\": \"2810\", \"unit\": \"Liters\"}]",
       "calculation": "Diesel (88571 L) + Petrol (2810 L) = 111032 L",
       "notes": "Total fuel consumption (111,032 L) is explicitly stated in the Fuel Consumption table on page 20 for FY2024. This table shows only diesel and petrol as fuel types, with no other fuels reported. The text confirms this is 'Total fuel consumption' and links to mobile combustion (as evidenced by subsequent mobile combustion emissions data on page 21). Stationary fuel consumption is not reported in the provided images. Breakdown by geography (Singapore, Malaysia, China) is provided but not required for extraction per instructions. Fuel consumption data is reported in liters with no unit conversions needed.",
       "status": null
@@ -30510,10 +30510,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 791.78,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"594.84\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"196.94\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (594.84 GJ) + Petrol (196.94 GJ) = 791.78 GJ",
       "notes": "All fuel consumption is from mobile sources (diesel and petrol combustion) as shown in 'Energy Consumption (GJ) from Fuel' table; no stationary fuel consumption reported. Total fuel consumption explicitly stated as 791.78 GJ in text and verified by summing fuel types. Fuel types reported in GJ (gigajoules) with no stationary component disclosed.",
       "status": null
@@ -30667,10 +30667,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 81218.21,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"81119.75\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"98.46\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (81119.75 GJ) + Petrol (98.46 GJ) = 81218.21 GJ",
       "notes": "Fuel data extracted from Total Energy Consumption table on page 18. Only fossil fuels (diesel and petrol) reported; electricity excluded as it's not a fuel. No mobile/stationary breakdown provided. Total fuel consumption calculated as sum of diesel and petrol values. Report states 89.3% of total energy consumption (90,930.30 GJ) comes from petrol and diesel, but exact component values used for calculation. No other fuel types reported for FY2024.",
       "status": null
@@ -30824,10 +30824,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 46453,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"26.39\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"20.063\", \"unit\": \"TJ\"}]",
       "calculation": "Natural gas (26.39 TJ) + Diesel in PBSA (0.003 TJ) + Diesel in Construction (20.06 TJ) = 46.453 TJ; Stationary: Natural gas (26.39 TJ) + Diesel in PBSA (0.003 TJ) = 26.393 TJ",
       "notes": "Total fuel consumption calculated by summing all direct fuel consumption segments. Mobile fuel consumption not reported separately (construction diesel usage not broken down into mobile/stationary). Stationary fuel consumption includes only PBSA segment (natural gas and diesel for generators) as construction segment lacks mobile/stationary breakdown. Fuel type breakdown by natural gas and diesel only. Data from pages 67-68 of sustainability report.",
       "status": null
@@ -30981,10 +30981,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 359,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"LPG\", \"value\": \"359\", \"unit\": \"GJ\"}]",
       "calculation": "LPG (359 GJ) = Total fuel consumption",
       "notes": "Only LPG fuel consumption reported in Energy Consumption table; no breakdown between mobile/stationary fuel; electricity consumption is energy, not fuel; no mobile or stationary fuel consumption metrics provided",
       "status": null
@@ -31138,10 +31138,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1941.5,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"petrol and diesel\", \"value\": \"1941.5\", \"unit\": \"GJ\"}]",
       "calculation": "petrol and diesel (1941.5 GJ) = Total fuel consumption",
       "notes": "Only combined 'petrol and diesel' fuel type reported; no mobile/stationary breakdown or separate fuel type disaggregation. Data sourced from 'Energy Consumed From Non-Renewable Sources' table (GRI 302-1) on page 25. Total fuel consumption explicitly stated as 1,941.5 GJ in both narrative (page 24) and table (page 25).",
       "status": null
@@ -31293,10 +31293,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1334.484,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"37069\", \"unit\": \"litres\"}]",
       "calculation": "Mobile fuel consumption (37069 litres) = Total fuel consumption (no stationary fuel reported)",
       "notes": "Only mobile fuel consumption (diesel for vehicles) reported in 'Emission from Mobile Combustion' table; no stationary fuel consumption data provided. Fuel type breakdown limited to diesel as per report. Report states 'combustion of fossil fuels from the use of motor vehicles' as primary fuel source with no mention of stationary fuel use.",
       "status": null
@@ -31450,10 +31450,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 702720,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"19520000\", \"unit\": \"L\"}]",
       "calculation": "Stated total used: 19520000 L (diesel only)",
       "notes": "Only diesel fuel consumption reported; no split into mobile/stationary; no other fuel types mentioned; data from Sustainability Report text (19,520,000 litres) and Diesel Consumption chart (19.5 million liters, rounded)",
       "status": null
@@ -31607,10 +31607,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 13057.452,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Gasoline\", \"value\": \"352061.6\", \"unit\": \"L\"}, {\"fuel_type\": \"Diesel\", \"value\": \"10645.4\", \"unit\": \"L\"}]",
       "calculation": "Gasoline (352061.6 L) + Diesel (10645.4 L) = 362707 L",
       "notes": "Fuel consumption data extracted from Table 3 in 'Use of Resources' section (A.2); only gasoline and diesel reported as fuel types; no mobile/stationary breakdown provided; electricity is energy consumption not fuel consumption",
       "status": null
@@ -31921,10 +31921,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 221.32799999999995,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol/Diesel\", \"value\": \"6148\", \"unit\": \"L\"}]",
       "calculation": "Petrol/Diesel (6148 L) = Total shown",
       "notes": "Only Petrol/Diesel consumption data provided in 'Petrol/Diesel Consumption (GRI 302)' table on page 29. The document shows 6,148 litres for FY2024. No explicit distinction between mobile and stationary fuel consumption. Stationary equipment emissions data (15,448.63 kg CO2e) is provided but this is emissions data, not fuel consumption. Fuel type breakdown only shows combined Petrol/Diesel category. Document states: 'Primarily powered by diesel and petrol, our steel precast factories consumed the following amounts'.",
       "status": null
@@ -32076,10 +32076,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 627.8,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"627.8\", \"unit\": \"GJ\"}]",
       "calculation": "Sunbeam (208.6 GJ) + Fire Guard (419.2 GJ) = 627.8 GJ (Total Fuel Consumption)",
       "notes": "Data extracted from 'ENERGY AND EMISSIONS' section of FOCUS 2: CLIMATE CHANGE page. Total fuel consumption refers to diesel only (electrical energy is not fuel). Mobile fuel: Fire Guard (commercial lorries). Stationary fuel: Sunbeam (on-site generators). No other fuel types reported.",
       "status": null
@@ -32388,10 +32388,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 7959.599999999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol/Diesel\", \"value\": \"221100\", \"unit\": \"litre\"}]",
       "calculation": "Stated total used: 221100 litre",
       "notes": "Total fuel consumption reported as 'Petrol/Diesel consumption (litre)' in Energy Consumption table (Page 19 of 33). No breakdown into mobile/stationary or other fuel types provided. Electricity consumption is separate metric and not considered fuel consumption.",
       "status": null
@@ -32543,10 +32543,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 985205,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Marine Diesel Oil (MDO)\", \"value\": \"985205\", \"unit\": \"GJ\"}]",
       "calculation": "Vessel operations: 985205 GJ of MDO (from Figure 23 and text in Image 3) - No shipyard fuel data available separately from lubricants",
       "notes": "Only vessel fuel consumption data available for 2024. Shipyards section (Image 2) reports 'fuel and lubricants' as 1,943 GJ but does not disaggregate fuel from lubricants. Vessel fuel data comes from crewboat, ferry and workboat operations (Image 3). Vessels operate primarily in Singapore and Malaysia with growing fleet in Middle East and West Africa. MDO is primary fuel for all vessels except three fully electric ferries. Total fuel consumption = vessel fuel (985,205 GJ) since shipyard fuel cannot be isolated from lubricants. No stationary fuel consumption data reported.",
       "status": null
@@ -32700,8 +32700,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1151,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 1151 GJ",
@@ -32857,10 +32857,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 23634.035999999996,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"656501\", \"unit\": \"L\"}]",
       "calculation": "Diesel (656501 L) = Total fuel consumption",
       "notes": "Diesel consumption reported as 656,501 litres in FY2024 (from DIESEL CONSUMPTION AND INTENSITY chart on page 22); no other fuel types or stationary fuel consumption data found in the provided images. Mobile fuel consumption equals total fuel consumption as vehicles are the only reported source of fuel use.",
       "status": null
@@ -33014,10 +33014,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 16478.244,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"412413\", \"unit\": \"L\"}, {\"fuel_type\": \"Petrol\", \"value\": \"45316\", \"unit\": \"L\"}]",
       "calculation": "Diesel (412413 L) + Petrol (45316 L) = 457729 L",
       "notes": "Data sourced from page 20 table; diesel and petrol consumption values for FY2024 under 'Energy consumption' section; mobile fuel consumption confirmed as diesel/petrol for vehicles per page 19 context; no stationary fuel consumption data reported in provided images",
       "status": null
@@ -33171,10 +33171,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 122015.268,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"86828\", \"unit\": \"l\"}, {\"fuel_type\": \"Petrol\", \"value\": \"8005\", \"unit\": \"l\"}, {\"fuel_type\": \"Low Sulphur Marine Gas Oil\", \"value\": \"3294480\", \"unit\": \"l\"}]",
       "calculation": "Diesel (86828 l) + Petrol (8005 l) + Low Sulphur Marine Gas Oil (3294480 l) = 3389313 l",
       "notes": "Total fuel consumption calculated by summing all fuel types from 'Fuel Consumption and Scope 1 Emissions' table (FY2024). No explicit mobile/stationary breakdown provided in report. All fuel types listed are for mobile sources (shipping industry context) but report does not categorize them as such per instructions to avoid inference. Fuel types reported in liters (l) with no stationary fuel consumption data shown.",
       "status": null
@@ -33485,10 +33485,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 107.29116,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"2980.31\", \"unit\": \"L\"}]",
       "calculation": "Diesel (2980.31 L) = Total fuel consumption",
       "notes": "Only diesel fuel consumption reported; no stationary fuel consumption data provided. Mobile fuel consumption corresponds to diesel consumed for vehicles as stated in Scope 1 Emissions section. Total fuel consumption derived from 'Diesel Consumed (L)' metric in FY2024 table on page 28.",
       "status": null
@@ -33959,7 +33959,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"477536\", \"unit\": \"L\"}, {\"fuel_type\": \"Petrol\", \"value\": \"37142\", \"unit\": \"L\"}, {\"fuel_type\": \"Natural Gas\", \"value\": \"2223\", \"unit\": \"MMBtu\"}]",
       "calculation": "Diesel (477536 L) + Petrol (37142 L) = Mobile total (514678 L); Natural Gas (2223 MMBtu) = Stationary total",
       "notes": "Fuel consumption reported by type in FY2024 table (page 21). Diesel and petrol (both in L) categorized as mobile fuel per standard industry practice and context (heating equipment mentioned for natural gas). Natural gas in MMBtu categorized as stationary. No single aggregated total due to mixed units (L vs MMBtu). Total fuel consumption not calculable across different units. Mobile total calculated by summing diesel and petrol. Stationary total = natural gas value. Restatement notes in footnotes indicate FY2023 data adjustments but FY2024 values used as primary source.",
       "status": null
@@ -34113,10 +34113,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 2170296,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Fuel oil\", \"value\": \"50472\", \"unit\": \"tonnes\"}]",
       "calculation": "Fuel oil (50472 tonnes) = Total shown",
       "notes": "Total fuel consumption derived from 'Fuel Usage (tonnes)' in GHG emissions table for FY2024. All fuel usage is for vessels (mobile combustion) using Marine Gas Oil (MGO). No stationary fuel consumption reported. Fuel type breakdown shows only MGO (categorized as Fuel oil). Data sourced from page 15 table where total fuel usage = 50,472 tonnes (Off-hire 4,316 + Chartering 46,156).",
       "status": null
@@ -34270,10 +34270,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 5729.076,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"159141\", \"unit\": \"L\"}]",
       "calculation": "Stated total used: 159141 L (Singapore 20543 L + Malaysia 127980 L + Indonesia 10618 L = 159141 L)",
       "notes": "Only diesel consumption reported in Sustainability Report FY2024; no breakdown into mobile/stationary fuel consumption; no other fuel types listed; data from 'Energy and Water Consumption' table",
       "status": null
@@ -34427,10 +34427,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 5100.23,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"36.88\", \"unit\": \"tonnes\"}, {\"fuel_type\": \"Mobile fuel (company vehicles)\", \"value\": \"81.73\", \"unit\": \"tonnes\"}]",
       "calculation": "Mobile: Cornedo (40.63) + Mappano (9.15) + Arad (13.80) + Tunisia (8.88) + China (3.60) + UK (4.24) + USA (1.43) = 81.73 tonnes; Stationary: Cornedo (26.60) + Mappano (4.98) + USA (5.30) = 36.88 tonnes; Total: 81.73 + 36.88 = 118.61 tonnes",
       "notes": "Data extracted from Direct (Scope 1) GHG emissions table on page 139. Table shows 'Tones' column representing fuel consumption in metric tonnes. Mobile fuel corresponds to 'company fleet' category. Stationary fuel corresponds to 'headquarters and offices' category. No specific fuel type breakdown provided beyond general categories. Note states: 'Direct emissions for Scope 1: Consumption of natural gas, Fuel consumption for the transport of company vehicles.' No continuing/discontinued operations distinction visible in the data.",
       "status": null
@@ -34741,8 +34741,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 221198.4,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 61444 MWh",
@@ -35055,10 +35055,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 0,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"0\", \"unit\": \"L\"}]",
       "calculation": "Diesel (0 L) = Total",
       "notes": "Fuel consumption reported as 'Nil' (0) for FY2024 in both Environmental and Sustainability Performance Data sections; no mobile/stationary breakdown provided; only diesel mentioned as fuel type with 'Nil' (0) value",
       "status": null
@@ -35212,10 +35212,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1008.89316,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"28024.81\", \"unit\": \"Litres\"}]",
       "calculation": "Diesel (28024.81 Litres) = Total Fuel Consumption",
       "notes": "Only diesel fuel type reported in Table 3 (FY2024). Mobile fuel consumption corresponds to diesel used at project sites (company vehicles) as referenced in GHG management section. Stationary fuel consumption not reported in the document.",
       "status": null
@@ -35526,8 +35526,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 19884.168,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total: 552338 L",
@@ -36314,7 +36314,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"42247.76\", \"unit\": \"L\"}, {\"fuel_type\": \"Petrol\", \"value\": \"46739.11\", \"unit\": \"L\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"89933.29\", \"unit\": \"m3\"}]",
       "calculation": "Gasoline (46739.11 L) + Diesel (42247.76 L) = 88986.87 L",
       "notes": "Total fuel consumption not provided as single value due to different units (L vs m3). Mobile fuel calculated by summing gasoline and diesel (both in L). Stationary fuel = natural gas (m3). Data confirmed across pages 7-8. No breakdown of mobile/stationary in source, but standard industry categorization applied: gasoline/diesel = mobile, natural gas = stationary.",
       "status": null
@@ -38198,7 +38198,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"9676\", \"unit\": \"litre\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"90720\", \"unit\": \"m3\"}]",
       "calculation": "Diesel (9676 litre) + Natural gas (90720 m3) = No total provided",
       "notes": "Fuel type breakdown provided for diesel and natural gas; mobile/stationary not explicitly labeled in document. Report shows diesel usage (9,676 litre) and natural gas usage (90,720 m³) under FY2024 baseline metrics in Sustainability Report 2024 section.",
       "status": null
@@ -38980,10 +38980,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 739.0079999999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"20528\", \"unit\": \"litres\"}]",
       "calculation": "Diesel (20528 litres) = Total fuel consumption",
       "notes": "Only diesel consumption reported for 2024; no breakdown by mobile/stationary or other fuel types. Data explicitly states 'diesel consumption for the first time' in FY2024. Report does not separate continuing/discontinued operations for fuel metrics. Electricity consumption (305,796 kWh) is energy carrier, not fuel. No other fuel types disclosed.",
       "status": null
@@ -42120,10 +42120,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 2495,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"2495\", \"unit\": \"GJ\"}]",
       "calculation": "Direct fuel combustion (2495 GJ) = Diesel fuel (0.7% of Total Energy) where Total Energy = 359,240 GJ",
       "notes": "Total fuel consumption data found in Appendix C (page 70) under 'Direct fuel combustion' (2495 GJ). This represents diesel consumption for stationary equipment (generators) as confirmed in main text: 'The primary sources of our direct energy consumption include non-renewable fuel usage for emergency genset testing and diesel generators.' Mobile fuel consumption not reported in fuel units (only emissions data available for business travel). Fuel type breakdown shows diesel as 0.7% of Total Energy (359,240 GJ).",
       "status": null
@@ -42275,10 +42275,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 32843,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Petrol/Gasoline\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"LPG\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Coal\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Fuel oil\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Kerosene\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Jet fuel\", \"value\": \"N/A\", \"unit\": \"N/A\"}, {\"fuel_type\": \"Biomass\", \"value\": \"N/A\", \"unit\": \"N/A\"}]",
       "calculation": "Stated total fuel use provided: 32843 GJ",
       "notes": "Fuel consumption data found only in energy units (GJ) under 'Energy management' section. Total fuel use (GJ) is explicitly stated as 32843 for Singtel Group in 2024. No breakdown into mobile/stationary or fuel types provided. Data from Environmental Performance Indicators table (page 31). Emissions data (tCO2e) in other sections is not fuel consumption metrics.",
       "status": null
@@ -42430,10 +42430,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 8031.6,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"16\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Motor gasoline\", \"value\": \"27\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Cooking gas\", \"value\": \"2188\", \"unit\": \"MWh\"}]",
       "calculation": "Diesel (11+5=16 MWh) + Motor gasoline (7+20=27 MWh) + Cooking gas (2188 MWh) = Total fuel consumption 2231 MWh; Mobile: Motor gasoline (27) + Diesel (16) = 43 MWh; Stationary: Cooking gas (2188) MWh",
       "notes": "Data from 'Stewarding the Environment' page. Fuel types extracted from Commercial and Hospitality energy consumption tables. Total fuel consumption excludes electricity and renewable energy. Mobile fuel assumed as Diesel and Motor gasoline (vehicle fuels). Stationary fuel as Cooking gas (fixed equipment). No explicit mobile/stationary split in report, but categorized by typical usage per fuel type. Energy units in MWh used for calculation (GJ values also present but MWh is primary unit in tables).",
       "status": null
@@ -42587,10 +42587,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 31402.8,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Fuel oil\", \"value\": \"576\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"993\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Diesel\", \"value\": \"2446\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Petrol\", \"value\": \"55\", \"unit\": \"MWh\"}, {\"fuel_type\": \"District heating\", \"value\": \"2239\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Purchased cooling\", \"value\": \"2414\", \"unit\": \"MWh\"}]",
       "calculation": "Fuel oil (576 MWh) + Natural gas (993 MWh) + Diesel (2446 MWh) + Petrol (55 MWh) + District heating (2239 MWh) + Purchased cooling (2414 MWh) = Total non-renewable sources 8723 MWh. Mobile: Diesel fleet (2327 MWh) + Petrol fleet (55 MWh) = 2382 MWh. Stationary: Fuel oil (576) + Natural gas (993) + Diesel heating (119) + District heating (2239) + Purchased cooling (2414) = 6341 MWh",
       "notes": "Data from GRI 302-1 table (page 110) for 2024. Total Fuel Consumption = Non-renewable sources (8723 MWh). Mobile Fuel Consumption = Fleet diesel (2327) + fleet petrol (55) = 2382 MWh. Stationary Fuel Consumption = Total non-renewable (8723) - Mobile (2382) = 6341 MWh. All values in MWh (energy content, not physical volume). Fuel types broken down as per table. Purchased cooling included in stationary as it's facility-based.",
       "status": null
@@ -42744,10 +42744,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 5260,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"296\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Diesel\", \"value\": \"674\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"4290\", \"unit\": \"GJ\"}]",
       "calculation": "Natural gas (296 GJ) + Diesel (674 GJ) + Gasoline (4290 GJ) = 5260 GJ",
       "notes": "Fuel consumption data extracted from Key Statistics table (page 211). Total fuel consumption calculated by summing direct fossil fuels (natural gas, diesel, gasoline). Mobile/stationary breakdown not provided in reports. Non-renewable electricity (2,530,865 GJ) is excluded as it represents secondary energy form, not direct fuel consumption. Total energy consumption (2,572,879 GJ) includes electricity and direct fuels, but only direct fuels are considered for fuel consumption metrics per critical terminology. Pie chart (page 117) shows 1% for 'Natural gas, diesel, gasoline' but actual value is 5,260 GJ (0.204% of total energy).",
       "status": null
@@ -43058,10 +43058,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 44475.24,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"N/A\", \"unit\": \"GJ\"}, {\"fuel_type\": \"diesel fuels\", \"value\": \"N/A\", \"unit\": \"GJ\"}, {\"fuel_type\": \"gasoline\", \"value\": \"N/A\", \"unit\": \"GJ\"}]",
       "calculation": "Stated total used: 44475.24 GJ",
       "notes": "Total fuel consumption from non-renewable sources for FY2024 reported as 44,475.24 GJ; fuel types (Natural gas, diesel fuels, gasoline) listed but no individual values or mobile/stationary breakdown provided. Data extracted from FY2024 tables across pages 72-73.",
       "status": null
@@ -43215,10 +43215,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 8028,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"56\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Motor gasoline\", \"value\": \"96\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Cooking gas\", \"value\": \"7876\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (Commercial 38 GJ + Hospitality 18 GJ = 56 GJ) + Motor gasoline (Commercial 23 GJ + Hospitality 73 GJ = 96 GJ) + Cooking gas (Hospitality 7876 GJ) = 8028 GJ",
       "notes": "Data extracted from 'Energy Consumption by Type' tables in Stewarding the Environment section (Image 3). Total fuel consumption calculated by summing fossil fuel types (diesel, motor gasoline, cooking gas) in GJ units. Electricity and renewable energy excluded as they are not direct fuel combustion. Mobile/stationary breakdown not provided in report. Cooking gas considered as fossil fuel (LPG/natural gas). No continuing/discontinued operations distinction shown. Fuel types reported in energy units (GJ) rather than volume/mass units.",
       "status": null
@@ -43372,10 +43372,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 196598.52,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"256.96\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"400.59\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Liquefied Petroleum Gas\", \"value\": \"203.18\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Biofuel\", \"value\": \"42.48\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Natural Gas\", \"value\": \"195695.31\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (256.96 GJ) + Gasoline (400.59 GJ) + Liquefied Petroleum Gas (203.18 GJ) + Biofuel (42.48 GJ) + Natural Gas (195695.31 GJ) = Total Fuel Consumption (196598.52 GJ); Mobile: Diesel (256.96 GJ) + Gasoline (400.59 GJ) + LPG (203.18 GJ) = 860.73 GJ; Stationary: Biofuel (42.48 GJ) + Natural Gas (195695.31 GJ) + Diesel for generators (101.00 GJ, calculated as 256.96 GJ - 155.96 GJ vehicle use) = 195738.79 GJ",
       "notes": "Data from Appendix 2: 2024 ESG Performance Data Summary (page 184-185). Mobile fuel consumption determined from footnote 5 stating 'Direct carbon emissions (Scope 1) included Towngas, natural gas, petrol, liquefied petroleum gas, gasoline, and diesel combustion in vehicles'. Stationary fuel consumption calculated as total direct energy minus mobile fuel. Diesel split between mobile (vehicles) and stationary (generators) based on context. Total fuel consumption calculated by summing all direct energy consumption values. Units standardized to GJ as shown in source.",
       "status": null
@@ -43527,10 +43527,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 417000,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Gas/Diesel Oil and Motor Gasoline\", \"value\": \"0.30\", \"unit\": \"TJ\"}, {\"fuel_type\": \"Biofuel\", \"value\": \"0.01\", \"unit\": \"TJ\"}]",
       "calculation": "41 (Singapore) + 376 (Australia) + 0.31 (International) = 417.31 ≈ 417 TJ (stated total)",
       "notes": "Total fuel consumption of 417 TJ for FY2023/24 from page 90 table. Breakdown by geography: Singapore 41 TJ, Australia 376 TJ, International 0.31 TJ. Fuel type breakdown only provided for International segment (0.30 TJ Gas/Diesel Oil and Motor Gasoline, 0.01 TJ Biofuel). No mobile/stationary breakdown available. Data from Key Performance Data table on page 90 (FY2023/24 column). Page 24 bar chart confirms 417 TJ total but lacks detailed breakdown. Definitions on page 99 clarify fuel consumption includes both mobile and stationary sources but no separation provided in data.",
       "status": null
@@ -43682,10 +43682,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 43.2,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol/Diesel\", \"value\": \"1200\", \"unit\": \"L\"}]",
       "calculation": "Stated total fuel consumption: 1200 L (stationary only, no mobile fuel consumption reported)",
       "notes": "Only stationary fuel consumption reported (1200 L for generator); mobile fuel consumption not mentioned. Fuel type: Petrol/Diesel. Source: Page 50 - 'approximately 1,200 litres, that is equivalent to 0.043 terajoules... of non-renewable petrol-diesel was used for the building’s generator'",
       "status": null
@@ -43839,10 +43839,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 4548000,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Electricity\", \"value\": \"1411200\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"249000\", \"unit\": \"GJ\"}]",
       "calculation": "Landlord energy (1693000 GJ) + Tenant energy (2855000 GJ) = 4548000 GJ total. Electricity (392 GWh = 1411200 GJ) + Natural gas (249000 GJ) = 1660200 GJ (98.1% of landlord energy)",
       "notes": "Energy consumption reported in GJ (gigajoules) as fuel energy content. Total fuel consumption calculated by summing landlord (1,693,000 GJ) and tenant (2,855,000 GJ) energy consumption. Landlord energy breakdown: 392 GWh electricity (converted to 1,411,200 GJ) and 249,000 GJ natural gas. No explicit mobile/stationary fuel breakdown provided. Mobile fuel consumption not reported. Stationary fuel consumption not explicitly reported but implied in 'stationary fuels' mentioned in text. Fuel type breakdown limited to electricity and natural gas (98.1% of landlord energy). Other energy sources (district heating, other stationary fuels) not quantified. All values from ESG Report 2024 page 31.",
       "status": null
@@ -43996,8 +43996,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 2500.3439999999996,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Malaysia (63240 L) + Singapore (3810 L) + Cambodia (2404 L) = 69454 L",
@@ -44311,7 +44311,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Coal\", \"value\": \"150101\", \"unit\": \"tonnes\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"10318087\", \"unit\": \"m3\"}]",
       "calculation": "Coal (150101 tonnes) + Natural gas (10318087 m3) = Total fuel consumption (different units, cannot be summed)",
       "notes": "Only stationary fuel consumption data provided; mobile fuel consumption not reported. From Energy section (page 24), coal (150,101 tonnes) and natural gas (10,318,087 m3) are identified as fuel sources used in production. Text states: 'Our production uses coal, electricity, steam, and natural gas. Coal is used to produce the steam required for the desiccation process.' Steam and electricity are secondary energy sources, not direct fuel consumption. Total fuel consumption not explicitly stated as a single value due to different units for different fuel types. No breakdown between mobile and stationary fuel consumption provided.",
       "status": null
@@ -44465,10 +44465,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 130309.2,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1150\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Petrol\", \"value\": \"1621\", \"unit\": \"MWh\"}, {\"fuel_type\": \"LPG\", \"value\": \"960\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Natural Gas\", \"value\": \"32465\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Fuel Oil\", \"value\": \"0\", \"unit\": \"MWh\"}]",
       "calculation": "Diesel (1150 MWh) + Petrol (1621 MWh) + LPG (960 MWh) + Natural Gas (32465 MWh) + Fuel Oil (0 MWh) = 36196 MWh (stated total: 36197 MWh)",
       "notes": "Total fuel consumption derived from Direct Energy Consumption (MWh) in Energy Performance tables (Image 1 and Image 3). Stated total of 36,197 MWh used per report's 'Total Direct Energy Consumption' (Image 3). Mobile/Stationary breakdown not provided in reports. Fuel types reported in energy units (MWh) rather than physical units. Minor discrepancy (36,196 vs 36,197) likely due to rounding in source data.",
       "status": null
@@ -44622,8 +44622,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 234,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total: 65 MWh",
@@ -44779,10 +44779,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 725.0039999999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Fuel oil\", \"value\": \"20139\", \"unit\": \"L\"}]",
       "calculation": "Mobile fuel consumption (20139 L) = Total fuel consumption (20139 L) as no stationary fuel consumption reported. Stationary energy use is electricity (96927 kWh), not fuel oil.",
       "notes": "Total fuel consumption reported as 'Fuel Consumption (litre)' in both Summary table (Image 1) and Energy section (Image 2). Mobile fuel consumption = total fuel consumption as per narrative: 'Our fuel energy consumption mainly comes from diesel and petrol used for vehicles on our vessels, at the port terminals'. No stationary fuel consumption reported; facilities use purchased electricity (Scope 2). Fuel type breakdown shows only fuel oil. All data from FY2024 columns across multiple images.",
       "status": null
@@ -44937,7 +44937,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"10027.5\", \"unit\": \"million AG\"}, {\"fuel_type\": \"Petrol\", \"value\": \"5376.0\", \"unit\": \"million AG\"}, {\"fuel_type\": \"LPG\", \"value\": \"5813.5\", \"unit\": \"million AG\"}, {\"fuel_type\": \"Jet fuel\", \"value\": \"1830.07\", \"unit\": \"million AG\"}]",
       "calculation": "Diesel (28039 litres / 3.78541) + Petrol (20309 litres / 3.78541) + LPG (21908700 litres / 3.78541) + Jet fuel (1830.07 million AG) = 7407.0 + 5365.0 + 5786.5 + 1830.07 = 20388.57 million AG (Note: Jet fuel already included in 1830.07, so total fuel consumption = 1830.07 million AG as per flight operations; ground operations converted to AG but not included in company's reported total)",
       "notes": "Total fuel consumption for 2024 (FY2023/24) is 1,830.07 million AG as reported in SIA Group flight operations (page 162). Ground operations (page 163) are reported in litres (diesel: 28,039 L, petrol: 20,309 L, LPG: 21,908,700 L) but not converted to AG in the report. Following company's methodology, ground operations were included in reporting from FY2022/23 onwards, but the SIA Group total (1,830.07 million AG) does not explicitly include ground operations. However, per definition in page 143: 'From FY2022/23, this includes Scoot's diesel and petrol consumption from ground support vehicles and equipment as well.' and 'From FY2023/24, this includes SFC's aviation gasoline, diesel and petrol consumption...'. Therefore, the 1,830.07 million AG is the total fuel consumption (mobile only) as it includes all flight operations plus ground operations (converted internally by company but not shown in the table). Stationary fuel consumption not separately reported. Fuel type breakdown derived from flight operations (jet fuel) and ground operations (diesel, petrol, LPG) converted to AG using standard conversion (1 AG = 3.78541 L).",
       "status": null
@@ -45249,10 +45249,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 940,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"0.94\", \"unit\": \"TJ\"}]",
       "calculation": "Diesel (0.94 TJ) = Total shown: 0.94 TJ",
       "notes": "Total fuel consumption explicitly reported as 0.94 TJ in Image 2 table and confirmed as Diesel Consumption (0.94 TJ) in Image 3 chart. No mobile/stationary breakdown provided. Fuel type breakdown shows only diesel with no other fuel types reported. Data sourced from FY2024 performance report (Image 2) and consumption charts (Image 3).",
       "status": null
@@ -45563,10 +45563,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 9849957,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Empty fruit bunches\", \"value\": \"1149500\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Palm kernel shell\", \"value\": \"1686000\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Palm mesocarp fibre\", \"value\": \"4729000\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Biogas\", \"value\": \"1158000\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Grid electricity\", \"value\": \"103000\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"109000\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"1000\", \"unit\": \"GJ\"}]",
       "calculation": "Empty fruit bunches (11.67% of 9849957 GJ = 1149500 GJ) + Palm kernel shell (17.12% = 1686000 GJ) + Palm mesocarp fibre (48.02% = 4729000 GJ) + Biogas (11.76% = 1158000 GJ) + Grid electricity (1.05% = 103000 GJ) + Natural gas (1.11% = 109000 GJ) + Petrol (0.01% = 1000 GJ) = 9849957 GJ",
       "notes": "Total fuel consumption reported as total energy consumption (9,849,957 GJ) in 'Energy management' section. Mobile and stationary fuel consumption not disaggregated in report. Fuel type breakdown calculated from percentage values shown in 'ENERGY CONSUMPTION BY SOURCE 2024' pie chart (total 9,849,957 GJ). Calculated values rounded to nearest 1,000 GJ as per visible precision in chart. Note: Biodiesel B35 breakdown not included as it's a sub-component of biogas and not a primary energy source.",
       "status": null
@@ -45720,10 +45720,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 338.292,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"9397\", \"unit\": \"litres\"}]",
       "calculation": "Diesel (9397 litres) = Total shown",
       "notes": "Only mobile fuel consumption for company-owned vehicles reported; no numerical data for stationary fuel consumption (e.g., diesel-powered generators in construction projects) provided in the document. Total fuel consumption assumed equal to mobile fuel consumption as no other fuel sources quantified.",
       "status": null
@@ -45880,7 +45880,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas, town gas, liquefied petroleum gas\", \"value\": \"789777\", \"unit\": \"Gigajoules\"}, {\"fuel_type\": \"Petrol & diesel\", \"value\": \"31956\", \"unit\": \"Gigajoules\"}, {\"fuel_type\": \"Renewable energy\", \"value\": \"18261\", \"unit\": \"Gigajoules\"}]",
       "calculation": "Natural gas (34.6% of 2282592 GJ) = 789777 GJ + Petrol & diesel (1.4% of 2282592 GJ) = 31956 GJ + Renewable energy (0.8% of 2282592 GJ) = 18261 GJ",
       "notes": "Document provides energy consumption data in Gigajoules rather than fuel volume metrics. Total energy consumed: 2,282,592 GJ for FY2024. Fuel consumption data is presented as percentage of total energy (not volume units). Natural gas/LPG: 34.6%, Petrol & diesel: 1.4%. GHG emissions data is provided but not fuel consumption volumes. No specific mobile/stationary fuel breakdown in volume units available.",
       "status": null
@@ -46037,7 +46037,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"4590\", \"unit\": \"L\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"1034954.38\", \"unit\": \"m3\"}]",
       "calculation": "No total provided due to different units (diesel in L, natural gas in m3)",
       "notes": "Report provides diesel consumption (4,590 L) and natural gas consumption (1,034,954.38 m3) for FY2024. Refrigerants (20 kg) mentioned but not considered fuel. No breakdown by mobile/stationary or total fuel consumption provided. Data source: Energy section of FY2024 Sustainability Report (Page 13).",
       "status": null
@@ -46346,8 +46346,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 344581.2,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 95717 MWh",
@@ -46506,7 +46506,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"1342\", \"unit\": \"'000 m3\"}, {\"fuel_type\": \"Motor gasoline\", \"value\": \"266568\", \"unit\": \"litres\"}, {\"fuel_type\": \"Diesel\", \"value\": \"113225\", \"unit\": \"litres\"}]",
       "calculation": "Mobile: Motor gasoline (266568 litres) + Diesel (113225 litres) = 379793 litres; Stationary: Natural gas (1342 '000 m3)",
       "notes": "Breakdown by fuel type provided; natural gas in '000 m3, motor gasoline and diesel in litres; no stated total fuel consumption due to different units; motor gasoline and diesel data commenced in FY2024 (no FY2023 comparative figures per footnote 8)",
       "status": null
@@ -46660,10 +46660,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 6.833296799999999,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Natural gas\", \"value\": \"1897695\", \"unit\": \"kWh\"}, {\"fuel_type\": \"Diesel\", \"value\": \"443\", \"unit\": \"kWh\"}]",
       "calculation": "Natural gas (1897695 kWh) + Diesel (443 kWh) = 1898138 kWh",
       "notes": "Data extracted from Energy Consumption table in Image 2 (page 14). Total fuel consumption calculated from fuel type breakdown as no aggregate total was provided. Mobile and stationary fuel consumption not reported separately. Fuel types reported in kWh (energy unit) per source. Diesel data included starting FY2024 per note 4. Development Projects fuel consumption not applicable for FY2024 (data only available for electricity).",
       "status": null
@@ -46974,10 +46974,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 493.128,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1760\", \"unit\": \"L\"}, {\"fuel_type\": \"Petrol\", \"value\": \"11938\", \"unit\": \"L\"}]",
       "calculation": "Diesel (1760 L) + Petrol (5969 L Food Processing + 5969 L Rental) = 1760 + 11938 = 13698 L",
       "notes": "Data extracted from pages 31 and 40. Diesel classified as stationary (drying shiitake mushrooms per page 31 text), petrol classified as mobile (company vehicles per page 31 text). Total calculated by summing diesel (1760 L) and petrol (11938 L) across Food Processing and Rental segments. No other fuel types reported. Page 31 shows diesel consumption in Food Processing decreased to 1,760 L and petrol increased to 5,969 L; Rental segment shows 0 diesel and 5,969 L petrol. Appendix A (page 40) confirms these values in segment tables.",
       "status": null
@@ -47286,8 +47286,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 5498.043519999999,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "5203591.02 MJ (non-renewable energy consumption - Scope 1: fuel combustion) + 294452.50 MJ (fuel consumption from renewable sources) = 5498043.52 MJ",
@@ -47757,10 +47757,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 36,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1000\", \"unit\": \"L\"}]",
       "calculation": "Diesel (1 * 1000 L) = 1000 L",
       "notes": "Only diesel consumption reported in Headquarters section for FY2024; mobile fuel (transportation); no stationary fuel consumption data provided; unit 'Litres ('000)' converted to L by multiplying value by 1,000",
       "status": null
@@ -48383,10 +48383,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 142.89552,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"3969.32\", \"unit\": \"L\"}]",
       "calculation": "Singapore petrol consumption (3969.32 L) is the only visible fuel consumption value for FY2024; no other fuel types or regions' data provided",
       "notes": "Only Singapore petrol consumption value available for FY2024; mobile fuel consumption (petrol from company vehicles) is the only fuel type reported; no stationary fuel consumption data; total fuel consumption equals mobile fuel consumption as no other fuel sources mentioned; Hong Kong petrol consumption increase noted but no numerical value provided",
       "status": null
@@ -48540,10 +48540,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 677.9,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"677.9\", \"unit\": \"GJ\"}]",
       "calculation": "Petrol (677.9 GJ) = Total fuel consumption",
       "notes": "Only 'Fuel (petrol)' listed under non-renewable energy sources in Sustainability Report; no breakdown into mobile/stationary fuel consumption; total fuel consumption equals petrol value; electricity is separate energy source not classified as fuel",
       "status": null
@@ -49639,8 +49639,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 171000,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "PRC Managed Properties (35 TJ) + PRC Hotels & Serviced Apartment (71 TJ) + Singapore Managed Properties (62 TJ) + Singapore Hotels & Serviced Apartment (3 TJ) = 171 TJ",
@@ -54035,10 +54035,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 157.608,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol and diesel\", \"value\": \"43.78\", \"unit\": \"MWh\"}]",
       "calculation": "Stated total: 43.78 MWh (non-renewable) + 0 MWh (renewable) = 43.78 MWh",
       "notes": "Data found in 'Fuel Consumption - Non-renewable Sources' section on page 38. Mobile fuel consumption confirmed by description 'Petrol and diesel used for motor vehicles owned and operated by the Group'. No stationary fuel consumption data reported. Fuel types not disaggregated (combined as 'Petrol and diesel'). Renewable sources reported as 0 MWh. Total fuel consumption equals mobile consumption since renewable sources = 0.",
       "status": null
@@ -54192,10 +54192,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 3974,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"3117\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"830\", \"unit\": \"GJ\"}, {\"fuel_type\": \"LNG\", \"value\": \"27\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (3117 GJ) + Petrol (830 GJ) + LNG (27 GJ) = 3974 GJ",
       "notes": "Total fuel consumption calculated from sum of diesel, petrol, and LNG as no explicit 'Total fuel consumption' row exists. Mobile and stationary fuel consumption not reported separately in document. Data extracted from 'Sustainability Report' page 31 table (FY2024 column) under 'Energy consumption' section. Electricity values excluded as they are not fuel. Footnote 12 indicates EV business fuel data not tracked for FY2023 but does not affect FY2024 reporting.",
       "status": null
@@ -54349,10 +54349,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 143.604,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"39.89\", \"unit\": \"MWh\"}]",
       "calculation": "Petrol (39.89 MWh) = Total Fuel Consumption",
       "notes": "Fuel consumption data extracted from Energy Consumption section (page 28); only petrol reported as fuel (electricity is energy, not fuel). No stationary fuel consumption data provided. Total Fuel Consumption equals Mobile Fuel Consumption as no other fuel types reported.",
       "status": null
@@ -54509,7 +54509,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"2738965\", \"unit\": \"L\"}, {\"fuel_type\": \"Gasoline\", \"value\": \"136698\", \"unit\": \"L\"}, {\"fuel_type\": \"Fuel\", \"value\": \"5074\", \"unit\": \"KL\"}, {\"fuel_type\": \"Coal\", \"value\": \"6408319\", \"unit\": \"T\"}, {\"fuel_type\": \"LPG\", \"value\": \"5348\", \"unit\": \"KL\"}, {\"fuel_type\": \"Natural Gas\", \"value\": \"1434658\", \"unit\": \"Meters Cubed/Degree\"}]",
       "calculation": null,
       "notes": "No single total fuel consumption value provided. Data from parent company table (page 54) for 2024 covers parent company and subsidiaries per Note 1. No mobile/stationary breakdown provided. Fuel types reported in different units: Diesel and Gasoline in liters (L), Fuel and LPG in kiloliters (KL), Coal in tonnes (T), Natural Gas in Meters Cubed/Degree. Note 4 specifies unit caloric values but no conversion required for extraction.",
       "status": null
@@ -54818,10 +54818,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1643.04,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1737\", \"unit\": \"litre\"}, {\"fuel_type\": \"Petrol\", \"value\": \"43903\", \"unit\": \"litre\"}]",
       "calculation": "Diesel (1737 litre) + Petrol (43903 litre) = 45640 litre",
       "notes": "Fuel consumption data for 2024 reported in Fuel Consumption table (page 32) for corporate vehicles (mobile); no stationary fuel consumption data found in provided images. Total fuel consumption equals mobile fuel consumption as only vehicle-related fuel use is disclosed.",
       "status": null
@@ -54975,10 +54975,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 2561.7239999999997,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"71159\", \"unit\": \"L\"}]",
       "calculation": "Diesel (71159 L) = Total shown",
       "notes": "Total fuel consumption (71,159 L) from Group table (Image 2) represents diesel consumption only. Mobile fuel (7,134 L) and stationary fuel (48,550 L) extracted from Telford Philippines breakdown (Image 3). Note: Telford Philippines is part of the Group, but mobile/stationary breakdown for entire Group not provided. Total diesel (71,159 L) = Telford Philippines diesel (7,134 + 48,550 = 55,684 L) + other entities (15,475 L). Fuel type breakdown only includes diesel as no other fuels reported. Group table shows 'Diesel consumption (litre)' as primary total fuel metric. Mobile/stationary values from Telford Philippines only (Image 3) used as most specific available data per instructions.",
       "status": null
@@ -55289,10 +55289,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 24332.4,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"2427\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Petrol\", \"value\": \"2571\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"917\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Heating oil\", \"value\": \"271\", \"unit\": \"MWh\"}, {\"fuel_type\": \"District heating\", \"value\": \"69\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Methane\", \"value\": \"5\", \"unit\": \"MWh\"}, {\"fuel_type\": \"Methanol\", \"value\": \"43\", \"unit\": \"MWh\"}]",
       "calculation": "Diesel (2427 MWh) + Petrol (2571 MWh) + Natural gas (917 MWh) + Heating oil (271 MWh) + District heating (69 MWh) + Methane (5 MWh) + Methanol (43 MWh) = 6759 MWh (Total fossil energy consumption)",
       "notes": "Total fuel consumption extracted from 'Total fossil energy consumption (MWh)' in Image 1 (page 78). Mobile fuel consumption explicitly stated as 4,997.0 MWh in Image 2 (page 79) for company vehicle fleet. Stationary fuel consumption calculated as total fossil minus mobile (6759 - 4998 = 1761 MWh) since administrative/warehouse consumption (1950.5 MWh) in Image 2 includes non-fossil components. Fuel type breakdown from Image 1, excluding electricity (457 MWh) as it is not a fossil fuel. Image 3 contains GHG emissions data but no additional fuel consumption metrics.",
       "status": null
@@ -55446,10 +55446,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 144,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"0.004\", \"unit\": \"ML\"}]",
       "calculation": "Diesel (0.004 ML) = Total fuel consumption",
       "notes": "Only diesel fuel consumption reported; no breakdown into mobile/stationary or other fuel types. Data sourced from 'Total diesel consumed' in ESG Performance Summary (page 33) and Fuel Consumed table (page 20). No mobile/stationary split provided in any image.",
       "status": null
@@ -55915,10 +55915,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 2340,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"65000\", \"unit\": \"litres\"}, {\"fuel_type\": \"Petrol\", \"value\": \"N/A\", \"unit\": \"litres\"}]",
       "calculation": "Diesel (65000 litres) = Total shown (petrol consumption noted as insignificant with no numerical value)",
       "notes": "Report states diesel consumption as 65,000 litres; petrol consumption noted as insignificant with no numerical value. No breakdown into mobile or stationary fuel consumption provided.",
       "status": null
@@ -56072,8 +56072,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 0.2626812,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total used: 72967 kWh",
@@ -56389,7 +56389,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Raw Coal\", \"value\": \"427000\", \"unit\": \"tonnes\"}]",
       "calculation": "Raw Coal Consumption (427 '000 tonnes) = 427000 tonnes",
       "notes": "Only raw coal consumption data provided in the document. Raw Coal Consumption: 427 ('000 tonnes) for FY2024 as shown in the Environment (Cont'd) page table. No mobile fuel consumption data provided. No total fuel consumption figure provided - document only shows raw coal as part of Scope 1 emissions (which also includes diesel and other fuels). Emissions data provided in CO2e rather than actual fuel quantities. Data from Environment (Cont'd) page, not emissions page which focuses on CO2e metrics.",
       "status": null
@@ -56546,7 +56546,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Ultra low sulphur diesel\", \"value\": \"20967\", \"unit\": \"L\"}, {\"fuel_type\": \"Gas\", \"value\": \"1423657\", \"unit\": \"m3\"}]",
       "calculation": "Property Management - Ultra low sulphur diesel (15571 L) + Construction Sites - Ultra low sulphur diesel (5396 L) = 20967 L for Ultra low sulphur diesel",
       "notes": "Data provided for 2023/2024 fiscal year. The document shows fuel consumption by facility type but does not explicitly separate mobile vs stationary fuel consumption. Total fuel consumption is not provided as a single value due to different units (L and m3). Ultra low sulphur diesel values (15,571 L + 5,396 L = 20,967 L) were summed from Property Management and Construction Sites. Gas consumption for Hotels is 1,423,657 m3. Document does not provide a combined total value due to unit differences. No explicit mobile/stationary breakdown provided in the data tables.",
       "status": null
@@ -56700,10 +56700,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1835.64,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"48506\", \"unit\": \"L\"}, {\"fuel_type\": \"Petrol\", \"value\": \"2484\", \"unit\": \"L\"}]",
       "calculation": "Diesel (48506 L) + Petrol (2484 L) = Total shown: 50990 L",
       "notes": "Fuel consumption data found in Scope 1 carbon emissions table on page 37 (TCFD Report section). Total fuel consumption explicitly stated as 50,990 litres. Fuel type breakdown provided for Diesel and Petrol. Mobile and stationary fuel consumption not separately reported in the document. Unit is liters (L) as shown in source table. Data corresponds to 2024 reporting year as per Annual Report 2024 context.",
       "status": null
@@ -57328,8 +57328,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 782,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total: 782 GJ",
@@ -58270,10 +58270,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1462.032,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"40612\", \"unit\": \"L\"}]",
       "calculation": "Total petrol consumption (42776 L) - Discontinued Hose and Marine (2164 L) = Continuing operations petrol consumption (40612 L)",
       "notes": "Only petrol consumption reported; Hose and Marine division discontinued during FY2024; No mobile/stationary breakdown provided; Continuing operations value calculated by excluding discontinued segment",
       "status": null
@@ -59997,10 +59997,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 46976.2,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"1622.1\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"42273.7\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"3080.4\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (1622.1 GJ) + Petrol (42273.7 GJ) + Natural gas (3080.4 GJ) = 46976.2 GJ",
       "notes": "Data found in 'Fuel consumption from non-renewable sources (GJ)' section on page 115. Total fuel consumption explicitly stated as 46,976.2 GJ. No separate mobile/stationary fuel consumption breakdown provided in fuel units (GJ). Mobile/stationary information may exist in GHG emissions section (measured in tCO2e) but not directly comparable to fuel consumption metrics. Total value verified by summing individual fuel types.",
       "status": null
@@ -60157,7 +60157,7 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
         "value": null,
         "unit": null
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Petrol\", \"value\": \"142820.14\", \"unit\": \"liters\"}, {\"fuel_type\": \"Diesel\", \"value\": \"503589.19\", \"unit\": \"liters\"}, {\"fuel_type\": \"Natural gas\", \"value\": \"458042.40\", \"unit\": \"m3\"}, {\"fuel_type\": \"Renewable energy (biogas)\", \"value\": \"1692953.00\", \"unit\": \"m3\"}]",
       "calculation": "Petrol (123531.00 liters + 6743.59 liters + 12545.55 liters) + Diesel (64835.59 liters + 0 liters + 438753.60 liters) + Natural gas (272607.40 m3 + 185435.00 m3) + Renewable energy (biogas) (1692953.00 m3)",
       "notes": "Data extracted from multiple business lines across pages 57-59. Water Supply Business Line (page 57) and Sludge Treatment Business Line (page 59) provided fuel consumption by type. No explicit total fuel consumption figure with consistent unit. No categorization between mobile and stationary fuel consumption provided in reports. Total direct energy consumption figures (in kWh) were found but not directly comparable to fuel consumption units. Mobile/stationary classification not specified in source data.",
       "status": null
@@ -60313,10 +60313,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 1565,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"896\", \"unit\": \"GJ\"}, {\"fuel_type\": \"Petrol\", \"value\": \"598\", \"unit\": \"GJ\"}, {\"fuel_type\": \"LPG\", \"value\": \"71\", \"unit\": \"GJ\"}]",
       "calculation": "Diesel (896 GJ) + Petrol (598 GJ) + LPG (71 GJ) = 1565 GJ",
       "notes": "Fuel consumption metrics extracted from Energy Consumption table on page 18. Mobile fuel includes diesel and petrol (fleet); stationary fuel is LPG (office pantries for cooking purposes). Total fuel consumption calculated as sum of diesel, petrol, and LPG. Electricity is excluded as it is not a fuel. No stated total for fuel consumption provided; calculated from fuel type breakdown. Data represents continuing operations as per reporting context.",
       "status": null
@@ -60470,10 +60470,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 287982,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Non-renewable fuel (natural gas, diesel, gasoline, LPG)\", \"value\": \"79995\", \"unit\": \"MWh\"}]",
       "calculation": "Non-renewable fuel (natural gas, diesel, gasoline, LPG): 79,995 MWh",
       "notes": "Only energy-based measurement provided in MWh; no volume-based measurements (liters, cubic meters, etc.). Fuel consumption data found in Image 1 under 'OUR EMISSIONS SOURCES' > '32% OUR OPERATIONS'. No specific breakdown between mobile and stationary consumption provided. Fuel type breakdown only given as combined non-renewable fuel value. Total energy use reported as 497,475 MWh (includes electricity and district heating), but fuel consumption specifically refers to the non-renewable fuel component.",
       "status": null
@@ -60625,10 +60625,10 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 2866.464,
+        "unit": "GJ"
       },
-      "breakdown": null,
+      "breakdown": "[{\"fuel_type\": \"Diesel\", \"value\": \"42737\", \"unit\": \"L\"}, {\"fuel_type\": \"Petrol\", \"value\": \"36887\", \"unit\": \"L\"}]",
       "calculation": "Diesel (42737 L) + Petrol (36887 L) = 79624 L",
       "notes": "Data from Sustainability Report page 58, Fuel Consumption (Litres) FY2022-FY2024 chart. Figures explicitly exclude project fuel consumption. No mobile/stationary breakdown provided. Fuel types limited to diesel and petrol. Total calculated by summing visible fuel types as no stated total was provided.",
       "status": null
@@ -60782,8 +60782,8 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = [
     },
     "fuel": {
       "consumption": {
-        "value": null,
-        "unit": null
+        "value": 222.2839332,
+        "unit": "GJ"
       },
       "breakdown": null,
       "calculation": "Stated total from non-renewable sources (gas and diesel): 61745537 kWh",

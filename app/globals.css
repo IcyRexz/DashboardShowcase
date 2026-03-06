@@ -1,43 +1,41 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  --background: #18181b;
-  --foreground: #fafafa;
-  --card: rgba(39, 39, 42, 0.9);
-  --card-foreground: #fafafa;
-  --popover: rgba(39, 39, 42, 0.95);
-  --popover-foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #18181b;
-  --secondary: rgba(63, 63, 70, 0.8);
-  --secondary-foreground: #fafafa;
-  --muted: rgba(63, 63, 70, 0.5);
-  --muted-foreground: #a1a1aa;
-  --accent: rgba(63, 63, 70, 0.8);
-  --accent-foreground: #fafafa;
+  --background: #ffffff;
+  --foreground: #18181b;
+  --card: rgba(255, 255, 255, 0.95);
+  --card-foreground: #18181b;
+  --popover: rgba(255, 255, 255, 0.98);
+  --popover-foreground: #18181b;
+  --primary: #18181b;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(244, 244, 245, 0.9);
+  --secondary-foreground: #18181b;
+  --muted: rgba(244, 244, 245, 0.7);
+  --muted-foreground: #71717a;
+  --accent: rgba(244, 244, 245, 0.9);
+  --accent-foreground: #18181b;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: rgba(63, 63, 70, 0.6);
-  --input: rgba(63, 63, 70, 0.4);
-  --ring: #71717a;
-  --chart-1: #71717a;
-  --chart-2: #a1a1aa;
-  --chart-3: #52525b;
-  --chart-4: #d4d4d8;
-  --chart-5: #3f3f46;
-  --chart-6: #e4e4e7;
+  --border: rgba(228, 228, 231, 0.8);
+  --input: rgba(228, 228, 231, 0.6);
+  --ring: #a1a1aa;
+  --chart-1: #3b82f6;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #8b5cf6;
+  --chart-5: #ef4444;
+  --chart-6: #06b6d4;
   --radius: 0.5rem;
-  --sidebar: rgba(39, 39, 42, 0.95);
-  --sidebar-foreground: #fafafa;
-  --sidebar-primary: #fafafa;
-  --sidebar-primary-foreground: #18181b;
-  --sidebar-accent: rgba(63, 63, 70, 0.5);
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: rgba(63, 63, 70, 0.6);
-  --sidebar-ring: #71717a;
+  --sidebar: rgba(249, 250, 251, 0.98);
+  --sidebar-foreground: #18181b;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(244, 244, 245, 0.7);
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: rgba(228, 228, 231, 0.8);
+  --sidebar-ring: #a1a1aa;
 }
 
 @theme inline {
@@ -95,25 +93,20 @@
 
 @layer components {
   .panel-glass {
-    @apply bg-zinc-900/80 backdrop-blur-md border border-zinc-800 shadow-lg;
+    @apply bg-white/90 backdrop-blur-md border border-gray-200 shadow-lg;
   }
 
   .panel-collapsed {
-    @apply bg-zinc-900/90 backdrop-blur-md border border-zinc-800;
+    @apply bg-white/95 backdrop-blur-md border border-gray-200;
   }
 
   .leaflet-container {
-    background: var(--map-bg, #f4f4f5) !important;
+    background: #f8fafc !important;
     border-radius: 0.5rem;
   }
 
   .leaflet-tile-pane {
-    filter: var(--map-filter, saturate(0.9) contrast(1.05) brightness(1.02));
-  }
-
-  .map-dark {
-    --map-bg: #27272a;
-    --map-filter: grayscale(100%) brightness(0.6) contrast(1.1);
+    filter: saturate(1.0) contrast(1.02) brightness(1.0);
   }
 
   .custom-marker {
@@ -126,12 +119,7 @@
     border: none !important;
   }
 
-  .bubble-label {
-    background: transparent !important;
-    border: none !important;
-  }
-
-  /* Override leaflet.markercluster defaults for dark theme */
+  /* Override leaflet.markercluster defaults */
   .marker-cluster-small,
   .marker-cluster-medium,
   .marker-cluster-large {
@@ -143,25 +131,9 @@
     background: transparent !important;
   }
 
-  .status-normal {
-    @apply bg-emerald-500/20 text-emerald-400 border-emerald-500/30;
-  }
-
-  .status-at-risk {
-    @apply bg-amber-500/20 text-amber-400 border-amber-500/30;
-  }
-
-  .status-maintenance {
-    @apply bg-blue-500/20 text-blue-400 border-blue-500/30;
-  }
-
-  .status-offline {
-    @apply bg-red-500/20 text-red-400 border-red-500/30;
-  }
-
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: #3f3f46 transparent;
+    scrollbar-color: #d4d4d8 transparent;
   }
 
   .scrollbar-thin::-webkit-scrollbar {
@@ -174,18 +146,17 @@
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: #3f3f46;
+    background-color: #d4d4d8;
     border-radius: 3px;
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background-color: #52525b;
+    background-color: #a1a1aa;
   }
 }
 
 /* Reduced motion: disable decorative animation only */
 @media (prefers-reduced-motion: reduce) {
-  .marker-ping,
   .animate-ping {
     animation: none !important;
   }

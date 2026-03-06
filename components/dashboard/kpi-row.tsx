@@ -16,7 +16,6 @@ import {
 
 interface KpiRowProps {
   kpis: KpiData;
-  /** KPI values are always canonical (tCO2e, %); unitView only affects tooltip. */
   unitView?: UnitView;
 }
 
@@ -47,7 +46,7 @@ export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
         </TooltipTrigger>
         <TooltipContent
           side="bottom"
-          className="max-w-[280px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
+          className="max-w-[280px] text-center bg-white text-gray-900 border-gray-200 shadow-lg"
         >
           Companies with all 4 core metrics reported: Scope 1, Scope 2, Waste
           Generated, and Waste Recycled. Data plausibility is based on
@@ -68,7 +67,7 @@ export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
         </TooltipTrigger>
         <TooltipContent
           side="bottom"
-          className="max-w-[280px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
+          className="max-w-[280px] text-center bg-white text-gray-900 border-gray-200 shadow-lg"
         >
           Sum of direct (Scope 1) and energy indirect (Scope 2) GHG emissions in
           tCO2e (canonical). Excludes non-convertible rows.
@@ -91,7 +90,7 @@ export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
         </TooltipTrigger>
         <TooltipContent
           side="bottom"
-          className="max-w-[280px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
+          className="max-w-[280px] text-center bg-white text-gray-900 border-gray-200 shadow-lg"
         >
           Average waste diversion (recycled / generated). Higher is better (50%+
           good, &lt;30% may trigger Watch plausibility).
@@ -117,7 +116,7 @@ export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
         </TooltipTrigger>
         <TooltipContent
           side="bottom"
-          className="max-w-[280px] text-center bg-zinc-800 text-zinc-100 border-zinc-700"
+          className="max-w-[280px] text-center bg-white text-gray-900 border-gray-200 shadow-lg"
         >
           Average extraction quality score. Low scores (&lt;50) contribute to
           Review plausibility.
@@ -150,43 +149,43 @@ function KpiCard({
     <div className="panel-glass rounded-lg p-4 cursor-default">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-1">
+          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             {title}
           </p>
           <div className="flex items-baseline gap-1">
             <p
               className={`text-2xl font-bold ${
                 isAlert
-                  ? "text-amber-400"
+                  ? "text-amber-600"
                   : isGood
-                    ? "text-emerald-400"
-                    : "text-zinc-100"
+                    ? "text-emerald-600"
+                    : "text-gray-900"
               }`}
             >
               {value}
             </p>
-            {unit && <span className="text-xs text-zinc-500">{unit}</span>}
+            {unit && <span className="text-xs text-gray-500">{unit}</span>}
             {subValue && (
-              <span className="text-sm text-zinc-400 ml-1">({subValue})</span>
+              <span className="text-sm text-gray-400 ml-1">({subValue})</span>
             )}
           </div>
         </div>
         <div
           className={`p-2 rounded-md ${
             isAlert
-              ? "bg-amber-500/10"
+              ? "bg-amber-50"
               : isGood
-                ? "bg-emerald-500/10"
-                : "bg-zinc-800"
+                ? "bg-emerald-50"
+                : "bg-gray-100"
           }`}
         >
           <Icon
             className={`h-4 w-4 ${
               isAlert
-                ? "text-amber-400"
+                ? "text-amber-600"
                 : isGood
-                  ? "text-emerald-400"
-                  : "text-zinc-500"
+                  ? "text-emerald-600"
+                  : "text-gray-400"
             }`}
           />
         </div>
