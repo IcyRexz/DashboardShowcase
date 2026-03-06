@@ -144,7 +144,7 @@ export function SidePanelLeft({
       countries: [],
       plausibilityBands: [],
       incompleteOnly: false,
-       industries: [],
+      industries: [],
     });
   };
 
@@ -560,7 +560,7 @@ export function SidePanelLeft({
                     >
                       {company.name}
                     </p>
-                    <div className="flex items-center gap-2 mt-1">
+                    <div className="flex items-center gap-2 mt-1 flex-wrap">
                       <Badge
                         variant="outline"
                         className={`text-[10px] px-1.5 py-0 h-4 ${getPlausibilityColor(plausibilityBand)}`}
@@ -568,6 +568,20 @@ export function SidePanelLeft({
                       >
                         {plausibilityBand}
                       </Badge>
+                      {company.derived.coverageScore != null && (
+                        <span
+                          className={`text-[10px] ${
+                            selectedCompany?.id === company.id
+                              ? "text-zinc-600"
+                              : "text-zinc-500"
+                          }`}
+                          title="Coverage score (key ESG fields present)"
+                        >
+                          {company.derived.coverageScore}% cov
+                          {company.derived.coverageRank != null &&
+                            ` · #${company.derived.coverageRank}`}
+                        </span>
+                      )}
                       {company.derived.scope12Total !== null && (
                         <span
                           className={`text-[10px] ${

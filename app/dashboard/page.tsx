@@ -2,13 +2,13 @@
 
 import { useState, useMemo } from "react";
 import dynamic from "next/dynamic";
-import { X, Building2 } from "lucide-react";
+import { X, Building2, Map, Table2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-// KPI summary lives in the right panel; no top-level KPI row needed
 import { SidePanelLeft } from "@/components/dashboard/side-panel-left";
 import { SidePanelRight } from "@/components/dashboard/side-panel-right";
 import { BottomDetailsPanel } from "@/components/dashboard/bottom-details-panel";
+import { TableView } from "@/components/dashboard/table-view";
 import {
   type SustainabilityCompany,
   type PlausibilityBand,
@@ -21,7 +21,6 @@ import {
   calculateKpis,
 } from "@/data/sustainability";
 
-// Dynamic import for map to avoid SSR issues with Leaflet
 const MapView = dynamic(
   () => import("@/components/dashboard/map-view").then((mod) => mod.MapView),
   {
@@ -33,6 +32,8 @@ const MapView = dynamic(
     ),
   },
 );
+
+type ViewMode = "map" | "table";
 
 function getPlausibilityColor(band: PlausibilityBand): string {
   switch (band) {
@@ -47,10 +48,16 @@ function getPlausibilityColor(band: PlausibilityBand): string {
   }
 }
 
+const VIEW_OPTIONS: { mode: ViewMode; label: string; icon: typeof Map }[] = [
+  { mode: "map", label: "Map", icon: Map },
+  { mode: "table", label: "Table", icon: Table2 },
+];
+
 export default function DashboardPage() {
   const [selectedCompany, setSelectedCompany] =
     useState<SustainabilityCompany | null>(null);
   const [unitView, setUnitView] = useState<UnitView>("Canonical");
+  const [viewMode, setViewMode] = useState<ViewMode>("map");
   const [filters, setFilters] = useState<FilterOptions>({
     search: "",
     countries: [],
@@ -59,20 +66,16 @@ export default function DashboardPage() {
     industries: [],
   });
 
-  // All companies from generated data
   const allCompanies = SUSTAINABILITY_COMPANIES;
 
-  // Filter companies based on current filters
   const filteredCompanies = useMemo(() => {
     return filterCompanies(allCompanies, filters);
   }, [allCompanies, filters]);
 
-  // Get locations from filtered companies
   const filteredLocations = useMemo(() => {
     return getLocations(filteredCompanies);
   }, [filteredCompanies]);
 
-  // Calculate KPIs from filtered companies
   const kpis: KpiData = useMemo(() => {
     return calculateKpis(filteredCompanies);
   }, [filteredCompanies]);
@@ -100,10 +103,14 @@ export default function DashboardPage() {
       selectedCompany.derived.riskBand)
     : null;
 
+  const isMapView = viewMode === "map";
+
   return (
     <div className="relative h-screen w-full overflow-hidden bg-zinc-900">
-      {/* Map Background */}
-      <div className="absolute inset-0 z-0">
+      {/* Map Background (always rendered for cluster/bubble, hidden for table) */}
+      <div
+        className={`absolute inset-0 z-0 ${isMapView ? "" : "invisible"}`}
+      >
         <MapView
           locations={filteredLocations}
           selectedCompany={selectedCompany}
@@ -111,7 +118,16 @@ export default function DashboardPage() {
         />
       </div>
 
-      {/* Removed gradient overlay to maximize map visibility */}
+      {/* Table View — fills the area below the header, above the bottom panel */}
+      {!isMapView && (
+        <div className="absolute inset-x-0 top-[76px] bottom-0 z-5 px-4 pb-4 overflow-hidden">
+          <TableView
+            companies={filteredCompanies}
+            selectedCompany={selectedCompany}
+            onSelectCompany={handleSelectCompany}
+          />
+        </div>
+      )}
 
       {/* Dashboard Content */}
       <div className="relative z-10 h-full flex flex-col p-4 pointer-events-none">
@@ -124,11 +140,32 @@ export default function DashboardPage() {
               </h1>
               <p className="text-sm text-zinc-500 mt-0.5">
                 ESG metrics for {allCompanies.length} listed companies across
-                Singapore, Malaysia, and Indonesia (2021–2024)
+                Singapore (2024)
               </p>
             </div>
 
             <div className="flex items-center gap-3">
+              {/* View Mode Toggle */}
+              <div className="flex items-center bg-zinc-800/90 border border-zinc-700 rounded-lg p-0.5">
+                {VIEW_OPTIONS.map(({ mode, label, icon: Icon }) => (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => setViewMode(mode)}
+                    className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all ${
+                      viewMode === mode
+                        ? "bg-zinc-700 text-zinc-100 shadow-sm"
+                        : "text-zinc-400 hover:text-zinc-200"
+                    }`}
+                    title={label}
+                    aria-label={`Switch to ${label}`}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                    <span className="hidden sm:inline">{label}</span>
+                  </button>
+                ))}
+              </div>
+
               {selectedCompany && plausibilityBand && (
                 <>
                   <div className="flex items-center gap-2 px-3 py-1.5 bg-zinc-800/90 border border-zinc-700 rounded-lg">
@@ -164,7 +201,7 @@ export default function DashboardPage() {
                   onChange={(e) => setUnitView(e.target.value as UnitView)}
                   className="bg-zinc-800 border border-zinc-700 rounded px-2 py-1 text-sm text-zinc-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
                   aria-label="Unit view: Canonical or Raw"
-                  title="Show values in canonical units (tCO2e, kWh, m³, tonnes) or raw extracted"
+                  title="Show values in canonical units (tCO2e, kWh, m3, tonnes) or raw extracted"
                 >
                   <option value="Canonical">Canonical</option>
                   <option value="Raw">Raw</option>
@@ -174,32 +211,36 @@ export default function DashboardPage() {
           </div>
         </header>
 
-        {/* Main Content Area - Flexible center with side panels */}
+        {/* Main Content Area */}
         <div className="flex-1 flex gap-4 min-h-0 mb-4">
-          {/* Left Panel - Locations & Companies */}
-          <div className="pointer-events-auto h-full">
-            <SidePanelLeft
-              companies={filteredCompanies}
-              allCompanies={allCompanies}
-              selectedCompany={selectedCompany}
-              onSelectCompany={handleSelectCompany}
-              filters={filters}
-              onFiltersChange={handleFiltersChange}
-              unitView={unitView}
-            />
-          </div>
+          {/* Left Panel */}
+          {isMapView && (
+            <div className="pointer-events-auto h-full">
+              <SidePanelLeft
+                companies={filteredCompanies}
+                allCompanies={allCompanies}
+                selectedCompany={selectedCompany}
+                onSelectCompany={handleSelectCompany}
+                filters={filters}
+                onFiltersChange={handleFiltersChange}
+                unitView={unitView}
+              />
+            </div>
+          )}
 
-          {/* Center - Spacer for map visibility */}
+          {/* Center - Spacer for map visibility / table takes full width */}
           <div className="flex-1" />
 
-          {/* Right Panel - Overview */}
-          <div className="pointer-events-auto h-full hidden lg:block">
-            <SidePanelRight
-              kpis={kpis}
-              companies={filteredCompanies}
-              unitView={unitView}
-            />
-          </div>
+          {/* Right Panel - Overview (hidden in table view) */}
+          {isMapView && (
+            <div className="pointer-events-auto h-full hidden lg:block">
+              <SidePanelRight
+                kpis={kpis}
+                companies={filteredCompanies}
+                unitView={unitView}
+              />
+            </div>
+          )}
         </div>
 
         {/* Bottom Details Panel */}

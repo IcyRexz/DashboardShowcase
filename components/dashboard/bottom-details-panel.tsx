@@ -452,6 +452,34 @@ export function BottomDetailsPanel({
               </div>
             </div>
           </div>
+
+          {/* Coverage (Option A: key ESG fields) */}
+          {(company.derived.coverageScore != null ||
+            company.derived.coverageRank != null ||
+            company.derived.coveragePercentile != null) && (
+            <div className="mt-4 p-3 bg-zinc-800/30 rounded-md">
+              <div className="flex items-center gap-4 flex-wrap">
+                <span className="text-xs text-zinc-500">
+                  Coverage (key ESG fields):
+                </span>
+                {company.derived.coverageScore != null && (
+                  <span className="text-sm font-medium text-zinc-100">
+                    {company.derived.coverageScore}%
+                  </span>
+                )}
+                {company.derived.coverageRank != null && (
+                  <span className="text-xs text-zinc-400">
+                    Rank #{company.derived.coverageRank}
+                  </span>
+                )}
+                {company.derived.coveragePercentile != null && (
+                  <span className="text-xs text-zinc-400">
+                    {company.derived.coveragePercentile}th percentile
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
         </TabsContent>
 
         {/* Data Quality Tab */}

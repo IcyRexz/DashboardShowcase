@@ -121,6 +121,28 @@
     border: none;
   }
 
+  .custom-cluster-icon {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .bubble-label {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Override leaflet.markercluster defaults for dark theme */
+  .marker-cluster-small,
+  .marker-cluster-medium,
+  .marker-cluster-large {
+    background: transparent !important;
+  }
+  .marker-cluster-small div,
+  .marker-cluster-medium div,
+  .marker-cluster-large div {
+    background: transparent !important;
+  }
+
   .status-normal {
     @apply bg-emerald-500/20 text-emerald-400 border-emerald-500/30;
   }

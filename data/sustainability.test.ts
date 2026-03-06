@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   getLocations,
+  getDistrictSummaries,
   filterCompanies,
   calculateKpis,
   calcScope12,
@@ -162,6 +163,99 @@ describe("getLocations", () => {
 
   it("returns empty array for empty input", () => {
     expect(getLocations([])).toEqual([]);
+  });
+});
+
+describe("getDistrictSummaries", () => {
+  it("groups companies by city+country", () => {
+    const companies = [
+      makeCompany({ id: "c1", city: "Marina Bay", country: "Singapore", lat: 1.28, lng: 103.86 }),
+      makeCompany({ id: "c2", city: "Marina Bay", country: "Singapore", lat: 1.281, lng: 103.861 }),
+      makeCompany({ id: "c3", city: "Jurong East", country: "Singapore", lat: 1.33, lng: 103.74 }),
+    ];
+    const summaries = getDistrictSummaries(companies);
+    expect(summaries).toHaveLength(2);
+    const marinaBay = summaries.find((s) => s.district === "Marina Bay");
+    expect(marinaBay).toBeDefined();
+    expect(marinaBay!.count).toBe(2);
+    expect(marinaBay!.companies).toHaveLength(2);
+    const jurong = summaries.find((s) => s.district === "Jurong East");
+    expect(jurong).toBeDefined();
+    expect(jurong!.count).toBe(1);
+  });
+
+  it("computes average lat/lng from grouped companies", () => {
+    const companies = [
+      makeCompany({ id: "c1", city: "Test", country: "Singapore", lat: 1.0, lng: 100.0 }),
+      makeCompany({ id: "c2", city: "Test", country: "Singapore", lat: 3.0, lng: 104.0 }),
+    ];
+    const [summary] = getDistrictSummaries(companies);
+    expect(summary.lat).toBeCloseTo(2.0);
+    expect(summary.lng).toBeCloseTo(102.0);
+  });
+
+  it("computes plausibility breakdown", () => {
+    const companies = [
+      makeCompany({
+        id: "c1",
+        city: "A",
+        country: "SG",
+        derived: {
+          ...makeCompany().derived,
+          plausibilityBand: "Good",
+        },
+      }),
+      makeCompany({
+        id: "c2",
+        city: "A",
+        country: "SG",
+        derived: {
+          ...makeCompany().derived,
+          plausibilityBand: "Review",
+        },
+      }),
+    ];
+    const [summary] = getDistrictSummaries(companies);
+    expect(summary.plausibilityBreakdown.Good).toBe(1);
+    expect(summary.plausibilityBreakdown.Review).toBe(1);
+    expect(summary.plausibilityBreakdown.Watch).toBe(0);
+  });
+
+  it("computes avgCoverageScore", () => {
+    const companies = [
+      makeCompany({
+        id: "c1",
+        city: "A",
+        country: "SG",
+        derived: { ...makeCompany().derived, coverageScore: 80 },
+      }),
+      makeCompany({
+        id: "c2",
+        city: "A",
+        country: "SG",
+        derived: { ...makeCompany().derived, coverageScore: 40 },
+      }),
+    ];
+    const [summary] = getDistrictSummaries(companies);
+    expect(summary.avgCoverageScore).toBe(60);
+  });
+
+  it("sorts by count descending", () => {
+    const companies = [
+      makeCompany({ id: "c1", city: "Small", country: "SG" }),
+      makeCompany({ id: "c2", city: "Big", country: "SG" }),
+      makeCompany({ id: "c3", city: "Big", country: "SG" }),
+      makeCompany({ id: "c4", city: "Big", country: "SG" }),
+    ];
+    const summaries = getDistrictSummaries(companies);
+    expect(summaries[0].district).toBe("Big");
+    expect(summaries[0].count).toBe(3);
+    expect(summaries[1].district).toBe("Small");
+    expect(summaries[1].count).toBe(1);
+  });
+
+  it("returns empty array for empty input", () => {
+    expect(getDistrictSummaries([])).toEqual([]);
   });
 });
 

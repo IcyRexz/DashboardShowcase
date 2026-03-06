@@ -138,6 +138,12 @@ export interface DerivedMetrics {
   plausibilityReasons?: string[];
   /** @deprecated Use plausibilityBand. Present in older generated data. */
   riskBand?: PlausibilityBand;
+  /** Coverage score 0–100: percentage of key ESG fields present (Option A). */
+  coverageScore?: number | null;
+  /** Rank by coverage score (1 = highest coverage). */
+  coverageRank?: number | null;
+  /** Percentile of coverage score (0–100, 100 = top). */
+  coveragePercentile?: number | null;
 }
 
 /** Optional normalized metrics (populated by build script). */
@@ -170,8 +176,18 @@ export interface SustainabilityCompany {
   reportName: string | null;
   reportYear: Year;
 
-  /** Industry for peer comparison (e.g. "General"). Default from build script. */
+  /** Industry sector (sector_ssic from CSV). */
   industry?: string;
+  /** Ticker symbol (e.g. "5EN.SI"). */
+  tickerSymbol?: string | null;
+  /** Number of employees. */
+  companySize?: number | null;
+  /** Annual revenue in millions (local currency). */
+  annualRevenue?: number | null;
+  /** Revenue currency code (e.g. "SGD"). */
+  revenueCurrency?: string | null;
+  /** Market cap in millions. */
+  marketCap?: number | null;
 
   // Location (derived from company name patterns or default)
   country: string;
@@ -179,7 +195,6 @@ export interface SustainabilityCompany {
   lat: number;
   lng: number;
 
-  // 2023 Data from CSV
   emissions: EmissionsData;
   waste: WasteData;
   water: WaterData;
@@ -590,9 +605,7 @@ export function getCountries(companies: SustainabilityCompany[]): string[] {
 /**
  * Get unique industries from companies (non-empty, sorted)
  */
-export function getIndustries(
-  companies: SustainabilityCompany[],
-): string[] {
+export function getIndustries(companies: SustainabilityCompany[]): string[] {
   const industries = new Set<string>();
   for (const company of companies) {
     const industry = company.industry?.trim();
@@ -619,6 +632,64 @@ export function getLocations(companies: SustainabilityCompany[]): Location[] {
     lng: company.lng,
     companies: [company],
   }));
+}
+
+// ============================================================================
+// DISTRICT SUMMARIES (for bubble-map view)
+// ============================================================================
+
+export interface DistrictSummary {
+  district: string;
+  country: string;
+  lat: number;
+  lng: number;
+  companies: SustainabilityCompany[];
+  count: number;
+  avgCoverageScore: number;
+  plausibilityBreakdown: Record<PlausibilityBand, number>;
+}
+
+export function getDistrictSummaries(
+  companies: SustainabilityCompany[],
+): DistrictSummary[] {
+  const byDistrict = new Map<string, SustainabilityCompany[]>();
+  for (const c of companies) {
+    const key = `${c.city}|${c.country}`;
+    const list = byDistrict.get(key) ?? [];
+    list.push(c);
+    byDistrict.set(key, list);
+  }
+
+  const summaries: DistrictSummary[] = [];
+  for (const [key, group] of byDistrict) {
+    const [district, country] = key.split("|");
+    const avgLat = group.reduce((s, c) => s + c.lat, 0) / group.length;
+    const avgLng = group.reduce((s, c) => s + c.lng, 0) / group.length;
+    const avgCov =
+      group.reduce((s, c) => s + (c.derived.coverageScore ?? 0), 0) /
+      group.length;
+    const breakdown: Record<PlausibilityBand, number> = {
+      Good: 0,
+      Watch: 0,
+      Review: 0,
+    };
+    for (const c of group) {
+      const band =
+        (c.derived.plausibilityBand ?? c.derived.riskBand) as PlausibilityBand;
+      if (band in breakdown) breakdown[band] += 1;
+    }
+    summaries.push({
+      district,
+      country,
+      lat: avgLat,
+      lng: avgLng,
+      companies: group,
+      count: group.length,
+      avgCoverageScore: Math.round(avgCov),
+      plausibilityBreakdown: breakdown,
+    });
+  }
+  return summaries.sort((a, b) => b.count - a.count);
 }
 
 // ============================================================================

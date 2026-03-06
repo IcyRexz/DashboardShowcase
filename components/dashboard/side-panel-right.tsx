@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   ChevronLeft,
   ChevronRight,
   BarChart3,
   Factory,
   Recycle,
+  TrendingUp,
   ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -36,7 +37,6 @@ interface SidePanelRightProps {
 export function SidePanelRight({
   kpis,
   companies,
-  unitView = "Canonical",
 }: SidePanelRightProps) {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
@@ -51,24 +51,47 @@ export function SidePanelRight({
     {} as Record<PlausibilityBand, number>,
   );
 
-  const completenessBreakdown = companies.reduce(
-    (acc, company) => {
-      const score = company.derived.completeness.score;
-      const key = score === 4 ? "Complete" : score >= 2 ? "Partial" : "Missing";
-      acc[key] = (acc[key] || 0) + 1;
-      return acc;
-    },
-    {} as Record<string, number>,
-  );
+  const sectorBreakdown = useMemo(() => {
+    const map = new Map<string, { count: number; avgCoverage: number; totalCov: number }>();
+    for (const c of companies) {
+      const sector = c.industry ?? "General";
+      const entry = map.get(sector) ?? { count: 0, avgCoverage: 0, totalCov: 0 };
+      entry.count += 1;
+      entry.totalCov += c.derived.coverageScore ?? 0;
+      map.set(sector, entry);
+    }
+    const result: { sector: string; count: number; avgCoverage: number }[] = [];
+    for (const [sector, entry] of map) {
+      result.push({
+        sector,
+        count: entry.count,
+        avgCoverage: entry.count > 0 ? Math.round(entry.totalCov / entry.count) : 0,
+      });
+    }
+    return result.sort((a, b) => b.count - a.count);
+  }, [companies]);
 
-  const extractionBreakdown = companies.reduce(
-    (acc, company) => {
-      const key = company.derived.trust.extractionOk ? "Success" : "Issues";
-      acc[key] = (acc[key] || 0) + 1;
-      return acc;
-    },
-    {} as Record<string, number>,
-  );
+  const coverageStats = useMemo(() => {
+    const scores = companies
+      .map((c) => c.derived.coverageScore ?? 0)
+      .sort((a, b) => a - b);
+    if (scores.length === 0) return { avg: 0, median: 0, high: 0, low: 0 };
+    const avg = Math.round(scores.reduce((s, v) => s + v, 0) / scores.length);
+    const mid = Math.floor(scores.length / 2);
+    const median =
+      scores.length % 2 === 0
+        ? Math.round((scores[mid - 1] + scores[mid]) / 2)
+        : scores[mid];
+    const high = scores.filter((s) => s >= 60).length;
+    const low = scores.filter((s) => s < 30).length;
+    return { avg, median, high, low };
+  }, [companies]);
+
+  const topCompanies = useMemo(() => {
+    return [...companies]
+      .sort((a, b) => (a.derived.coverageRank ?? Infinity) - (b.derived.coverageRank ?? Infinity))
+      .slice(0, 5);
+  }, [companies]);
 
   const getPlausibilityColor = (b: PlausibilityBand): string => {
     switch (b) {
@@ -129,12 +152,12 @@ export function SidePanelRight({
   }
 
   return (
-    <div className="w-64 h-full panel-glass rounded-lg flex flex-col transition-all duration-300 overflow-hidden">
+    <div className="w-72 h-full panel-glass rounded-lg flex flex-col transition-all duration-300 overflow-hidden">
       {/* Header */}
       <div className="p-4 border-b border-zinc-800">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-semibold text-zinc-100">
-            Overview (2023)
+            Overview (2024)
           </h2>
           <Button
             variant="ghost"
@@ -159,9 +182,15 @@ export function SidePanelRight({
           <div className="grid grid-cols-2 gap-2">
             <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
               <p className="text-2xl font-bold text-zinc-100 truncate">
-                {kpis.reportingComplete}
+                {kpis.totalCompanies}
               </p>
-              <p className="text-xs text-zinc-500 truncate">Complete</p>
+              <p className="text-xs text-zinc-500 truncate">Companies</p>
+            </div>
+            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
+              <p className="text-2xl font-bold text-zinc-100 truncate">
+                {sectorBreakdown.length}
+              </p>
+              <p className="text-xs text-zinc-500 truncate">Sectors</p>
             </div>
             <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
               <p
@@ -174,7 +203,7 @@ export function SidePanelRight({
               >
                 {fmtCompact(kpis.totalScope12)}
               </p>
-              <p className="text-xs text-zinc-500 truncate">Scope 1+2</p>
+              <p className="text-xs text-zinc-500 truncate">Scope 1+2 tCO2e</p>
             </div>
             <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
               <p
@@ -190,24 +219,56 @@ export function SidePanelRight({
               >
                 {fmtPct(kpis.avgWasteDiversion)}
               </p>
-              <p className="text-xs text-zinc-500 truncate">Avg Diversion</p>
+              <p className="text-xs text-zinc-500 truncate">Avg Waste Div.</p>
             </div>
-            <div className="bg-zinc-800/50 rounded-md p-3 overflow-hidden">
-              <p
-                className={`text-lg font-bold truncate ${
-                  kpis.avgDataQuality !== null && kpis.avgDataQuality >= 70
-                    ? "text-emerald-400"
-                    : kpis.avgDataQuality !== null && kpis.avgDataQuality < 50
-                      ? "text-amber-400"
-                      : "text-zinc-100"
-                }`}
-              >
-                {kpis.avgDataQuality !== null
-                  ? `${kpis.avgDataQuality.toFixed(0)}`
-                  : "N/A"}
-              </p>
-              <p className="text-xs text-zinc-500 truncate">Avg Quality</p>
+          </div>
+        </div>
+
+        {/* Coverage Distribution */}
+        <div className="space-y-3">
+          <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+            <TrendingUp className="h-3 w-3" />
+            Coverage Score
+          </h3>
+          <div className="grid grid-cols-2 gap-2">
+            <div className="bg-zinc-800/50 rounded-md p-2.5">
+              <p className="text-lg font-bold text-zinc-100">{coverageStats.avg}%</p>
+              <p className="text-[10px] text-zinc-500">Average</p>
             </div>
+            <div className="bg-zinc-800/50 rounded-md p-2.5">
+              <p className="text-lg font-bold text-zinc-100">{coverageStats.median}%</p>
+              <p className="text-[10px] text-zinc-500">Median</p>
+            </div>
+            <div className="bg-zinc-800/50 rounded-md p-2.5">
+              <p className="text-lg font-bold text-emerald-400">{coverageStats.high}</p>
+              <p className="text-[10px] text-zinc-500">High (60%+)</p>
+            </div>
+            <div className="bg-zinc-800/50 rounded-md p-2.5">
+              <p className="text-lg font-bold text-red-400">{coverageStats.low}</p>
+              <p className="text-[10px] text-zinc-500">Low (&lt;30%)</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Top 5 by Coverage */}
+        <div className="space-y-3">
+          <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider">
+            Top 5 by Coverage
+          </h3>
+          <div className="space-y-1.5">
+            {topCompanies.map((c, idx) => (
+              <div key={c.id} className="flex items-center gap-2 text-xs">
+                <span className="text-zinc-600 font-mono w-5 text-right shrink-0">
+                  {idx + 1}.
+                </span>
+                <span className="text-zinc-300 truncate flex-1" title={c.name}>
+                  {c.name}
+                </span>
+                <span className="text-zinc-400 shrink-0 tabular-nums">
+                  {c.derived.coverageScore ?? 0}%
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -217,23 +278,23 @@ export function SidePanelRight({
             Data Plausibility
           </h3>
           <div className="space-y-2">
-            {(["Good", "Watch", "Review"] as PlausibilityBand[]).map((band) => {
-              const count = plausibilityBreakdown[band] || 0;
+            {(["Good", "Watch", "Review"] as PlausibilityBand[]).map((b) => {
+              const count = plausibilityBreakdown[b] || 0;
               const percentage =
                 companies.length > 0
                   ? Math.round((count / companies.length) * 100)
                   : 0;
               return (
-                <div key={band} className="space-y-1">
+                <div key={b} className="space-y-1">
                   <div className="flex items-center justify-between text-xs min-w-0">
-                    <span className="text-zinc-400 shrink-0">{band}</span>
+                    <span className="text-zinc-400 shrink-0">{b}</span>
                     <span className="text-zinc-300 truncate ml-2">
                       {count} ({percentage}%)
                     </span>
                   </div>
                   <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
                     <div
-                      className={`h-full ${getPlausibilityColor(band)} rounded-full transition-all duration-500`}
+                      className={`h-full ${getPlausibilityColor(b)} rounded-full transition-all duration-500`}
                       style={{ width: `${percentage}%` }}
                     />
                   </div>
@@ -243,94 +304,35 @@ export function SidePanelRight({
           </div>
         </div>
 
-        {/* Data Completeness */}
+        {/* Sector Breakdown */}
         <div className="space-y-3">
           <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
             <ShieldCheck className="h-3 w-3" />
-            Data Completeness
+            By Sector
           </h3>
           <div className="space-y-2">
-            {Object.entries(completenessBreakdown)
-              .sort(([a], [b]) => {
-                const order = { Complete: 0, Partial: 1, Missing: 2 };
-                return (
-                  (order[a as keyof typeof order] || 3) -
-                  (order[b as keyof typeof order] || 3)
-                );
-              })
-              .map(([status, count]) => {
-                const percentage =
-                  companies.length > 0
-                    ? Math.round((count / companies.length) * 100)
-                    : 0;
-                const color =
-                  status === "Complete"
-                    ? "bg-emerald-500"
-                    : status === "Partial"
-                      ? "bg-amber-500"
-                      : "bg-red-500";
-                return (
-                  <div key={status} className="space-y-1">
-                    <div className="flex items-center justify-between text-xs min-w-0">
-                      <span className="text-zinc-400 shrink-0">{status}</span>
-                      <span className="text-zinc-300 truncate ml-2">
-                        {count} ({percentage}%)
-                      </span>
-                    </div>
-                    <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full ${color} rounded-full transition-all duration-500`}
-                        style={{ width: `${percentage}%` }}
-                      />
-                    </div>
+            {sectorBreakdown.slice(0, 8).map(({ sector, count, avgCoverage }) => {
+              const pct =
+                companies.length > 0
+                  ? Math.round((count / companies.length) * 100)
+                  : 0;
+              return (
+                <div key={sector} className="space-y-1">
+                  <div className="flex items-center justify-between text-xs min-w-0">
+                    <span className="text-zinc-400 truncate flex-1">{sector}</span>
+                    <span className="text-zinc-500 shrink-0 ml-2 tabular-nums">
+                      {count} · {avgCoverage}% cov
+                    </span>
                   </div>
-                );
-              })}
-          </div>
-        </div>
-
-        {/* Extraction Status */}
-        <div className="space-y-3">
-          <h3 className="text-xs font-medium text-zinc-400 uppercase tracking-wider">
-            Extraction Status
-          </h3>
-          <div className="space-y-2">
-            {Object.entries(extractionBreakdown)
-              .sort(([a]) => (a === "Success" ? -1 : 1))
-              .map(([status, count]) => {
-                const percentage =
-                  companies.length > 0
-                    ? Math.round((count / companies.length) * 100)
-                    : 0;
-                const color =
-                  status === "Success" ? "bg-emerald-500" : "bg-amber-500";
-                return (
-                  <div key={status} className="space-y-1">
-                    <div className="flex items-center justify-between text-xs min-w-0">
-                      <span className="text-zinc-400 shrink-0">{status}</span>
-                      <span className="text-zinc-300 truncate ml-2">
-                        {count} ({percentage}%)
-                      </span>
-                    </div>
-                    <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full ${color} rounded-full transition-all duration-500`}
-                        style={{ width: `${percentage}%` }}
-                      />
-                    </div>
+                  <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-blue-500/70 rounded-full transition-all duration-500"
+                      style={{ width: `${pct}%` }}
+                    />
                   </div>
-                );
-              })}
-          </div>
-        </div>
-
-        {/* Total Companies Footer */}
-        <div className="pt-4 border-t border-zinc-800">
-          <div className="flex items-center justify-between text-xs">
-            <span className="text-zinc-500">Total Companies</span>
-            <span className="text-zinc-300 font-medium">
-              {kpis.totalCompanies}
-            </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
