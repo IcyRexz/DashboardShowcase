@@ -49,7 +49,7 @@ const METRIC_HINTS: Array<{
 }> = [
   {
     group: "emissions",
-    keywords: ["emissions", "emission", "ghg", "carbon", "scope 1", "scope 2", "scope 3"],
+    keywords: ["emissions", "emission", "ghg", "carbon", "scope 1", "scope 2", "scope 3", "scope1", "scope2", "scope3"],
   },
   {
     group: "water",
@@ -212,6 +212,25 @@ function readValue(row: CsvRow, key: string) {
   return String(row[key] ?? "").trim();
 }
 
+function formatAnomalyScore(score: string) {
+  const numericScore = Number(score);
+  if (!Number.isFinite(numericScore)) return score || null;
+  return numericScore.toFixed(2);
+}
+
+function humanizeMetricGroup(metricGroup: MetricGroup) {
+  switch (metricGroup) {
+    case "gfa":
+      return "GFA";
+    default:
+      return metricGroup.charAt(0).toUpperCase() + metricGroup.slice(1);
+  }
+}
+
+function formatSnapshotLine(entry: { label: string; value: string; unit?: string }) {
+  return `- \`${entry.label}\`: \`${entry.value}${entry.unit ? ` ${entry.unit}` : ""}\``;
+}
+
 function normalizeTokens(value: string) {
   return value
     .toLowerCase()
@@ -277,16 +296,23 @@ function buildExtractionAnswer(
   const reportName = readValue(row, "report_name");
 
   const sections = [
-    `${company} (${year}) ${metricGroup} extraction explanation.`,
-    calculation || "No stored calculation rationale is available for this metric group.",
+    `**${humanizeMetricGroup(metricGroup)} Extraction Explanation**`,
+    `**${company}** · **${year}**`,
+    `**Calculation**\n${calculation || "No stored calculation rationale is available for this metric group."}`,
   ];
 
+  if (snapshot.length > 0) {
+    sections.push(
+      `**Extracted Values**\n${snapshot.map(formatSnapshotLine).join("\n")}`,
+    );
+  }
+
   if (notes) {
-    sections.push(`Supporting notes: ${notes}`);
+    sections.push(`**Supporting Notes**\n${notes}`);
   }
 
   if (status) {
-    sections.push(`Validation status: ${status}`);
+    sections.push(`**Validation Status**\n- \`${status}\``);
   }
 
   return {
@@ -316,24 +342,28 @@ function buildExtractionAnswer(
 
 function buildAnomalyAnswer(row: CsvRow, company: string) {
   const anomalyFlag = readValue(row, "anomaly_flag");
-  const anomalyScore = readValue(row, "anomaly_score");
+  const anomalyScore = formatAnomalyScore(readValue(row, "anomaly_score"));
   const anomalyTypes = readValue(row, "anomaly_types");
   const explanation =
     readValue(row, "anomaly_explanation") || "No anomaly explanation is stored for this row.";
 
   const sections = [
-    anomalyFlag.toLowerCase() === "true"
-      ? `${company} was flagged as an anomaly by the detection model.`
-      : `${company} was not flagged as an anomaly by the detection model.`,
-    explanation,
+    "**Anomaly Detection Explanation**",
+    `**${company}**`,
+    `**Finding**\n${
+      anomalyFlag.toLowerCase() === "true"
+        ? `${company} was flagged as an anomaly by the detection model.`
+        : `${company} was not flagged as an anomaly by the detection model.`
+    }`,
+    `**Explanation**\n${explanation}`,
   ];
 
   if (anomalyTypes) {
-    sections.push(`Anomaly types: ${anomalyTypes}`);
+    sections.push(`**Anomaly Types**\n- \`${anomalyTypes}\``);
   }
 
   if (anomalyScore) {
-    sections.push(`Anomaly score: ${anomalyScore}`);
+    sections.push(`**Anomaly Score**\n- \`${anomalyScore}\``);
   }
 
   return {

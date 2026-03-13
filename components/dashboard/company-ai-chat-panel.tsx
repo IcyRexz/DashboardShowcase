@@ -1,6 +1,12 @@
 "use client";
 
-import { KeyboardEvent, useEffect, useMemo, useState } from "react";
+import {
+  KeyboardEvent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Bot, MessageSquare, Send, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { SustainabilityCompany } from "@/data/sustainability";
@@ -19,7 +25,10 @@ type ChatMessage = {
   role: "user" | "assistant";
   content: string;
   sources?: string[];
+  isLoading?: boolean;
 };
+
+const MIN_THINKING_MS = 1500;
 
 const MODE_COPY: Record<
   ChatIntent,
@@ -49,6 +58,76 @@ function buildIntroMessage(company: SustainabilityCompany): ChatMessage {
   };
 }
 
+function renderInlineFormatting(text: string) {
+  const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g);
+
+  return parts.map((part, index) => {
+    if (part.startsWith("`") && part.endsWith("`")) {
+      return (
+        <code
+          key={`${part}-${index}`}
+          className="rounded bg-black/5 px-1.5 py-0.5 font-mono text-[0.92em]"
+        >
+          {part.slice(1, -1)}
+        </code>
+      );
+    }
+
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={`${part}-${index}`} className="font-semibold text-current">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+
+    return <span key={`${part}-${index}`}>{part}</span>;
+  });
+}
+
+function renderStructuredMessage(content: string) {
+  const lines = content.split("\n");
+
+  return (
+    <div className="space-y-3">
+      {lines.map((line, index) => {
+        const trimmed = line.trim();
+
+        if (!trimmed) {
+          return <div key={`spacer-${index}`} className="h-1" />;
+        }
+
+        const headingMatch = trimmed.match(/^\*\*([^*]+)\*\*$/);
+        if (headingMatch) {
+          return (
+            <div
+              key={`heading-${index}`}
+              className="text-xs font-semibold uppercase tracking-[0.18em] text-current/70"
+            >
+              {headingMatch[1]}
+            </div>
+          );
+        }
+
+        if (trimmed.startsWith("- ")) {
+          return (
+            <div key={`bullet-${index}`} className="flex gap-2">
+              <span className="pt-0.5 text-current/50">•</span>
+              <div className="flex-1">{renderInlineFormatting(trimmed.slice(2))}</div>
+            </div>
+          );
+        }
+
+        return (
+          <div key={`line-${index}`} className="leading-7">
+            {renderInlineFormatting(trimmed)}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 interface CompanyAiChatPanelProps {
   company: SustainabilityCompany;
   isOpen: boolean;
@@ -64,6 +143,7 @@ export function CompanyAiChatPanel({
   const [prompt, setPrompt] = useState(MODE_COPY.EXTRACTION_EXPLANATION.template);
   const [messages, setMessages] = useState<ChatMessage[]>([buildIntroMessage(company)]);
   const [loading, setLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setMessages([buildIntroMessage(company)]);
@@ -80,6 +160,18 @@ export function CompanyAiChatPanel({
     setPrompt(MODE_COPY[nextMode].template);
   }
 
+  function scrollToLatestMessage() {
+    messagesEndRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
+  }
+
+  useEffect(() => {
+    if (!isOpen) return;
+    scrollToLatestMessage();
+  }, [messages, isOpen]);
+
   async function sendMessage() {
     if (!canSend || loading) return;
 
@@ -92,40 +184,58 @@ export function CompanyAiChatPanel({
     setMessages((current) => [...current, userMessage]);
     setLoading(true);
 
+    const loadingMessageId = Date.now() + 1;
+    setMessages((current) => [
+      ...current,
+      {
+        id: loadingMessageId,
+        role: "assistant",
+        content: "",
+        isLoading: true,
+      },
+    ]);
+
     try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          message: prompt.trim(),
-          context: {
-            intent: mode,
-            company: company.name,
-            year: company.reportYear,
-          },
-        }),
-      });
-
-      const data = (await response.json()) as ApiResponse;
-
-      setMessages((current) => [
-        ...current,
-        {
-          id: Date.now() + 1,
-          role: "assistant",
-          content: data.error ?? data.answer ?? "No response returned.",
-          sources: data.sources,
-        },
+      const [data] = await Promise.all([
+        fetch("/api/chat", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            message: prompt.trim(),
+            context: {
+              intent: mode,
+              company: company.name,
+              year: company.reportYear,
+            },
+          }),
+        }).then(async (response) => (await response.json()) as ApiResponse),
+        new Promise((resolve) => setTimeout(resolve, MIN_THINKING_MS)),
       ]);
+
+      setMessages((current) =>
+        current.map((message) =>
+          message.id === loadingMessageId
+            ? {
+              ...message,
+              content: data.error ?? data.answer ?? "No response returned.",
+              sources: data.sources,
+              isLoading: false,
+            }
+            : message,
+        ),
+      );
     } catch (error) {
-      setMessages((current) => [
-        ...current,
-        {
-          id: Date.now() + 1,
-          role: "assistant",
-          content: error instanceof Error ? error.message : "Request failed.",
-        },
-      ]);
+      setMessages((current) =>
+        current.map((message) =>
+          message.id === loadingMessageId
+            ? {
+              ...message,
+              content: error instanceof Error ? error.message : "Request failed.",
+              isLoading: false,
+            }
+            : message,
+        ),
+      );
     } finally {
       setLoading(false);
     }
@@ -205,10 +315,21 @@ export function CompanyAiChatPanel({
                     )}
                     {message.role}
                   </div>
-                  <p className="whitespace-pre-wrap">{message.content}</p>
+                  {message.isLoading ? (
+                    <div className="flex items-center gap-1 py-1 text-sm text-current/80">
+                      <span>Thinking</span>
+                      <span className="inline-flex w-6 justify-start">
+                        <span className="animate-pulse [animation-delay:0ms]">.</span>
+                        <span className="animate-pulse [animation-delay:200ms]">.</span>
+                        <span className="animate-pulse [animation-delay:400ms]">.</span>
+                      </span>
+                    </div>
+                  ) : (
+                    renderStructuredMessage(message.content)
+                  )}
                 </div>
 
-                {message.role === "assistant" && message.sources?.length ? (
+                {message.role === "assistant" && !message.isLoading && message.sources?.length ? (
                   <div className="max-w-[94%] rounded-2xl border border-gray-200 bg-white px-4 py-3">
                     <div className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
                       Sources
@@ -227,6 +348,7 @@ export function CompanyAiChatPanel({
                 ) : null}
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
         </div>
 
