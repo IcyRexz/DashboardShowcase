@@ -286,7 +286,7 @@ export function CompanyAiChatPanel({
                 key={option}
                 type="button"
                 onClick={() => switchMode(option)}
-                className={`rounded-full px-3 py-1.5 text-sm transition ${mode === option
+                className={`rounded-full px-3 py-1 text-sm transition ${mode === option
                   ? "bg-emerald-600 text-white"
                   : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
                   }`}
@@ -352,21 +352,21 @@ export function CompanyAiChatPanel({
           </div>
         </div>
 
-        <div className="border-t border-gray-200 bg-white px-4 py-4">
+        <div className="border-t border-gray-200 bg-white px-4 py-3">
           <div className="mb-2 text-xs text-gray-500">{MODE_COPY[mode].hint}</div>
-          <div className="flex gap-3">
+          <div className="flex items-stretch gap-2">
             <textarea
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               onKeyDown={handlePromptKeyDown}
-              rows={4}
-              className="min-h-[112px] flex-1 resize-none rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-emerald-400"
+              rows={2}
+              className="min-h-[72px] flex-1 resize-none rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-emerald-400"
             />
             <Button
               type="button"
               onClick={sendMessage}
               disabled={!canSend || loading}
-              className="h-auto rounded-3xl bg-emerald-600 px-4 text-white hover:bg-emerald-500 disabled:bg-gray-300"
+              className="min-h-[72px] rounded-3xl bg-emerald-600 px-4 text-white hover:bg-emerald-500 disabled:bg-gray-300"
             >
               <Send className="h-4 w-4" />
             </Button>

@@ -210,108 +210,104 @@ export function BottomDetailsPanel({
       >
         <div className="h-1 w-14 rounded-full bg-gray-300 transition-colors group-hover:bg-gray-400" />
       </div>
-      {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-gray-200">
-        <div className="flex items-center gap-3">
-          <Building2 className="h-5 w-5 text-gray-500" />
-          <div>
-            <h3 className="text-base font-semibold text-gray-900">
-              {company.name}
-            </h3>
-            <p className="text-xs text-gray-500">
-              {company.city}, {company.country} · Report Year{" "}
-              {company.reportYear}
-            </p>
+      <div className="flex min-h-0 flex-1">
+        <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
+          <div className="flex items-center justify-between border-b border-gray-200 p-4">
+            <div className="flex items-center gap-3">
+              <Building2 className="h-5 w-5 text-gray-500" />
+              <div>
+                <h3 className="text-base font-semibold text-gray-900">
+                  {company.name}
+                </h3>
+                <p className="text-xs text-gray-500">
+                  {company.city}, {company.country} · Report Year{" "}
+                  {company.reportYear}
+                </p>
+              </div>
+              <Badge
+                variant="outline"
+                className={`ml-2 ${getPlausibilityColor(plausibilityBand)}`}
+                title="Data plausibility"
+              >
+                {plausibilityBand}
+              </Badge>
+            </div>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMinimized(true)}
+                className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                aria-label="Minimize panel"
+                title="Minimize panel"
+              >
+                <ChevronDown className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={onClear}
+                className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                aria-label="Close panel"
+                title="Close panel"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
-          <Badge
-            variant="outline"
-            className={`ml-2 ${getPlausibilityColor(plausibilityBand)}`}
-            title="Data plausibility"
-          >
-            {plausibilityBand}
-          </Badge>
-        </div>
-        <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMinimized(true)}
-            className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
-            aria-label="Minimize panel"
-            title="Minimize panel"
-          >
-            <ChevronDown className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onClear}
-            className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
-            aria-label="Close panel"
-            title="Close panel"
-          >
-            <X className="h-4 w-4" />
-          </Button>
-        </div>
-      </div>
 
-      {/* Why flagged? */}
-      {plausibilityReasons.length > 0 && (
-        <div className="px-4 py-2 border-b border-gray-200 bg-amber-50 border-l-2 border-l-amber-400">
-          <h4 className="text-xs font-medium text-amber-700 uppercase tracking-wider mb-1.5">
-            Why flagged?
-          </h4>
-          <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
-            {plausibilityReasons.map((reason, i) => (
-              <li key={i}>{reason}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+          {plausibilityReasons.length > 0 && (
+            <div className="border-b border-gray-200 border-l-2 border-l-amber-400 bg-amber-50 px-4 py-2">
+              <h4 className="mb-1.5 text-xs font-medium uppercase tracking-wider text-amber-700">
+                Why flagged?
+              </h4>
+              <ul className="list-inside list-disc space-y-1 text-sm text-gray-700">
+                {plausibilityReasons.map((reason, i) => (
+                  <li key={i}>{reason}</li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-      {/* Tabs Content */}
-      <Tabs defaultValue="overview" className="flex min-h-0 flex-1 flex-col">
-        <div className="flex items-center justify-between gap-4 px-4 pt-2 border-b border-gray-200">
-          <TabsList className="bg-transparent h-9 p-0 gap-4">
-            <TabsTrigger
-              value="overview"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
-            >
-              Overview
-            </TabsTrigger>
-            <TabsTrigger
-              value="data-quality"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
-            >
-              Data Quality
-            </TabsTrigger>
-            <TabsTrigger
-              value="notes"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
-            >
-              Notes & Strategy
-            </TabsTrigger>
-            <TabsTrigger
-              value="peers"
-              className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
-            >
-              Peer Examples
-            </TabsTrigger>
-          </TabsList>
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={() => setIsAiOpen((current) => !current)}
-            className="mb-2 h-9 rounded-md border-emerald-300 bg-emerald-50 px-3 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800"
-          >
-            Ask AI
-          </Button>
-        </div>
+          <Tabs defaultValue="overview" className="flex min-h-0 flex-1 flex-col">
+            <div className="flex items-center justify-between gap-4 border-b border-gray-200 px-4 pt-2">
+              <TabsList className="bg-transparent h-9 p-0 gap-4">
+                <TabsTrigger
+                  value="overview"
+                  className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
+                >
+                  Overview
+                </TabsTrigger>
+                <TabsTrigger
+                  value="data-quality"
+                  className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
+                >
+                  Data Quality
+                </TabsTrigger>
+                <TabsTrigger
+                  value="notes"
+                  className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
+                >
+                  Notes & Strategy
+                </TabsTrigger>
+                <TabsTrigger
+                  value="peers"
+                  className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
+                >
+                  Peer Examples
+                </TabsTrigger>
+              </TabsList>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => setIsAiOpen((current) => !current)}
+                className="mb-2 h-9 rounded-md border-emerald-300 bg-emerald-50 px-3 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800"
+              >
+                Ask AI
+              </Button>
+            </div>
 
-        <div className="flex min-h-0 flex-1">
-          <div className="min-h-0 flex-1 overflow-hidden">
-            {/* Overview Tab */}
             <TabsContent value="overview" className="m-0 h-full overflow-y-auto p-4">
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 <div className="bg-gray-50 rounded-md p-3">
@@ -896,15 +892,15 @@ export function BottomDetailsPanel({
                 </div>
               )}
             </TabsContent>
-          </div>
-
-          <CompanyAiChatPanel
-            company={company}
-            isOpen={isAiOpen}
-            onClose={() => setIsAiOpen(false)}
-          />
+          </Tabs>
         </div>
-      </Tabs>
+
+        <CompanyAiChatPanel
+          company={company}
+          isOpen={isAiOpen}
+          onClose={() => setIsAiOpen(false)}
+        />
+      </div>
     </div>
   );
 }
