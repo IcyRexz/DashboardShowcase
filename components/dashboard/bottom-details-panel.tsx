@@ -50,6 +50,14 @@ interface BottomDetailsPanelProps {
   allCompanies?: SustainabilityCompany[];
 }
 
+const RAW_PDF_PATHS: Record<string, string> = {
+  "LS 2 Holdings Limited": "/reports/ls-2-holdings-limited.pdf",
+  "YKGI Limited": "/reports/ykgi-limited.pdf",
+  "Midas Holdings Limited": "/reports/midas-holdings-limited.pdf",
+  "NetLink NBN Trust": "/reports/netlink-nbn-trust.pdf",
+  "CapitaLand Investment Limited": "/reports/capitaland-investment-limited.pdf",
+};
+
 export function BottomDetailsPanel({
   company,
   onClear,
@@ -151,6 +159,7 @@ export function BottomDetailsPanel({
     allCompanies.length > 0
       ? getPeerStrategyExamples(company, allCompanies)
       : [];
+  const rawPdfPath = RAW_PDF_PATHS[company.name] ?? null;
 
   if (isMinimized) {
     return (
@@ -296,6 +305,12 @@ export function BottomDetailsPanel({
                 >
                   Peer Examples
                 </TabsTrigger>
+                <TabsTrigger
+                  value="raw-pdf"
+                  className="data-[state=active]:bg-transparent data-[state=active]:text-gray-900 data-[state=active]:border-b-2 data-[state=active]:border-gray-900 rounded-none pb-2 px-0 text-gray-400 hover:text-gray-700"
+                >
+                  Raw PDF
+                </TabsTrigger>
               </TabsList>
               <Button
                 type="button"
@@ -400,12 +415,12 @@ export function BottomDetailsPanel({
                   </div>
                   <p
                     className={`text-sm font-medium ${company.derived.wasteDiversionRate !== null &&
-                        company.derived.wasteDiversionRate >= 0.5
-                        ? "text-emerald-600"
-                        : company.derived.wasteDiversionRate !== null &&
-                          company.derived.wasteDiversionRate < 0.3
-                          ? "text-amber-600"
-                          : "text-gray-900"
+                      company.derived.wasteDiversionRate >= 0.5
+                      ? "text-emerald-600"
+                      : company.derived.wasteDiversionRate !== null &&
+                        company.derived.wasteDiversionRate < 0.3
+                        ? "text-amber-600"
+                        : "text-gray-900"
                       }`}
                   >
                     {fmtPct(company.derived.wasteDiversionRate)}
@@ -580,10 +595,10 @@ export function BottomDetailsPanel({
                         <span className="text-gray-500">Extraction Quality</span>
                         <span
                           className={`font-medium ${company.meta.dataQualityScore >= 80
-                              ? "text-emerald-600"
-                              : company.meta.dataQualityScore >= 50
-                                ? "text-amber-600"
-                                : "text-red-600"
+                            ? "text-emerald-600"
+                            : company.meta.dataQualityScore >= 50
+                              ? "text-amber-600"
+                              : "text-red-600"
                             }`}
                         >
                           {company.meta.dataQualityScore}/100
@@ -660,8 +675,8 @@ export function BottomDetailsPanel({
                         </div>
                         <p
                           className={`text-sm font-medium ${company.meta.groupsFailed > 0
-                              ? "text-amber-600"
-                              : "text-emerald-600"
+                            ? "text-amber-600"
+                            : "text-emerald-600"
                             }`}
                         >
                           {company.meta.groupsFailed}
@@ -891,6 +906,31 @@ export function BottomDetailsPanel({
                   )}
                 </div>
               )}
+            </TabsContent>
+
+            <TabsContent value="raw-pdf" className="m-0 h-full overflow-y-auto p-4">
+              <div className="flex h-full min-h-[320px] flex-col rounded-lg border border-gray-200 bg-gray-50">
+
+                {rawPdfPath ? (
+                  <iframe
+                    src={rawPdfPath}
+                    title={`${company.name} sustainability report PDF`}
+                    className="min-h-0 flex-1 rounded-b-lg bg-white"
+                  />
+                ) : (
+                  <div className="flex flex-1 items-center justify-center px-6 text-center">
+                    <div>
+                      <p className="text-sm font-medium text-gray-700">
+                        No demo PDF uploaded for this company yet.
+                      </p>
+                      <p className="mt-2 text-xs text-gray-500">
+                        Add the report under `public/reports/` and update the
+                        company mapping in this panel to enable preview.
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
             </TabsContent>
           </Tabs>
         </div>
