@@ -206,6 +206,7 @@ export function CompanyAiChatPanel({
               intent: mode,
               company: company.name,
               year: company.reportYear,
+              tickerSymbol: company.tickerSymbol ?? undefined,
             },
           }),
         }).then(async (response) => (await response.json()) as ApiResponse),

@@ -28,6 +28,7 @@ const schema = z.object({
     intent: intentSchema.optional(),
     company: z.string().min(1),
     year: z.number().int().optional(),
+    tickerSymbol: z.string().min(1).optional(),
     metricGroup: metricGroupSchema.optional(),
   }),
 });
@@ -48,6 +49,7 @@ export async function POST(req: Request) {
       company: context.company,
       message,
       year: context.year,
+      tickerSymbol: context.tickerSymbol,
       metricGroup,
     });
 

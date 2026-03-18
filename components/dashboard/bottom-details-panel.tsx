@@ -921,11 +921,7 @@ export function BottomDetailsPanel({
                   <div className="flex flex-1 items-center justify-center px-6 text-center">
                     <div>
                       <p className="text-sm font-medium text-gray-700">
-                        No demo PDF uploaded for this company yet.
-                      </p>
-                      <p className="mt-2 text-xs text-gray-500">
-                        Add the report under `public/reports/` and update the
-                        company mapping in this panel to enable preview.
+                        No PDF uploaded for this company yet.
                       </p>
                     </div>
                   </div>

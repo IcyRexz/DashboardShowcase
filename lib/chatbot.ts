@@ -15,6 +15,7 @@ export type ChatContext = {
   company: string;
   message: string;
   year?: number;
+  tickerSymbol?: string | null;
   metricGroup?: MetricGroup;
 };
 
@@ -28,10 +29,10 @@ export type ChatResponse = {
 type CsvRow = Record<string, string>;
 
 const EXTRACTION_FILE = "singapore_2024_merged_with_coverage_rank.csv";
-const ANOMALY_FILE = "anomaly_detection_report-3.csv";
-const EXTRACTION_COMPANY_COL = "company_name_left";
+const ANOMALY_FILE = "anomaly_detection_report_with_tickers.csv";
+const EXTRACTION_COMPANY_COL = "company_name";
 const EXTRACTION_YEAR_COL = "report_year";
-const ANOMALY_COMPANY_COL = "company_name";
+const ANOMALY_TICKER_COL = "sgx_ticker";
 
 const ANOMALY_HINTS = [
   "anomaly",
@@ -215,6 +216,7 @@ function readValue(row: CsvRow, key: string) {
 function formatAnomalyScore(score: string) {
   const numericScore = Number(score);
   if (!Number.isFinite(numericScore)) return score || null;
+  if (numericScore === 0) return null;
   return numericScore.toFixed(2);
 }
 
@@ -229,36 +231,6 @@ function humanizeMetricGroup(metricGroup: MetricGroup) {
 
 function formatSnapshotLine(entry: { label: string; value: string; unit?: string }) {
   return `- \`${entry.label}\`: \`${entry.value}${entry.unit ? ` ${entry.unit}` : ""}\``;
-}
-
-function normalizeTokens(value: string) {
-  return value
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim()
-    .split(/\s+/)
-    .map((token) => {
-      if (token === "inv") return "investment";
-      if (token === "trt") return "trust";
-      if (token === "corp") return "corporation";
-      return token;
-    })
-    .filter(
-      (token) =>
-        token &&
-        !["limited", "ltd", "company", "co", "corp", "corporation"].includes(token),
-    );
-}
-
-function tokensMatch(left: string, right: string) {
-  const leftTokens = normalizeTokens(left);
-  const rightTokens = normalizeTokens(right);
-  if (!leftTokens.length || !rightTokens.length) return false;
-
-  const overlap = leftTokens.filter((token) => rightTokens.includes(token)).length;
-  const target = Math.min(leftTokens.length, rightTokens.length);
-
-  return overlap >= Math.max(2, target - 1);
 }
 
 function inferMetricGroup(message: string): MetricGroup | undefined {
@@ -340,7 +312,12 @@ function buildExtractionAnswer(
   };
 }
 
-function buildAnomalyAnswer(row: CsvRow, company: string) {
+function buildAnomalyAnswer(
+  row: CsvRow,
+  company: string,
+  tickerSymbol: string,
+  year?: number,
+) {
   const anomalyFlag = readValue(row, "anomaly_flag");
   const anomalyScore = formatAnomalyScore(readValue(row, "anomaly_score"));
   const anomalyTypes = readValue(row, "anomaly_types");
@@ -349,7 +326,8 @@ function buildAnomalyAnswer(row: CsvRow, company: string) {
 
   const sections = [
     "**Anomaly Detection Explanation**",
-    `**${company}**`,
+    year ? `**${company}** · **${year}**` : `**${company}**`,
+    `**Ticker**\n- \`${tickerSymbol}\``,
     `**Finding**\n${
       anomalyFlag.toLowerCase() === "true"
         ? `${company} was flagged as an anomaly by the detection model.`
@@ -371,6 +349,7 @@ function buildAnomalyAnswer(row: CsvRow, company: string) {
     answer: sections.join("\n\n"),
     sources: [
       ANOMALY_FILE,
+      ANOMALY_TICKER_COL,
       "anomaly_flag",
       "anomaly_score",
       "anomaly_types",
@@ -378,6 +357,8 @@ function buildAnomalyAnswer(row: CsvRow, company: string) {
     ],
     data: {
       company,
+      year: year ?? null,
+      tickerSymbol,
       anomalyFlag: anomalyFlag || null,
       anomalyScore: anomalyScore || null,
       anomalyTypes: anomalyTypes || null,
@@ -430,23 +411,30 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
 
     if (!row) {
       throw new Error(
-        `No extraction row found for company_name_left="${context.company}" and report_year=${year}.`,
+        `No extraction row found for company_name="${context.company}" and report_year=${year}.`,
       );
     }
 
     return buildExtractionAnswer(row, readValue(row, EXTRACTION_COMPANY_COL), year, metricGroup);
   }
 
+  const tickerSymbol = context.tickerSymbol?.trim();
+  if (!tickerSymbol) {
+    throw new Error(
+      `No ticker symbol is available for ${context.company}, so anomaly lookup cannot be resolved.`,
+    );
+  }
+
   const rows = await loadCsv(ANOMALY_FILE);
   const row = rows.find(
-    (entry) =>
-      normalize(readValue(entry, ANOMALY_COMPANY_COL)) === normalize(context.company) ||
-      tokensMatch(readValue(entry, ANOMALY_COMPANY_COL), context.company),
+    (entry) => normalize(readValue(entry, ANOMALY_TICKER_COL)) === normalize(tickerSymbol),
   );
 
   if (!row) {
-    throw new Error(`No anomaly row found for company_name="${context.company}".`);
+    throw new Error(
+      `No anomaly row found for sgx_ticker="${tickerSymbol}" from the selected company context.`,
+    );
   }
 
-  return buildAnomalyAnswer(row, readValue(row, ANOMALY_COMPANY_COL));
+  return buildAnomalyAnswer(row, context.company, tickerSymbol, context.year);
 }
