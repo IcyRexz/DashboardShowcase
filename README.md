@@ -4,7 +4,7 @@ A map-centric dashboard for viewing ESG (Environmental, Social, Governance) metr
 
 ## What it does
 
-- Displays ~3,300 companies on an interactive map, colored by **data plausibility** (Good / Watch / Review)
+- Displays ~3,500 companies on an interactive map, colored by **data plausibility** (Good / Watch / Review)
 - Lets you search, filter by country, industry, and plausibility, and select companies to inspect detailed sustainability metrics
 - Shows emissions (tCO₂e), energy (kWh), water (m³), and waste (tonnes) with a toggle between canonical and raw units
 - Provides peer strategy examples from similar companies in the dataset
@@ -13,15 +13,20 @@ A map-centric dashboard for viewing ESG (Environmental, Social, Governance) metr
 ## Architecture
 
 ```
-CSV Data/
-  master_metrics_1.csv     (canonical Singapore 2023)
-  singapore-2021.csv, singapore-2022.csv, singapore-2024.csv
-  malaysia-2022.csv, malaysia-2024.csv
-  indonesia-2022.csv, indonesia-2023.csv, indonesia-2024.csv
+Data for CSV/
+  indonesia_2022.csv
+  indonesia_2023.csv
+  indonesia_2024.csv
+  malaysia_2022.csv
+  malaysia_2023.csv
+  malaysia_2024.csv
+  singapore_2021.csv
+  singapore_2022.csv
+  singapore_2023.csv
+  singapore_2024.csv
         │
-        │  (singapore-2023.csv is excluded to avoid double-counting SG 2023)
         ▼
-scripts/build-sustainability-data.ts   ← build-time transform
+scripts/build-sustainability-data.ts   ← build-time transform (CSV → TS)
         │
         ▼
 data/sustainability.generated.ts       ← typed dataset (auto-generated)
@@ -35,7 +40,7 @@ app/dashboard/page.tsx                 ← single-page client-side app
         └── BottomDetailsPanel (detailed metrics, peer examples, targets, strategy)
 ```
 
-**Data pipeline:** Multiple CSVs under `CSV Data/` → build script → generated TypeScript → in-memory runtime. No database, no API calls. `CSV Data/singapore-2023.csv` is intentionally excluded so Singapore 2023 companies are not double-counted (they come from `master_metrics_1.csv` only).
+**Data pipeline:** All country-year CSVs under `Data for CSV/` (`country_year.csv`) → build script → generated TypeScript → in-memory runtime. No database, no API calls.
 
 **Unit normalization** (`lib/units.ts`) converts raw extracted values into canonical units at build time. Both raw and normalized values are stored so the UI can switch between them.
 
@@ -67,7 +72,7 @@ npm install
 
 ### Build the dataset
 
-Reads all configured CSVs under `CSV Data/` (including `CSV Data/master_metrics_1.csv` for Singapore 2023) and generates `data/sustainability.generated.ts`:
+Reads all `Data for CSV/country_year.csv` files (e.g. `singapore_2024.csv`) and generates `data/sustainability.generated.ts`:
 
 ```bash
 npm run build:data
@@ -99,11 +104,8 @@ components/dashboard/
   side-panel-right.tsx      — overview breakdowns
   bottom-details-panel.tsx  — company detail view
   kpi-row.tsx               — KPI cards (available but not mounted)
-CSV Data/
-  master_metrics_1.csv     — canonical Singapore 2023 source
-  singapore-2021.csv, singapore-2022.csv, singapore-2024.csv
-  malaysia-2022.csv, malaysia-2024.csv
-  indonesia-2022.csv, indonesia-2023.csv, indonesia-2024.csv
+Data for CSV/
+  country_year.csv — canonical multi-country/year sources
 data/
   sustainability.ts        — types, helpers, formatters
   sustainability.generated.ts — auto-generated dataset (do not edit)

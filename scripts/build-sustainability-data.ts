@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * Build script to parse singapore_2024_merged_with_coverage_rank.csv and generate sustainability.generated.ts
+ * Build script to parse all country_year.csv files and generate sustainability.generated.ts
  * - Canonical unit normalization (emissions, energy kWh, water m³, waste tonnes)
  * - Data plausibility (industry-based percentiles + consistency checks) with reasons
  *
@@ -587,154 +587,180 @@ function calcPlausibility(
 // ============================================================================
 
 function buildSustainabilityData(): void {
-  console.log("Building sustainability data from singapore_2024_merged_with_coverage_rank.csv...");
-
-  const csvPath = path.join(
-    process.cwd(),
-    "CSV Data",
-    "singapore_2024_merged_with_coverage_rank.csv",
-  );
-  if (!fs.existsSync(csvPath)) {
-    console.error(`CSV file not found: ${csvPath}`);
+  const csvDir = path.join(process.cwd(), "Data for CSV");
+  if (!fs.existsSync(csvDir)) {
+    console.error(`CSV directory not found: ${csvDir}`);
     process.exit(1);
   }
 
-  const csvContent = fs.readFileSync(csvPath, "utf-8");
-  console.log(`Read CSV file: ${csvPath}`);
-  const rows = parseCsv(csvContent);
-  console.log(`Parsed ${rows.length} rows`);
+  const mergedFiles = fs
+    .readdirSync(csvDir)
+    .filter((file) =>
+      /^(singapore|malaysia|indonesia)_\d{4}\.csv$/i.test(file),
+    )
+    .sort();
+
+  if (mergedFiles.length === 0) {
+    console.error(
+      `No country-year CSV files found in ${csvDir} (expected country_year.csv naming)`,
+    );
+    process.exit(1);
+  }
+
+  console.log(
+    `Building sustainability data from ${mergedFiles.length} country-year CSV files in Data for CSV...`,
+  );
 
   const companies: unknown[] = [];
-  const country = "Singapore";
+  let companyIndex = 0;
 
-  for (let i = 0; i < rows.length; i++) {
-    const row = rows[i];
+  for (const fileName of mergedFiles) {
+    const csvPath = path.join(csvDir, fileName);
+    const csvContent = fs.readFileSync(csvPath, "utf-8");
+    const rows = parseCsv(csvContent);
+    console.log(`Read ${fileName}: ${rows.length} rows`);
 
-    // Column names: 2024SG_Merged uses company_name_left, company_name_right; legacy used company_name
-    const rawName =
-      getRow(row, "company_name_right", "company_name") ||
-      getRow(row, "company_name_left", "company_name") ||
-      `unknown_${i}`;
-    const name =
-      parseString(getRow(row, "company_name_left", "company_name")) ||
-      formatCompanyName(rawName);
-    const locationInfo = getCoordinates(rawName, country);
+    const match = fileName.match(
+      /^(singapore|malaysia|indonesia)_(\d{4})\.csv$/i,
+    );
+    const inferredCountryRaw = match?.[1]?.toLowerCase() ?? "singapore";
+    const inferredCountry =
+      inferredCountryRaw === "malaysia"
+        ? "Malaysia"
+        : inferredCountryRaw === "indonesia"
+          ? "Indonesia"
+          : "Singapore";
+    const inferredYear = match?.[2] ? Number(match[2]) : 2024;
 
-    const reportYearNumber = parseNumber(getRow(row, "report_year"));
-    const reportYear: Year =
-      (reportYearNumber as Year | null) ?? (2024 as Year);
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
+      companyIndex += 1;
 
-    const scope1Value = parseNumber(getRow(row, "scope_1_value"));
-    const scope1Unit = parseString(getRow(row, "scope_1_unit"));
-    const scope2Value = parseNumber(getRow(row, "scope_2_value"));
-    const scope2Unit = parseString(getRow(row, "scope_2_unit"));
-    const scope3Value = parseNumber(getRow(row, "scope_3_value"));
-    const scope3Unit = parseString(getRow(row, "scope_3_unit"));
+      // Column names: 2024SG_Merged uses company_name_left, company_name_right; legacy used company_name
+      const rawName =
+        getRow(row, "company_name_right", "company_name") ||
+        getRow(row, "company_name_left", "company_name") ||
+        `unknown_${companyIndex}`;
+      const name =
+        parseString(getRow(row, "company_name_left", "company_name")) ||
+        formatCompanyName(rawName);
+      const locationInfo = getCoordinates(rawName, inferredCountry);
 
-    const wasteGeneratedValue = parseNumber(
-      getRow(row, "waste_generated_value"),
-    );
-    const wasteGeneratedUnit = parseString(getRow(row, "waste_generated_unit"));
-    const wasteDisposedValue = parseNumber(getRow(row, "waste_disposed_value"));
-    const wasteDisposedUnit = parseString(getRow(row, "waste_disposed_unit"));
-    const wasteRecycledValue = parseNumber(getRow(row, "waste_recycled_value"));
-    const wasteRecycledUnit = parseString(getRow(row, "waste_recycled_unit"));
+      const reportYearNumber = parseNumber(getRow(row, "report_year"));
+      const reportYear: Year =
+        (reportYearNumber as Year | null) ?? (inferredYear as Year);
 
-    const groupsFailed = parseNumber(getRow(row, "total_groups_failed"));
-    const dataQualityScore = parseNumber(getRow(row, "data_quality_score"));
+      const scope1Value = parseNumber(getRow(row, "scope_1_value"));
+      const scope1Unit = parseString(getRow(row, "scope_1_unit"));
+      const scope2Value = parseNumber(getRow(row, "scope_2_value"));
+      const scope2Unit = parseString(getRow(row, "scope_2_unit"));
+      const scope3Value = parseNumber(getRow(row, "scope_3_value"));
+      const scope3Unit = parseString(getRow(row, "scope_3_unit"));
 
-    const waterWithdrawalValue = parseNumber(
-      getRow(row, "water_withdrawal_value"),
-    );
-    const waterConsumptionValue = parseNumber(
-      getRow(row, "water_consumption_value"),
-    );
-    const totalEnergyValue = parseNumber(
-      getRow(row, "energy_total_stated_value", "total_energy_value"),
-    );
-    const totalEnergyUnit = parseString(
-      getRow(row, "energy_total_stated_unit", "total_energy_unit"),
-    );
-    const gfaValue = parseNumber(getRow(row, "gfa_value"));
-    const targetsJson = parseString(getRow(row, "targets_json"));
-    const strategySummary = parseString(getRow(row, "strategy_summary"));
+      const wasteGeneratedValue = parseNumber(
+        getRow(row, "waste_generated_value"),
+      );
+      const wasteGeneratedUnit = parseString(getRow(row, "waste_generated_unit"));
+      const wasteDisposedValue = parseNumber(getRow(row, "waste_disposed_value"));
+      const wasteDisposedUnit = parseString(getRow(row, "waste_disposed_unit"));
+      const wasteRecycledValue = parseNumber(getRow(row, "waste_recycled_value"));
+      const wasteRecycledUnit = parseString(getRow(row, "waste_recycled_unit"));
 
-    // Coverage: prefer pre-computed from CSV, fallback to local computation
-    const csvCoverageScore = parseNumber(getRow(row, "coverage_score"));
-    const coverageScore =
-      csvCoverageScore !== null
-        ? Math.round(csvCoverageScore)
-        : computeCoverageFromRow(row).score;
-    const csvSectorRank = parseNumber(getRow(row, "sector_rank"));
-    const csvSectorPercentile = parseNumber(getRow(row, "sector_percentile"));
+      const groupsFailed = parseNumber(getRow(row, "total_groups_failed"));
+      const dataQualityScore = parseNumber(getRow(row, "data_quality_score"));
 
-    // Calculate derived metrics
-    const scope1: QuantityRaw = { value: scope1Value, unit: scope1Unit };
-    const scope2: QuantityRaw = { value: scope2Value, unit: scope2Unit };
-    const scope12Total = calcScope12(scope1, scope2);
-    const wasteDiversionRate = calcWasteDiversion(
-      wasteGeneratedValue,
-      wasteRecycledValue,
-    );
-    const completeness = calcCompleteness(
-      scope1Value,
-      scope2Value,
-      wasteGeneratedValue,
-      wasteRecycledValue,
-    );
-    const extractionOk = groupsFailed === null || groupsFailed === 0;
+      const waterWithdrawalValue = parseNumber(
+        getRow(row, "water_withdrawal_value"),
+      );
+      const waterConsumptionValue = parseNumber(
+        getRow(row, "water_consumption_value"),
+      );
+      const totalEnergyValue = parseNumber(
+        getRow(row, "energy_total_stated_value", "total_energy_value"),
+      );
+      const totalEnergyUnit = parseString(
+        getRow(row, "energy_total_stated_unit", "total_energy_unit"),
+      );
+      const gfaValue = parseNumber(getRow(row, "gfa_value"));
+      const targetsJson = parseString(getRow(row, "targets_json"));
+      const strategySummary = parseString(getRow(row, "strategy_summary"));
 
-    // Canonical normalization
-    const scope1TCO2e = normalizeEmissions(scope1Value, scope1Unit);
-    const scope2TCO2e = normalizeEmissions(scope2Value, scope2Unit);
-    const scope3TCO2e = normalizeEmissions(scope3Value, scope3Unit);
-    const totalEnergyKwh = normalizeEnergyToKwh(
-      totalEnergyValue,
-      totalEnergyUnit,
-    );
-    const waterWithdrawalM3 = normalizeWaterToM3(
-      waterWithdrawalValue,
-      parseString(getRow(row, "water_withdrawal_unit")),
-    );
-    const waterConsumptionM3 = normalizeWaterToM3(
-      waterConsumptionValue,
-      parseString(getRow(row, "water_consumption_unit")),
-    );
-    const waterRecycledM3 = normalizeWaterToM3(
-      parseNumber(getRow(row, "water_recycled_value")),
-      parseString(getRow(row, "water_recycled_unit")),
-    );
-    const wasteGeneratedTonnes = normalizeWasteToTonnes(
-      wasteGeneratedValue,
-      wasteGeneratedUnit,
-    );
-    const wasteRecycledTonnes = normalizeWasteToTonnes(
-      wasteRecycledValue,
-      wasteRecycledUnit,
-    );
-    const wasteDisposedTonnes = normalizeWasteToTonnes(
-      wasteDisposedValue,
-      wasteDisposedUnit,
-    );
+      // Coverage: prefer pre-computed from CSV, fallback to local computation
+      const csvCoverageScore = parseNumber(getRow(row, "coverage_score"));
+      const coverageScore =
+        csvCoverageScore !== null
+          ? Math.round(csvCoverageScore)
+          : computeCoverageFromRow(row).score;
+      const csvSectorRank = parseNumber(getRow(row, "sector_rank"));
+      const csvSectorPercentile = parseNumber(getRow(row, "sector_percentile"));
 
-    const normalized = {
-      scope1TCO2e,
-      scope2TCO2e,
-      scope3TCO2e,
-      totalEnergyKwh,
-      waterWithdrawalM3,
-      waterConsumptionM3,
-      waterRecycledM3,
-      wasteGeneratedTonnes,
-      wasteRecycledTonnes,
-      wasteDisposedTonnes,
-    };
+      // Calculate derived metrics
+      const scope1: QuantityRaw = { value: scope1Value, unit: scope1Unit };
+      const scope2: QuantityRaw = { value: scope2Value, unit: scope2Unit };
+      const scope12Total = calcScope12(scope1, scope2);
+      const wasteDiversionRate = calcWasteDiversion(
+        wasteGeneratedValue,
+        wasteRecycledValue,
+      );
+      const completeness = calcCompleteness(
+        scope1Value,
+        scope2Value,
+        wasteGeneratedValue,
+        wasteRecycledValue,
+      );
+      const extractionOk = groupsFailed === null || groupsFailed === 0;
 
-    const sectorSsic = parseString(getRow(row, "sector_ssic"));
-    const industry = sectorSsic && sectorSsic.trim() ? sectorSsic.trim() : "General";
+      // Canonical normalization
+      const scope1TCO2e = normalizeEmissions(scope1Value, scope1Unit);
+      const scope2TCO2e = normalizeEmissions(scope2Value, scope2Unit);
+      const scope3TCO2e = normalizeEmissions(scope3Value, scope3Unit);
+      const totalEnergyKwh = normalizeEnergyToKwh(
+        totalEnergyValue,
+        totalEnergyUnit,
+      );
+      const waterWithdrawalM3 = normalizeWaterToM3(
+        waterWithdrawalValue,
+        parseString(getRow(row, "water_withdrawal_unit")),
+      );
+      const waterConsumptionM3 = normalizeWaterToM3(
+        waterConsumptionValue,
+        parseString(getRow(row, "water_consumption_unit")),
+      );
+      const waterRecycledM3 = normalizeWaterToM3(
+        parseNumber(getRow(row, "water_recycled_value")),
+        parseString(getRow(row, "water_recycled_unit")),
+      );
+      const wasteGeneratedTonnes = normalizeWasteToTonnes(
+        wasteGeneratedValue,
+        wasteGeneratedUnit,
+      );
+      const wasteRecycledTonnes = normalizeWasteToTonnes(
+        wasteRecycledValue,
+        wasteRecycledUnit,
+      );
+      const wasteDisposedTonnes = normalizeWasteToTonnes(
+        wasteDisposedValue,
+        wasteDisposedUnit,
+      );
 
-    const company = {
-      id: `company_${i + 1}`,
+      const normalized = {
+        scope1TCO2e,
+        scope2TCO2e,
+        scope3TCO2e,
+        totalEnergyKwh,
+        waterWithdrawalM3,
+        waterConsumptionM3,
+        waterRecycledM3,
+        wasteGeneratedTonnes,
+        wasteRecycledTonnes,
+        wasteDisposedTonnes,
+      };
+
+      const sectorSsic = parseString(getRow(row, "sector_ssic"));
+      const industry = sectorSsic && sectorSsic.trim() ? sectorSsic.trim() : "General";
+
+      const company = {
+      id: `company_${companyIndex}`,
       name,
       reportName: parseString(getRow(row, "report_name")),
       reportYear,
@@ -745,7 +771,7 @@ function buildSustainabilityData(): void {
       revenueCurrency: parseString(getRow(row, "revenue_currency")),
       marketCap: parseNumber(getRow(row, "market_cap_in_millions")),
 
-      country,
+      country: inferredCountry,
       city: locationInfo.district,
       lat: locationInfo.coords.lat,
       lng: locationInfo.coords.lng,
@@ -863,9 +889,10 @@ function buildSustainabilityData(): void {
         coverageRank: csvSectorRank !== null ? Math.round(csvSectorRank) : (null as number | null),
         coveragePercentile: csvSectorPercentile !== null ? Math.round(csvSectorPercentile * 100) / 100 : (null as number | null),
       },
-    };
+      };
 
-    companies.push(company);
+      companies.push(company);
+    }
   }
 
   // Fallback: compute rank/percentile for companies where CSV didn't provide them
@@ -966,7 +993,8 @@ function buildSustainabilityData(): void {
   // Generate TypeScript output
   const output = `// ============================================================================
 // GENERATED FILE - DO NOT EDIT MANUALLY
-// Generated from CSV Data/singapore_2024_merged_with_coverage_rank.csv by scripts/build-sustainability-data.ts
+// Generated from Data for CSV/country_year.csv files by scripts/build-sustainability-data.ts
+// Source files: ${mergedFiles.length}
 // Generated at: ${new Date().toISOString()}
 // Total companies: ${companies.length}
 // ============================================================================
