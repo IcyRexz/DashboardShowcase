@@ -1,11 +1,11 @@
 # Sustainability Monitoring Dashboard
 
-A map-centric dashboard for viewing ESG (Environmental, Social, Governance) metrics across listed companies in **Singapore, Malaysia, and Indonesia**. The dataset spans **report years 2021–2024**. Built with Next.js and Leaflet.
+A map-centric dashboard for viewing ESG (Environmental, Social, Governance) metrics across listed companies in **multiple countries** (currently Singapore, Malaysia, and Indonesia). The dataset spans **report years 2021–2024**. Built with Next.js and Leaflet.
 
 ## What it does
 
 - Displays ~3,500 companies on an interactive map, colored by **data plausibility** (Good / Watch / Review)
-- Lets you search, filter by country, industry, and plausibility, and select companies to inspect detailed sustainability metrics
+- Lets you search and filter across countries, industries, and plausibility bands, then inspect detailed sustainability metrics per company
 - Shows emissions (tCO₂e), energy (kWh), water (m³), and waste (tonnes) with a toggle between canonical and raw units
 - Provides peer strategy examples from similar companies in the dataset
 - All data is static and build-time generated — no backend or API required

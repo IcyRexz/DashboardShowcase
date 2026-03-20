@@ -143,7 +143,7 @@ export default function DashboardPage() {
                 {filteredCompanies.length < allCompanies.length
                   ? `${filteredCompanies.length} of ${allCompanies.length}`
                   : `${allCompanies.length}`}{" "}
-                listed companies across Singapore (2024)
+                listed companies across multiple countries (2021–2024)
               </p>
             </div>
 
