@@ -1,0 +1,336 @@
+ticker_symbol,company_name,gics_sector,sector_group,anomaly_flag,anomaly_score,anomaly_types,anomaly_layers,anomaly_explanation,n_flags,rule_flags,scope_1_raw,scope_1_unit,scope_1_normalised_tCO2e,scope_2_raw,scope_2_unit,scope_2_normalised_tCO2e,total_energy_raw,total_energy_unit,total_energy_normalised_GJ
+500.SI,Tai Sin Electric Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+504.SI,HS Optimus Holdings Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+505.SI,AsiaMedic Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+532.SI,DISA Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+544.SI,CSE Global Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+546.SI,Medtecs International Corporation Limited,Health Care,Health Care,False,0.012901018978171308,,,No anomalies detected. All reported values appear reasonable.,0,0,4134.0,tCO2e,4134.0,3775.0,tCO2e,3775.0,96491.0,GJ,96491.0
+554.SI,King Wan Corporation Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,192.852,tCO2e,192.852,,,
+566.SI,SHS Holdings Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+575.SI,ASTI Holdings Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,27.795,tCO2e,27.795,0.245214,GJ,0.245214
+585.SI,Asian Micro Holdings Limited,Energy,Energy & Utilities,False,0.6615551500111999,,,No anomalies detected. All reported values appear reasonable.,0,0,60.9,tCO2e,60.9,10.0,tCO2e,10.0,910.0,GJ,910.0
+594.SI,CapAllianz Holdings Limited,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+595.SI,GKE Corporation Limited,Industrials,Industrials,False,0.056343702266850704,,,No anomalies detected. All reported values appear reasonable.,0,0,4787.662,tCO2e,4787.662,1529.636,tCO2e,1529.636,73562.901,GJ,73562.901
+596.SI,Pavillon Holdings Ltd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1Y1.SI,9R Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+QZG.SI,Accrelist Ltd.,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AYV.SI,Acma Ltd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+A31.SI,Addvalue Technologies Ltd,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5EF.SI,Adventus Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,11.03,tCO2e,11.03,,,
+AWX.SI,AEM Holdings Ltd.,Information Technology,Information Technology,True,0.6828479790118126,IF_GLOBAL_OUTLIER,L3_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population.",1,0,15.0,tCO2e,15.0,8082.0,tCO2e,8082.0,43.919999999999995,GJ,43.919999999999995
+O5RU.SI,AIMS APAC REIT,Real Estate,Real Estate,True,,SECTOR_ZSCORE_TOTAL_ENERGY,L2b_sector_zscore,The reported total energy consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically.,1,0,,,,,,,26.8937568,GJ,26.8937568
+VVL.SI,Alpha DX Group Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,0.1262879999999999,GJ,0.1262879999999999
+ZXY.SI,Alpina Holdings,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+40V.SI,Alset International Limited,Real Estate,Real Estate,True,,SECTOR_ZSCORE_TOTAL_ENERGY,L2b_sector_zscore,The reported total energy consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically.,1,0,,,,,,,0.0845860319999999,GJ,0.0845860319999999
+S9B.SI,Amcorp Global Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+49B.SI,AMOS Group Limited,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AOF.SI,Amplefield Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+Y35.SI,AnAn International Limited,Energy,Energy & Utilities,True,,ZSCORE_WATER_CONSUMPTION,L2_zscore,The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,,,,,,,,,
+1D4.SI,Aoxin Q & M Dental Group Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5AU.SI,AP Oil International Limited,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,112.0,tCO2e,112.0,208.0,tCO2e,208.0,,,
+CLN.SI,APAC Realty Limited,Real Estate,Real Estate,True,1.0,SECTOR_ZSCORE_SCOPE_2; SECTOR_ZSCORE_TOTAL_ENERGY; IF_GLOBAL_OUTLIER; IF_SECTOR_OUTLIER,L2b_sector_zscore; L3_isolation_forest; L3b_sector_isolation_forest,"The reported Scope 2 (indirect/electricity) emissions, total energy consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically. Machine learning analysis (Isolation Forest) flagged this company as an outlier both across the full dataset and within its sector, meaning its combination of emissions, energy, and other metrics is unusual from multiple perspectives. This anomaly was detected by 3 independent methods, giving HIGH confidence that the data warrants manual review.",4,0,0.0,tCO2e,0.0,39.395,tCO2e,39.395,0.3458016,GJ,0.3458016
+5RE.SI,Asia Vets Holdings Ltd.,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,0.1706291999999999,GJ,0.1706291999999999
+S7OU.SI,Asian Pay Television Trust,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5CR.SI,Asiatic Group (Holdings) Limited,Utilities,Energy & Utilities,False,0.21355581689014047,,,No anomalies detected. All reported values appear reasonable.,0,0,8095.0,tCO2e,8095.0,242.0,tCO2e,242.0,72902.0,GJ,72902.0
+A04.SI,ASL Marine Holdings Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1F3.SI,Aspen (Group) Holdings Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+53W.SI,$ Attika Group,Industrials,Industrials,False,0.4445315992098461,,,No anomalies detected. All reported values appear reasonable.,0,0,880984.0,tCO2e,880984.0,939.0,tCO2e,939.0,11409552.0,GJ,11409552.0
+5GJ.SI,AusGroup Limited,Industrials,Industrials,True,,SECTOR_ZSCORE_SCOPE_3,L2b_sector_zscore,The reported Scope 3 (value chain) emissions value(s) are statistically unusual compared to other companies in the Industrials sector specifically.,1,0,22.14,tCO2e,22.14,15091.0,tCO2e,15091.0,,,
+1D3.SI,Autagco Ltd.,Consumer Discretionary,Consumer Discretionary,False,0.42480629757843535,,,No anomalies detected. All reported values appear reasonable.,0,0,714483.0,tCO2e,714483.0,103052.0,tCO2e,103052.0,46900000.0,GJ,46900000.0
+X5N.SI,Avarga Ltd,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1R6.SI,Avi-Tech Holdings Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8AZ.SI,Aztech Global Ltd.,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,60872.4,GJ,60872.4
+CJN.SI,British and Malayan Holdings Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+YYB.SI,Bacui Technologies International Ltd.,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+KJ5.SI,BBR Holdings (S) Ltd,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+F9D.SI,Boustead Singapore Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BEC.SI,BRC Asia Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AWC.SI,Brook Crompton Holdings Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,427.0,tCO2e,427.0,,,
+BTE.SI,Bund Center Investment Ltd,Real Estate,Real Estate,True,,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,,,,,,,93391.2,GJ,93391.2
+BAC.SI,Camsing Hc,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9CI.SI,CapitaLand Investment Limited,Real Estate,Real Estate,False,0.6366033064384408,,,No anomalies detected. All reported values appear reasonable.,0,0,24862.0,tCO2e,24862.0,613314.0,tCO2e,613314.0,5260000.0,GJ,5260000.0
+A17U.SI,CapitaLand Ascendas REIT,Real Estate,Real Estate,False,0.022956282798546446,,,No anomalies detected. All reported values appear reasonable.,0,0,770.0,tCO2e,770.0,48764.0,tCO2e,48764.0,321516.0,GJ,321516.0
+HMN.SI,CapitaLand Ascott Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,240408.0,GJ,240408.0
+AU8U.SI,CapitaLand China Trust,Real Estate,Real Estate,False,0.005431445466709928,,,No anomalies detected. All reported values appear reasonable.,0,0,1997.0,tCO2e,1997.0,38700.0,tCO2e,38700.0,306720.0,GJ,306720.0
+CY6U.SI,CapitaLand India Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1025.0,tCO2e,1025.0,21438.0,tCO2e,21438.0,,,
+AWV.SI,Captii Limited,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,0.6193692,GJ,0.6193692
+C04.SI,Casa Holdings Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+J85.SI,CDL Hospitality Trusts,Real Estate,Real Estate,True,,SECTOR_ZSCORE_TOTAL_ENERGY,L2b_sector_zscore,The reported total energy consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically.,1,0,,,,,,,101.374,GJ,101.374
+OU8.SI,Centurion Corporation Limited,Consumer Discretionary,Consumer Discretionary,False,0.40273094185200864,,,No anomalies detected. All reported values appear reasonable.,0,0,2637.5,tCO2e,2637.5,2011.6,tCO2e,2011.6,48440.0,GJ,48440.0
+5EB.SI,CFM Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+C13.SI,CH Offshore Ltd.,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,51599.0,tCO2e,51599.0,,,,687236.0,GJ,687236.0
+YSV.SI,Charisma Energy Services Limited,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+UIX.SI,China Environmental Resources Group Limited,Consumer Discretionary,Consumer Discretionary,True,1.0,IF_SECTOR_OUTLIER,L3b_sector_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier within the Consumer Discretionary sector, meaning its reported metrics are unusual compared to sector peers.",1,0,73.806,tCO2e,73.806,25.543,tCO2e,25.543,0.9031788,GJ,0.9031788
+U9E.SI,China Everbright Water Limited,Utilities,Energy & Utilities,True,0.18204504718680747,ZSCORE_WATER_CONSUMPTION,L2_zscore,The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,43188.72,tCO2e,43188.72,392120.35,tCO2e,392120.35,2372227.09,GJ,2372227.09
+BHD.SI,China Mining International Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+P74.SI,China Kangda Food Company Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,248.0,tCO2e,248.0,18473.0,tCO2e,18473.0,,,
+42E.SI,Choo Chiang Holdings Ltd.,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+P9D.SI,Civmec Limited,Industrials,Industrials,False,0.09160897220809061,,,No anomalies detected. All reported values appear reasonable.,0,0,836.0,tCO2e,836.0,5844.0,tCO2e,5844.0,42950.0,GJ,42950.0
+1H3.SI,Clearbridge Health Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5TP.SI,CNMC Goldmine Holdings Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,17198.0,tCO2e,17198.0,,,,228.309732,GJ,228.309732
+C52.SI,ComfortDelGro Corporation Limited,Industrials,Industrials,True,,ZSCORE_WATER_WITHDRAWAL; SECTOR_ZSCORE_WATER_WITHDRAWAL,L2_zscore; L2b_sector_zscore,"The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water withdrawal value(s) are statistically unusual compared to other companies in the Industrials sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,744805.0,tCO2e,744805.0,192982.0,tCO2e,192982.0,,,
+P8A.SI,Cordlife Group Limited,Health Care,Health Care,False,0.6272926907953893,,,No anomalies detected. All reported values appear reasonable.,0,0,0.0,tCO2e,0.0,103.0,tCO2e,103.0,0.870822,GJ,0.870822
+CIN.SI,Courage Investment Group Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+C76.SI,Creative Technology Ltd,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TCU.SI,Credit Bureau Asia Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+C06.SI,CSC Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CEDU.SI,Dasin Retail Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+D05.SI,DBS Group Holdings Ltd,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,757.0,tCO2e,757.0,,,,357220.8,GJ,357220.8
+D03.SI,Del Monte Pacific Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+P34.SI,Delfi Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,316782.0,GJ,316782.0
+BAI.SI,Digilife Technologies Limited,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BWCU.SI,EC World Real Estate Investment Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8YY.SI,Embracing Future Holdings Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MXNU.SI,Elite UK REIT,Real Estate,Real Estate,False,0.1604067783880565,,,No anomalies detected. All reported values appear reasonable.,0,0,10918.0,tCO2e,10918.0,5935.0,tCO2e,5935.0,293011.2,GJ,293011.2
+EMI.SI,Emperador Inc.,Consumer Staples,Consumer Staples,True,,ZSCORE_WATER_CONSUMPTION; ZSCORE_WATER_WITHDRAWAL; SECTOR_ZSCORE_WATER_WITHDRAWAL,L2_zscore; L2b_sector_zscore,"The reported water consumption, water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water withdrawal value(s) are statistically unusual compared to other companies in the Consumer Staples sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",3,0,91449.0,tCO2e,91449.0,166986.0,tCO2e,166986.0,,,
+R14.SI,Eneco Energy Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,5140.0,tCO2e,5140.0,,,,,,
+S44.SI,EnGro Corporation Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9A4U.SI,ESR REIT,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,15344.0,tCO2e,15344.0,,,
+5TJ.SI,Far East Group Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+Q5T.SI,Far East Hospitality Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,21.2,tCO2e,21.2,14140.0,tCO2e,14140.0,,,
+5F4.SI,Figtree Holdings Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AW9U.SI,First Real Estate Investment Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+EB5.SI,First Resources Limited,Consumer Staples,Consumer Staples,False,0.24867574410291637,,,No anomalies detected. All reported values appear reasonable.,0,0,141786.0,tCO2e,141786.0,740.0,tCO2e,740.0,497796.0,GJ,497796.0
+ADN.SI,First Sponsor Group Limited,Real Estate,Real Estate,False,0.1416919591579423,,,No anomalies detected. All reported values appear reasonable.,0,0,1273.0,tCO2e,1273.0,7118.0,tCO2e,7118.0,79459.2,GJ,79459.2
+F03.SI,Food Empire Holdings Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,15.0,tCO2e,15.0,861.0,tCO2e,861.0,,,
+OAJ.SI,Fortress Minerals Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+J69U.SI,Frasers Centrepoint Trust,Real Estate,Real Estate,True,,ZSCORE_WATER_CONSUMPTION; SECTOR_ZSCORE_WATER_CONSUMPTION,L2_zscore; L2b_sector_zscore,"The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,,,,25400.0,tCO2e,25400.0,224280.0,GJ,224280.0
+BUOU.SI,Frasers Logistics & Commercial Trust,Real Estate,Real Estate,True,,ZSCORE_WATER_CONSUMPTION; SECTOR_ZSCORE_WATER_CONSUMPTION,L2_zscore; L2b_sector_zscore,"The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,900.0,tCO2e,900.0,10500.0,tCO2e,10500.0,,,
+TQ5.SI,Frasers Property Limited,Real Estate,Real Estate,True,,ZSCORE_WATER_CONSUMPTION; SECTOR_ZSCORE_WATER_CONSUMPTION,L2_zscore; L2b_sector_zscore,"The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,,,,25400.0,tCO2e,25400.0,224280.0,GJ,224280.0
+E28.SI,Frencken Group Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+D8DU.SI,First Ship Lease Trust,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+F13.SI,Fu Yu Corporation Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5IG.SI,Gallant Venture Ltd.,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,9916.0,tCO2e,9916.0,,,,133.3876032,GJ,133.3876032
+41T.SI,GCCP Resources Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5VP.SI,GDS Global Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,49622.0,tCO2e,49622.0,1564988.0,tCO2e,1564988.0,,,
+G13.SI,Genting Singapore Limited,Consumer Discretionary,Consumer Discretionary,False,0.5807803884287348,,,No anomalies detected. All reported values appear reasonable.,0,0,4245558.0,tCO2e,4245558.0,266313.0,tCO2e,266313.0,43476000.0,GJ,43476000.0
+RE4.SI,Geo Energy Resources Limited,Energy,Energy & Utilities,False,0.3535787377524101,,,No anomalies detected. All reported values appear reasonable.,0,0,1802.92,tCO2e,1802.92,93.92,tCO2e,93.92,1629487.45,GJ,1629487.45
+B73.SI,Global Investments Limited,Financials,Financials,False,0.5499392613418461,,,No anomalies detected. All reported values appear reasonable.,0,0,2274.7580000000003,tCO2e,2274.7580000000003,2617.043,tCO2e,2617.043,69.4415124,GJ,69.4415124
+AYN.SI,Global Testing Corporation Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5PC.SI,Goodland Group Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+G50.SI,Grand Banks Yachts Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,156.0,tCO2e,156.0,1587.0,tCO2e,1587.0,,,
+G07.SI,Great Eastern Holdings Limited,Financials,Financials,True,0.3146321962884667,SECTOR_ZSCORE_WASTE_DISPOSED,L2b_sector_zscore,The reported waste disposed value(s) are statistically unusual compared to other companies in the Financials sector specifically.,1,0,31.0,tCO2e,31.0,13297.0,tCO2e,13297.0,88902.0,GJ,88902.0
+Y06.SI,Green Build Technology Limited,Industrials,Industrials,True,,ZSCORE_GFA; SECTOR_ZSCORE_GFA,L2_zscore; L2b_sector_zscore,"The reported gross floor area value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported gross floor area value(s) are statistically unusual compared to other companies in the Industrials sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,,,,,,,,,
+BLU.SI,GRP Limited,Information Technology,Information Technology,False,0.5131007790679835,,,No anomalies detected. All reported values appear reasonable.,0,0,117009.608,tCO2e,117009.608,417.082,tCO2e,417.082,4276.7911730000005,GJ,4276.7911730000005
+BDX.SI,GSH Corporation Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BDX.SI,GSH Corporation Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+41F.SI,GSS Energy Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+F17.SI,GuocoLand Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,42674.0,GJ,42674.0
+5VS.SI,Hafary Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PH0.SI,Hatten Land Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,3491.0,tCO2e,3491.0,19488.0,GJ,19488.0
+H02.SI,Haw Par Corporation Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,11511.0,GJ,11511.0
+5DP.SI,Heeton Holdings Limited,Consumer Discretionary,Consumer Discretionary,False,0.4319423988209391,,,No anomalies detected. All reported values appear reasonable.,0,0,4052.0,tCO2e,4052.0,5753.0,tCO2e,5753.0,134306.0,GJ,134306.0
+8A1.SI,Heptamax International Limited,Financials,Financials,True,1.0,SECTOR_ZSCORE_WATER_CONSUMPTION; SECTOR_ZSCORE_WASTE_GENERATED; IF_GLOBAL_OUTLIER,L2b_sector_zscore; L3_isolation_forest,"The reported water consumption, total waste generated value(s) are statistically unusual compared to other companies in the Financials sector specifically. Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",3,0,6718568.0,tCO2e,6718568.0,4332728.0,tCO2e,4332728.0,411263863.0,GJ,411263863.0
+BTG.SI,HG Metal Manufacturing Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5JK.SI,Hiap Hoe Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,5438.0,tCO2e,5438.0,,,
+1L2.SI,Hiap Seng Ind,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5PO.SI,Hiap Tong Corporation Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,5438.0,tCO2e,5438.0,,,
+AVX.SI,HL Global Enterprises Limited,Consumer Discretionary,Consumer Discretionary,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,1419171.0,tCO2e,1419171.0,306982.0,tCO2e,306982.0,8193000.0,GJ,8193000.0
+H13.SI,Ho Bee Land Limited,Real Estate,Real Estate,True,,SECTOR_ZSCORE_TOTAL_ENERGY,L2b_sector_zscore,The reported total energy consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically.,1,0,,,,,,,31.9714884,GJ,31.9714884
+J2T.SI,Hock Lian Seng Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+H20.SI,Hoe Leong Corporation Ltd.,Industrials,Industrials,True,0.12265620105101671,ZSCORE_WATER_CONSUMPTION; SECTOR_ZSCORE_WATER_CONSUMPTION,L2_zscore; L2b_sector_zscore,"The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water consumption value(s) are statistically unusual compared to other companies in the Industrials sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,1419171.0,tCO2e,1419171.0,306982.0,tCO2e,306982.0,8193000.0,GJ,8193000.0
+H30.SI,Hong Fok Corporation Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2947.442,tCO2e,2947.442,2947.442,tCO2e,2947.442,,,
+H22.SI,Hong Leong Asia Ltd.,Consumer Discretionary,Consumer Discretionary,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,1419171.0,tCO2e,1419171.0,306982.0,tCO2e,306982.0,8193000.0,GJ,8193000.0
+S41.SI,Hong Leong Finance Limited,Financials,Financials,True,0.12265620105101671,ZSCORE_WATER_CONSUMPTION; SECTOR_ZSCORE_WATER_CONSUMPTION,L2_zscore; L2b_sector_zscore,"The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water consumption value(s) are statistically unusual compared to other companies in the Financials sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,1419171.0,tCO2e,1419171.0,306982.0,tCO2e,306982.0,8193000.0,GJ,8193000.0
+H78.SI,Hongkong Land Holdings Limited,Real Estate,Real Estate,False,0.16582282603394183,,,No anomalies detected. All reported values appear reasonable.,0,0,1419.0,tCO2e,1419.0,130911.0,tCO2e,130911.0,794642.0,GJ,794642.0
+5EV.SI,Hosen Group Ltd.,Consumer Staples,Consumer Staples,False,0.5810569176200595,,,No anomalies detected. All reported values appear reasonable.,0,0,2500000.0,tCO2e,2500000.0,400000.0,tCO2e,400000.0,26541.0,GJ,26541.0
+H12.SI,Hotel Royal Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,51666.0,GJ,51666.0
+NS8U.SI,Hutchison Port Holdings Trust,Industrials,Industrials,False,0.1519823946320238,,,No anomalies detected. All reported values appear reasonable.,0,0,125349.0,tCO2e,125349.0,149208.0,tCO2e,149208.0,2630331.0,GJ,2630331.0
+CHZ.SI,HRnetGroup Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+41B.SI,Huationg Global Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1J5.SI,Hyphens Pharma International Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AIY.SI,iFAST Corporation Ltd.,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+I49.SI,IFS Capital Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5HT.SI,Imperium Crown Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,376510.0,tCO2e,376510.0,44621.0,tCO2e,44621.0,,,
+5JS.SI,Indofood Agri Resources Ltd.,Consumer Staples,Consumer Staples,True,0.8201775969295573,IF_GLOBAL_OUTLIER,L3_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population.",1,0,1233.0,tCO2e,1233.0,2.0,tCO2e,2.0,14863000.0,GJ,14863000.0
+M14.SI,InnoTek Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+KUO.SI,International Cement Group Ltd.,Materials,Materials,True,,SECTOR_ZSCORE_WASTE_RECYCLED,L2b_sector_zscore,The reported waste recycled value(s) are statistically unusual compared to other companies in the Materials sector specifically.,1,0,,,,,,,,,
+8U7U.SI,IREIT Global,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+I07.SI,ISDN Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+NXR.SI,iWOW Technology Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,109100.0,tCO2e,109100.0,393000.0,tCO2e,393000.0,,,
+42C.SI,iX Biopharma Ltd.,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+J03.SI,Jadason Enterprises Ltd,Information Technology,Information Technology,True,,ZSCORE_WATER_WITHDRAWAL,L2_zscore,The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,,,,,,,,,
+5OI.SI,Japan Foods Holding Ltd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+C07.SI,Jardine Cycle & Carriage Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1J7.SI,Jawala Inc.,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BEW.SI,JB Foods Limited,Consumer Staples,Consumer Staples,False,0.6127569514983253,,,No anomalies detected. All reported values appear reasonable.,0,0,4675368.0,tCO2e,4675368.0,1399521.0,tCO2e,1399521.0,73633645.0,GJ,73633645.0
+C8R.SI,Jiutian Chemical Group Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+J36.SI,Jardine Matheson Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+42R.SI,Jumbo Group Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+K29.SI,Karin Technology Holdings Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1A0.SI,Katrina Group Ltd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1131.0,tCO2e,1131.0,1306.0,tCO2e,1306.0,,,
+BNE.SI,Kencana Agri Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5TT.SI,Keong Hong Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+A7RU.SI,Keppel Infrastructure Trust,Materials,Materials,False,0.21811274696192817,,,No anomalies detected. All reported values appear reasonable.,0,0,1939000.0,tCO2e,1939000.0,156000.0,tCO2e,156000.0,8047000.0,GJ,8047000.0
+BN4.SI,Keppel Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AJBU.SI,Keppel DC REIT,Real Estate,Real Estate,False,0.0976732774748652,,,No anomalies detected. All reported values appear reasonable.,0,0,863.0,tCO2e,863.0,70018.0,tCO2e,70018.0,677300.0,GJ,677300.0
+K71U.SI,Keppel REIT,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,863.0,tCO2e,863.0,,,,1881714.0,GJ,1881714.0
+K03.SI,Khong Guan Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5G2.SI,Kim Heng Limited,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5MZ.SI,Kingsmen Creatives Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5HV.SI,Koh Brothers Eco Engineering Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,4.4473752,GJ,4.4473752
+XCF.SI,KTMG Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,239.4,tCO2e,239.4,3848.11,tCO2e,3848.11,,,
+LS9.SI,Leader Environmental Technologies Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+Q0X.SI,Ley Choon Group Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,7700.0,tCO2e,7700.0,1200.0,tCO2e,1200.0,,,
+41O.SI,LHN Limited,Real Estate,Real Estate,False,0.3005437249959392,,,No anomalies detected. All reported values appear reasonable.,0,0,2885.0,tCO2e,2885.0,2167.0,tCO2e,2167.0,57801.6,GJ,57801.6
+BEI.SI,LHT Holdings Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BAZ.SI,Lion Asiapac Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+D5IU.SI,Lippo Malls Indonesia Retail Trust,Real Estate,Real Estate,False,0.34950030273777766,,,No anomalies detected. All reported values appear reasonable.,0,0,114776.1,tCO2e,114776.1,113241.0,tCO2e,113241.0,500820.12000000005,GJ,500820.12000000005
+O6Z.SI,Lonza,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,5950000.0,GJ,5950000.0
+F1E.SI,Low Keng Huat (Singapore) Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,41295.6,GJ,41295.6
+5UA.SI,Luminor Financial Holdings Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1H8.SI,LY Corporation Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BTOU.SI,Manulife US Real Estate Investment Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ME8U.SI,Mapletree Industrial Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,20776.0,tCO2e,20776.0,,,
+M44U.SI,Mapletree Logistics Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,183.0,tCO2e,183.0,11838.0,tCO2e,11838.0,,,
+N2IU.SI,Mapletree Pan Asia Commercial Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,38.61,tCO2e,38.61,27145.0,tCO2e,27145.0,,,
+5OX.SI,Mary Chia Holdings Limited,Consumer Discretionary,Consumer Discretionary,False,0.9920002028789628,,,No anomalies detected. All reported values appear reasonable.,0,0,11.46,tCO2e,11.46,137.38,tCO2e,137.38,1.370805012,GJ,1.370805012
+Y3D.SI,mDR Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,3232.0,GJ,3232.0
+Z4D.SI,Medi Lifestyle Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+OTX.SI,Medinex Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5DS.SI,Megachem Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SJY.SI,MeGroup Ltd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TWL.SI,Memiontec Holdings Ltd.,Utilities,Energy & Utilities,True,0.5147722972595592,ZSCORE_WATER_WITHDRAWAL,L2_zscore,The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,163.4,tCO2e,163.4,54.8,tCO2e,54.8,2753.4,GJ,2753.4
+5NF.SI,Mencast Holdings Ltd.,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,24.1092,GJ,24.1092
+5RF.SI,Mercurius Capital Investment Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+DU4.SI,Mermaid Maritime Public Company Limited,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,23607.0,tCO2e,23607.0,723.0,tCO2e,723.0,,,
+5DX.SI,Meta Health Limited,Health Care,Health Care,False,0.4105688787815748,,,No anomalies detected. All reported values appear reasonable.,0,0,55000.0,tCO2e,55000.0,2000.0,tCO2e,2000.0,36993000.0,GJ,36993000.0
+M01.SI,Metro Holdings Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,0.0,tCO2e,0.0,25658.0,tCO2e,25658.0,,,
+M11.SI,Manufacturing Integration Technology Ltd,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5EN.SI,Midas Holdings Limited,Materials,Materials,True,0.12390010917969341,ZSCORE_WATER_WITHDRAWAL,L2_zscore,The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,41818.0,tCO2e,41818.0,22554.0,tCO2e,22554.0,1420014.0,GJ,1420014.0
+CNE.SI,MindChamps PreSchool Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+M03.SI,Miyoshi Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1B0.SI,mm2 Asia Ltd.,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1V3.SI,Mooreast Holdings Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,221332.0,tCO2e,221332.0,1.9640052,GJ,1.9640052
+M05.SI,MTQ Corporation Limited,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AWZ.SI,Multi-Chem Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,312.0,tCO2e,312.0,,,
+MF6.SI,Mun Siong Engineering Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1177.90584,tCO2e,1177.90584,1177.90584,tCO2e,1177.90584,,,
+F86.SI,MYP Ltd.,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+G0I.SI,Nam Lee Pressed Metal Industries Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,8683.603000000001,tCO2e,8683.603000000001,48582.3,GJ,48582.3
+MZH.SI,Nanofilm Technologies International Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5IF.SI,Natural Cool Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+N08.SI,New Toyo International Holdings Ltd,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5FX.SI,New Wave Holdings Ltd.,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+NIO.SI,NIO Inc.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+N33.SI,Nomura Holdings Inc,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MR7.SI,Nordic Group Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+N02.SI,NSL Ltd,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+NTDU.SI,NTT DC REIT USD,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AZT.SI,NutryFarm International Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,12000.0,tCO2e,12000.0,73637.0,tCO2e,73637.0,,,
+O39.SI,Oversea-Chinese Banking Corporation Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,237.0,tCO2e,237.0,61375.0,tCO2e,61375.0,,,
+KUX.SI,OIO Holdings Limited,Information Technology,Information Technology,True,0.7214805549474445,IF_GLOBAL_OUTLIER,L3_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population.",1,0,11.11906,tCO2e,11.11906,2.92699,tCO2e,2.92699,0.1816152479999999,GJ,0.1816152479999999
+5ML.SI,Old Chang Kee Ltd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5SY.SI,OneApex Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+O08.SI,Ossia International Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+OTS.SI,OTS Holdings Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,650.0,tCO2e,650.0,1117.0,tCO2e,1117.0,,,
+LJ3.SI,OUE Limited,Real Estate,Real Estate,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,1015.0,tCO2e,1015.0,26491.7,tCO2e,26491.7,289195.2,GJ,289195.2
+LJ3.SI,OUE Limited,Real Estate,Real Estate,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,1015.0,tCO2e,1015.0,26491.7,tCO2e,26491.7,289195.2,GJ,289195.2
+AJ2.SI,Ouhua Energy Holdings Limited,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TVV.SI,OxPay Financial Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+P15.SI,Pacific Century Regional Developments Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+P36.SI,Pan Hong Holdings Group Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+P52.SI,Pan-United Corporation Ltd,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+C2PU.SI,Parkway Life Real Estate Investment Trust,Real Estate,Real Estate,False,0.39834386738358685,,,No anomalies detected. All reported values appear reasonable.,0,0,5.0,tCO2e,5.0,14129.0,tCO2e,14129.0,124560.0,GJ,124560.0
+BTM.SI,Penguin International Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,65919.0,tCO2e,65919.0,1505.0,tCO2e,1505.0,,,
+YYN.SI,Plato Capital Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BDA.SI,PNE Industries Ltd,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,17.615484,GJ,17.615484
+BDA.SI,PNE Industries Ltd,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+OXMU.SI,Prime US REIT,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+OYY.SI,PropNex Limited,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5HH.SI,Prospera Global Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+DM0.SI,PSC Corporation Ltd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,26.1180612,GJ,26.1180612
+QC7.SI,Q & M Dental Group (Singapore) Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+Q01.SI,QAF Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BCV.SI,Qian Hu Corporation Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+V8Y.SI,Quantum Healthcare Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+NR7.SI,Raffles Education Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BSL.SI,Raffles Medical Group Ltd,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+NEX.SI,Reclaims Global Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+UV1.SI,Regal International Group Ltd.,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+I11.SI,Renaissance United Limited,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5WH.SI,Rex International Holding Limited,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+T13.SI,RH PetroGas Limited,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AP4.SI,Riverstone Holdings Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,0.0,tCO2e,0.0,,,,,,
+E6R.SI,Le tree Holdings Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+Y8E.SI,Samurai 2K Aerosol Limited,Materials,Materials,True,,ZSCORE_WATER_CONSUMPTION; SECTOR_ZSCORE_WATER_CONSUMPTION,L2_zscore; L2b_sector_zscore,"The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water consumption value(s) are statistically unusual compared to other companies in the Materials sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,,,,,,,,,
+1E3.SI,Sanli Environmental Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,0.294048,GJ,0.294048
+BRD.SI,Sapphire Corporation Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+U77.SI,Sarine Technologies Ltd.,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,100.47,tCO2e,100.47,1372.56,tCO2e,1372.56,,,
+CRPU.SI,Sasseur Real Estate Investment Trust,Real Estate,Real Estate,True,,ZSCORE_WATER_WITHDRAWAL; SECTOR_ZSCORE_WATER_WITHDRAWAL,L2_zscore; L2b_sector_zscore,"The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water withdrawal value(s) are statistically unusual compared to other companies in the Real Estate sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,,,,,,,206722.0,GJ,206722.0
+S58.SI,SATS Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,150.0,tCO2e,150.0,18649.0,tCO2e,18649.0,,,
+S61.SI,SBS Transit Ltd,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5TI.SI,SDAI Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5E2.SI,Seatrium Ltd,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+U96.SI,Sembcorp Industries Ltd,Industrials,Industrials,True,,SECTOR_ZSCORE_WASTE_GENERATED,L2b_sector_zscore,The reported total waste generated value(s) are statistically unusual compared to other companies in the Industrials sector specifically.,1,0,25936300.0,tCO2e,25936300.0,229900.0,tCO2e,229900.0,,,
+AWM.SI,Shanghai Turbo Enterprises Ltd,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,3441.0,tCO2e,3441.0,18.18234,GJ,18.18234
+S07.SI,Shangri-La Asia Limited,Consumer Discretionary,Consumer Discretionary,True,0.44060360687818734,ZSCORE_WATER_WITHDRAWAL,L2_zscore,The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,696000.0,tCO2e,696000.0,696000.0,tCO2e,696000.0,5389200.0,GJ,5389200.0
+A78.SI,Shen Yao Holdings Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+OV8.SI,Sheng Siong Group Ltd,Consumer Staples,Consumer Staples,False,0.07357544110798875,,,No anomalies detected. All reported values appear reasonable.,0,0,28044.0,tCO2e,28044.0,33168.0,tCO2e,33168.0,341385.0,GJ,341385.0
+1F0.SI,shopper360 Limited,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+C6L.SI,Singapore Airlines Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,3957.9,tCO2e,3957.9,8484.4,tCO2e,8484.4,,,
+C6L.SI,Singapore Airlines Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,3957899.0,tCO2e,3957899.0,8484.4,tCO2e,8484.4,,,
+S59.SI,SIA Engineering Company Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,12134.0,tCO2e,12134.0,,,,58000.0,GJ,58000.0
+BKA.SI,Sin Heng Heavy Machinery Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+S35.SI,Sing Investments & Finance Limited,Financials,Financials,True,,SECTOR_ZSCORE_WASTE_RECYCLED,L2b_sector_zscore,The reported waste recycled value(s) are statistically unusual compared to other companies in the Financials sector specifically.,1,0,,,,,,,,,
+S08.SI,Singapore Post Limited,Industrials,Industrials,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,3283.0,tCO2e,3283.0,14504.0,tCO2e,14504.0,172000.0,GJ,172000.0
+S19.SI,Singapore Shipping Corporation Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,79414.0,tCO2e,79414.0,,,,,,
+Z74.SI,Singapore Telecommunications Limited,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+Z74.SI,Singapore Telecommunications Limited,Communication Services,Comm & IT,False,0.2743400059416484,,,No anomalies detected. All reported values appear reasonable.,0,0,7643.0,tCO2e,7643.0,585251.0,tCO2e,585251.0,1602698.0,GJ,1602698.0
+LYY.SI,SinoCloud Group Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2906.5,tCO2e,2906.5,96227.2,tCO2e,96227.2,,,
+C9Q.SI,Sinostar PEC Holdings Limited,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5LE.SI,Sitra Holdings (International) Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,31.7,tCO2e,31.7,495.7,tCO2e,495.7,,,
+V5Q.SI,Soilbuild Constr,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5MD.SI,Soon Lian Holdings Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5KI.SI,Soup Holdings Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+A33.SI,Southern Archipelago Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BQP.SI,Southern Packaging Group Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9VW.SI,$ Spackman Entmt,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,240000.0,tCO2e,240000.0,40000.0,tCO2e,40000.0,,,
+S23.SI,Singapura Finance Ltd,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+NC2.SI,Sri Trang Agro-Industry Public Company Limited,Materials,Materials,False,0.10472441880600347,,,No anomalies detected. All reported values appear reasonable.,0,0,32983.0,tCO2e,32983.0,108514.0,tCO2e,108514.0,2168934.0,GJ,2168934.0
+P40U.SI,Starhill Global Real Estate Investment Trust,Real Estate,Real Estate,True,0.2897152532196233,ZSCORE_WATER_WITHDRAWAL; SECTOR_ZSCORE_WATER_WITHDRAWAL,L2_zscore; L2b_sector_zscore,"The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water withdrawal value(s) are statistically unusual compared to other companies in the Real Estate sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,416.0,tCO2e,416.0,5563.0,tCO2e,5563.0,34512.0,GJ,34512.0
+CC3.SI,StarHub Ltd,Communication Services,Comm & IT,True,0.05276422589555774,ZSCORE_WATER_WITHDRAWAL,L2_zscore,The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,1356.0,tCO2e,1356.0,54619.0,tCO2e,54619.0,518466.0,GJ,518466.0
+SET.SI,Stoneweg Europe Stapled Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+S85.SI,Straco Corporation Limited,Consumer Discretionary,Consumer Discretionary,True,0.6148089078883783,ZSCORE_WATER_CONSUMPTION; ZSCORE_WATER_WITHDRAWAL,L2_zscore,"The reported water consumption, water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).",2,0,8149.09,tCO2e,8149.09,61.91,tCO2e,61.91,52676.880000000005,GJ,52676.880000000005
+S20.SI,The Straits Trading Company Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,122400.0,GJ,122400.0
+AAJ.SI,Sunmoon Food Company Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+T82U.SI,Suntec Real Estate Investment Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BHU.SI,SUTL Enterprise Limited,Consumer Discretionary,Consumer Discretionary,True,,ZSCORE_WATER_CONSUMPTION,L2_zscore,The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,,,,2656.692,tCO2e,2656.692,23.441403599999997,GJ,23.441403599999997
+PA3.SI,TA Corporation Ltd,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5OQ.SI,TEHO International Inc Ltd.,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+T41.SI,TeleChoice International Limited,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,51.0,tCO2e,51.0,340.0,tCO2e,340.0,,,
+AWI.SI,Thakral Corporation Ltd,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+E27.SI,The Place Holdings Limited,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+T55.SI,TIH Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+T14.SI,Tianjin Pharmaceutical Da Ren Tang Group Corporation Limited,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,190744.935,GJ,190744.935
+42T.SI,The Trendlines Group Ltd.,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CYW.SI,TrickleStar Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5G9.SI,Tritech Group Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8K7.SI,UG Healthcare Corporation Limited,Health Care,Health Care,True,,ZSCORE_WATER_WITHDRAWAL,L2_zscore,The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,97537.0,tCO2e,97537.0,,,,4145176.8,GJ,4145176.8
+CHJ.SI,Uni-Asia Group Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1F2.SI,Union Gas Holdings Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ZB9.SI,Union Steel Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AZR.SI,United Food Holdings Limited,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+U11.SI,United Overseas Bank Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+U10.SI,UOB-Kay Hian Holdings Limited,Financials,Financials,False,0.065983368630535,,,No anomalies detected. All reported values appear reasonable.,0,0,4300.0,tCO2e,4300.0,1000.0,tCO2e,1000.0,465840.0,GJ,465840.0
+U13.SI,United Overseas Insurance Limited,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,4300.0,tCO2e,4300.0,,,,,,
+U14.SI,UOL Group Limited,Real Estate,Real Estate,True,0.060748728804091656,ZSCORE_WATER_CONSUMPTION; SECTOR_ZSCORE_WATER_CONSUMPTION,L2_zscore; L2b_sector_zscore,"The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). The reported water consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,5557.0,tCO2e,5557.0,45249.0,tCO2e,45249.0,467946.0,GJ,467946.0
+BRS.SI,USP Group Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ODBU.SI,United Hampshire US Real Estate Investment Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,801.9,tCO2e,801.9,,,
+WPC.SI,Vallianz Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+T6I.SI,ValueMax Group Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+43E.SI,VCPlus Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,4.0,tCO2e,4.0,,,,,,
+BIP.SI,Vibrant Group Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+E3B.SI,Wee Hur Holdings Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BDR.SI,Willas-Array Electronics (Holdings) Limited,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5F7.SI,Wilton Resources Corporation Limited,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+W05.SI,Wing Tai Holdings Limited,Real Estate,Real Estate,True,,SECTOR_ZSCORE_TOTAL_ENERGY,L2b_sector_zscore,The reported total energy consumption value(s) are statistically unusual compared to other companies in the Real Estate sector specifically.,1,0,,,,1663.0,tCO2e,1663.0,14.2481916,GJ,14.2481916
+B49.SI,World Precision Machinery Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BQF.SI,XMH Holdings Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1F1.SI,Y Ventures Group Ltd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+Z25.SI,Yanlord Land Group Limited,Real Estate,Real Estate,False,0.07039713909388223,,,No anomalies detected. All reported values appear reasonable.,0,0,11439.0,tCO2e,11439.0,34145.0,tCO2e,34145.0,352000.0,GJ,352000.0
+BPF.SI,YHI International Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,25261.0,tCO2e,25261.0,,,
+YK9.SI,YKGI Limited,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+Z59.SI,Yoma Strategic Holdings Ltd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BKX.SI,Yongmao Holdings Limited,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+T43.SI,Yunnan Energy International Co. Limited,Information Technology,Information Technology,True,0.637123236430442,ZSCORE_WATER_CONSUMPTION,L2_zscore,The reported water consumption value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,11.75,tCO2e,11.75,7.74,tCO2e,7.74,0.2123999999999999,GJ,0.2123999999999999
+40W.SI,ZICO Holdings Inc.,Industrials,Industrials,False,0.6034408548005206,,,No anomalies detected. All reported values appear reasonable.,0,0,0.0,tCO2e,0.0,83.55,tCO2e,83.55,0.5824583999999999,GJ,0.5824583999999999

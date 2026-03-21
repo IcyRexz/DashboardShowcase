@@ -1,0 +1,433 @@
+ticker_symbol,company_name,gics_sector,sector_group,anomaly_flag,anomaly_score,anomaly_types,anomaly_layers,anomaly_explanation,n_flags,rule_flags,scope_1_raw,scope_1_unit,scope_1_normalised_tCO2e,scope_2_raw,scope_2_unit,scope_2_normalised_tCO2e,total_energy_raw,total_energy_unit,total_energy_normalised_GJ
+7167.KL,Able Global Berhad,Consumer Staples,Consumer Staples,False,0.048216759205432225,,,No anomalies detected. All reported values appear reasonable.,0,0,4595.0,tCO2e,4595.0,12101.0,tCO2e,12101.0,55850.4,GJ,55850.4
+7131.KL,ACME Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0218.KL,ACO Group Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1481.KL,Advance Synergy Berhad,Consumer Discretionary,Consumer Discretionary,False,0.12884190508544136,,,No anomalies detected. All reported values appear reasonable.,0,0,1.072,tCO2e,1.072,3476.0,tCO2e,3476.0,20116.8,GJ,20116.8
+7191.KL,Adventa Berhad,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,9488520.0,GJ,9488520.0
+7146.KL,AE Multi Holdings Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0299.KL,AGX Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,1.9595664,GJ,1.9595664
+0209.KL,Aimflex Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,4.3326215999999995,GJ,4.3326215999999995
+5238.KL,AirAsia X Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,333.196,tCO2e,333.196,3403.617,tCO2e,3403.617,,,
+2658.KL,Ajinomoto (Malaysia) Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7609.KL,Ajiya Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,6575.0,tCO2e,6575.0,34531.200000000004,GJ,34531.200000000004
+5116.KL,Al-'Aqar Healthcare REIT,Real Estate,Real Estate,False,0.676050512157802,,,No anomalies detected. All reported values appear reasonable.,0,0,19.8,tCO2e,19.8,23.9,tCO2e,23.9,420183.0,GJ,420183.0
+2674.KL,Alcom Group Berhad,Materials,Materials,True,0.07109583384551865,SECTOR_ZSCORE_WATER_CONSUMPTION,L2b_sector_zscore,The reported water consumption value(s) are statistically unusual compared to other companies in the Materials sector specifically.,1,0,21114.0,tCO2e,21114.0,25056.0,tCO2e,25056.0,472025.0,GJ,472025.0
+0079.KL,Aldrich Resources Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0303.KL,ALPHA,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,61548.0,tCO2e,61548.0,30286.0,tCO2e,30286.0,,,
+03051.KL,Alpha Ocean Resources Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,54935.0,tCO2e,54935.0,29266.0,tCO2e,29266.0,,,
+5120.KL,AmFirst Real Estate Investment Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,29803.0,tCO2e,29803.0,,,
+03011.KL,Amlex Holdings Berhad,Information Technology,Information Technology,False,0.401327295157604,,,No anomalies detected. All reported values appear reasonable.,0,0,70.0,tCO2e,70.0,15196.0,tCO2e,15196.0,77.05156319999999,GJ,77.05156319999999
+1015.KL,AMMB Holdings Berhad,Financials,Financials,False,0.401327295157604,,,No anomalies detected. All reported values appear reasonable.,0,0,70.0,tCO2e,70.0,15196.0,tCO2e,15196.0,77.05156319999999,GJ,77.05156319999999
+7031.KL,Amtel Holdings Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+6351.KL,Amway (Malaysia) Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0048.KL,Ancom Logistics Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+4758.KL,Ancom Nylex Berhad,Materials,Materials,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,23055.0,tCO2e,23055.0,8666.0,tCO2e,8666.0,394000.0,GJ,394000.0
+6556.KL,Ann Joo Resources Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5082.KL,ANNUM BERHAD,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5088.KL,Apex Equity Holdings Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5015.KL,APM Automotive Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+6432.KL,Apollo Food Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0119.KL,AppAsia Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7214.KL,A-Rank Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7181.KL,ARB Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7007.KL,ARK Resources Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7218.KL,Arka Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7722.KL,Asia Brands Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7129.KL,Asia File Corporation Bhd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0105.KL,Asia Poly Holdings Berhad,Materials,Materials,False,0.4278985979636968,,,No anomalies detected. All reported values appear reasonable.,0,0,16048.84,tCO2e,16048.84,2830.45,tCO2e,2830.45,94.73479362,GJ,94.73479362
+7162.KL,Astino Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7054.KL,Astral Asia Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+6399.KL,Astro Malaysia Holdings Berhad,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8176.KL,WaveFront Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,14711.57,tCO2e,14711.57,83.46410279999999,GJ,83.46410279999999
+7048.KL,Atlan Holdings Bhd,Consumer Staples,Consumer Staples,False,0.005748554599700251,,,No anomalies detected. All reported values appear reasonable.,0,0,641.0,tCO2e,641.0,5031.0,tCO2e,5031.0,32817.6,GJ,32817.6
+5130.KL,Atrium Real Estate Investment Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5302.KL,Aurelius Technologies Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,21.15,tCO2e,21.15,6559.67,tCO2e,6559.67,,,
+8885.KL,Avillion Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5204.KL,AwanBiru Technology Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,82.25,tCO2e,82.25,132.52,tCO2e,132.52,,,
+7579.KL,AWC Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,12321.62,tCO2e,12321.62,,,,928471.932,GJ,928471.932
+6888.KL,Axiata Group Berhad,Communication Services,Comm & IT,False,0.5590206296861515,,,No anomalies detected. All reported values appear reasonable.,0,0,28767.76,tCO2e,28767.76,1094612.6,tCO2e,1094612.6,6190000.0,GJ,6190000.0
+5106.KL,Axis Real Estate Investment Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,678.4,tCO2e,678.4,1724.4,tCO2e,1724.4,,,
+2305.KL,AYER Holdings Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,2564.2799999999997,GJ,2564.2799999999997
+03012.KL,Baba Eco Group Berhad,Consumer Discretionary,Consumer Discretionary,False,0.0204556284859313,,,No anomalies detected. All reported values appear reasonable.,0,0,595.0,tCO2e,595.0,5923.0,tCO2e,5923.0,36188.0,GJ,36188.0
+0098.KL,AuMas Resources Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5258.KL,Bank Islam Malaysia Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1899.KL,Batu Kawan Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1030964.0,tCO2e,1030964.0,440008.0,tCO2e,440008.0,,,
+6602.KL,BCB Berhad,Real Estate,Real Estate,False,0.14837861941413122,,,No anomalies detected. All reported values appear reasonable.,0,0,118.0,tCO2e,118.0,1117.0,tCO2e,1117.0,8558.0,GJ,8558.0
+4219.KL,Berjaya Property Berhad,Industrials,Industrials,False,0.06705595059539748,,,No anomalies detected. All reported values appear reasonable.,0,0,6659.0,tCO2e,6659.0,26604.0,tCO2e,26604.0,264000.0,GJ,264000.0
+5248.KL,Bermaz Auto Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7668.KL,Beshom Holdings Berhad,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,1699.0,tCO2e,1699.0,,,
+0263.KL,Betamek Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0179.KL,Bioalpha Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5069.KL,BLD Plantation Bhd.,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0168.KL,BM GreenTech Berhad,Industrials,Industrials,False,0.09617954162523468,,,No anomalies detected. All reported values appear reasonable.,0,0,1669.0,tCO2e,1669.0,1669.0,tCO2e,1669.0,23828.0,GJ,23828.0
+6297.KL,Box-Pak (Malaysia) Bhd.,Consumer Discretionary,Consumer Discretionary,False,0.2686253233007475,,,No anomalies detected. All reported values appear reasonable.,0,0,8261.5,tCO2e,8261.5,7353.5,tCO2e,7353.5,304700.0,GJ,304700.0
+5100.KL,BP Plastics Holding Bhd.,Consumer Discretionary,Consumer Discretionary,True,0.9647920633891933,ZSCORE_SCOPE_2; IF_GLOBAL_OUTLIER,L2_zscore; L3_isolation_forest,"The reported Scope 2 (indirect/electricity) emissions value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,31.1,tCO2e,31.1,1.0,tCO2e,1.0,449172000.0,GJ,449172000.0
+4162.KL,British American Tobacco (Malaysia) Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7188.KL,BTM Resources Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5210.KL,Bumi Armada Berhad,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1850.0,tCO2e,1850.0,400.0,tCO2e,400.0,,,
+1818.KL,Bursa Malaysia Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0313.KL,BWYS Group Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7174.KL,CAB Cakaran Corporation Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0191.KL,Cabnet Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5311.KL,Cape EMS Berhad,Information Technology,Information Technology,False,0.11974351722560095,,,No anomalies detected. All reported values appear reasonable.,0,0,117.58,tCO2e,117.58,10542.13,tCO2e,10542.13,43126.89,GJ,43126.89
+5180.KL,CapitaLand Malaysia Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+2836.KL,Carlsberg Brewery Malaysia Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,4346.0,tCO2e,4346.0,,,,,,
+0173.KL,Catcha Digital Berhad,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7076.KL,CB Industrial Product Holding Berhad,Industrials,Industrials,True,1.0,IF_SECTOR_OUTLIER,L3b_sector_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier within the Industrials sector, meaning its reported metrics are unusual compared to sector peers.",1,0,94.0,tCO2e,94.0,1031.0,tCO2e,1031.0,6339.0,GJ,6339.0
+7035.KL,CCK Consolidated Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0238.KL,CEKD Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+6947.KL,Celcomdigi Berhad,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0243.KL,Cengild Medical Berhad,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8982.KL,Cepatwawasan Group Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1929.KL,Chin Teck Plantations Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5797.KL,Choo Bee Metal Industries Berhad,Materials,Materials,False,0.7356543331664849,,,No anomalies detected. All reported values appear reasonable.,0,0,233.0,tCO2e,233.0,965.0,tCO2e,965.0,6.912,GJ,6.912
+1023.KL,CIMB Group Holdings Berhad,Financials,Financials,False,0.12247079727116505,,,No anomalies detected. All reported values appear reasonable.,0,0,3077.0,tCO2e,3077.0,74005.0,tCO2e,74005.0,433566.0,GJ,433566.0
+5104.KL,Citra Nusa Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,40.0,tCO2e,40.0,1787.0,tCO2e,1787.0,,,
+7117.KL,CJ Century Logistics Holdings Berhad,Industrials,Industrials,False,0.5707606801017902,,,No anomalies detected. All reported values appear reasonable.,0,0,167062.0,tCO2e,167062.0,122455.0,tCO2e,122455.0,14906000.0,GJ,14906000.0
+7018.KL,CME Group Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,309.0,tCO2e,309.0,10417.0,tCO2e,10417.0,,,
+0246.KL,Cnergenz Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+2127.KL,Comfort Gloves Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,48806.0,tCO2e,48806.0,7256.0,tCO2e,7256.0,,,
+8044.KL,Computer Forms (Malaysia) Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0240.KL,Coraza Integrated Technology Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0261.KL,Cosmos Technology International Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5738.KL,Country Heights Holdings Berhad,Consumer Discretionary,Consumer Discretionary,True,,SECTOR_ZSCORE_WATER_CONSUMPTION,L2b_sector_zscore,The reported water consumption value(s) are statistically unusual compared to other companies in the Consumer Discretionary sector specifically.,1,0,,,,,,,67655.0,GJ,67655.0
+5049.KL,Country View Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5094.KL,CSC Steel Holdings Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5301.KL,CTOS Digital Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9423.KL,CWG Holdings Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,12108.0,tCO2e,12108.0,15116.0,tCO2e,15116.0,,,
+5166.KL,Cyberjaya Education Group Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5184.KL,Cypark Resources Berhad,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7204.KL,D & O Green Technologies Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,46.0,tCO2e,46.0,25884.0,tCO2e,25884.0,,,
+0400GB.KL,DANAINFRA NASIONAL-ETBS4.58%102,Unknown,Unknown,True,0.9203071128938417,ZSCORE_SCOPE_2; IF_GLOBAL_OUTLIER,L2_zscore; L3_isolation_forest,"The reported Scope 2 (indirect/electricity) emissions value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,38.92,tCO2e,38.92,0.39,tCO2e,0.39,404523322.0,GJ,404523322.0
+5276.KL,Dancomech Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,11668.716,GJ,11668.716
+8338.KL,Dataprep Holdings Bhd,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,2037.384,GJ,2037.384
+5141.KL,Dayang Enterprise Holdings Bhd,Energy,Energy & Utilities,True,1.0,IF_SECTOR_OUTLIER,L3b_sector_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier within the Energy sector, meaning its reported metrics are unusual compared to sector peers.",1,0,957.61,tCO2e,957.61,1152.73,tCO2e,1152.73,23283.9,GJ,23283.9
+5132.KL,Deleum Berhad,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7277.KL,Dialog Group Berhad,Energy,Energy & Utilities,False,0.31032971881030935,,,No anomalies detected. All reported values appear reasonable.,0,0,9056.0,tCO2e,9056.0,8270.0,tCO2e,8270.0,170640.0,GJ,170640.0
+0029.KL,Digistar Corporation Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0131.KL,Divfex Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7528.KL,DKLS Industries Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5908.KL,DKSH Holdings (Malaysia) Berhad,Industrials,Industrials,False,0.05055370854380503,,,No anomalies detected. All reported values appear reasonable.,0,0,9112.0,tCO2e,9112.0,28901.0,tCO2e,28901.0,469126.8,GJ,469126.8
+5265.KL,Oasis Harvest Corporation Berhad,Industrials,Industrials,False,0.520365819939395,,,No anomalies detected. All reported values appear reasonable.,0,0,2562626.0,tCO2e,2562626.0,40679.0,tCO2e,40679.0,33138323.0,GJ,33138323.0
+03055.KL,DSR Taiko Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7148.KL,Duopharma Biotech Berhad,Health Care,Health Care,False,0.04499123802164007,,,No anomalies detected. All reported values appear reasonable.,0,0,1477.7,tCO2e,1477.7,38141.9,tCO2e,38141.9,201188.5,GJ,201188.5
+3948.KL,DutaLand Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,30.0,tCO2e,30.0,75.0,tCO2e,75.0,,,
+3026.KL,Dutch Lady Milk Industries Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0154.KL,EA Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3417.KL,Eastern & Oriental Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,99104474.03,GJ,99104474.03
+0267.KL,ECA Integrated Solution Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,1387.8,GJ,1387.8
+2143.KL,ECM Libra Group Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8206.KL,Eco World Development Group Berhad,Real Estate,Real Estate,False,0.0024820160829810423,,,No anomalies detected. All reported values appear reasonable.,0,0,595.0,tCO2e,595.0,5923.0,tCO2e,5923.0,36188.0,GJ,36188.0
+5283.KL,EWI Capital Berhad,Real Estate,Real Estate,True,0.4202919637488157,SECTOR_ZSCORE_WASTE_GENERATED,L2b_sector_zscore,The reported total waste generated value(s) are statistically unusual compared to other companies in the Real Estate sector specifically.,1,0,3.36,tCO2e,3.36,103.81,tCO2e,103.81,1260.0,GJ,1260.0
+3557.KL,EcoFirst Consolidated Bhd,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,16.2170928,GJ,16.2170928
+0227.KL,Econframe Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7471.KL,Eden Inc. Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8907.KL,EG Industries Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,8.877599999999999e-05,GJ,8.877599999999999e-05
+5228.KL,ELK-Desa Resources Berhad,Financials,Financials,True,0.9807638576040425,IF_GLOBAL_OUTLIER,L3_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population.",1,0,0.0,tCO2e,0.0,255.0,tCO2e,255.0,1.7322263999999998,GJ,1.7322263999999998
+5056.KL,Engtex Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,14024.0,tCO2e,14024.0,37015.0,tCO2e,37015.0,,,
+7773.KL,EP Manufacturing Bhd,Consumer Discretionary,Consumer Discretionary,True,,SECTOR_ZSCORE_WATER_CONSUMPTION,L2b_sector_zscore,The reported water consumption value(s) are statistically unusual compared to other companies in the Consumer Discretionary sector specifically.,1,0,,,,,,,62735.4,GJ,62735.4
+4847.KL,Epicon Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+6815.KL,Eupe Corporation Berhad,Real Estate,Real Estate,True,,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,416.0,tCO2e,416.0,948.0,tCO2e,948.0,,,
+0174.KL,Evd Berhad,Information Technology,Information Technology,True,,SECTOR_ZSCORE_SCOPE_1,L2b_sector_zscore,The reported Scope 1 (direct) greenhouse gas emissions value(s) are statistically unusual compared to other companies in the Information Technology sector specifically.,1,0,7219731.17,tCO2e,7219731.17,13635.19,tCO2e,13635.19,,,
+0190.KL,Eversafe Rubber Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7249.KL,Skygate Solutions Berhad,Real Estate,Real Estate,True,0.4202919637488157,SECTOR_ZSCORE_WASTE_GENERATED,L2b_sector_zscore,The reported total waste generated value(s) are statistically unusual compared to other companies in the Real Estate sector specifically.,1,0,3.364,tCO2e,3.364,103.809,tCO2e,103.809,1260.0,GJ,1260.0
+2984.KL,FACB Industries Incorporated Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5029.KL,Far East Holdings Berhad,Consumer Staples,Consumer Staples,False,0.27639559165205707,,,No anomalies detected. All reported values appear reasonable.,0,0,252.634,tCO2e,252.634,317.771,tCO2e,317.771,7819.2,GJ,7819.2
+7229.KL,Favelle Favco Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8605.KL,Federal International Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5322.KL,Feytech Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5222.KL,FGV HOLDINGS BERHAD,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3107.KL,Fima Corporation Berhad,Industrials,Industrials,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,3094.0,tCO2e,3094.0,2100.0,tCO2e,2100.0,61576.0,GJ,61576.0
+7210.KL,FM Global Logistics Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,7275.8,tCO2e,7275.8,3894.9,tCO2e,3894.9,,,
+0116.KL,Focus Dynamics Group Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0157.KL,Focus Point Holdings Berhad,Health Care,Health Care,False,0.3617762312036671,,,No anomalies detected. All reported values appear reasonable.,0,0,210.0,tCO2e,210.0,1697.0,tCO2e,1697.0,8.057437199999999,GJ,8.057437199999999
+3689.KL,Fraser & Neave Holdings Bhd,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,39253.0,tCO2e,39253.0,35372.0,tCO2e,35372.0,,,
+0128.KL,Frontken Corporation Berhad,Industrials,Industrials,False,0.07141859525488714,,,No anomalies detected. All reported values appear reasonable.,0,0,1590.0,tCO2e,1590.0,12154.0,tCO2e,12154.0,91069.2,GJ,91069.2
+9377.KL,FSBM Holdings Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,7.46,tCO2e,7.46,7.46,tCO2e,7.46,,,
+0820EA.KL,FTSE Bursa Malaysia KLCI ETF,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7676.KL,G Capital Berhad,Industrials,Industrials,False,0.6245551705581451,,,No anomalies detected. All reported values appear reasonable.,0,0,4692356.0,tCO2e,4692356.0,49165.0,tCO2e,49165.0,61660000.0,GJ,61660000.0
+7184.KL,G3 Global Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,24.8,tCO2e,24.8,,,
+5209.KL,Gas Malaysia Berhad,Utilities,Energy & Utilities,False,0.14639198733181258,,,No anomalies detected. All reported values appear reasonable.,0,0,171342.919,tCO2e,171342.919,10979.57,tCO2e,10979.57,3123109.0,GJ,3123109.0
+0198.KL,GDB Holdings Berhad,Industrials,Industrials,False,0.11357206327439218,,,No anomalies detected. All reported values appear reasonable.,0,0,1848.37,tCO2e,1848.37,821.32,tCO2e,821.32,32673.44143,GJ,32673.44143
+3182.KL,Genting Berhad,Consumer Discretionary,Consumer Discretionary,False,0.18034116952904655,,,No anomalies detected. All reported values appear reasonable.,0,0,39206.0,tCO2e,39206.0,178298.0,tCO2e,178298.0,2307000.0,GJ,2307000.0
+4715.KL,Genting Malaysia Berhad,Consumer Discretionary,Consumer Discretionary,True,0.18703323287634688,SECTOR_ZSCORE_WATER_CONSUMPTION,L2b_sector_zscore,The reported water consumption value(s) are statistically unusual compared to other companies in the Consumer Discretionary sector specifically.,1,0,39206.0,tCO2e,39206.0,178298.0,tCO2e,178298.0,2452000.0,GJ,2452000.0
+2291.KL,Genting Plantations Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,159438.0,tCO2e,159438.0,12406.0,tCO2e,12406.0,,,
+0039.KL,GFM Services Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0021.KL,GHL SYSTEMS BERHAD,Unknown,Unknown,False,0.449962986748803,,,No anomalies detected. All reported values appear reasonable.,0,0,54.4,tCO2e,54.4,810.16,tCO2e,810.16,7.250313599999999,GJ,7.250313599999999
+7022.KL,Globetronics Technology Bhd.,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5649.KL,Golden Pharos Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1070.5,tCO2e,1070.5,2463.1,tCO2e,2463.1,,,
+5592.KL,Grand Central Enterprises Bhd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9148.KL,Greater Bay Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0074.KL,Green Ocean Corporation Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0136.KL,Greenyield Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1459.0,tCO2e,1459.0,1317.0,tCO2e,1317.0,,,
+3247.KL,GUH Holdings Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,22956.72678,tCO2e,22956.72678,,,
+1503.KL,GuocoLand (Malaysia) Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,289.0,tCO2e,289.0,12136.0,tCO2e,12136.0,,,
+3034.KL,Hap Seng Consolidated Berhad,Industrials,Industrials,False,0.05957118109683046,,,No anomalies detected. All reported values appear reasonable.,0,0,135413.44,tCO2e,135413.44,19249.31,tCO2e,19249.31,2305864.20916,GJ,2305864.20916
+5138.KL,Hap Seng Plantations Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5008.KL,Harrisons Holdings (Malaysia) Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,1492.37,tCO2e,1492.37,,,
+5187.KL,HB Global Limited,Consumer Staples,Consumer Staples,False,0.15243668822262257,,,No anomalies detected. All reported values appear reasonable.,0,0,145880.0,tCO2e,145880.0,145880.0,tCO2e,145880.0,1990800.0,GJ,1990800.0
+3255.KL,Heineken Malaysia Berhad,Consumer Staples,Consumer Staples,True,0.8551639026476838,ZSCORE_SCOPE_2; IF_GLOBAL_OUTLIER,L2_zscore; L3_isolation_forest,"The reported Scope 2 (indirect/electricity) emissions value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,6375.0,tCO2e,6375.0,0.0,tCO2e,0.0,175726.0,GJ,175726.0
+5121.KL,Hektar Real Estate Investment Trust,Real Estate,Real Estate,False,0.4363900361791989,,,No anomalies detected. All reported values appear reasonable.,0,0,2.0,tCO2e,2.0,21861.0,tCO2e,21861.0,103825.0,GJ,103825.0
+4324.KL,Hengyuan Refining Company Berhad,Energy,Energy & Utilities,True,0.06904548313977821,ZSCORE_WATER_WITHDRAWAL,L2_zscore,The reported water withdrawal value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,988987.97,tCO2e,988987.97,115953.12,tCO2e,115953.12,11086000.0,GJ,11086000.0
+5151.KL,Hextar Global Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,410.0,tCO2e,410.0,2051.0,tCO2e,2051.0,,,
+7202.KL,Hextar Retail Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,410.0,tCO2e,410.0,2051.0,tCO2e,2051.0,,,
+5136.KL,Hextar Technologies Solutions Berhad,Materials,Materials,False,0.3960535454605365,,,No anomalies detected. All reported values appear reasonable.,0,0,410.0,tCO2e,410.0,2051.0,tCO2e,2051.0,8.3134368,GJ,8.3134368
+3298.KL,Hexza Corporation Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0175.KL,HHRG Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0160.KL,Hiap Huat Holdings Berhad,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5169.KL,Ho Hup Construction Company Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9601.KL,Ho Wah Genting Berhad,Industrials,Industrials,False,0.4005684037068852,,,No anomalies detected. All reported values appear reasonable.,0,0,39206.0,tCO2e,39206.0,178298.0,tCO2e,178298.0,2452000.0,GJ,2452000.0
+5819.KL,Hong Leong Bank Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,160.0,tCO2e,160.0,27671.0,tCO2e,27671.0,,,
+5274.KL,Hong Leong Capital Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3301.KL,Hong Leong Industries Berhad,Consumer Discretionary,Consumer Discretionary,True,1.0,IF_SECTOR_OUTLIER,L3b_sector_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier within the Consumer Discretionary sector, meaning its reported metrics are unusual compared to sector peers.",1,0,1644689.0,tCO2e,1644689.0,265284.0,tCO2e,265284.0,9127000.0,GJ,9127000.0
+0041.KL,Hong Seng Consolidated Berhad,Industrials,Industrials,False,0.05957118109683046,,,No anomalies detected. All reported values appear reasonable.,0,0,135413.44,tCO2e,135413.44,19249.31,tCO2e,19249.31,2305864.20916,GJ,2305864.20916
+0228.KL,HPP Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,2627395.2,GJ,2627395.2
+5062.KL,Hua Yang Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5024.KL,Hup Seng Industries Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+4251.KL,I-Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9113.KL,Iconic Worldwide Berhad,Health Care,Health Care,False,0.5544090304250054,,,No anomalies detected. All reported values appear reasonable.,0,0,5960000.0,tCO2e,5960000.0,1380000.0,tCO2e,1380000.0,100380000.0,GJ,100380000.0
+03038.KL,ICT ZONE ASIA BERHAD,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9687.KL,Ideal Capital Berhad,Real Estate,Real Estate,True,,ZSCORE_GFA,L2_zscore,The reported gross floor area value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,,,,,,,,,
+5606.KL,IGB Berhad,Real Estate,Real Estate,False,0.25966623754655815,,,No anomalies detected. All reported values appear reasonable.,0,0,3322.0,tCO2e,3322.0,98864.0,tCO2e,98864.0,588934.8,GJ,588934.8
+5299.KL,IGB Commercial Real Estate Investment Trust,Real Estate,Real Estate,False,0.06888092807986423,,,No anomalies detected. All reported values appear reasonable.,0,0,2562.0,tCO2e,2562.0,34779.0,tCO2e,34779.0,214022.664,GJ,214022.664
+5227.KL,IGB Real Estate Investment Trust,Real Estate,Real Estate,False,0.06888092807986423,,,No anomalies detected. All reported values appear reasonable.,0,0,2562.0,tCO2e,2562.0,34779.0,tCO2e,34779.0,214022.664,GJ,214022.664
+5225.KL,IHH Healthcare Berhad,Health Care,Health Care,False,0.1867748704135681,,,No anomalies detected. All reported values appear reasonable.,0,0,80528.0,tCO2e,80528.0,210111.0,tCO2e,210111.0,2227572.0,GJ,2227572.0
+0401GA.KL,IHSAN SUKUK-ETBS 4.60%0824,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5614.KL,Nuenergy Holdings Berhad,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7222.KL,Imaspro Corporation Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+2607.KL,Inch Kenneth Kajang Rubber Public Limited Company,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0024.KL,JAG Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8648.KL,Jasa Kita Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0292.KL,Jati Tinggi Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+4383.KL,Jaya Tiasa Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0058.KL,JcbNext Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,0.2969027999999999,GJ,0.2969027999999999
+5161.KL,JCY International Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5673.KL,Jentayu Sustainables Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,29.0,tCO2e,29.0,376.0,tCO2e,376.0,,,
+7096.KL,Joe Holding Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7216.KL,Kawan Food Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9334.KL,KESM Industries Berhad,Information Technology,Information Technology,False,0.08424714608449668,,,No anomalies detected. All reported values appear reasonable.,0,0,2662.7,tCO2e,2662.7,54100.0,tCO2e,54100.0,278927.3,GJ,278927.3
+0143.KL,Key ASIC Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+6203.KL,Khee San Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+6211.KL,Kia Lim Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0210.KL,Kim Hin Joo (Malaysia) Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0193.KL,Kinergy Advancement Berhad,Industrials,Industrials,True,,NEGATIVE_TOTAL_ENERGY,L1_rules,"Reported a negative value for total energy consumption, which is physically impossible and likely a data entry or extraction error.",1,1,68.0,tCO2e,68.0,531.0,tCO2e,531.0,-271.317186,GJ,-271.317186
+0293.KL,KJTS,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,125.29,tCO2e,125.29,16586.61,tCO2e,16586.61,,,
+9466.KL,KKB Engineering Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5235SS.KL,KLCC Property Holdings Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5235SS.KL,KLCC Property Holdings Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,51.07,tCO2e,51.07,29935.82,tCO2e,29935.82,,,
+5235SS.KL,KLCC Property Holdings Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5235SS.KL,KLCC Property Holdings Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,51.07,tCO2e,51.07,29935.82,tCO2e,29935.82,,,
+6971.KL,Kobay Technology Bhd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0002.KL,Kotra Industries Berhad,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,38768.0,GJ,38768.0
+5878.KL,KPJ Healthcare Berhad,Health Care,Health Care,False,0.1825225081314894,,,No anomalies detected. All reported values appear reasonable.,0,0,21317.83,tCO2e,21317.83,141631.92,tCO2e,141631.92,729614.48,GJ,729614.48
+9121.KL,KPS Consortium Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,3670.73,tCO2e,3670.73,30128.47,tCO2e,30128.47,,,
+6491.KL,Kumpulan Fima Berhad,Industrials,Industrials,False,0.25180322401402155,,,No anomalies detected. All reported values appear reasonable.,0,0,11228.0,tCO2e,11228.0,4175.0,tCO2e,4175.0,350005.0,GJ,350005.0
+5843.KL,Kumpulan Perangsang Selangor Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,3670.73,tCO2e,3670.73,30128.47,tCO2e,30128.47,,,
+8362.KL,KYM Holdings Bhd,Consumer Discretionary,Consumer Discretionary,False,0.8259994670365026,,,No anomalies detected. All reported values appear reasonable.,0,0,32.526,tCO2e,32.526,995.358,tCO2e,995.358,8.2832508,GJ,8.2832508
+0268.KL,L&P Global Berhad,Consumer Discretionary,Consumer Discretionary,True,,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,719.0,tCO2e,719.0,1416.0,tCO2e,1416.0,,,
+1643.KL,Landmarks Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9385.KL,Lay Hong Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9326.KL,LB Aluminium Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8494.KL,LBI Capital Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5789.KL,LBS Bina Group Berhad,Real Estate,Real Estate,False,0.01313532722727706,,,No anomalies detected. All reported values appear reasonable.,0,0,288.0,tCO2e,288.0,6973.0,tCO2e,6973.0,36558.0,GJ,36558.0
+0266.KL,Leform Berhad,Materials,Materials,False,0.1576521427562142,,,No anomalies detected. All reported values appear reasonable.,0,0,688.0,tCO2e,688.0,3617.0,tCO2e,3617.0,27603.0,GJ,27603.0
+5232.KL,Leon Fuat Berhad,Materials,Materials,False,0.04774978941813457,,,No anomalies detected. All reported values appear reasonable.,0,0,1455.0,tCO2e,1455.0,2914.0,tCO2e,2914.0,42607.0,GJ,42607.0
+5284.KL,Lotte Chemical Titan Holding Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,3896865.0,tCO2e,3896865.0,2159205.0,tCO2e,2159205.0,,,
+8621.KL,LPI Capital Bhd,Financials,Financials,False,0.43972685751237695,,,No anomalies detected. All reported values appear reasonable.,0,0,44.4,tCO2e,44.4,2216.2,tCO2e,2216.2,11.0902644,GJ,11.0902644
+7085.KL,LTKM Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9199.KL,Lysaght Galvanized Steel Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0095.KL,MAG Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7243.KL,Magma Group Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7617.KL,Magna Prima Berhad,Real Estate,Real Estate,True,1.0,SECTOR_ZSCORE_WATER_WITHDRAWAL; IF_SECTOR_OUTLIER,L2b_sector_zscore; L3b_sector_isolation_forest,"The reported water withdrawal value(s) are statistically unusual compared to other companies in the Real Estate sector specifically. Machine learning analysis (Isolation Forest) flagged this company as an outlier within the Real Estate sector, meaning its reported metrics are unusual compared to sector peers. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,424561.0,tCO2e,424561.0,1150656.0,tCO2e,1150656.0,20077657.0,GJ,20077657.0
+3859.KL,Magnum Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8583.KL,Mah Sing Group Berhad,Real Estate,Real Estate,True,0.20347116790862585,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,4351.0,tCO2e,4351.0,28688.0,tCO2e,28688.0,511479.27,GJ,511479.27
+8141.KL,Majuperak Holdings Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1155.KL,Malayan Banking Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3794.KL,Malayan Cement Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3662.KL,Malayan Flour Mills Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3891.KL,Malayan United Industries Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2342.16,tCO2e,2342.16,2367.67,tCO2e,2367.67,,,
+5014.KL,MALAYSIA AIRPORTS HOLDINGS BERHAD,Unknown,Unknown,False,0.3905608787733367,,,No anomalies detected. All reported values appear reasonable.,0,0,1819.0,tCO2e,1819.0,103045.0,tCO2e,103045.0,1862.2670688,GJ,1862.2670688
+5186.KL,Malaysia Marine and Heavy Engineering Holdings Berhad,Energy,Energy & Utilities,False,0.255879847133618,,,No anomalies detected. All reported values appear reasonable.,0,0,9928.0,tCO2e,9928.0,27882.0,tCO2e,27882.0,271962.0,GJ,271962.0
+5916.KL,Malaysia Smelting Corporation Berhad,Materials,Materials,False,0.27362354482600815,,,No anomalies detected. All reported values appear reasonable.,0,0,127122.0,tCO2e,127122.0,19826.0,tCO2e,19826.0,156600.0,GJ,156600.0
+5098.KL,Malaysia Steel Works (KL) Bhd.,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,6632.96,tCO2e,6632.96,325057.23,tCO2e,325057.23,,,
+0155.KL,Malaysian Genomics Resource Centre Berhad,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3867.KL,Malaysian Pacific Industries Berhad,Information Technology,Information Technology,True,0.7851544516113711,ZSCORE_SCOPE_2; IF_GLOBAL_OUTLIER,L2_zscore; L3_isolation_forest,"The reported Scope 2 (indirect/electricity) emissions value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,197.2,tCO2e,197.2,1.1,tCO2e,1.1,956.2536,GJ,956.2536
+4936.KL,MALPAC HOLDINGS BERHAD,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+03015.KL,Manforce Group Berhad,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5078.KL,Marine & General Berhad,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0295.KL,Master Tec Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7029.KL,Master-Pack Group Berhad,Consumer Discretionary,Consumer Discretionary,False,0.5683786433299975,,,No anomalies detected. All reported values appear reasonable.,0,0,7.88,tCO2e,7.88,15.8,tCO2e,15.8,28854.0,GJ,28854.0
+0189.KL,Matang Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5236.KL,Matrix Concepts Holdings Berhad,Real Estate,Real Estate,False,1.7539515713815845e-05,,,No anomalies detected. All reported values appear reasonable.,0,0,428.38,tCO2e,428.38,4372.74,tCO2e,4372.74,36573.0,GJ,36573.0
+4022.KL,Maxim Global Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+6012.KL,Maxis Berhad,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7099.KL,Mayu Global Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5983.KL,MBM Resources Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1717.0,tCO2e,1717.0,9612.0,tCO2e,9612.0,,,
+1171.KL,MBSB Berhad,Financials,Financials,True,0.15042663368320108,SECTOR_ZSCORE_WATER_CONSUMPTION,L2b_sector_zscore,The reported water consumption value(s) are statistically unusual compared to other companies in the Financials sector specifically.,1,0,41.0,tCO2e,41.0,5480.0,tCO2e,5480.0,28341.967,GJ,28341.967
+0167.KL,MClean Technologies Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,27000.0,GJ,27000.0
+03022.KL,MCOM Holdings Berhad,Information Technology,Information Technology,True,,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,616.0,tCO2e,616.0,327.0,tCO2e,327.0,,,
+5090.KL,Media Chinese International Limited,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,10300.0,tCO2e,10300.0,,,
+4502.KL,Media Prima Berhad,Communication Services,Comm & IT,False,0.33887073979620674,,,No anomalies detected. All reported values appear reasonable.,0,0,157.39,tCO2e,157.39,1952.44,tCO2e,1952.44,56.7819108,GJ,56.7819108
+3069.KL,Mega First Corporation Berhad,Utilities,Energy & Utilities,False,0.01570329794636449,,,No anomalies detected. All reported values appear reasonable.,0,0,486362.93,tCO2e,486362.93,51661.51,tCO2e,51661.51,1984472.28,GJ,1984472.28
+3778.KL,Melewar Industrial Group Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,6737.0,tCO2e,6737.0,9010.0,tCO2e,9010.0,,,
+8192.KL,Mercury Industries Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0285.KL,Mercury Securities Group Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5040.KL,Meridian Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7234.KL,Lotus Circular Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+03005.KL,Metro Healthcare Berhad,Unknown,Unknown,False,0.515466676501598,,,No anomalies detected. All reported values appear reasonable.,0,0,0.0,tCO2e,0.0,15938.0,tCO2e,15938.0,102632.0,GJ,102632.0
+7595.KL,MGB Berhad,Industrials,Industrials,False,0.4453454091063588,,,No anomalies detected. All reported values appear reasonable.,0,0,6587.0,tCO2e,6587.0,446.0,tCO2e,446.0,85168.8,GJ,85168.8
+5026.KL,MHC Plantations Bhd.,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5286.KL,Mi Technovation Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,67.7861,tCO2e,67.7861,3615.8092,tCO2e,3615.8092,,,
+5576.KL,Minho (M) Berhad,Materials,Materials,True,,SECTOR_ZSCORE_GFA,L2b_sector_zscore,The reported gross floor area value(s) are statistically unusual compared to other companies in the Materials sector specifically.,1,0,,,,,,,,,
+3816.KL,MISC Berhad,Industrials,Industrials,False,0.49341938947588626,,,No anomalies detected. All reported values appear reasonable.,0,0,4106235.0,tCO2e,4106235.0,39851.0,tCO2e,39851.0,59885590.0,GJ,59885590.0
+9571.KL,Mitrajaya Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,4500.0,tCO2e,4500.0,4500.0,tCO2e,4500.0,,,
+6114.KL,MKH Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5319.KL,MKH Oil Palm (East Kalimantan) Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0034.KL,MMAG Holdings Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+03027.KL,MMIS Berhad,Industrials,Industrials,True,,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,616.0,tCO2e,616.0,327.0,tCO2e,327.0,,,
+0159.KL,MMM Group Berhad,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,543.0,tCO2e,543.0,199.0,tCO2e,199.0,,,
+6459.KL,MNRB Holdings Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7943.KL,Greentronics Technology Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,1.156536,GJ,1.156536
+5296.KL,Mr D.I.Y. Group (M) Berhad,Consumer Discretionary,Consumer Discretionary,False,0.8609388889986379,,,No anomalies detected. All reported values appear reasonable.,0,0,0.48,tCO2e,0.48,116616.0,tCO2e,116616.0,764.888,GJ,764.888
+5085.KL,Mudajaya Group Berhad,Industrials,Industrials,False,0.00034047318363172874,,,No anomalies detected. All reported values appear reasonable.,0,0,2893.0,tCO2e,2893.0,1444.0,tCO2e,1444.0,48794.4,GJ,48794.4
+5703.KL,Muhibbah Engineering (M) Bhd.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3913.KL,MUI Properties Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2342.0,tCO2e,2342.0,2368.0,tCO2e,2368.0,,,
+5087.KL,Mycron Steel Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0280.KL,MYMBN Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7692.KL,MyTech Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0270.KL,NationGate Holdings Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+2038.KL,Negri Sembilan Oil Palms Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,13050.0,GJ,13050.0
+7241.KL,Nextgreen Global Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7139.KL,Niche Capital Emas Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1060.0,tCO2e,1060.0,,,,,,
+0083.KL,Notion VTec Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+03006.KL,NOVA PHARMA SOLUTIONS BERHAD,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5047.KL,NPC RESOURCES BERHAD,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+4944.KL,Nylex (Malaysia) Berhad,Unknown,Unknown,False,0.08246343834380832,,,No anomalies detected. All reported values appear reasonable.,0,0,23055.0,tCO2e,23055.0,8646.0,tCO2e,8646.0,394000.0,GJ,394000.0
+5533.KL,OCB Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,147.0,tCO2e,147.0,,,,418221.0,GJ,418221.0
+0049.KL,Oceancash Pacific Berhad,Consumer Staples,Consumer Staples,False,0.0302264752124628,,,No anomalies detected. All reported values appear reasonable.,0,0,1486.7,tCO2e,1486.7,2998.6,tCO2e,2998.6,47683.6,GJ,47683.6
+0172.KL,OCK Group Berhad,Communication Services,Comm & IT,True,0.8300703967726207,IF_GLOBAL_OUTLIER,L3_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population.",1,0,850.0,tCO2e,850.0,187.0,tCO2e,187.0,1.0922364,GJ,1.0922364
+7071.KL,OCR Group Berhad,Real Estate,Real Estate,False,0.31426565410339846,,,No anomalies detected. All reported values appear reasonable.,0,0,174.03,tCO2e,174.03,366.07,tCO2e,366.07,2391.75,GJ,2391.75
+3018.KL,Olympia Industries Berhad,Consumer Discretionary,Consumer Discretionary,False,0.008763886733769377,,,No anomalies detected. All reported values appear reasonable.,0,0,5.0,tCO2e,5.0,3195.0,tCO2e,3195.0,15631.0,GJ,15631.0
+0275.KL,Oppstar Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,0.0,tCO2e,0.0,60.31,tCO2e,60.31,,,
+0252.KL,Orgabio Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7107.KL,Oriental Food Industries Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,99104474.03,GJ,99104474.03
+4006.KL,Oriental Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,99104474.03,GJ,99104474.03
+5065.KL,Ornapaper Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,37556.0,GJ,37556.0
+0053.KL,OSK Ventures International Berhad,Financials,Financials,True,,SECTOR_ZSCORE_SCOPE_3,L2b_sector_zscore,The reported Scope 3 (value chain) emissions value(s) are statistically unusual compared to other companies in the Financials sector specifically.,1,0,3.85,tCO2e,3.85,4.19,tCO2e,4.19,,,
+0153.KL,Oversea Enterprise Berhad,Consumer Discretionary,Consumer Discretionary,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,45.36178,tCO2e,45.36178,1931.7285,tCO2e,1931.7285,17334.28,GJ,17334.28
+7225.KL,P.A. Resources Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,6875967.0,tCO2e,6875967.0,,,,61572344.4,GJ,61572344.4
+6009.KL,Pacific & Orient Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7052.KL,Padini Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+4081.KL,Pan Malaysia Corporation Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3719.KL,Panasonic Manufacturing Malaysia Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5125.KL,Pantech Group Holdings Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,17474.0,tCO2e,17474.0,,,
+1724.KL,Paramount Corporation Berhad,Real Estate,Real Estate,False,0.5679964183736868,,,No anomalies detected. All reported values appear reasonable.,0,0,389.85,tCO2e,389.85,5251.14,tCO2e,5251.14,24.2426628,GJ,24.2426628
+0022.KL,Parlo Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0177.KL,Midtown Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5212.KL,Pavilion Real Estate Investment Trust,Real Estate,Real Estate,False,0.5300617786097521,,,No anomalies detected. All reported values appear reasonable.,0,0,35.7,tCO2e,35.7,94757.0,tCO2e,94757.0,450.033282,GJ,450.033282
+5041.KL,PBA Holdings Bhd,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5231.KL,PBS Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+6068.KL,PCCS Group Berhad,Consumer Discretionary,Consumer Discretionary,True,0.8034450944163423,ZSCORE_SCOPE_2; IF_GLOBAL_OUTLIER,L2_zscore; L3_isolation_forest,"The reported Scope 2 (indirect/electricity) emissions value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median). Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,5.96,tCO2e,5.96,1.38,tCO2e,1.38,100380000.0,GJ,100380000.0
+6254.KL,PDZ Holdings Bhd,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+4464.KL,Pegasus Heights Berhad,Real Estate,Real Estate,False,0.15243882059435443,,,No anomalies detected. All reported values appear reasonable.,0,0,62.8,tCO2e,62.8,1935.9,tCO2e,1935.9,10120.32,GJ,10120.32
+0233.KL,Pekat Group Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7160.KL,Pentamaster Corporation Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7080.KL,Permaju Industries Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8532.KL,Pertama Digital Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5436.KL,Perusahaan Sadur Timah Malaysia (Perstima) Berhad,Consumer Discretionary,Consumer Discretionary,False,0.3847854341014093,,,No anomalies detected. All reported values appear reasonable.,0,0,96791.4,tCO2e,96791.4,33262.0,tCO2e,33262.0,1844872.0,GJ,1844872.0
+8311.KL,Pesona Metro Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+3042.KL,Petron Malaysia Refining & Marketing Bhd,Energy,Energy & Utilities,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,191000.0,tCO2e,191000.0,71000.0,tCO2e,71000.0,3530891.0,GJ,3530891.0
+5183.KL,PETRONAS Chemicals Group Berhad,Materials,Materials,True,1.0,IF_SECTOR_OUTLIER,L3b_sector_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier within the Materials sector, meaning its reported metrics are unusual compared to sector peers.",1,0,5960000.0,tCO2e,5960000.0,1380000.0,tCO2e,1380000.0,100380000.0,GJ,100380000.0
+5681.KL,PETRONAS Dagangan Berhad,Energy,Energy & Utilities,False,0.6192815166591656,,,No anomalies detected. All reported values appear reasonable.,0,0,5960000.0,tCO2e,5960000.0,1380000.0,tCO2e,1380000.0,100380000.0,GJ,100380000.0
+6033.KL,PETRONAS Gas Berhad,Energy,Energy & Utilities,False,0.2365876290589246,,,No anomalies detected. All reported values appear reasonable.,0,0,4692356.0,tCO2e,4692356.0,49165.0,tCO2e,49165.0,61660000.0,GJ,61660000.0
+7055.KL,PLB Engineering Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,63.131,tCO2e,63.131,211.816,tCO2e,211.816,,,
+5075.KL,Plenitude Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,4203.0,tCO2e,4203.0,,,,,,
+9695.KL,PLS Plantations Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7172.KL,PMB Technology Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,3328051.0,GJ,3328051.0
+6637.KL,PNE PCB Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7088.KL,Poh Huat Resources Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5080.KL,Poh Kong Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+03031.KL,Polydamic Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,5960000.0,tCO2e,5960000.0,,,,100380000.0,GJ,100380000.0
+4634.KL,Pos Malaysia Berhad,Industrials,Industrials,False,0.0926788373070162,,,No anomalies detected. All reported values appear reasonable.,0,0,63422.34,tCO2e,63422.34,41344.54,tCO2e,41344.54,1048105.4,GJ,1048105.4
+7237.KL,Power Root Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0217.KL,Powerwell Holdings Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+4065.KL,PPB Group Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8869.KL,Press Metal Aluminium Holdings Berhad,Materials,Materials,True,0.894117183306598,WASTE_INCONSISTENCY; SECTOR_ZSCORE_SCOPE_3,L1_rules; L2b_sector_zscore,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data. The reported Scope 3 (value chain) emissions value(s) are statistically unusual compared to other companies in the Materials sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,1,2171500.0,tCO2e,2171500.0,2121700.0,tCO2e,2121700.0,55600000.0,GJ,55600000.0
+0823EA.KL,Principal FTSE China 50 ETF,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,5479.0,tCO2e,5479.0,,,,267713.28,GJ,267713.28
+0123.KL,Privasia Technology Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2.1,tCO2e,2.1,149.189,tCO2e,149.189,,,
+5320.KL,PLINTAS,Industrials,Industrials,False,0.18596339838969245,,,No anomalies detected. All reported values appear reasonable.,0,0,1018.99,tCO2e,1018.99,12383.58,tCO2e,12383.58,63681.12,GJ,63681.12
+0091.KL,Propel Global Bhd,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0260.KL,PT Resources Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1295.KL,Public Bank Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+8273.KL,Public Packages Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0007.KL,PUC Berhad,Communication Services,Comm & IT,True,0.9052171935820686,IF_GLOBAL_OUTLIER,L3_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population.",1,0,5960000.0,tCO2e,5960000.0,7330000.0,tCO2e,7330000.0,100380000.0,GJ,100380000.0
+7134.KL,PWF Corporation Bhd.,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,0.0,tCO2e,0.0,,,,872.9064,GJ,872.9064
+7084.KL,QL Resources Berhad,Consumer Staples,Consumer Staples,False,0.4840764193859626,,,No anomalies detected. All reported values appear reasonable.,0,0,35510.0,tCO2e,35510.0,107310.0,tCO2e,107310.0,1896.58,GJ,1896.58
+5313.KL,Radium Development Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,185.41,tCO2e,185.41,880.55,GJ,880.55
+5272.KL,Ranhill Utilities Berhad,Utilities,Energy & Utilities,True,0.6167262385585242,EXTREME_ENERGY; IF_GLOBAL_OUTLIER,L1_rules; L3_isolation_forest,"Total energy consumption exceeds 1 billion GJ, which is beyond even the largest utilities. This likely indicates a unit conversion or data extraction error. Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,1,1357602.92,tCO2e,1357602.92,292907.11,tCO2e,292907.11,7048425371.92,GJ,7048425371.92
+9296.KL,RCE Capital Berhad,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7130.KL,Reneuco Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,4272.31,tCO2e,4272.31,137.14,tCO2e,137.14,,,
+7232.KL,Resintech Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9946.KL,ETA Group Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,22240.1,tCO2e,22240.1,,,,183800.0,GJ,183800.0
+0037.KL,RGB International Bhd.,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9954.KL,RGT Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,34.0,tCO2e,34.0,1567.0,tCO2e,1567.0,,,
+1066.KL,RHB Bank Berhad,Financials,Financials,False,0.045352008413886535,,,No anomalies detected. All reported values appear reasonable.,0,0,488.0,tCO2e,488.0,24317.0,tCO2e,24317.0,139071.6,GJ,139071.6
+7006.KL,Rhong Khen International Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+2542.KL,"Riverview Rubber Estates, Berhad",Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1044.42,tCO2e,1044.42,,,,,,
+03039.KL,RTS Technology Holdings Berhad,Unknown,Unknown,False,0.045352008413886535,,,No anomalies detected. All reported values appear reasonable.,0,0,488.0,tCO2e,488.0,24317.0,tCO2e,24317.0,139071.6,GJ,139071.6
+8745.KL,S & F Capital Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,488.0,tCO2e,488.0,24317.0,tCO2e,24317.0,,,
+8664.KL,S P Setia Berhad,Real Estate,Real Estate,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,457.0,tCO2e,457.0,12429.0,tCO2e,12429.0,96174.521,GJ,96174.521
+8567.KL,Salcon Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,340.69,tCO2e,340.69,116.34,tCO2e,116.34,,,
+0183.KL,Salutica Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9822.KL,SAM Engineering & Equipment (M) Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,20400.01,tCO2e,20400.01,,,
+5147.KL,Samchem Holdings Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+03057.KL,Sancy Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,142200.0,tCO2e,142200.0,142200.0,tCO2e,142200.0,,,
+5218.KL,Vantris Energy Berhad,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7811.KL,Sapura Industrial Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+4596.KL,Sapura Resources Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5170.KL,SARAWAK CABLE BERHAD,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+9237.KL,Sarawak Consolidated Industries Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5126.KL,Sarawak Oil Palms Berhad,Consumer Staples,Consumer Staples,False,0.23044984087967602,,,No anomalies detected. All reported values appear reasonable.,0,0,269481.0,tCO2e,269481.0,24956.0,tCO2e,24956.0,1489872.0,GJ,1489872.0
+5135.KL,Sarawak Plantation Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,171270.0,GJ,171270.0
+5157.KL,SaudiGold Group Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0300.KL,SBH Marine Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0158.KL,SCC Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7247.KL,SCGM Bhd,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0099.KL,Scicom (MSC) Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,4723.0,tCO2e,4723.0,19654758.0,GJ,19654758.0
+4731.KL,Scientex Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,6300.0,tCO2e,6300.0,135900.0,tCO2e,135900.0,,,
+8125.KL,Scientex Packaging (Ayer Keroh) Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,134200.0,tCO2e,134200.0,8000.0,tCO2e,8000.0,,,
+0028.KL,Scope Industries Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7073.KL,Seacera Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5145.KL,Sealink International Berhad,Industrials,Industrials,True,,ZSCORE_SCOPE_2,L2_zscore,The reported Scope 2 (indirect/electricity) emissions value(s) are statistically unusual compared to all companies in the dataset (more than 3.5 standard deviations from the median).,1,0,0.0,tCO2e,0.0,0.0,tCO2e,0.0,,,
+03009.KL,SEERS BERHAD,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+2224.KL,Selangor Dredging Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5213.KL,Sentoria Group Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5163.KL,Seremban Engineering Berhad,Industrials,Industrials,False,0.3077744686922095,,,No anomalies detected. All reported values appear reasonable.,0,0,1207.0,tCO2e,1207.0,608.0,tCO2e,608.0,21084.0,GJ,21084.0
+7180.KL,Sern Kou Resources Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5517.KL,Shangri-La Hotels (Malaysia) Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,150.0,tCO2e,150.0,,,,6724800.0,GJ,6724800.0
+7412.KL,SHH Resources Holdings Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5173.KL,Shin Yang Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,139674.0,tCO2e,139674.0,16826.9,tCO2e,16826.9,,,
+6017.KL,SHL Consolidated Bhd.,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,768.0,tCO2e,768.0,1257.0,tCO2e,1257.0,,,
+4197.KL,Sime Darby Berhad,Consumer Discretionary,Consumer Discretionary,False,0.0692599986473057,,,No anomalies detected. All reported values appear reasonable.,0,0,537.15,tCO2e,537.15,15849.5,tCO2e,15849.5,83306.24,GJ,83306.24
+5288.KL,Sime Darby Property Berhad,Real Estate,Real Estate,False,0.012279539362977876,,,No anomalies detected. All reported values appear reasonable.,0,0,537.15,tCO2e,537.15,15849.5,tCO2e,15849.5,83306.24,GJ,83306.24
+5172.KL,Sinaran Advance Group Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7115.KL,SKB Shutters Corporation Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7155.KL,SKP Resources Bhd,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1547.0,tCO2e,1547.0,54717.0,tCO2e,54717.0,,,
+0117.KL,SMRT Holdings Berhad,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,100746.0,tCO2e,100746.0,318709.0,tCO2e,318709.0,,,
+0259.KL,SNS Network Technology Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,97.33,tCO2e,97.33,418.8,tCO2e,418.8,,,
+0215.KL,Solarvest Holdings Berhad,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,74.87,tCO2e,74.87,203.01,tCO2e,203.01,,,
+0225.KL,Southern Cable Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,81.601272,GJ,81.601272
+0045.KL,Southern Score Builders Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5665.KL,Southern Steel Berhad,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,97273.0,tCO2e,97273.0,272150.0,tCO2e,272150.0,,,
+7103.KL,Spritzer Bhd,Consumer Staples,Consumer Staples,False,0.04482174940202155,,,No anomalies detected. All reported values appear reasonable.,0,0,865.0,tCO2e,865.0,34554.0,tCO2e,34554.0,159468.0,GJ,159468.0
+6084.KL,Star Media Group Berhad,Communication Services,Comm & IT,False,0.3074568090200499,,,No anomalies detected. All reported values appear reasonable.,0,0,5.66,tCO2e,5.66,5442.27,tCO2e,5442.27,79787.04,GJ,79787.04
+03049.KL,Steel Hawk Berhad,Unknown,Unknown,False,0.5026175548384846,,,No anomalies detected. All reported values appear reasonable.,0,0,92.7,tCO2e,92.7,45.8,tCO2e,45.8,1642.0,GJ,1642.0
+3743.KL,Sunsuria Berhad,Real Estate,Real Estate,False,0.22273494944767214,,,No anomalies detected. All reported values appear reasonable.,0,0,2266.0,tCO2e,2266.0,962.0,tCO2e,962.0,36234.0,GJ,36234.0
+5211.KL,Sunway Berhad,Industrials,Industrials,False,0.33401454613879833,,,No anomalies detected. All reported values appear reasonable.,0,0,104355.0,tCO2e,104355.0,188898.0,tCO2e,188898.0,1483524.0,GJ,1483524.0
+5263.KL,Sunway Construction Group Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5176.KL,Sunway Real Estate Investment Trust,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+0001.KL,Supercomnet Technologies Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+03018.KL,Supreme Consolidated Resources Berhad,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+5303.KL,Swift Haulage Berhad,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+7186.KL,SWS Capital Berhad,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+1538.KL,Symphony Life Berhad,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,

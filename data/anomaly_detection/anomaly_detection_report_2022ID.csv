@@ -1,0 +1,368 @@
+ticker_symbol,company_name,gics_sector,sector_group,anomaly_flag,anomaly_score,anomaly_types,anomaly_layers,anomaly_explanation,n_flags,rule_flags,scope_1_raw,scope_1_unit,scope_1_normalised_tCO2e,scope_2_raw,scope_2_unit,scope_2_normalised_tCO2e,total_energy_raw,total_energy_unit,total_energy_normalised_GJ
+AALI.JK,PT Astra Agro Lestari Tbk,Consumer Staples,Consumer Staples,False,0.8725994150681915,,,No anomalies detected. All reported values appear reasonable.,0,0,975.519,tCO2e,975.519,21.779,tCO2e,21.779,20873007.0,GJ,20873007.0
+ACST.JK,PT Acset Indonusa Tbk,Industrials,Industrials,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,1596.86,tCO2e,1596.86,2759.9,tCO2e,2759.9,42688.19,GJ,42688.19
+AISA.JK,PT FKS Food Sejahtera Tbk,Consumer Staples,Consumer Staples,False,0.5434949652964831,,,No anomalies detected. All reported values appear reasonable.,0,0,113447.0,tCO2e,113447.0,7482.0,tCO2e,7482.0,970.008,GJ,970.008
+AKKU.JK,PT Anugerah Kagum Karya Utama Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AMAG.JK,PT Asuransi Multi Artha Guna Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AMIN.JK,PT Ateliers Mecaniques D'Indonesie Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AMRT.JK,PT Sumber Alfaria Trijaya Tbk,Consumer Staples,Consumer Staples,False,0.616080283616893,,,No anomalies detected. All reported values appear reasonable.,0,0,5.72,tCO2e,5.72,1124.45,tCO2e,1124.45,4416973.0,GJ,4416973.0
+APEX.JK,PT Apexindo Pratama Duta Tbk,Energy,Energy & Utilities,False,0.1707972581032987,,,No anomalies detected. All reported values appear reasonable.,0,0,33834.0,tCO2e,33834.0,517.0,tCO2e,517.0,433302.0,GJ,433302.0
+APLI.JK,PT Asiaplast Industries Tbk,Consumer Discretionary,Consumer Discretionary,False,0.007684430497814532,,,No anomalies detected. All reported values appear reasonable.,0,0,9376.0,tCO2e,9376.0,14646.47,tCO2e,14646.47,158143.0,GJ,158143.0
+ARII.JK,PT Atlas Resources Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ARNA.JK,PT Arwana Citramulia Tbk,Industrials,Industrials,False,0.1837955640658454,,,No anomalies detected. All reported values appear reasonable.,0,0,328506.0,tCO2e,328506.0,328506.0,tCO2e,328506.0,4274850.0,GJ,4274850.0
+ARTA.JK,PT Arthavest Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,24323.26,GJ,24323.26
+ARTO.JK,PT Bank Jago Tbk,Financials,Financials,False,0.32924265048854984,,,No anomalies detected. All reported values appear reasonable.,0,0,0.2208,tCO2e,0.2208,6920.1178899999995,tCO2e,6920.1178899999995,11533529.82,GJ,11533529.82
+ASBI.JK,PT Asuransi Bintang Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ASDM.JK,PT Asuransi Dayin Mitra Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ASGR.JK,PT Astra Graphia Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1477.0,tCO2e,1477.0,2739.0,tCO2e,2739.0,,,
+ASII.JK,PT Astra International Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ASJT.JK,PT Asuransi Jasa Tania Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ASRI.JK,PT Alam Sutera Realty Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,33826.0,tCO2e,33826.0,169055.0,GJ,169055.0
+ASRM.JK,PT Asuransi Ramayana Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AUTO.JK,PT Astra Otoparts Tbk,Consumer Discretionary,Consumer Discretionary,False,0.22356441753938217,,,No anomalies detected. All reported values appear reasonable.,0,0,114.64,tCO2e,114.64,154.64,tCO2e,154.64,1471974.0,GJ,1471974.0
+BABP.JK,PT Bank MNC Internasional Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BAJA.JK,PT Saranacentral Bajatama Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2880.0,tCO2e,2880.0,11872.08,tCO2e,11872.08,,,
+BAPA.JK,PT Bekasi Asri Pemula Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BAYU.JK,PT Bayu Buana Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BBCA.JK,PT Bank Central Asia Tbk,Financials,Financials,True,,SECTOR_ZSCORE_GFA,L2b_sector_zscore,The reported gross floor area value(s) are statistically unusual compared to other companies in the Financials sector specifically.,1,0,806.0,tCO2e,806.0,136996.0,tCO2e,136996.0,,,
+BBHI.JK,PT Allo Bank Indonesia Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BBKP.JK,PT Bank KB Indonesia Tbk,Financials,Financials,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,13993.0,tCO2e,13993.0,114994.0,tCO2e,114994.0,1129428.0,GJ,1129428.0
+BBNI.JK,PT Bank Negara Indonesia (Persero) Tbk,Financials,Financials,False,0.07451647254566018,,,No anomalies detected. All reported values appear reasonable.,0,0,121.64,tCO2e,121.64,295208.86,tCO2e,295208.86,989477.0,GJ,989477.0
+BBRI.JK,PT Bank Rakyat Indonesia (Persero) Tbk,Financials,Financials,False,0.1131808128250783,,,No anomalies detected. All reported values appear reasonable.,0,0,132235.0,tCO2e,132235.0,360135.0,tCO2e,360135.0,3074957.68,GJ,3074957.68
+BBRM.JK,PT Pelayaran Nasional Bina Buana Raya Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BCAP.JK,PT MNC Kapital Indonesia Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,25667.7,GJ,25667.7
+BCIC.JK,PT Bank JTrust Indonesia Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BCIP.JK,PT Bumi Citra Permai Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,1370.0,GJ,1370.0
+BDMN.JK,PT Bank Danamon Indonesia Tbk,Financials,Financials,False,0.029470642744072184,,,No anomalies detected. All reported values appear reasonable.,0,0,348.0,tCO2e,348.0,23338.0,tCO2e,23338.0,144811.0,GJ,144811.0
+BEST.JK,PT Bekasi Fajar Industrial Estate Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2286.0,tCO2e,2286.0,,,,,,
+BGTG.JK,PT Bank Ganesha Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,2923.8,GJ,2923.8
+BIKA.JK,PT Binakarya Jaya Abadi Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BIPI.JK,PT Astrindo Nusantara Infrastruktur Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BIPP.JK,PT Bhuwanatala Indah Permai Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BISI.JK,PT BISI International Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,13122.42,tCO2e,13122.42,,,,178848.71,GJ,178848.71
+BNBR.JK,PT Bakrie & Brothers Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BNGA.JK,PT Bank CIMB Niaga Tbk,Financials,Financials,False,0.006548770605396381,,,No anomalies detected. All reported values appear reasonable.,0,0,2620.0,tCO2e,2620.0,71416.2,tCO2e,71416.2,434616.48,GJ,434616.48
+BNII.JK,PT Bank Maybank Indonesia Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2474660.0,tCO2e,2474660.0,2474660.0,tCO2e,2474660.0,,,
+BOLT.JK,PT Garuda Metalindo Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,121666.55,GJ,121666.55
+BRAM.JK,PT Indo Kordsa Tbk,Consumer Discretionary,Consumer Discretionary,True,,SECTOR_ZSCORE_SCOPE_3,L2b_sector_zscore,The reported Scope 3 (value chain) emissions value(s) are statistically unusual compared to other companies in the Consumer Discretionary sector specifically.,1,0,136010.44,tCO2e,136010.44,221392.73,tCO2e,221392.73,,,
+BRNA.JK,PT Berlina Tbk,Consumer Discretionary,Consumer Discretionary,False,0.04761764627859011,,,No anomalies detected. All reported values appear reasonable.,0,0,11496.86367,tCO2e,11496.86367,47706.44552,tCO2e,47706.44552,189969.86,GJ,189969.86
+BRPT.JK,PT Barito Pacific Tbk,Materials,Materials,False,0.037372406464633245,,,No anomalies detected. All reported values appear reasonable.,0,0,1635733.08,tCO2e,1635733.08,425286.54,tCO2e,425286.54,29799652.0,GJ,29799652.0
+BSIM.JK,PT Bank Sinarmas Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BSSR.JK,PT Baramulti Suksessarana Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2.067,tCO2e,2.067,,,,4296720.0,GJ,4296720.0
+BTEK.JK,PT Bumi Teknokultura Unggul Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,88447.0,GJ,88447.0
+BTEL.JK,PT Bakrie Telecom Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BUKK.JK,PT Bukaka Teknik Utama Tbk.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,549.48,tCO2e,549.48,4371.74,tCO2e,4371.74,,,
+BULL.JK,PT Buana Lintas Lautan Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,92731.06,tCO2e,92731.06,,,,1232035.91,GJ,1232035.91
+BUVA.JK,PT Bukit Uluwatu Villa Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BVIC.JK,PT Bank Victoria International Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,7322.31,GJ,7322.31
+BWPT.JK,PT Eagle High Plantations Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,356.422,tCO2e,356.422,,,,89900.0,GJ,89900.0
+BYAN.JK,PT Bayan Resources Tbk.,Energy,Energy & Utilities,False,0.5900803151112755,,,No anomalies detected. All reported values appear reasonable.,0,0,59683.35,tCO2e,59683.35,0.082,tCO2e,0.082,934094.0,GJ,934094.0
+CANI.JK,PT Capitol Nusantara Indonesia Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CEKA.JK,PT Wilmar Cahaya Indonesia Tbk.,Consumer Staples,Consumer Staples,False,0.7900875112278921,,,No anomalies detected. All reported values appear reasonable.,0,0,4.203,tCO2e,4.203,46.01,tCO2e,46.01,336384.55,GJ,336384.55
+CENT.JK,PT Centratama Telekomunikasi Indonesia Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CINT.JK,PT Chitose Internasional Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,11267.17,GJ,11267.17
+CNKO.JK,PT Exploitasi Energi Indonesia Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CNTX.JK,PT Century Textile Industry Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CPIN.JK,PT Charoen Pokphand Indonesia Tbk,Consumer Staples,Consumer Staples,False,0.2778899597162061,,,No anomalies detected. All reported values appear reasonable.,0,0,149713.56,tCO2e,149713.56,603229.2,tCO2e,603229.2,4195055.31,GJ,4195055.31
+CPRO.JK,PT Central Proteina Prima Tbk,Consumer Staples,Consumer Staples,False,0.05956796433458478,,,No anomalies detected. All reported values appear reasonable.,0,0,54492.9,tCO2e,54492.9,79539.00200000001,tCO2e,79539.00200000001,1162337.0,GJ,1162337.0
+CSAP.JK,PT Catur Sentosa Adiprana Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,233600.0,GJ,233600.0
+CTRA.JK,PT Ciputra Development Tbk,Real Estate,Real Estate,False,0.2169670476886253,,,No anomalies detected. All reported values appear reasonable.,0,0,267.0,tCO2e,267.0,510586.0,tCO2e,510586.0,590477.0,GJ,590477.0
+CTTH.JK,PT Citatah Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,10430.5,tCO2e,10430.5,1155.597,tCO2e,1155.597,,,
+DEWA.JK,PT Darma Henwa Tbk,Energy,Energy & Utilities,True,0.781177977040457,EXTREME_ENERGY; IF_GLOBAL_OUTLIER,L1_rules; L3_isolation_forest,"Total energy consumption exceeds 1 billion GJ, which is beyond even the largest utilities. This likely indicates a unit conversion or data extraction error. Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,1,494.016,tCO2e,494.016,4784.24,tCO2e,4784.24,25930621327.0,GJ,25930621327.0
+DGIK.JK,PT Nusa Konstruksi Enjiniring Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+DILD.JK,PT Intiland Development Tbk,Real Estate,Real Estate,False,0.5548864281533579,,,No anomalies detected. All reported values appear reasonable.,0,0,26915.532,tCO2e,26915.532,0.162,tCO2e,0.162,123879.6,GJ,123879.6
+DKFT.JK,PT Central Omega Resources Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+DLTA.JK,PT Delta Djakarta Tbk,Consumer Staples,Consumer Staples,True,,SECTOR_ZSCORE_SCOPE_2,L2b_sector_zscore,The reported Scope 2 (indirect/electricity) emissions value(s) are statistically unusual compared to other companies in the Consumer Staples sector specifically.,1,0,4.76,tCO2e,4.76,6.075,tCO2e,6.075,,,
+DNET.JK,PT Indoritel Makmur Internasional Tbk.,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+DPNS.JK,PT Duta Pertiwi Nusantara Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,794.92,tCO2e,794.92,,,,0.1442303999999999,GJ,0.1442303999999999
+DSSA.JK,PT Dian Swastatika Sentosa Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,524055.1,tCO2e,524055.1,24917.1,tCO2e,24917.1,,,
+DUTI.JK,PT Duta Pertiwi Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,794.92,tCO2e,794.92,,,,0.1442303999999999,GJ,0.1442303999999999
+EMDE.JK,PT Megapolitan Developments Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,16650.78,tCO2e,16650.78,0.0688997988,GJ,0.0688997988
+EMTK.JK,PT Elang Mahkota Teknologi Tbk,Communication Services,Comm & IT,False,0.31610944967883925,,,No anomalies detected. All reported values appear reasonable.,0,0,10.8,tCO2e,10.8,290.9,tCO2e,290.9,1359.08,GJ,1359.08
+EPMT.JK,PT Enseval Putera Megatrading Tbk.,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,6446.0,tCO2e,6446.0,,,,314965.42776,GJ,314965.42776
+ESSA.JK,PT ESSA Industries Indonesia Tbk.,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,399738.94,GJ,399738.94
+FISH.JK,PT FKS Multi Agro Tbk,Consumer Staples,Consumer Staples,True,0.07884283510359069,SECTOR_ZSCORE_WATER_WITHDRAWAL,L2b_sector_zscore,The reported water withdrawal value(s) are statistically unusual compared to other companies in the Consumer Staples sector specifically.,1,0,6895.566,tCO2e,6895.566,6472.674,tCO2e,6472.674,158610.0,GJ,158610.0
+FMII.JK,PT Fortune Mate Indonesia Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+FORU.JK,PT Fortune Indonesia Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+GDYR.JK,PT Goodyear Indonesia Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+GGRM.JK,PT Gudang Garam Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,132042.0,tCO2e,132042.0,,,,,,
+GJTL.JK,PT. Gajah Tunggal Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,6118.199,GJ,6118.199
+GOLD.JK,PT Visi Telekomunikasi Infrastruktur Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,17358.0,tCO2e,17358.0,981687292.0,tCO2e,981687292.0,,,
+GSMF.JK,PT Equity Development Investment Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+GWSA.JK,PT Greenwood Sejahtera Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+HERO.JK,PT DFI Retail Nusantara Tbk,Consumer Discretionary,Consumer Discretionary,True,0.8732358746621665,IF_GLOBAL_OUTLIER,L3_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population.",1,0,289000.0,tCO2e,289000.0,488000.0,tCO2e,488000.0,3.43,GJ,3.43
+HEXA.JK,PT Hexindo Adiperkasa Tbk,Industrials,Industrials,True,0.4773551313056853,EXTREME_SCOPE1,L1_rules,"Scope 1 emissions exceed 50 million tCO2e, which is beyond even the largest single-facility emitters globally. This likely indicates a unit conversion or data extraction error.",1,1,60127512.0,tCO2e,60127512.0,2095.0,tCO2e,2095.0,9310.32,GJ,9310.32
+HITS.JK,PT Humpuss Intermoda Transportasi Tbk.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,14102713.0,tCO2e,14102713.0,,,,,,
+HOME.JK,PT Hotel Mandarine Regency Tbk,Unknown,Unknown,False,0.0386380531841497,,,No anomalies detected. All reported values appear reasonable.,0,0,22974.0,tCO2e,22974.0,168479.0,tCO2e,168479.0,1739819.0,GJ,1739819.0
+HRUM.JK,PT Harum Energy Tbk,Energy,Energy & Utilities,False,0.07000844517701232,,,No anomalies detected. All reported values appear reasonable.,0,0,25019.0,tCO2e,25019.0,3735.0,tCO2e,3735.0,547073.5,GJ,547073.5
+IATA.JK,PT MNC Energy Investments Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,123.4,GJ,123.4
+IBST.JK,PT Inti Bangun Sejahtera Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,2340.7,GJ,2340.7
+ICBP.JK,PT Indofood CBP Sukses Makmur Tbk,Consumer Staples,Consumer Staples,False,0.33555861057826086,,,No anomalies detected. All reported values appear reasonable.,0,0,1509600.0,tCO2e,1509600.0,331200.0,tCO2e,331200.0,17200000.0,GJ,17200000.0
+ICON.JK,PT Island Concepts Indonesia Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+IGAR.JK,PT Champion Pacific Indonesia Tbk,Consumer Discretionary,Consumer Discretionary,False,0.25263378616307175,,,No anomalies detected. All reported values appear reasonable.,0,0,1295.55,tCO2e,1295.55,43.36,tCO2e,43.36,68947.12,GJ,68947.12
+IIKP.JK,PT Inti Agri Resources Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+IMAS.JK,PT Indomobil Sukses Internasional Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+IMJS.JK,PT Indomobil Multi Jasa Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+IMPC.JK,PT Impack Pratama Industri Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,643.0,tCO2e,643.0,36860.0,tCO2e,36860.0,,,
+INAI.JK,PT Indal Aluminium Industry Tbk,Materials,Materials,False,0.4902158112049757,,,No anomalies detected. All reported values appear reasonable.,0,0,181.0,tCO2e,181.0,12444.0,tCO2e,12444.0,96152.39,GJ,96152.39
+INDF.JK,PT Indofood Sukses Makmur Tbk,Consumer Staples,Consumer Staples,False,0.33439142637144825,,,No anomalies detected. All reported values appear reasonable.,0,0,1509500.0,tCO2e,1509500.0,333000.0,tCO2e,333000.0,17200000.0,GJ,17200000.0
+INDR.JK,PT. Indo-Rama Synthetics Tbk,Consumer Discretionary,Consumer Discretionary,False,0.6958092924498244,,,No anomalies detected. All reported values appear reasonable.,0,0,645817.0,tCO2e,645817.0,295163.0,tCO2e,295163.0,10906164.0,GJ,10906164.0
+INDS.JK,PT Indospring Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+INDX.JK,PT Tanah Laut Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+INDY.JK,PT. Indika Energy Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1029538.0,tCO2e,1029538.0,3425.0,tCO2e,3425.0,,,
+INKP.JK,PT Indah Kiat Pulp & Paper Tbk,Materials,Materials,False,0.22606713287462432,,,No anomalies detected. All reported values appear reasonable.,0,0,6296.638,tCO2e,6296.638,190.645,tCO2e,190.645,152534281.0,GJ,152534281.0
+INPP.JK,PT Indonesian Paradise Property Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,73.14291899999999,tCO2e,73.14291899999999,3.000449,tCO2e,3.000449,,,
+INRU.JK,PT Toba Pulp Lestari Tbk,Materials,Materials,False,0.5557349548136432,,,No anomalies detected. All reported values appear reasonable.,0,0,42933.234,tCO2e,42933.234,0.029,tCO2e,0.029,8798091.0,GJ,8798091.0
+INTD.JK,PT Inter Delta Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+INTP.JK,PT Indocement Tunggal Prakarsa Tbk,Materials,Materials,False,0.8818995910656088,,,No anomalies detected. All reported values appear reasonable.,0,0,10.0,tCO2e,10.0,1.19,tCO2e,1.19,45302.258,GJ,45302.258
+ISAT.JK,PT Indosat Ooredoo Hutchison Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ISSP.JK,PT Steel Pipe Industry of Indonesia Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,10682890.36,GJ,10682890.36
+ITMG.JK,PT Indo Tambangraya Megah Tbk,Energy,Energy & Utilities,False,0.2386271670640222,,,No anomalies detected. All reported values appear reasonable.,0,0,1537461.0,tCO2e,1537461.0,2909.0,tCO2e,2909.0,9869372.0,GJ,9869372.0
+JIHD.JK,PT Jakarta International Hotels & Development Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,61.0,tCO2e,61.0,389324.2,tCO2e,389324.2,,,
+JKON.JK,PT Jaya Konstruksi Manggala Pratama Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2044668.38,tCO2e,2044668.38,2935347.39,tCO2e,2935347.39,,,
+JPFA.JK,PT Japfa Comfeed Indonesia Tbk,Consumer Staples,Consumer Staples,False,0.20859767265615048,,,No anomalies detected. All reported values appear reasonable.,0,0,70683.0,tCO2e,70683.0,453837.0,tCO2e,453837.0,4342858.3,GJ,4342858.3
+JRPT.JK,"PT Jaya Real Property, Tbk.",Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+JSMR.JK,PT Jasa Marga (Persero) Tbk,Industrials,Industrials,True,1.0,EXTREME_SCOPE1; IF_GLOBAL_OUTLIER; IF_SECTOR_OUTLIER,L1_rules; L3_isolation_forest; L3b_sector_isolation_forest,"Scope 1 emissions exceed 50 million tCO2e, which is beyond even the largest single-facility emitters globally. This likely indicates a unit conversion or data extraction error. Machine learning analysis (Isolation Forest) flagged this company as an outlier both across the full dataset and within its sector, meaning its combination of emissions, energy, and other metrics is unusual from multiple perspectives. This anomaly was detected by 3 independent methods, giving HIGH confidence that the data warrants manual review.",3,1,756850614.72,tCO2e,756850614.72,8228915.44,tCO2e,8228915.44,10799690.0,GJ,10799690.0
+JSPT.JK,PT Jakarta Setiabudi Internasional Tbk,Real Estate,Real Estate,False,0.2788775079248216,,,No anomalies detected. All reported values appear reasonable.,0,0,61.0,tCO2e,61.0,389324.2,tCO2e,389324.2,1623226.0,GJ,1623226.0
+KAEF.JK,PT Kimia Farma Tbk,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,106892.54,GJ,106892.54
+KBLI.JK,PT KMI Wire and Cable Tbk,Industrials,Industrials,False,0.07764082781766501,,,No anomalies detected. All reported values appear reasonable.,0,0,1965.62,tCO2e,1965.62,64987.2,tCO2e,64987.2,65393.35,GJ,65393.35
+KDSI.JK,PT Kedawung Setia Industrial Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+KIAS.JK,PT Keramika Indonesia Assosiasi Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,604.037,tCO2e,604.037,32.0,tCO2e,32.0,,,
+KOIN.JK,PT Kokoh Inti Arebama Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+KOPI.JK,PT Mitra Energi Persada Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+LINK.JK,PT Link Net Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,13488.0,tCO2e,13488.0,69515.0,GJ,69515.0
+LION.JK,PT Lion Metal Works Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,23.056,GJ,23.056
+LMPI.JK,PT Langgeng Makmur Industri Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+LMSH.JK,PT Lionmesh Prima Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,29.34,tCO2e,29.34,1349.07,tCO2e,1349.07,,,
+LPGI.JK,PT Lippo General Insurance Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,3143.96,GJ,3143.96
+LPIN.JK,PT Multi Prima Sejahtera Tbk,Consumer Discretionary,Consumer Discretionary,True,1.0,IF_GLOBAL_OUTLIER; IF_SECTOR_OUTLIER,L3_isolation_forest; L3b_sector_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier both across the full dataset and within its sector, meaning its combination of emissions, energy, and other metrics is unusual from multiple perspectives. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,0.006481,tCO2e,0.006481,0.929755,tCO2e,0.929755,4.415937,GJ,4.415937
+LPKR.JK,PT Lippo Karawaci Tbk,Health Care,Health Care,False,0.07300568371562322,,,No anomalies detected. All reported values appear reasonable.,0,0,12000.0,tCO2e,12000.0,257000.0,tCO2e,257000.0,1210000.0,GJ,1210000.0
+LPPF.JK,PT Matahari Department Store Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,465.0,tCO2e,465.0,117932.0,tCO2e,117932.0,,,
+MAGP.JK,PT Multi Agro Gemilang Plantation Tbk,Unknown,Unknown,True,0.01331119709113937,SECTOR_ZSCORE_WATER_CONSUMPTION,L2b_sector_zscore,The reported water consumption value(s) are statistically unusual compared to other companies in the Unknown sector specifically.,1,0,6895.566,tCO2e,6895.566,6472.674,tCO2e,6472.674,158610.0,GJ,158610.0
+MAIN.JK,PT Malindo Feedmill Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MAPI.JK,PT. Mitra Adiperkasa Tbk,Consumer Discretionary,Consumer Discretionary,False,0.39377335483748177,,,No anomalies detected. All reported values appear reasonable.,0,0,0.0,tCO2e,0.0,191275.34,tCO2e,191275.34,791484.156,GJ,791484.156
+MAYA.JK,PT Bank Mayapada Internasional Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MBAP.JK,PT Mitrabara Adiperdana Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,655396.58,GJ,655396.58
+MBSS.JK,PT Mitrabahtera Segara Sejati Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,56245.9,tCO2e,56245.9,156.3,tCO2e,156.3,,,
+MCOR.JK,PT Bank China Construction Bank Indonesia Tbk,Financials,Financials,False,0.37372673205377793,,,No anomalies detected. All reported values appear reasonable.,0,0,1682812.2,tCO2e,1682812.2,1682812.2,tCO2e,1682812.2,9606898.905,GJ,9606898.905
+MDKA.JK,PT Merdeka Copper Gold Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,8705659.0,GJ,8705659.0
+MEDC.JK,PT Medco Energi Internasional Tbk,Energy,Energy & Utilities,False,0.3299679256829444,,,No anomalies detected. All reported values appear reasonable.,0,0,4442480.0,tCO2e,4442480.0,24390.27,tCO2e,24390.27,37026219.64,GJ,37026219.64
+MERK.JK,PT Merck Tbk,Health Care,Health Care,False,0.11645509897667428,,,No anomalies detected. All reported values appear reasonable.,0,0,1425000.0,tCO2e,1425000.0,242000.0,tCO2e,242000.0,8755200.0,GJ,8755200.0
+META.JK,PT Nusantara Infrastructure Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,869.87,tCO2e,869.87,14820.36,tCO2e,14820.36,,,
+MFMI.JK,PT Multifiling Mitra Indonesia Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MGNA.JK,PT Magna Investama Mandiri Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MICE.JK,PT Multi Indocitra Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MIRA.JK,PT Mitra International Resources Tbk,Energy,Energy & Utilities,True,,SECTOR_ZSCORE_FUEL_CONSUMPTION,L2b_sector_zscore,The reported fuel consumption value(s) are statistically unusual compared to other companies in the Energy sector specifically.,1,0,,,,,,,457.467,GJ,457.467
+MITI.JK,PT Mitra Investindo Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,457467.0,GJ,457467.0
+MLIA.JK,PT Mulia Industrindo Tbk,Industrials,Industrials,False,0.4531477676250223,,,No anomalies detected. All reported values appear reasonable.,0,0,383.007,tCO2e,383.007,170.011,tCO2e,170.011,7507042.0,GJ,7507042.0
+MLPL.JK,PT Multipolar Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MLPT.JK,PT Multipolar Technology Tbk,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MMLP.JK,PT Mega Manunggal Property Tbk,Real Estate,Real Estate,False,0.18093476642770856,,,No anomalies detected. All reported values appear reasonable.,0,0,30.3,tCO2e,30.3,10796.3,tCO2e,10796.3,41885.9,GJ,41885.9
+MPPA.JK,PT Matahari Putra Prima Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,115394.0,tCO2e,115394.0,477491.0,GJ,477491.0
+MREI.JK,PT Maskapai Reasuransi Indonesia Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MSKY.JK,PT MNC Sky Vision Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,27189.07,GJ,27189.07
+MTLA.JK,PT Metropolitan Land Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1044.77173,tCO2e,1044.77173,118881.48981,tCO2e,118881.48981,,,
+MTSM.JK,PT Metro Realty Tbk,Real Estate,Real Estate,False,0.2823589114807994,,,No anomalies detected. All reported values appear reasonable.,0,0,4.11,tCO2e,4.11,1423.37,tCO2e,1423.37,1716910.0,GJ,1716910.0
+MYOH.JK,PT Samindo Resources Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,379.0,tCO2e,379.0,,,,,,
+NIKL.JK,PT Pelat Timah Nusantara Tbk,Industrials,Industrials,True,0.06501768424327958,SECTOR_ZSCORE_WATER_WITHDRAWAL,L2b_sector_zscore,The reported water withdrawal value(s) are statistically unusual compared to other companies in the Industrials sector specifically.,1,0,23253.0,tCO2e,23253.0,130404.0,tCO2e,130404.0,1799841.0,GJ,1799841.0
+NISP.JK,PT Bank OCBC NISP Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,160.0,tCO2e,160.0,59941.0,tCO2e,59941.0,,,
+OMRE.JK,PT Indonesia Prima Property Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PALM.JK,PT Provident Investasi Bersama Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PANR.JK,PT Panorama Sentrawisata Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PANS.JK,PT Panin Sekuritas Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PBRX.JK,PT Pan Brothers Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,1.278878004,GJ,1.278878004
+PDES.JK,PT Destinasi Tirta Nusantara Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PLAS.JK,PT Polaris Investama Tbk,Unknown,Unknown,False,0.04781543987465964,,,No anomalies detected. All reported values appear reasonable.,0,0,56558.0,tCO2e,56558.0,77048.0,tCO2e,77048.0,1700000.0,GJ,1700000.0
+PLIN.JK,PT Plaza Indonesia Realty Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,9622.0,tCO2e,9622.0,53.491002,tCO2e,53.491002,,,
+PNIN.JK,PT Paninvest Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PSAB.JK,PT J Resources Asia Pasifik Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PSDN.JK,PT Prasidha Aneka Niaga Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,3717.71,tCO2e,3717.71,10578.21,tCO2e,10578.21,,,
+PSKT.JK,PT Red Planet Indonesia Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,14028.85,GJ,14028.85
+PTBA.JK,PT Bukit Asam Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PTPP.JK,PT PP (Persero) Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,73.14291899999999,tCO2e,73.14291899999999,3.000449,tCO2e,3.000449,,,
+PTRO.JK,PT Petrosea Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,331922.37,tCO2e,331922.37,2476.4,tCO2e,2476.4,,,
+PWON.JK,PT Pakuwon Jati Tbk,Real Estate,Real Estate,True,0.3448581278849838,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,4181.0,tCO2e,4181.0,206323.0,tCO2e,206323.0,1614.667,GJ,1614.667
+PYFA.JK,PT Pyridam Farma Tbk,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,7301.9,tCO2e,7301.9,,,,17498.58,GJ,17498.58
+RAJA.JK,PT Rukun Raharja Tbk,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,99586360.0,GJ,99586360.0
+RALS.JK,PT Ramayana Lestari Sentosa Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+RANC.JK,PT Supra Boga Lestari Tbk,Consumer Staples,Consumer Staples,False,0.5502824643357667,,,No anomalies detected. All reported values appear reasonable.,0,0,0.0,tCO2e,0.0,36520.57,tCO2e,36520.57,151119.62,GJ,151119.62
+RIMO.JK,PT Rimo International Lestari Tbk,Unknown,Unknown,False,0.3072063664253436,,,No anomalies detected. All reported values appear reasonable.,0,0,2785.926,tCO2e,2785.926,84.0,tCO2e,84.0,42619320.0,GJ,42619320.0
+RODA.JK,PT Pikko Land Development Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ROTI.JK,PT Nippon Indosari Corpindo Tbk,Consumer Staples,Consumer Staples,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,15114.0,tCO2e,15114.0,42268.0,tCO2e,42268.0,479130.0,GJ,479130.0
+SAFE.JK,PT Steady Safe Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SAME.JK,PT Sarana Meditama Metropolitan Tbk,Health Care,Health Care,False,0.24273023073612776,,,No anomalies detected. All reported values appear reasonable.,0,0,365.64,tCO2e,365.64,22.2,tCO2e,22.2,80321.548,GJ,80321.548
+SCCO.JK,PT Supreme Cable Manufacturing & Commerce Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SDMU.JK,PT Sidomulyo Selaras Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,102.26,tCO2e,102.26,1.01,tCO2e,1.01,,,
+SDRA.JK,PT Bank Woori Saudara Indonesia 1906 Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SIDO.JK,PT Industri Jamu dan Farmasi Sido Muncul Tbk,Health Care,Health Care,True,0.09314243339916695,WASTE_INCONSISTENCY; SECTOR_ZSCORE_WATER_WITHDRAWAL,L1_rules; L2b_sector_zscore,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data. The reported water withdrawal value(s) are statistically unusual compared to other companies in the Health Care sector specifically. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,1,10544.24,tCO2e,10544.24,1461.47,tCO2e,1461.47,215632.0,GJ,215632.0
+SIMA.JK,PT Siwani Makmur Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SIPD.JK,PT Sreeya Sewu Indonesia Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,47102.0,tCO2e,47102.0,,,
+SKBM.JK,PT Sekar Bumi Tbk,Consumer Staples,Consumer Staples,False,0.2893917687408055,,,No anomalies detected. All reported values appear reasonable.,0,0,3749791.4,tCO2e,3749791.4,43674.07,tCO2e,43674.07,116240.16843,GJ,116240.16843
+SKLT.JK,PT Sekar Laut Tbk,Consumer Staples,Consumer Staples,True,1.0,SECTOR_ZSCORE_TOTAL_ENERGY; IF_SECTOR_OUTLIER,L2b_sector_zscore; L3b_sector_isolation_forest,"The reported total energy consumption value(s) are statistically unusual compared to other companies in the Consumer Staples sector specifically. Machine learning analysis (Isolation Forest) flagged this company as an outlier within the Consumer Staples sector, meaning its reported metrics are unusual compared to sector peers. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,8964.0,tCO2e,8964.0,5046.0,tCO2e,5046.0,0.003148528,GJ,0.003148528
+SKYB.JK,PT Northcliff Citranusa Indonesia Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SMBR.JK,PT Semen Baturaja (Persero) Tbk,Materials,Materials,False,0.14842584125806002,,,No anomalies detected. All reported values appear reasonable.,0,0,1163644.0,tCO2e,1163644.0,147915.0,tCO2e,147915.0,5042307.0,GJ,5042307.0
+SMDM.JK,PT Suryamas Dutamakmur Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SMGR.JK,PT Semen Indonesia (Persero) Tbk,Materials,Materials,True,1.0,IF_SECTOR_OUTLIER,L3b_sector_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier within the Materials sector, meaning its reported metrics are unusual compared to sector peers.",1,0,20759169.0,tCO2e,20759169.0,2233260.0,tCO2e,2233260.0,94227782.0,GJ,94227782.0
+SMMT.JK,PT Golden Eagle Energy Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,195.851,GJ,195.851
+SMRA.JK,PT Summarecon Agung Tbk,Real Estate,Real Estate,False,0.01902077324206064,,,No anomalies detected. All reported values appear reasonable.,0,0,6496.35,tCO2e,6496.35,44804.48,tCO2e,44804.48,227245.33,GJ,227245.33
+SMSM.JK,PT Selamat Sempurna Tbk,Consumer Discretionary,Consumer Discretionary,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,81.0,tCO2e,81.0,8910.0,tCO2e,8910.0,100889.0,GJ,100889.0
+SOCI.JK,PT Soechi Lines Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,215000.0,tCO2e,215000.0,375.0,tCO2e,375.0,,,
+SPMA.JK,PT Suparma Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,401.11,tCO2e,401.11,,,,793246.0,GJ,793246.0
+SQMI.JK,PT Wilton Makmur indonesia Tbk.,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SRAJ.JK,PT Sejahteraraya Anugrahjaya Tbk,Health Care,Health Care,False,0.19969293836150281,,,No anomalies detected. All reported values appear reasonable.,0,0,244.7,tCO2e,244.7,36.163,tCO2e,36.163,128390.0,GJ,128390.0
+SRIL.JK,PT Sri Rejeki Isman Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2181.13,tCO2e,2181.13,,,,807822.0,GJ,807822.0
+SRTG.JK,PT Saratoga Investama Sedaya Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SSIA.JK,PT Surya Semesta Internusa Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,5649.0,tCO2e,5649.0,150.817,GJ,150.817
+SSMS.JK,PT Sawit Sumbermas Sarana Tbk.,Consumer Staples,Consumer Staples,True,,SECTOR_ZSCORE_WASTE_RECYCLED,L2b_sector_zscore,The reported waste recycled value(s) are statistically unusual compared to other companies in the Consumer Staples sector specifically.,1,0,271579.4,tCO2e,271579.4,,,,198565.0,GJ,198565.0
+SSTM.JK,PT Sunson Textile Manufacturer Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SUGI.JK,Sugih Energy Tbk.,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SULI.JK,PT SLJ Global Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SUPR.JK,PT Solusi Tunas Pratama Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,46.3,tCO2e,46.3,279.3,tCO2e,279.3,,,
+TALF.JK,PT Tunas Alfin Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TAXI.JK,PT Express Transindo Utama Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TBIG.JK,PT Tower Bersama Infrastructure Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,31492.0,GJ,31492.0
+TCID.JK,PT. Mandom Indonesia Tbk,Consumer Staples,Consumer Staples,True,,SECTOR_ZSCORE_WATER_WITHDRAWAL,L2b_sector_zscore,The reported water withdrawal value(s) are statistically unusual compared to other companies in the Consumer Staples sector specifically.,1,0,19015.0,tCO2e,19015.0,19015.0,tCO2e,19015.0,,,
+TELE.JK,PT Omni Inovasi Indonesia Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TINS.JK,PT TIMAH Tbk,Materials,Materials,False,0.5552724079956499,,,No anomalies detected. All reported values appear reasonable.,0,0,23253.0,tCO2e,23253.0,130404.0,tCO2e,130404.0,1799.841,GJ,1799.841
+TIRA.JK,PT Tira Austenite Tbk,Industrials,Industrials,False,0.12830791872438752,,,No anomalies detected. All reported values appear reasonable.,0,0,142.0,tCO2e,142.0,399.0,tCO2e,399.0,3897.0,GJ,3897.0
+TKIM.JK,PT Pabrik Kertas Tjiwi Kimia Tbk,Materials,Materials,False,0.0,,,No anomalies detected. All reported values appear reasonable.,0,0,2011.186,tCO2e,2011.186,209.291,tCO2e,209.291,22561732.0,GJ,22561732.0
+TLKM.JK,Perusahaan Perseroan (Persero) PT Telekomunikasi Indonesia Tbk,Communication Services,Comm & IT,False,0.36668803467520117,,,No anomalies detected. All reported values appear reasonable.,0,0,36825.7,tCO2e,36825.7,1815853.6,tCO2e,1815853.6,8010525.0,GJ,8010525.0
+TMAS.JK,PT Temas Tbk.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TOBA.JK,PT TBS Energi Utama Tbk,Energy,Energy & Utilities,False,0.23111812898045514,,,No anomalies detected. All reported values appear reasonable.,0,0,1375713.0,tCO2e,1375713.0,10037.0,tCO2e,10037.0,187974.0,GJ,187974.0
+TOTL.JK,PT Total Bangun Persada Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TOTO.JK,PT Surya Toto Indonesia Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,19.88,tCO2e,19.88,6.59,tCO2e,6.59,,,
+TOWR.JK,PT Sarana Menara Nusantara Tbk.,Real Estate,Real Estate,False,0.24211961353990674,,,No anomalies detected. All reported values appear reasonable.,0,0,78.7,tCO2e,78.7,275.9,tCO2e,275.9,2199.04,GJ,2199.04
+TPMA.JK,PT Trans Power Marine Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TRIL.JK,Triwira Insanlestari Tbk.,Unknown,Unknown,True,,SECTOR_ZSCORE_WATER_CONSUMPTION,L2b_sector_zscore,The reported water consumption value(s) are statistically unusual compared to other companies in the Unknown sector specifically.,1,0,,,,,,,,,
+TRIM.JK,PT Trimegah Sekuritas Indonesia Tbk,Financials,Financials,False,0.4775486608914292,,,No anomalies detected. All reported values appear reasonable.,0,0,2758457.0,tCO2e,2758457.0,585.0,tCO2e,585.0,25173696.0,GJ,25173696.0
+TRIO.JK,Trikomsel Oke Tbk.,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TRIS.JK,PT Trisula International Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,324751.23,GJ,324751.23
+ULTJ.JK,PT Ultrajaya Milk Industry & Trading Company Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,38.256,tCO2e,38.256,,,,,,
+UNIT.JK,PT Cahaya Permata Sejahtera Tbk,Unknown,Unknown,False,0.21838017140311639,,,No anomalies detected. All reported values appear reasonable.,0,0,869.87,tCO2e,869.87,14820.36,tCO2e,14820.36,2732.04,GJ,2732.04
+UNSP.JK,PT Bakrie Sumatera Plantations Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+UNTR.JK,PT United Tractors Tbk,Materials,Materials,False,0.07850210459798246,,,No anomalies detected. All reported values appear reasonable.,0,0,2940923.57,tCO2e,2940923.57,278614.91,tCO2e,278614.91,50981973.09,GJ,50981973.09
+VRNA.JK,PT Mizuho Leasing Indonesia Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+WAPO.JK,PT Wahana Pronatural Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+IDPR.JK,PT Indonesia Pondasi Raya Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,720.86,tCO2e,720.86,263.98,tCO2e,263.98,,,
+KINO.JK,PT Kino Indonesia Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,14821.69,tCO2e,14821.69,26994.0,tCO2e,26994.0,,,
+MARI.JK,PT Mahaka Radio Integra Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,3348.0,GJ,3348.0
+MTRA.JK,PT Mitra Pemuda Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+OASA.JK,PT Maharaksa Biru Energi Tbk,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,318.45,tCO2e,318.45,,,
+POWR.JK,PT Cikarang Listrindo Tbk,Utilities,Energy & Utilities,False,0.45340146345077026,,,No anomalies detected. All reported values appear reasonable.,0,0,2785926.0,tCO2e,2785926.0,84.0,tCO2e,84.0,42619320.0,GJ,42619320.0
+WSBP.JK,PT Waskita Beton Precast Tbk,Materials,Materials,False,0.6360354437373996,,,No anomalies detected. All reported values appear reasonable.,0,0,15865.412,tCO2e,15865.412,3557.2000000000003,tCO2e,3557.2000000000003,238.318,GJ,238.318
+PRDA.JK,PT Prodia Widyahusada Tbk,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,11175.02,tCO2e,11175.02,8943.7,GJ,8943.7
+BRIS.JK,PT Bank Syariah Indonesia Tbk,Financials,Financials,False,0.22778326335661836,,,No anomalies detected. All reported values appear reasonable.,0,0,261.5,tCO2e,261.5,4124.15,tCO2e,4124.15,22076.1,GJ,22076.1
+PORT.JK,PT Nusantara Pelabuhan Handal Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CARS.JK,PT Industri dan Perdagangan Bintraco Dharma Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,4.691,tCO2e,4.691,,,
+MINA.JK,PT Sanurhasta Mitra Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,14.67,tCO2e,14.67,206.13,tCO2e,206.13,,,
+CSIS.JK,PT Cahayasakti Investindo Sukses Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,255.0,GJ,255.0
+FIRE.JK,PT Alfa Energi Investama Tbk,Energy,Energy & Utilities,False,0.022748846730071826,,,No anomalies detected. All reported values appear reasonable.,0,0,7143.52,tCO2e,7143.52,30130.2,tCO2e,30130.2,95504.65,GJ,95504.65
+KMTR.JK,PT Kirana Megatara Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,63229.245,tCO2e,63229.245,,,,,,
+ARMY.JK,PT Armidian Karyatama Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,61750.0,tCO2e,61750.0,,,,1504842.0,GJ,1504842.0
+MAPB.JK,PT Map Boga Adiperkasa Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,66812.18,tCO2e,66812.18,276464.196,GJ,276464.196
+HRTA.JK,PT Hartadinata Abadi Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,4.801,tCO2e,4.801,54317.0,GJ,54317.0
+MABA.JK,PT Marga Abhinaya Abadi Tbk,Unknown,Unknown,True,0.8122078254045857,EXTREME_SCOPE1; IF_GLOBAL_OUTLIER,L1_rules; L3_isolation_forest,"Scope 1 emissions exceed 50 million tCO2e, which is beyond even the largest single-facility emitters globally. This likely indicates a unit conversion or data extraction error. Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,1,756850614.72,tCO2e,756850614.72,8228915.44,tCO2e,8228915.44,10799690.0,GJ,10799690.0
+NASA.JK,PT Andalan Perkasa Abadi Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,157.1,GJ,157.1
+BELL.JK,PT Trisula Textile Industries Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,29549.0,tCO2e,29549.0,,,,249525.0,GJ,249525.0
+MTWI.JK,PT Malacca Trust Wuwungan Insurance Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ZINC.JK,PT Kapuas Prima Coal Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+MCAS.JK,PT M Cash Integrasi Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PPRE.JK,PT PP Presisi Tbk,Industrials,Industrials,False,0.16529389717287546,,,No anomalies detected. All reported values appear reasonable.,0,0,2183772.0,tCO2e,2183772.0,55981.0,tCO2e,55981.0,623537.0,GJ,623537.0
+PSSI.JK,PT IMC Pelita Logistik Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,714.11,tCO2e,714.11,,,
+PBID.JK,PT Panca Budi Idaman Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1.999,tCO2e,1.999,53.877,tCO2e,53.877,,,
+IPCM.JK,PT Jasa Armada Indonesia Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,45115.121,tCO2e,45115.121,40.169,tCO2e,40.169,,,
+BOSS.JK,PT. Borneo Olah Sarana Sukses Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,2.067,tCO2e,2.067,,,,4296720.0,GJ,4296720.0
+GHON.JK,PT Gihon Telekomunikasi Indonesia Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+DFAM.JK,PT Dafam Property Indonesia Tbk,Real Estate,Real Estate,False,0.22983744828225638,,,No anomalies detected. All reported values appear reasonable.,0,0,36.49,tCO2e,36.49,1837.61,tCO2e,1837.61,8123.86,GJ,8123.86
+NICK.JK,PT Charnic Capital Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SPTO.JK,PT Surya Pertiwi Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PRIM.JK,PT Royal Prima Tbk,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,1825.0,tCO2e,1825.0,,,,15991.0,GJ,15991.0
+HEAL.JK,PT Medikaloka Hermina Tbk,Health Care,Health Care,True,1.0,IF_GLOBAL_OUTLIER,L3_isolation_forest,"Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population.",1,0,2.9170000000000003,tCO2e,2.9170000000000003,34457659.172,tCO2e,34457659.172,221.9270616,GJ,221.9270616
+TUGU.JK,PT Asuransi Tugu Pratama Indonesia Tbk,Financials,Financials,True,1.0,SECTOR_ZSCORE_SCOPE_2; IF_GLOBAL_OUTLIER; IF_SECTOR_OUTLIER,L2b_sector_zscore; L3_isolation_forest; L3b_sector_isolation_forest,"The reported Scope 2 (indirect/electricity) emissions value(s) are statistically unusual compared to other companies in the Financials sector specifically. Machine learning analysis (Isolation Forest) flagged this company as an outlier both across the full dataset and within its sector, meaning its combination of emissions, energy, and other metrics is unusual from multiple perspectives. This anomaly was detected by 3 independent methods, giving HIGH confidence that the data warrants manual review.",3,0,0.060794,tCO2e,0.060794,0.2438789999999999,tCO2e,0.2438789999999999,1.81,GJ,1.81
+MAPA.JK,PT Map Aktif Adiperkasa Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,43500.5,tCO2e,43500.5,,,
+TCPI.JK,PT Transcoal Pacific Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,6282.73,tCO2e,6282.73,,,,,,
+IPCC.JK,PT Indonesia Kendaraan Terminal Tbk,Industrials,Industrials,False,0.7167649830037364,,,No anomalies detected. All reported values appear reasonable.,0,0,82.41,tCO2e,82.41,1624.3,tCO2e,1624.3,8.021,GJ,8.021
+RISE.JK,PT Jaya Sukses Makmur Sentosa Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,59269.0,GJ,59269.0
+POLL.JK,PT Pollux Properties Indonesia Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+NFCX.JK,PT NFC Indonesia Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+NUSA.JK,PT Sinergi Megah Internusa Tbk,Unknown,Unknown,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,5649.0,tCO2e,5649.0,,,,150817.0,GJ,150817.0
+FILM.JK,PT.MD Entertainment Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ANDI.JK,"PT Andira Agro, Tbk",Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,14884.0,GJ,14884.0
+MOLI.JK,PT Madusari Murni Indah Tbk,Materials,Materials,False,0.2971444904691225,,,No anomalies detected. All reported values appear reasonable.,0,0,329.316,tCO2e,329.316,11.847,tCO2e,11.847,2327000.0,GJ,2327000.0
+DIGI.JK,PT Arkadia Digital Media Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CITY.JK,PT Natura City Developments Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SAPX.JK,PT Satria Antaran Prima Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+GOOD.JK,PT Garudafood Putra Putri Jaya Tbk,Consumer Staples,Consumer Staples,False,0.20370664094967927,,,No anomalies detected. All reported values appear reasonable.,0,0,2940832.07,tCO2e,2940832.07,36821.46,tCO2e,36821.46,1051203.76,GJ,1051203.76
+YELO.JK,PT Yelooo Integra Datanet Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CAKK.JK,PT Cahayaputra Asa Keramik Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+LUCK.JK,PT Sentral Mitra Informatika Tbk,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+URBN.JK,PT Urban Jakarta Propertindo Tbk.,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,59.97,tCO2e,59.97,3.78,tCO2e,3.78,,,
+ZONE.JK,PT Mega Perintis Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+PEHA.JK,PT Phapros Tbk,Health Care,Health Care,True,0.742907154106651,SECTOR_ZSCORE_SCOPE_1; IF_GLOBAL_OUTLIER,L2b_sector_zscore; L3_isolation_forest,"The reported Scope 1 (direct) greenhouse gas emissions value(s) are statistically unusual compared to other companies in the Health Care sector specifically. Machine learning analysis (Isolation Forest) flagged this company as an outlier across the full dataset, meaning the combination of its reported metrics is unusual relative to the broader population. This anomaly was detected by 2 independent methods, giving HIGH confidence that the data warrants manual review.",2,0,0.5352,tCO2e,0.5352,9.98,tCO2e,9.98,89098988.14,GJ,89098988.14
+CLAY.JK,PT Citra Putra Realty Tbk,Consumer Discretionary,Consumer Discretionary,False,0.16260215530985722,,,No anomalies detected. All reported values appear reasonable.,0,0,267.0,tCO2e,267.0,510586.0,tCO2e,510586.0,590477.0,GJ,590477.0
+NATO.JK,PT Surya Permata Andalan Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+COCO.JK,PT Wahana Interfood Nusantara Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,7508.0,tCO2e,7508.0,,,,462.8,GJ,462.8
+MTPS.JK,PT Meta Epsi Tbk.,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,1.299,GJ,1.299
+FITT.JK,PT Hotel Fitra International Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CCSI.JK,PT Communication Cable Systems Indonesia Tbk,Information Technology,Information Technology,False,0.008696206516017102,,,No anomalies detected. All reported values appear reasonable.,0,0,14405.0,tCO2e,14405.0,34716.0,tCO2e,34716.0,607471.2000000001,GJ,607471.2000000001
+SFAN.JK,PT Surya Fajar Capital Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+KEEN.JK,PT Kencana Energi Lestari Tbk,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TRIN.JK,PT Perintis Triniti Properti Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,392.92,GJ,392.92
+DMND.JK,PT Diamond Food Indonesia Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,33757.71,tCO2e,33757.71,,,
+PMMP.JK,PT Panca Mitra Multiperdana Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BANK.JK,PT Bank Aladin Syariah Tbk,Financials,Financials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,1233.76,GJ,1233.76
+WMUU.JK,PT Widodo Makmur Unggas Tbk,Consumer Staples,Consumer Staples,True,,SECTOR_ZSCORE_WATER_WITHDRAWAL,L2b_sector_zscore,The reported water withdrawal value(s) are statistically unusual compared to other companies in the Consumer Staples sector specifically.,1,0,,,,,,,,,
+EDGE.JK,PT Indointernet Tbk.,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,129.9,tCO2e,129.9,15318.5,tCO2e,15318.5,,,
+BEBS.JK,PT Berkah Beton Sadaya Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SNLK.JK,PT Sunter Lakeside Hotel Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+FIMP.JK,PT Fimperkasa Utama Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TAPG.JK,PT Triputra Agro Persada Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,227551.207,GJ,227551.207
+ADCP.JK,PT Adhi Commuter Properti Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+HOPE.JK,PT Harapan Duta Pertiwi Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,794.92,tCO2e,794.92,,,,0.1442303999999999,GJ,0.1442303999999999
+MGLV.JK,PT Panca Anugrah Wisesa Tbk,Consumer Discretionary,Consumer Discretionary,False,0.33874931688262677,,,No anomalies detected. All reported values appear reasonable.,0,0,1.74181,tCO2e,1.74181,345.48566999999997,tCO2e,345.48566999999997,1356.52,GJ,1356.52
+TRUE.JK,PT Triniti Dinamik Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,392.92,GJ,392.92
+LABA.JK,PT Green Power Group Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+ARCI.JK,PT Archi Indonesia Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,61750.0,tCO2e,61750.0,,,,1504842.0,GJ,1504842.0
+BMHS.JK,PT Bundamedik Tbk,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+FLMC.JK,PT Falmaco Nonwoven Industri Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,5139.0,GJ,5139.0
+NICL.JK,PT PAM Mineral Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+UVCR.JK,PT Trimegah Karya Pratama Tbk,Information Technology,Information Technology,True,0.2987814786379057,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,2758457.0,tCO2e,2758457.0,585.0,tCO2e,585.0,25173696.0,GJ,25173696.0
+BUKA.JK,PT Bukalapak.com Tbk.,Consumer Discretionary,Consumer Discretionary,False,0.19666645845568842,,,No anomalies detected. All reported values appear reasonable.,0,0,32.02,tCO2e,32.02,497.05,tCO2e,497.05,2874.46,GJ,2874.46
+HAIS.JK,PT Hasnur Internasional Shipping Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,291242.0,GJ,291242.0
+OILS.JK,PT Indo Oil Perkasa Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+GPSO.JK,PT Geoprima Solusi Tbk,Information Technology,Information Technology,False,0.44073109912713393,,,No anomalies detected. All reported values appear reasonable.,0,0,15.4,tCO2e,15.4,45.94,tCO2e,45.94,179.0,GJ,179.0
+RSGK.JK,PT Kedoya Adyaraya Tbk,Health Care,Health Care,True,,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,6030.45,tCO2e,6030.45,,,,20989.506,GJ,20989.506
+IDEA.JK,PT Idea Indonesia Akademi Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CMRY.JK,PT Cisarua Mountain Dairy Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,6745.0,tCO2e,6745.0,,,,,,
+RMKE.JK,PT RMK Energy Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+OBMD.JK,PT OBM Drilchem Tbk,Materials,Materials,False,0.9545133473752312,,,No anomalies detected. All reported values appear reasonable.,0,0,12.03088,tCO2e,12.03088,30.83601,tCO2e,30.83601,181.29,GJ,181.29
+NASI.JK,PT Wahana Inti Makmur Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BSML.JK,PT Bintang Samudera Mandiri Lines Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,120.3,GJ,120.3
+ADMR.JK,PT Alamtri Minerals Indonesia Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+NETV.JK,PT MDTV Media Technologies Tbk,Communication Services,Comm & IT,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BAUT.JK,PT Mitra Angkasa Sejahtera Tbk,Industrials,Industrials,False,0.4572638337896997,,,No anomalies detected. All reported values appear reasonable.,0,0,103.0,tCO2e,103.0,51.0,tCO2e,51.0,1646.88,GJ,1646.88
+ENAK.JK,PT Champ Resto Indonesia Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+STAA.JK,PT Sumber Tani Agung Resources Tbk,Consumer Staples,Consumer Staples,True,,WASTE_INCONSISTENCY,L1_rules,"The sum of waste disposed and waste recycled exceeds total waste generated, indicating an internal inconsistency in the reported data.",1,1,,,,,,,,,
+WIRG.JK,PT WIR ASIA Tbk,Information Technology,Information Technology,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+GOTO.JK,PT GoTo Gojek Tokopedia Tbk,Information Technology,Information Technology,False,0.032143153776728384,,,No anomalies detected. All reported values appear reasonable.,0,0,1508.02,tCO2e,1508.02,9946.71,tCO2e,9946.71,70924.81,GJ,70924.81
+MTMH.JK,PT Murni Sadar Tbk,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+WINR.JK,PT Winner Nusantara Jaya Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SWID.JK,PT Saraswanti Indoland Development Tbk,Real Estate,Real Estate,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+TRGU.JK,PT Cerestar Indonesia Tbk,Consumer Staples,Consumer Staples,False,0.1647467509529731,,,No anomalies detected. All reported values appear reasonable.,0,0,449.0,tCO2e,449.0,25113.0,tCO2e,25113.0,111511.0,GJ,111511.0
+ARKO.JK,PT. Arkora Hydro Tbk,Utilities,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+AXIO.JK,PT Tera Data Indonusa Tbk,Information Technology,Information Technology,False,0.4059111078325808,,,No anomalies detected. All reported values appear reasonable.,0,0,28.0,tCO2e,28.0,10148.0,tCO2e,10148.0,126.0738792,GJ,126.0738792
+KRYA.JK,PT Bangun Karya Perkasa Jaya Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+JARR.JK,PT Jhonlin Agro Raya Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,163161.9,GJ,163161.9
+KKES.JK,PT Kusuma Kemindo Sentosa Tbk,Materials,Materials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+EURO.JK,PT Estee Gold Feet Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+BUAH.JK,PT Segar Kumala Indonesia Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CRAB.JK,PT Toba Surimi Industries Tbk,Consumer Staples,Consumer Staples,True,,SECTOR_ZSCORE_FUEL_CONSUMPTION,L2b_sector_zscore,The reported fuel consumption value(s) are statistically unusual compared to other companies in the Consumer Staples sector specifically.,1,0,,,,,,,,,
+MEDS.JK,PT Hetzer Medical Indonesia Tbk,Health Care,Health Care,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,510023.357,GJ,510023.357
+CBUT.JK,PT Citra Borneo Utama Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,6398.56,tCO2e,6398.56,,,,181860.37,GJ,181860.37
+BELI.JK,PT Global Digital Niaga Tbk,Consumer Discretionary,Consumer Discretionary,False,0.044958208202264704,,,No anomalies detected. All reported values appear reasonable.,0,0,2311.0,tCO2e,2311.0,5556.0,tCO2e,5556.0,48854.0,GJ,48854.0
+MKTR.JK,PT Menthobi Karyatama Raya Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+KDTN.JK,PT Puri Sentul Permai Tbk,Consumer Discretionary,Consumer Discretionary,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SOUL.JK,PT Mitra Tirta Buwana Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,457.467,GJ,457.467
+BEER.JK,PT Jobubu Jarum Minahasa Tbk,Consumer Staples,Consumer Staples,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+SUNI.JK,PT Sunindo Pratama Tbk,Energy,Energy & Utilities,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,
+CBRE.JK,PT Cakra Buana Resources Energi Tbk,Industrials,Industrials,False,,,,No anomalies detected. All reported values appear reasonable.,0,0,,,,,,,,,

@@ -29,10 +29,10 @@ export type ChatResponse = {
 
 type CsvRow = Record<string, string>;
 
-const ANOMALY_FILE = "anomaly_detection_report_with_tickers.csv";
 const EXTRACTION_COMPANY_COL = "company_name";
 const EXTRACTION_YEAR_COL = "report_year";
-const ANOMALY_TICKER_COL = "sgx_ticker";
+const ANOMALY_TICKER_COL = "ticker_symbol";
+const ANOMALY_DIRECTORY = "anomaly_detection";
 
 const ANOMALY_HINTS = [
   "anomaly",
@@ -244,11 +244,38 @@ function normalizeCountryForFileName(country: string) {
   return country.trim().toLowerCase().replace(/\s+/g, "_");
 }
 
+function normalizeCountryForAnomalyFile(country: string) {
+  const normalized = country.trim().toLowerCase();
+
+  switch (normalized) {
+    case "singapore":
+      return "SG";
+    case "indonesia":
+      return "ID";
+    case "malaysia":
+      return "MY";
+    default:
+      throw new Error(
+        `No anomaly file mapping exists for country="${country}". Expected Singapore, Indonesia, or Malaysia.`,
+      );
+  }
+}
+
 async function loadExtractionRows(country: string, year: number): Promise<{
   rows: CsvRow[];
   sourceFile: string;
 }> {
   const sourceFile = `${normalizeCountryForFileName(country)}_${year}.csv`;
+  const rows = await loadCsv(sourceFile);
+  return { rows, sourceFile };
+}
+
+async function loadAnomalyRows(country: string, year: number): Promise<{
+  rows: CsvRow[];
+  sourceFile: string;
+}> {
+  const countryCode = normalizeCountryForAnomalyFile(country);
+  const sourceFile = `${ANOMALY_DIRECTORY}/anomaly_detection_report_${year}${countryCode}.csv`;
   const rows = await loadCsv(sourceFile);
   return { rows, sourceFile };
 }
@@ -330,6 +357,7 @@ function buildAnomalyAnswer(
   row: CsvRow,
   company: string,
   tickerSymbol: string,
+  sourceFile: string,
   year?: number,
 ) {
   const anomalyFlag = readValue(row, "anomaly_flag");
@@ -362,7 +390,7 @@ function buildAnomalyAnswer(
     intent: "ANOMALY_EXPLANATION" as const,
     answer: sections.join("\n\n"),
     sources: [
-      ANOMALY_FILE,
+      sourceFile,
       ANOMALY_TICKER_COL,
       "anomaly_flag",
       "anomaly_score",
@@ -451,17 +479,24 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
       `No ticker symbol is available for ${context.company}, so anomaly lookup cannot be resolved.`,
     );
   }
+  const year = context.year ?? 2024;
+  const country = context.country?.trim();
+  if (!country) {
+    throw new Error(
+      `No country is available for ${context.company}, so anomaly lookup cannot be resolved.`,
+    );
+  }
 
-  const rows = await loadCsv(ANOMALY_FILE);
+  const { rows, sourceFile } = await loadAnomalyRows(country, year);
   const row = rows.find(
     (entry) => normalize(readValue(entry, ANOMALY_TICKER_COL)) === normalize(tickerSymbol),
   );
 
   if (!row) {
     throw new Error(
-      `No anomaly row found for sgx_ticker="${tickerSymbol}" from the selected company context.`,
+      `No anomaly row found for ticker_symbol="${tickerSymbol}" in ${sourceFile}.`,
     );
   }
 
-  return buildAnomalyAnswer(row, context.company, tickerSymbol, context.year);
+  return buildAnomalyAnswer(row, context.company, tickerSymbol, sourceFile, year);
 }
