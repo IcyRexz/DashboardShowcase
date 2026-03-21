@@ -205,6 +205,7 @@ export function CompanyAiChatPanel({
             context: {
               intent: mode,
               company: company.name,
+              country: company.country,
               year: company.reportYear,
               tickerSymbol: company.tickerSymbol ?? undefined,
             },

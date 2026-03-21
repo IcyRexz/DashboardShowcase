@@ -27,6 +27,7 @@ const schema = z.object({
   context: z.object({
     intent: intentSchema.optional(),
     company: z.string().min(1),
+    country: z.string().min(1).optional(),
     year: z.number().int().optional(),
     tickerSymbol: z.string().min(1).optional(),
     metricGroup: metricGroupSchema.optional(),
@@ -47,6 +48,7 @@ export async function POST(req: Request) {
     const response = await generateChatResponse({
       intent: context.intent as ChatIntent | undefined,
       company: context.company,
+      country: context.country,
       message,
       year: context.year,
       tickerSymbol: context.tickerSymbol,

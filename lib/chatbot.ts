@@ -15,6 +15,7 @@ export type ChatContext = {
   company: string;
   message: string;
   year?: number;
+  country?: string;
   tickerSymbol?: string | null;
   metricGroup?: MetricGroup;
 };
@@ -28,7 +29,6 @@ export type ChatResponse = {
 
 type CsvRow = Record<string, string>;
 
-const EXTRACTION_FILE = "singapore_2024_merged_with_coverage_rank.csv";
 const ANOMALY_FILE = "anomaly_detection_report_with_tickers.csv";
 const EXTRACTION_COMPANY_COL = "company_name";
 const EXTRACTION_YEAR_COL = "report_year";
@@ -240,6 +240,19 @@ function inferMetricGroup(message: string): MetricGroup | undefined {
   )?.group;
 }
 
+function normalizeCountryForFileName(country: string) {
+  return country.trim().toLowerCase().replace(/\s+/g, "_");
+}
+
+async function loadExtractionRows(country: string, year: number): Promise<{
+  rows: CsvRow[];
+  sourceFile: string;
+}> {
+  const sourceFile = `${normalizeCountryForFileName(country)}_${year}.csv`;
+  const rows = await loadCsv(sourceFile);
+  return { rows, sourceFile };
+}
+
 function formatMetricSnapshot(
   row: CsvRow,
   metricGroup: MetricGroup,
@@ -259,6 +272,7 @@ function buildExtractionAnswer(
   company: string,
   year: number,
   metricGroup: MetricGroup,
+  sourceFile: string,
 ) {
   const config = METRIC_CONFIG[metricGroup];
   const calculation = readValue(row, config.calculationCol);
@@ -291,7 +305,7 @@ function buildExtractionAnswer(
     intent: "EXTRACTION_EXPLANATION" as const,
     answer: sections.join("\n\n"),
     sources: [
-      EXTRACTION_FILE,
+      sourceFile,
       config.calculationCol,
       config.notesCol,
       config.statusCol,
@@ -401,8 +415,15 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
       );
     }
 
-    const rows = await loadCsv(EXTRACTION_FILE);
     const year = context.year ?? 2024;
+    const country = context.country?.trim();
+    if (!country) {
+      throw new Error(
+        `No country is available for ${context.company}, so extraction lookup cannot be resolved.`,
+      );
+    }
+
+    const { rows, sourceFile } = await loadExtractionRows(country, year);
     const row = rows.find(
       (entry) =>
         normalize(readValue(entry, EXTRACTION_COMPANY_COL)) === normalize(context.company) &&
@@ -415,7 +436,13 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
       );
     }
 
-    return buildExtractionAnswer(row, readValue(row, EXTRACTION_COMPANY_COL), year, metricGroup);
+    return buildExtractionAnswer(
+      row,
+      readValue(row, EXTRACTION_COMPANY_COL),
+      year,
+      metricGroup,
+      sourceFile,
+    );
   }
 
   const tickerSymbol = context.tickerSymbol?.trim();
