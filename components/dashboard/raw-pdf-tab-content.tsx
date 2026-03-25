@@ -92,7 +92,7 @@ export function RawPdfTabContent({ company }: RawPdfTabContentProps) {
       ) : error ? (
         <div className="flex flex-1 items-center justify-center px-6 text-center">
           <div className="max-w-md space-y-3">
-            <div className="flex items-center justify-center gap-2 text-sm font-medium text-amber-700">
+            <div className="flex items-center justify-center gap-2 text-sm font-medium text-red-700">
               <FileWarning className="h-4 w-4" />
               PDF preview unavailable
             </div>

@@ -26,10 +26,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import type {
-  SustainabilityCompany,
-  PlausibilityBand,
-} from "@/data/sustainability";
+import type { SustainabilityCompany } from "@/data/sustainability";
 import {
   fmtTCO2e,
   fmtPct,
@@ -40,6 +37,9 @@ import {
   fmtWaste,
   type UnitView,
   getPeerStrategyExamples,
+  getCompletenessBadgeClass,
+  getCompletenessFieldRows,
+  COMPLETENESS_GREEN_MIN,
 } from "@/data/sustainability";
 import { CompanyAiChatPanel } from "@/components/dashboard/company-ai-chat-panel";
 import { RawPdfTabContent } from "@/components/dashboard/raw-pdf-tab-content";
@@ -118,19 +118,6 @@ export function BottomDetailsPanel({
     document.body.style.userSelect = "none";
   }
 
-  const getPlausibilityColor = (band: PlausibilityBand): string => {
-    switch (band) {
-      case "Good":
-        return "bg-emerald-100 text-emerald-700 border-emerald-300";
-      case "Watch":
-        return "bg-amber-100 text-amber-700 border-amber-300";
-      case "Review":
-        return "bg-red-100 text-red-700 border-red-300";
-      default:
-        return "bg-gray-100 text-gray-600 border-gray-300";
-    }
-  };
-
   if (!company) {
     return (
       <div className="w-full panel-glass rounded-lg p-6">
@@ -144,10 +131,9 @@ export function BottomDetailsPanel({
     );
   }
 
-  const plausibilityBand =
-    company.derived.plausibilityBand ?? company.derived.riskBand ?? "Review";
-  const plausibilityReasons = company.derived.plausibilityReasons ?? [];
   const completeness = company.derived.completeness;
+  const completenessStrong = completeness.meetsGreenThreshold;
+  const completenessFieldRows = getCompletenessFieldRows(company);
   const peerExamples =
     allCompanies.length > 0
       ? getPeerStrategyExamples(company, allCompanies)
@@ -164,10 +150,10 @@ export function BottomDetailsPanel({
             </span>
             <Badge
               variant="outline"
-              className={`text-xs ${getPlausibilityColor(plausibilityBand)}`}
-              title="Data plausibility"
+              className={`text-xs ${getCompletenessBadgeClass(completenessStrong)}`}
+              title="Data completeness (overview fields filled)"
             >
-              {plausibilityBand}
+              {completeness.score12}/12
             </Badge>
           </div>
           <div className="flex items-center gap-2">
@@ -227,10 +213,10 @@ export function BottomDetailsPanel({
               </div>
               <Badge
                 variant="outline"
-                className={`ml-2 ${getPlausibilityColor(plausibilityBand)}`}
-                title="Data plausibility"
+                className={`ml-2 ${getCompletenessBadgeClass(completenessStrong)}`}
+                title="Data completeness (overview fields filled)"
               >
-                {plausibilityBand}
+                {completeness.score12}/12
               </Badge>
             </div>
             <div className="flex items-center gap-2">
@@ -256,19 +242,6 @@ export function BottomDetailsPanel({
               </Button>
             </div>
           </div>
-
-          {plausibilityReasons.length > 0 && (
-            <div className="border-b border-gray-200 border-l-2 border-l-amber-400 bg-amber-50 px-4 py-2">
-              <h4 className="mb-1.5 text-xs font-medium uppercase tracking-wider text-amber-700">
-                Why flagged?
-              </h4>
-              <ul className="list-inside list-disc space-y-1 text-sm text-gray-700">
-                {plausibilityReasons.map((reason, i) => (
-                  <li key={i}>{reason}</li>
-                ))}
-              </ul>
-            </div>
-          )}
 
           <Tabs defaultValue="overview" className="flex min-h-0 flex-1 flex-col">
             <div className="flex items-center justify-between gap-4 border-b border-gray-200 px-4 pt-2">
@@ -411,7 +384,7 @@ export function BottomDetailsPanel({
                       ? "text-emerald-600"
                       : company.derived.wasteDiversionRate !== null &&
                         company.derived.wasteDiversionRate < 0.3
-                        ? "text-amber-600"
+                        ? "text-red-600"
                         : "text-gray-900"
                       }`}
                   >
@@ -466,58 +439,22 @@ export function BottomDetailsPanel({
 
               {/* Completeness Summary */}
               <div className="mt-4 p-3 bg-gray-50 rounded-md">
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-3">
                   <div className="flex items-center gap-2">
                     <span className="text-xs text-gray-500">
-                      Data Completeness:
+                      Data completeness:
                     </span>
                     <Badge
                       variant="outline"
-                      className={
-                        completeness.score === 4
-                          ? "bg-emerald-100 text-emerald-700 border-emerald-300"
-                          : completeness.score >= 2
-                            ? "bg-amber-100 text-amber-700 border-amber-300"
-                            : "bg-red-100 text-red-700 border-red-300"
-                      }
+                      className={getCompletenessBadgeClass(completenessStrong)}
                     >
-                      {completeness.score}/4 fields
+                      {completeness.score12} / 12
                     </Badge>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span
-                      className={
-                        completeness.hasScope1 ? "text-emerald-600" : "text-red-600"
-                      }
-                    >
-                      Scope 1 {completeness.hasScope1 ? "✓" : "✗"}
-                    </span>
-                    <span
-                      className={
-                        completeness.hasScope2 ? "text-emerald-600" : "text-red-600"
-                      }
-                    >
-                      Scope 2 {completeness.hasScope2 ? "✓" : "✗"}
-                    </span>
-                    <span
-                      className={
-                        completeness.hasWasteGenerated
-                          ? "text-emerald-600"
-                          : "text-red-600"
-                      }
-                    >
-                      Waste Gen {completeness.hasWasteGenerated ? "✓" : "✗"}
-                    </span>
-                    <span
-                      className={
-                        completeness.hasWasteRecycled
-                          ? "text-emerald-600"
-                          : "text-red-600"
-                      }
-                    >
-                      Waste Rec {completeness.hasWasteRecycled ? "✓" : "✗"}
-                    </span>
-                  </div>
+                  <span className="text-xs text-gray-500">
+                    Green when at least {COMPLETENESS_GREEN_MIN} of 12 overview
+                    fields are filled (zero counts as filled).
+                  </span>
                 </div>
               </div>
 
@@ -555,25 +492,17 @@ export function BottomDetailsPanel({
               <div className="space-y-6">
                 <div>
                   <h4 className="text-sm font-medium text-gray-700 mb-3">
-                    Core Field Completeness
+                    Overview field completeness (12)
                   </h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <FieldCheckItem
-                      label="Scope 1"
-                      isPresent={completeness.hasScope1}
-                    />
-                    <FieldCheckItem
-                      label="Scope 2"
-                      isPresent={completeness.hasScope2}
-                    />
-                    <FieldCheckItem
-                      label="Waste Generated"
-                      isPresent={completeness.hasWasteGenerated}
-                    />
-                    <FieldCheckItem
-                      label="Waste Recycled"
-                      isPresent={completeness.hasWasteRecycled}
-                    />
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                    {completenessFieldRows.map((row) => (
+                      <FieldCheckItem
+                        key={row.label}
+                        label={row.label}
+                        isPresent={row.filled}
+                        softMissing={completenessStrong}
+                      />
+                    ))}
                   </div>
                 </div>
 
@@ -589,7 +518,7 @@ export function BottomDetailsPanel({
                           className={`font-medium ${company.meta.dataQualityScore >= 80
                             ? "text-emerald-600"
                             : company.meta.dataQualityScore >= 50
-                              ? "text-amber-600"
+                              ? "text-gray-700"
                               : "text-red-600"
                             }`}
                         >
@@ -667,7 +596,7 @@ export function BottomDetailsPanel({
                         </div>
                         <p
                           className={`text-sm font-medium ${company.meta.groupsFailed > 0
-                            ? "text-amber-600"
+                            ? "text-red-600"
                             : "text-emerald-600"
                             }`}
                         >
@@ -708,9 +637,9 @@ export function BottomDetailsPanel({
                       </>
                     ) : (
                       <>
-                        <AlertCircle className="h-5 w-5 text-amber-600" />
+                        <AlertCircle className="h-5 w-5 text-red-600" />
                         <div>
-                          <p className="text-sm font-medium text-amber-600">
+                          <p className="text-sm font-medium text-red-600">
                             Not Verified
                           </p>
                           <p className="text-xs text-gray-500">
@@ -843,8 +772,7 @@ export function BottomDetailsPanel({
                 <div className="space-y-3">
                   {peerExamples.map(
                     ({ company: peer, snippet, targetsSummary }) => {
-                      const peerBand =
-                        peer.derived.plausibilityBand ?? peer.derived.riskBand ?? "Review";
+                      const peerComp = peer.derived.completeness;
                       const isExpanded = expandedPeerId === peer.id;
                       return (
                         <div
@@ -858,9 +786,9 @@ export function BottomDetailsPanel({
                               </span>
                               <Badge
                                 variant="outline"
-                                className={`text-[10px] ${getPlausibilityColor(peerBand)}`}
+                                className={`text-[10px] ${getCompletenessBadgeClass(peerComp.meetsGreenThreshold)}`}
                               >
-                                {peerBand}
+                                {peerComp.score12}/12
                               </Badge>
                             </div>
                             <p className="text-xs text-gray-500 line-clamp-2">
@@ -919,21 +847,37 @@ export function BottomDetailsPanel({
 interface FieldCheckItemProps {
   label: string;
   isPresent: boolean;
+  /** When 6+/12 overview fields are filled, style missing fields neutrally (not red). */
+  softMissing?: boolean;
 }
 
-function FieldCheckItem({ label, isPresent }: FieldCheckItemProps) {
+function FieldCheckItem({
+  label,
+  isPresent,
+  softMissing = false,
+}: FieldCheckItemProps) {
+  const missingSoft = !isPresent && softMissing;
   return (
     <div
-      className={`flex items-center gap-2 p-2 rounded-md ${isPresent ? "bg-emerald-50" : "bg-red-50"
-        }`}
+      className={`flex items-center gap-2 p-2 rounded-md ${
+        isPresent ? "bg-emerald-50" : missingSoft ? "bg-gray-100" : "bg-red-50"
+      }`}
     >
       {isPresent ? (
         <Check className="h-4 w-4 text-emerald-600" />
       ) : (
-        <X className="h-4 w-4 text-red-600" />
+        <X
+          className={`h-4 w-4 ${missingSoft ? "text-gray-400" : "text-red-600"}`}
+        />
       )}
       <span
-        className={`text-xs ${isPresent ? "text-emerald-700" : "text-red-700"}`}
+        className={`text-xs ${
+          isPresent
+            ? "text-emerald-700"
+            : missingSoft
+              ? "text-gray-600"
+              : "text-red-700"
+        }`}
       >
         {label}
       </span>

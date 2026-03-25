@@ -93,18 +93,22 @@ export interface ExtractionMeta {
 // DERIVED TYPES
 // ============================================================================
 
-/** Data plausibility band: Good = consistent & comparable; Watch = unusual vs peers; Review = incomplete or suspicious */
-export type PlausibilityBand = "Good" | "Watch" | "Review";
-
-/** @deprecated Use PlausibilityBand. Kept for type compatibility. */
-export type RiskBand = PlausibilityBand;
+/** Minimum filled overview metrics (of 12) for “strong” green completeness. */
+export const COMPLETENESS_GREEN_MIN = 6;
+/** Total overview metrics tracked for completeness (matches dashboard overview grid). */
+export const COMPLETENESS_TOTAL_FIELDS = 12;
 
 export interface Completeness {
   hasScope1: boolean;
   hasScope2: boolean;
   hasWasteGenerated: boolean;
   hasWasteRecycled: boolean;
-  score: number; // 0-4 count of fields present
+  /** Legacy 0–4 count: Scope 1, Scope 2, waste generated, waste recycled. */
+  score: number;
+  /** 0–12 count across overview metrics (see calcCompleteness). */
+  score12: number;
+  /** True when score12 >= COMPLETENESS_GREEN_MIN. */
+  meetsGreenThreshold: boolean;
 }
 
 export interface TrustMetrics {
@@ -132,12 +136,6 @@ export interface DerivedMetrics {
   wasteDiversionRate: number | null; // recycled / generated (0-1)
   completeness: Completeness;
   trust: TrustMetrics;
-  /** Data plausibility (industry-relative + consistency checks). */
-  plausibilityBand?: PlausibilityBand;
-  /** Human-readable reasons when Watch or Review. */
-  plausibilityReasons?: string[];
-  /** @deprecated Use plausibilityBand. Present in older generated data. */
-  riskBand?: PlausibilityBand;
   /** Coverage score 0–100: percentage of key ESG fields present (Option A). */
   coverageScore?: number | null;
   /** Rank by coverage score (1 = highest coverage). */
@@ -232,16 +230,18 @@ export interface Location {
 export interface FilterOptions {
   search: string;
   countries: string[];
-  /** Data plausibility bands to include (Good / Watch / Review). */
-  plausibilityBands: PlausibilityBand[];
+  /** When true, only companies with fewer than 6 of 12 overview fields filled. */
   incompleteOnly: boolean;
   /** Industries to include (empty = all industries). */
   industries: string[];
+  /** Report year slice (CSV cohort). */
+  reportYear: Year;
 }
 
 export interface KpiData {
   totalCompanies: number;
-  reportingComplete: number; // Companies with completeness.score === 4
+  /** Companies meeting the 6/12 data completeness threshold. */
+  reportingComplete: number;
   totalScope12: number | null;
   avgWasteDiversion: number | null;
   avgDataQuality: number | null;
@@ -323,14 +323,104 @@ export function calcWasteDiversion(
   return Math.min(1, Math.max(0, rate));
 }
 
+/** Labels for the 12 overview completeness fields (order matches scoring). */
+export const COMPLETENESS_FIELD_LABELS = [
+  "Scope 1",
+  "Scope 2",
+  "Scope 3",
+  "Scope 1+2 total",
+  "Waste generated",
+  "Waste recycled",
+  "Waste disposed",
+  "Diversion rate",
+  "Water withdrawal",
+  "Water consumption",
+  "Total energy",
+  "Fuel consumption",
+] as const;
+
+export interface CompletenessFieldRow {
+  label: (typeof COMPLETENESS_FIELD_LABELS)[number];
+  filled: boolean;
+}
+
+function getCompletenessFlags(company: SustainabilityCompany): {
+  hasScope1: boolean;
+  hasScope2: boolean;
+  hasScope3: boolean;
+  hasScope12: boolean;
+  hasWasteGenerated: boolean;
+  hasWasteRecycled: boolean;
+  hasWasteDisposed: boolean;
+  hasDiversion: boolean;
+  hasWaterWithdrawal: boolean;
+  hasWaterConsumption: boolean;
+  hasEnergy: boolean;
+  hasFuel: boolean;
+} {
+  return {
+    hasScope1: company.emissions.scope1.value !== null,
+    hasScope2: company.emissions.scope2.value !== null,
+    hasScope3: company.emissions.scope3.value !== null,
+    hasScope12: company.derived.scope12Total !== null,
+    hasWasteGenerated: company.waste.generated.value !== null,
+    hasWasteRecycled: company.waste.recycled.value !== null,
+    hasWasteDisposed: company.waste.disposed.value !== null,
+    hasDiversion: company.derived.wasteDiversionRate !== null,
+    hasWaterWithdrawal:
+      company.water.withdrawal.value !== null ||
+      company.normalized?.waterWithdrawalM3 != null,
+    hasWaterConsumption:
+      company.water.consumption.value !== null ||
+      company.normalized?.waterConsumptionM3 != null,
+    hasEnergy:
+      company.energy.total.value !== null ||
+      company.normalized?.totalEnergyKwh != null,
+    hasFuel: company.fuel.consumption.value !== null,
+  };
+}
+
+/** Per-field rows for UI (same rules as {@link calcCompleteness}). */
+export function getCompletenessFieldRows(
+  company: SustainabilityCompany,
+): CompletenessFieldRow[] {
+  const f = getCompletenessFlags(company);
+  const filled = [
+    f.hasScope1,
+    f.hasScope2,
+    f.hasScope3,
+    f.hasScope12,
+    f.hasWasteGenerated,
+    f.hasWasteRecycled,
+    f.hasWasteDisposed,
+    f.hasDiversion,
+    f.hasWaterWithdrawal,
+    f.hasWaterConsumption,
+    f.hasEnergy,
+    f.hasFuel,
+  ];
+  return COMPLETENESS_FIELD_LABELS.map((label, i) => ({
+    label,
+    filled: filled[i] ?? false,
+  }));
+}
+
+/** Badge styles: green when at least {@link COMPLETENESS_GREEN_MIN} of 12 fields are filled. */
+export function getCompletenessBadgeClass(meetsGreenThreshold: boolean): string {
+  return meetsGreenThreshold
+    ? "bg-emerald-100 text-emerald-700 border-emerald-300"
+    : "bg-red-100 text-red-700 border-red-300";
+}
+
 /**
- * Calculate completeness metrics
+ * Calculate completeness metrics (4-field legacy score + 12-field overview score).
  */
 export function calcCompleteness(company: SustainabilityCompany): Completeness {
-  const hasScope1 = company.emissions.scope1.value !== null;
-  const hasScope2 = company.emissions.scope2.value !== null;
-  const hasWasteGenerated = company.waste.generated.value !== null;
-  const hasWasteRecycled = company.waste.recycled.value !== null;
+  const f = getCompletenessFlags(company);
+  const hasScope1 = f.hasScope1;
+  const hasScope2 = f.hasScope2;
+  const hasWasteGenerated = f.hasWasteGenerated;
+  const hasWasteRecycled = f.hasWasteRecycled;
 
   const score = [
     hasScope1,
@@ -339,12 +429,31 @@ export function calcCompleteness(company: SustainabilityCompany): Completeness {
     hasWasteRecycled,
   ].filter(Boolean).length;
 
+  const score12 = [
+    f.hasScope1,
+    f.hasScope2,
+    f.hasScope3,
+    f.hasScope12,
+    f.hasWasteGenerated,
+    f.hasWasteRecycled,
+    f.hasWasteDisposed,
+    f.hasDiversion,
+    f.hasWaterWithdrawal,
+    f.hasWaterConsumption,
+    f.hasEnergy,
+    f.hasFuel,
+  ].filter(Boolean).length;
+
+  const meetsGreenThreshold = score12 >= COMPLETENESS_GREEN_MIN;
+
   return {
     hasScope1,
     hasScope2,
     hasWasteGenerated,
     hasWasteRecycled,
     score,
+    score12,
+    meetsGreenThreshold,
   };
 }
 
@@ -360,32 +469,6 @@ export function calcTrust(company: SustainabilityCompany): TrustMetrics {
     dataQualityScore: company.meta.dataQualityScore,
     verifiedByHuman: company.meta.verifiedByHuman,
   };
-}
-
-/**
- * @deprecated Use plausibilityBand from build output. Fallback when plausibility not precomputed.
- */
-export function calcRiskBand(company: SustainabilityCompany): PlausibilityBand {
-  const completeness = calcCompleteness(company);
-  const trust = calcTrust(company);
-  const diversion = calcWasteDiversion(company);
-
-  if (completeness.score < 4) return "Review";
-  if (trust.dataQualityScore !== null && trust.dataQualityScore < 50)
-    return "Review";
-  if (!trust.extractionOk) return "Review";
-  if (diversion !== null && diversion < 0.3) return "Watch";
-  return "Good";
-}
-
-/** All data plausibility bands for filters. */
-export function getPlausibilityBands(): PlausibilityBand[] {
-  return ["Good", "Watch", "Review"];
-}
-
-/** @deprecated Alias for getPlausibilityBands */
-export function getRiskBands(): PlausibilityBand[] {
-  return getPlausibilityBands();
 }
 
 // ============================================================================
@@ -498,9 +581,8 @@ export function fmtWaste(
 export function calculateKpis(companies: SustainabilityCompany[]): KpiData {
   const totalCompanies = companies.length;
 
-  // Reporting complete (all 4 MVP fields present)
   const reportingComplete = companies.filter(
-    (c) => c.derived.completeness.score === 4,
+    (c) => c.derived.completeness.meetsGreenThreshold,
   ).length;
 
   // Total Scope 1+2 (use canonical; derived.scope12Total is already tCO2e)
@@ -551,6 +633,10 @@ export function filterCompanies(
   options: FilterOptions,
 ): SustainabilityCompany[] {
   return companies.filter((company) => {
+    if (company.reportYear !== options.reportYear) {
+      return false;
+    }
+
     // Search filter (name, country, city)
     if (options.search) {
       const searchLower = options.search.toLowerCase();
@@ -577,17 +663,11 @@ export function filterCompanies(
       }
     }
 
-    // Plausibility band filter (support both new and legacy field names)
-    const band = company.derived.plausibilityBand ?? company.derived.riskBand;
+    // Incomplete only: fewer than 6 of 12 overview fields
     if (
-      options.plausibilityBands.length > 0 &&
-      (band === undefined || !options.plausibilityBands.includes(band))
+      options.incompleteOnly &&
+      company.derived.completeness.meetsGreenThreshold
     ) {
-      return false;
-    }
-
-    // Incomplete only filter
-    if (options.incompleteOnly && company.derived.completeness.score === 4) {
       return false;
     }
 
@@ -614,6 +694,37 @@ export function getIndustries(companies: SustainabilityCompany[]): string[] {
     }
   }
   return [...industries].sort();
+}
+
+/**
+ * Unique report years present in the dataset, ascending.
+ */
+const VALID_REPORT_YEARS: readonly Year[] = [2021, 2022, 2023, 2024];
+
+export function getAvailableReportYears(
+  companies: SustainabilityCompany[],
+): Year[] {
+  const years = new Set<Year>();
+  for (const c of companies) {
+    if (VALID_REPORT_YEARS.includes(c.reportYear)) {
+      years.add(c.reportYear);
+    }
+  }
+  return [...years].sort((a, b) => a - b);
+}
+
+/**
+ * Prefer 2024 when present; otherwise the latest year in the dataset.
+ */
+export function getDefaultReportYear(companies: SustainabilityCompany[]): Year {
+  const available = getAvailableReportYears(companies);
+  if (available.length === 0) {
+    return 2024;
+  }
+  if (available.includes(2024)) {
+    return 2024;
+  }
+  return available[available.length - 1];
 }
 
 // ============================================================================
@@ -646,7 +757,10 @@ export interface DistrictSummary {
   companies: SustainabilityCompany[];
   count: number;
   avgCoverageScore: number;
-  plausibilityBreakdown: Record<PlausibilityBand, number>;
+  /** Companies with 6+ of 12 overview fields filled. */
+  completenessStrong: number;
+  /** Companies below 6/12. */
+  completenessWeak: number;
 }
 
 export function getDistrictSummaries(
@@ -668,15 +782,11 @@ export function getDistrictSummaries(
     const avgCov =
       group.reduce((s, c) => s + (c.derived.coverageScore ?? 0), 0) /
       group.length;
-    const breakdown: Record<PlausibilityBand, number> = {
-      Good: 0,
-      Watch: 0,
-      Review: 0,
-    };
+    let completenessStrong = 0;
+    let completenessWeak = 0;
     for (const c of group) {
-      const band =
-        (c.derived.plausibilityBand ?? c.derived.riskBand) as PlausibilityBand;
-      if (band in breakdown) breakdown[band] += 1;
+      if (c.derived.completeness.meetsGreenThreshold) completenessStrong += 1;
+      else completenessWeak += 1;
     }
     summaries.push({
       district,
@@ -686,7 +796,8 @@ export function getDistrictSummaries(
       companies: group,
       count: group.length,
       avgCoverageScore: Math.round(avgCov),
-      plausibilityBreakdown: breakdown,
+      completenessStrong,
+      completenessWeak,
     });
   }
   return summaries.sort((a, b) => b.count - a.count);
@@ -734,7 +845,7 @@ export function parseTargetsSummary(targetsJson: string | null): string | null {
 
 /**
  * Get peer companies with strategy examples (same industry, non-empty strategy_summary).
- * Prefer Good plausibility; rank by similarity (scope12 band, diversion band, completeness).
+ * Rank by similarity (scope12 band, diversion band, completeness score12).
  * Returns top 3–5 peers.
  */
 export function getPeerStrategyExamples(
@@ -743,10 +854,9 @@ export function getPeerStrategyExamples(
   maxPeers = 5,
 ): PeerStrategyExample[] {
   const industry = selected.industry ?? "General";
-  const band = selected.derived.plausibilityBand ?? selected.derived.riskBand;
   const scope12 = selected.derived.scope12Total;
   const diversion = selected.derived.wasteDiversionRate;
-  const score = selected.derived.completeness.score;
+  const score12 = selected.derived.completeness.score12;
 
   const scope12Band =
     scope12 === null
@@ -773,7 +883,6 @@ export function getPeerStrategyExamples(
   );
 
   const withScore = candidates.map((c) => {
-    const pBand = c.derived.plausibilityBand ?? c.derived.riskBand;
     const s12 = c.derived.scope12Total;
     const div = c.derived.wasteDiversionRate;
     const s12B =
@@ -787,12 +896,10 @@ export function getPeerStrategyExamples(
     const divB =
       div === null ? "none" : div < 0.2 ? "low" : div < 0.5 ? "med" : "high";
     let similarity = 0;
-    if (pBand === "Good") similarity += 3;
-    else if (pBand === "Watch") similarity += 1;
+    if (c.derived.completeness.meetsGreenThreshold) similarity += 3;
     if (s12B === scope12Band) similarity += 2;
     if (divB === diversionBand) similarity += 2;
-    if (c.derived.completeness.score === 4) similarity += 1;
-    if (c.derived.completeness.score === score) similarity += 1;
+    if (c.derived.completeness.score12 === score12) similarity += 1;
     return { company: c, similarity };
   });
 

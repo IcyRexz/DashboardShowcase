@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import dynamic from "next/dynamic";
-import { X, Building2, Map, Table2 } from "lucide-react";
+import { X, Building2, Map, Table2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SidePanelLeft } from "@/components/dashboard/side-panel-left";
@@ -11,14 +11,17 @@ import { BottomDetailsPanel } from "@/components/dashboard/bottom-details-panel"
 import { TableView } from "@/components/dashboard/table-view";
 import {
   type SustainabilityCompany,
-  type PlausibilityBand,
   type FilterOptions,
   type KpiData,
   type UnitView,
+  type Year,
   SUSTAINABILITY_COMPANIES,
   filterCompanies,
   getLocations,
   calculateKpis,
+  getAvailableReportYears,
+  getDefaultReportYear,
+  getCompletenessBadgeClass,
 } from "@/data/sustainability";
 
 const MapView = dynamic(
@@ -35,19 +38,6 @@ const MapView = dynamic(
 
 type ViewMode = "map" | "table";
 
-function getPlausibilityColor(band: PlausibilityBand): string {
-  switch (band) {
-    case "Good":
-      return "bg-emerald-100 text-emerald-700 border-emerald-300";
-    case "Watch":
-      return "bg-amber-100 text-amber-700 border-amber-300";
-    case "Review":
-      return "bg-red-100 text-red-700 border-red-300";
-    default:
-      return "bg-gray-100 text-gray-600 border-gray-300";
-  }
-}
-
 const VIEW_OPTIONS: { mode: ViewMode; label: string; icon: typeof Map }[] = [
   { mode: "map", label: "Map", icon: Map },
   { mode: "table", label: "Table", icon: Table2 },
@@ -58,15 +48,26 @@ export default function DashboardPage() {
     useState<SustainabilityCompany | null>(null);
   const [unitView, setUnitView] = useState<UnitView>("Canonical");
   const [viewMode, setViewMode] = useState<ViewMode>("map");
-  const [filters, setFilters] = useState<FilterOptions>({
+  const [filters, setFilters] = useState<FilterOptions>(() => ({
     search: "",
     countries: [],
-    plausibilityBands: [],
     incompleteOnly: false,
     industries: [],
-  });
+    reportYear: getDefaultReportYear(SUSTAINABILITY_COMPANIES),
+  }));
 
   const allCompanies = SUSTAINABILITY_COMPANIES;
+
+  const availableYears = useMemo(
+    () => getAvailableReportYears(allCompanies),
+    [allCompanies],
+  );
+
+  const companiesForSelectedYear = useMemo(
+    () =>
+      allCompanies.filter((c) => c.reportYear === filters.reportYear),
+    [allCompanies, filters.reportYear],
+  );
 
   const filteredCompanies = useMemo(() => {
     return filterCompanies(allCompanies, filters);
@@ -98,10 +99,18 @@ export default function DashboardPage() {
     }
   };
 
-  const plausibilityBand = selectedCompany
-    ? (selectedCompany.derived.plausibilityBand ??
-      selectedCompany.derived.riskBand)
-    : null;
+  const handleReportYearChange = (year: Year) => {
+    handleFiltersChange({ ...filters, reportYear: year });
+  };
+
+  const shiftReportYear = (delta: -1 | 1) => {
+    const idx = availableYears.indexOf(filters.reportYear);
+    const nextIdx = idx + delta;
+    if (nextIdx < 0 || nextIdx >= availableYears.length) return;
+    handleReportYearChange(availableYears[nextIdx]);
+  };
+
+  const completeness = selectedCompany?.derived.completeness;
 
   const isMapView = viewMode === "map";
 
@@ -140,14 +149,18 @@ export default function DashboardPage() {
               </h1>
               <p className="text-sm text-gray-500 mt-0.5">
                 ESG metrics for{" "}
-                {filteredCompanies.length < allCompanies.length
-                  ? `${filteredCompanies.length} of ${allCompanies.length}`
-                  : `${allCompanies.length}`}{" "}
-                listed companies across multiple countries (2021–2024)
+                {filteredCompanies.length < companiesForSelectedYear.length
+                  ? `${filteredCompanies.length} of ${companiesForSelectedYear.length}`
+                  : `${companiesForSelectedYear.length}`}{" "}
+                listed companies ({filters.reportYear}
+                {availableYears.length > 1
+                  ? ` · ${availableYears[0]}–${availableYears[availableYears.length - 1]}`
+                  : ""}
+                )
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-wrap">
               {/* View Mode Toggle */}
               <div className="flex items-center bg-white/90 border border-gray-200 rounded-lg p-0.5 shadow-sm">
                 {VIEW_OPTIONS.map(({ mode, label, icon: Icon }) => (
@@ -169,7 +182,41 @@ export default function DashboardPage() {
                 ))}
               </div>
 
-              {selectedCompany && plausibilityBand && (
+              {availableYears.length > 0 && (
+                <div className="flex items-center gap-1 bg-white/90 border border-gray-200 rounded-lg px-1 py-0.5 shadow-sm">
+                  <button
+                    type="button"
+                    onClick={() => shiftReportYear(-1)}
+                    disabled={availableYears.indexOf(filters.reportYear) <= 0}
+                    className="p-1.5 rounded-md text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:pointer-events-none"
+                    aria-label="Previous report year"
+                    title="Previous year"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </button>
+                  <span
+                    className="text-xs font-medium text-gray-800 tabular-nums min-w-12 text-center"
+                    title="Report year"
+                  >
+                    {filters.reportYear}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => shiftReportYear(1)}
+                    disabled={
+                      availableYears.indexOf(filters.reportYear) >=
+                      availableYears.length - 1
+                    }
+                    className="p-1.5 rounded-md text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:pointer-events-none"
+                    aria-label="Next report year"
+                    title="Next year"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
+              )}
+
+              {selectedCompany && completeness && (
                 <>
                   <div className="flex items-center gap-2 px-3 py-1.5 bg-white/90 border border-gray-200 rounded-lg shadow-sm">
                     <Building2 className="h-4 w-4 text-gray-400" aria-hidden />
@@ -178,10 +225,10 @@ export default function DashboardPage() {
                     </span>
                     <Badge
                       variant="outline"
-                      className={`text-[10px] px-1.5 py-0 h-5 ${getPlausibilityColor(plausibilityBand)}`}
-                      title="Data plausibility"
+                      className={`text-[10px] px-1.5 py-0 h-5 ${getCompletenessBadgeClass(completeness.meetsGreenThreshold)}`}
+                      title="Data completeness (overview fields filled)"
                     >
-                      {plausibilityBand}
+                      {completeness.score12}/12
                     </Badge>
                   </div>
                   <Button
@@ -240,6 +287,7 @@ export default function DashboardPage() {
             <SidePanelRight
               kpis={kpis}
               companies={filteredCompanies}
+              reportYear={filters.reportYear}
             />
             </div>
           )}
@@ -251,7 +299,7 @@ export default function DashboardPage() {
             company={selectedCompany}
             onClear={handleClearSelection}
             unitView={unitView}
-            allCompanies={allCompanies}
+            allCompanies={filteredCompanies}
           />
         </div>
       </div>

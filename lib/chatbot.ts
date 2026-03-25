@@ -288,11 +288,19 @@ function formatMetricSnapshot(
   return METRIC_CONFIG[metricGroup].valueFields
     .map(({ label, valueCol, unitCol }) => {
       const value = readValue(row, valueCol);
-      const unit = unitCol ? readValue(row, unitCol) : "";
       if (!value) return null;
-      return { label, value, unit: unit || undefined };
+
+      if (unitCol) {
+        const unitValue = readValue(row, unitCol);
+        if (unitValue) return { label, value, unit: unitValue };
+      }
+
+      return { label, value };
     })
-    .filter((entry): entry is { label: string; value: string; unit?: string } => entry !== null);
+    .filter(
+      (entry): entry is { label: string; value: string; unit?: string } =>
+        entry !== null,
+    );
 }
 
 function buildExtractionAnswer(
@@ -487,7 +495,8 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
       sourceFile,
     );
 
-    response.sources = pageSources;
+    response.sources =
+      pageSources.length > 0 ? [sourceFile, ...pageSources] : [sourceFile];
     return response;
   }
 

@@ -28,6 +28,9 @@ export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
     kpis.totalCompanies > 0
       ? (kpis.reportingComplete / kpis.totalCompanies) * 100
       : 0;
+  const completionIsGood =
+    kpis.totalCompanies > 0 &&
+    kpis.reportingComplete / kpis.totalCompanies >= 0.5;
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -36,11 +39,14 @@ export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
           <div>
             <KpiCard
               icon={Building2}
-              title="Reporting Complete"
+              title="Strong completeness"
               value={`${kpis.reportingComplete}/${kpis.totalCompanies}`}
               subValue={`${completionRate.toFixed(0)}%`}
-              isGood={completionRate >= 50}
-              isAlert={completionRate < 30}
+              isGood={completionIsGood}
+              isAlert={
+                kpis.totalCompanies > 0 &&
+                kpis.reportingComplete / kpis.totalCompanies < 0.3
+              }
             />
           </div>
         </TooltipTrigger>
@@ -48,9 +54,9 @@ export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
           side="bottom"
           className="max-w-[280px] text-center bg-white text-gray-900 border-gray-200 shadow-lg"
         >
-          Companies with all 4 core metrics reported: Scope 1, Scope 2, Waste
-          Generated, and Waste Recycled. Data plausibility is based on
-          completeness and peer comparison.
+          Companies with at least 6 of 12 overview metrics filled (emissions,
+          waste, water, energy, fuel, etc.). Green KPI styling when at least half
+          of companies meet that bar.
         </TooltipContent>
       </Tooltip>
 
@@ -93,7 +99,7 @@ export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
           className="max-w-[280px] text-center bg-white text-gray-900 border-gray-200 shadow-lg"
         >
           Average waste diversion (recycled / generated). Higher is better (50%+
-          good, &lt;30% may trigger Watch plausibility).
+          is strong; below 30% is weak).
         </TooltipContent>
       </Tooltip>
 
@@ -118,8 +124,7 @@ export function KpiRow({ kpis, unitView = "Canonical" }: KpiRowProps) {
           side="bottom"
           className="max-w-[280px] text-center bg-white text-gray-900 border-gray-200 shadow-lg"
         >
-          Average extraction quality score. Low scores (&lt;50) contribute to
-          Review plausibility.
+          Average extraction quality score from the source pipeline.
         </TooltipContent>
       </Tooltip>
     </div>
@@ -156,7 +161,7 @@ function KpiCard({
             <p
               className={`text-2xl font-bold ${
                 isAlert
-                  ? "text-amber-600"
+                  ? "text-red-600"
                   : isGood
                     ? "text-emerald-600"
                     : "text-gray-900"
@@ -173,7 +178,7 @@ function KpiCard({
         <div
           className={`p-2 rounded-md ${
             isAlert
-              ? "bg-amber-50"
+              ? "bg-red-50"
               : isGood
                 ? "bg-emerald-50"
                 : "bg-gray-100"
@@ -182,7 +187,7 @@ function KpiCard({
           <Icon
             className={`h-4 w-4 ${
               isAlert
-                ? "text-amber-600"
+                ? "text-red-600"
                 : isGood
                   ? "text-emerald-600"
                   : "text-gray-400"

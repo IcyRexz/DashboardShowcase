@@ -8,12 +8,8 @@ import "leaflet/dist/leaflet.css";
 import "leaflet.markercluster";
 import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
-import type {
-  SustainabilityCompany,
-  Location,
-  PlausibilityBand,
-} from "@/data/sustainability";
-import { fmtTCO2e } from "@/data/sustainability";
+import type { SustainabilityCompany, Location } from "@/data/sustainability";
+import { fmtTCO2e, getCompletenessBadgeClass } from "@/data/sustainability";
 
 interface MapViewProps {
   locations: Location[];
@@ -27,33 +23,15 @@ const LIGHT_TILES = {
     '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
 } as const;
 
-const BAND_COLORS: Record<PlausibilityBand, string> = {
-  Good: "#16a34a",
-  Watch: "#d97706",
-  Review: "#dc2626",
-};
-
-function getPlausibilityColor(band: PlausibilityBand): string {
-  switch (band) {
-    case "Good":
-      return "bg-emerald-100 text-emerald-700 border-emerald-300";
-    case "Watch":
-      return "bg-amber-100 text-amber-700 border-amber-300";
-    case "Review":
-      return "bg-red-100 text-red-700 border-red-300";
-    default:
-      return "bg-gray-100 text-gray-600 border-gray-300";
-  }
-}
+const COMPLETE_GREEN = "#16a34a";
+const COMPLETE_RED = "#dc2626";
 
 function getMarkerColor(location: Location): string {
-  const band = (c: SustainabilityCompany) =>
-    c.derived.plausibilityBand ?? c.derived.riskBand;
-  const hasReview = location.companies.some((c) => band(c) === "Review");
-  const hasWatch = location.companies.some((c) => band(c) === "Watch");
-  if (hasReview) return BAND_COLORS.Review;
-  if (hasWatch) return BAND_COLORS.Watch;
-  return BAND_COLORS.Good;
+  const hasWeak = location.companies.some(
+    (c) => !c.derived.completeness.meetsGreenThreshold,
+  );
+  if (hasWeak) return COMPLETE_RED;
+  return COMPLETE_GREEN;
 }
 
 export function MapView({
@@ -173,19 +151,16 @@ export function MapView({
         const childMarkers = clusterObj.getAllChildMarkers();
         const count = childMarkers.length;
 
-        let good = 0;
-        let watch = 0;
-        let review = 0;
+        let green = 0;
+        let red = 0;
         for (const m of childMarkers) {
-          const band = (m.options as { _band?: PlausibilityBand })._band;
-          if (band === "Good") good++;
-          else if (band === "Watch") watch++;
-          else review++;
+          const complete = (m.options as { _complete?: boolean })._complete;
+          if (complete) green++;
+          else red++;
         }
 
-        const pGood = (good / count) * 100;
-        const pWatch = (watch / count) * 100;
-        const conicGradient = `conic-gradient(${BAND_COLORS.Good} 0% ${pGood}%, ${BAND_COLORS.Watch} ${pGood}% ${pGood + pWatch}%, ${BAND_COLORS.Review} ${pGood + pWatch}% 100%)`;
+        const pGreen = (green / count) * 100;
+        const conicGradient = `conic-gradient(${COMPLETE_GREEN} 0% ${pGreen}%, ${COMPLETE_RED} ${pGreen}% 100%)`;
 
         const size = count < 10 ? 40 : count < 50 ? 48 : 56;
         const inner = size - 8;
@@ -215,9 +190,9 @@ export function MapView({
       const isSelected =
         selectedCompany &&
         location.companies.some((c) => c.id === selectedCompany.id);
-      const band = (location.companies[0]?.derived.plausibilityBand ??
-        location.companies[0]?.derived.riskBand ??
-        "Review") as PlausibilityBand;
+      const firstComplete =
+        location.companies[0]?.derived.completeness.meetsGreenThreshold ??
+        false;
 
       const markerIcon = L.divIcon({
         className: "custom-marker",
@@ -238,7 +213,7 @@ export function MapView({
 
       const marker = L.marker([location.lat, location.lng], {
         icon: markerIcon,
-        _band: band,
+        _complete: firstComplete,
       } as L.MarkerOptions);
 
       marker.on("click", (e) => {
@@ -321,10 +296,7 @@ export function MapView({
           <div className="p-2 max-h-[300px] overflow-y-auto scrollbar-thin">
             <div className="space-y-1">
               {activePopup.companies.map((company) => {
-                const plausibilityBand =
-                  (company.derived.plausibilityBand ??
-                    company.derived.riskBand ??
-                    "Review") as PlausibilityBand;
+                const comp = company.derived.completeness;
                 return (
                   <button
                     key={company.id}
@@ -356,10 +328,10 @@ export function MapView({
                       <div className="flex items-center gap-1.5 mt-1">
                         <Badge
                           variant="outline"
-                          className={`text-[10px] px-1 py-0 h-4 ${getPlausibilityColor(plausibilityBand)}`}
-                          title="Data plausibility"
+                          className={`text-[10px] px-1 py-0 h-4 ${getCompletenessBadgeClass(comp.meetsGreenThreshold)}`}
+                          title="Data completeness (overview fields)"
                         >
-                          {plausibilityBand}
+                          {comp.score12}/12
                         </Badge>
                         {company.derived.coverageScore != null && (
                           <span className="text-[10px] text-gray-500">

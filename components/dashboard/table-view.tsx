@@ -3,11 +3,8 @@
 import { useState, useMemo } from "react";
 import { ArrowUpDown, ArrowUp, ArrowDown, Building2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import type {
-  SustainabilityCompany,
-  PlausibilityBand,
-} from "@/data/sustainability";
-import { fmtTCO2e, fmtPct } from "@/data/sustainability";
+import type { SustainabilityCompany } from "@/data/sustainability";
+import { fmtTCO2e, fmtPct, getCompletenessBadgeClass } from "@/data/sustainability";
 
 interface TableViewProps {
   companies: SustainabilityCompany[];
@@ -21,33 +18,13 @@ type SortField =
   | "industry"
   | "coverageScore"
   | "coveragePercentile"
-  | "plausibility"
+  | "completeness12"
   | "scope12"
   | "wasteDiversion";
 type SortDirection = "asc" | "desc";
 
-const PLAUSIBILITY_ORDER: Record<string, number> = {
-  Good: 0,
-  Watch: 1,
-  Review: 2,
-};
-
-function getPlausibilityColor(band: PlausibilityBand): string {
-  switch (band) {
-    case "Good":
-      return "bg-emerald-100 text-emerald-700 border-emerald-300";
-    case "Watch":
-      return "bg-amber-100 text-amber-700 border-amber-300";
-    case "Review":
-      return "bg-red-100 text-red-700 border-red-300";
-    default:
-      return "bg-gray-100 text-gray-600 border-gray-300";
-  }
-}
-
 function coverageBarColor(score: number): string {
-  if (score >= 70) return "bg-emerald-500";
-  if (score >= 40) return "bg-amber-500";
+  if (score >= 40) return "bg-emerald-500";
   return "bg-red-500";
 }
 
@@ -93,16 +70,10 @@ export function TableView({
           const bP = b.derived.coveragePercentile ?? -1;
           return (aP - bP) * dir;
         }
-        case "plausibility": {
-          const aB =
-            PLAUSIBILITY_ORDER[
-              (a.derived.plausibilityBand ?? a.derived.riskBand) as string
-            ] ?? 3;
-          const bB =
-            PLAUSIBILITY_ORDER[
-              (b.derived.plausibilityBand ?? b.derived.riskBand) as string
-            ] ?? 3;
-          return (aB - bB) * dir;
+        case "completeness12": {
+          const aS = a.derived.completeness.score12;
+          const bS = b.derived.completeness.score12;
+          return (aS - bS) * dir;
         }
         case "scope12": {
           const aE = a.derived.scope12Total ?? -Infinity;
@@ -157,7 +128,7 @@ export function TableView({
                   { field: "industry" as SortField, label: "Sector", width: "w-32" },
                   { field: "coverageScore" as SortField, label: "Coverage", width: "w-32" },
                   { field: "coveragePercentile" as SortField, label: "Percentile", width: "w-24" },
-                  { field: "plausibility" as SortField, label: "Plausibility", width: "w-24" },
+                  { field: "completeness12" as SortField, label: "Complete", width: "w-24" },
                   { field: "scope12" as SortField, label: "Scope 1+2", width: "w-28" },
                   { field: "wasteDiversion" as SortField, label: "Waste Div.", width: "w-24" },
                 ] as const
@@ -177,9 +148,7 @@ export function TableView({
           </thead>
           <tbody>
             {sorted.map((company) => {
-              const band = (company.derived.plausibilityBand ??
-                company.derived.riskBand ??
-                "Review") as PlausibilityBand;
+              const comp = company.derived.completeness;
               const isSelected = selectedCompany?.id === company.id;
               const covScore = company.derived.coverageScore ?? 0;
 
@@ -244,13 +213,14 @@ export function TableView({
                       : "—"}
                   </td>
 
-                  {/* Plausibility */}
+                  {/* Completeness (overview fields) */}
                   <td className="px-3 py-2.5">
                     <Badge
                       variant="outline"
-                      className={`text-[10px] px-1.5 py-0 h-4 ${getPlausibilityColor(band)}`}
+                      className={`text-[10px] px-1.5 py-0 h-4 ${getCompletenessBadgeClass(comp.meetsGreenThreshold)}`}
+                      title="Filled overview metrics (max 12)"
                     >
-                      {band}
+                      {comp.score12}/12
                     </Badge>
                   </td>
 

@@ -8,7 +8,6 @@ import {
   calcWasteDiversion,
   calcCompleteness,
   calcTrust,
-  calcRiskBand,
   normalizeToTCO2e,
   fmtPct,
   fmtNumber,
@@ -16,17 +15,22 @@ import {
   fmtEmissionsValue,
   fmtQuantity,
   getCountries,
-  getPlausibilityBands,
   getIndustries,
+  getAvailableReportYears,
+  getDefaultReportYear,
   parseTargetsSummary,
+  getCompletenessBadgeClass,
+  getCompletenessFieldRows,
+  COMPLETENESS_GREEN_MIN,
   type SustainabilityCompany,
   type FilterOptions,
+  type NormalizedMetrics,
 } from "./sustainability";
 
 function makeCompany(
   overrides: Partial<SustainabilityCompany> = {},
 ): SustainabilityCompany {
-  return {
+  const base: SustainabilityCompany = {
     id: "company_1",
     name: "Test Company",
     reportName: "test_report",
@@ -116,17 +120,66 @@ function makeCompany(
         hasWasteGenerated: true,
         hasWasteRecycled: true,
         score: 4,
+        score12: 0,
+        meetsGreenThreshold: false,
       },
       trust: {
         extractionOk: true,
         dataQualityScore: 80,
         verifiedByHuman: null,
       },
-      plausibilityBand: "Good",
-      plausibilityReasons: [],
     },
-    ...overrides,
   };
+
+  const merged: SustainabilityCompany = {
+    ...base,
+    ...overrides,
+    emissions: { ...base.emissions, ...overrides.emissions },
+    waste: { ...base.waste, ...overrides.waste },
+    water: { ...base.water, ...overrides.water },
+    energy: { ...base.energy, ...overrides.energy },
+    fuel: { ...base.fuel, ...overrides.fuel },
+    gfa: { ...base.gfa, ...overrides.gfa },
+    meta: { ...base.meta, ...overrides.meta },
+    normalized: {
+      ...base.normalized,
+      ...overrides.normalized,
+    } as NormalizedMetrics,
+    derived: {
+      ...base.derived,
+      ...overrides.derived,
+    },
+  };
+
+  const scope12Total =
+    overrides.derived?.scope12Total !== undefined
+      ? merged.derived.scope12Total
+      : calcScope12(merged);
+  const wasteDiversionRate =
+    overrides.derived?.wasteDiversionRate !== undefined
+      ? merged.derived.wasteDiversionRate
+      : calcWasteDiversion(merged);
+
+  const computedCompleteness = calcCompleteness({
+    ...merged,
+    derived: {
+      ...merged.derived,
+      scope12Total,
+      wasteDiversionRate,
+    },
+  });
+
+  const derived = {
+    ...merged.derived,
+    scope12Total,
+    wasteDiversionRate,
+    completeness: {
+      ...computedCompleteness,
+      ...(overrides.derived?.completeness ?? {}),
+    },
+  };
+
+  return { ...merged, derived };
 }
 
 describe("getLocations", () => {
@@ -194,31 +247,34 @@ describe("getDistrictSummaries", () => {
     expect(summary.lng).toBeCloseTo(102.0);
   });
 
-  it("computes plausibility breakdown", () => {
-    const companies = [
-      makeCompany({
-        id: "c1",
-        city: "A",
-        country: "SG",
-        derived: {
-          ...makeCompany().derived,
-          plausibilityBand: "Good",
+  it("computes completeness strong vs weak counts", () => {
+    const strong = makeCompany({
+      id: "c1",
+      city: "A",
+      country: "SG",
+      derived: {
+        ...makeCompany().derived,
+        completeness: {
+          ...makeCompany().derived.completeness,
+          meetsGreenThreshold: true,
         },
-      }),
-      makeCompany({
-        id: "c2",
-        city: "A",
-        country: "SG",
-        derived: {
-          ...makeCompany().derived,
-          plausibilityBand: "Review",
+      },
+    });
+    const weak = makeCompany({
+      id: "c2",
+      city: "A",
+      country: "SG",
+      derived: {
+        ...makeCompany().derived,
+        completeness: {
+          ...makeCompany().derived.completeness,
+          meetsGreenThreshold: false,
         },
-      }),
-    ];
-    const [summary] = getDistrictSummaries(companies);
-    expect(summary.plausibilityBreakdown.Good).toBe(1);
-    expect(summary.plausibilityBreakdown.Review).toBe(1);
-    expect(summary.plausibilityBreakdown.Watch).toBe(0);
+      },
+    });
+    const [summary] = getDistrictSummaries([strong, weak]);
+    expect(summary.completenessStrong).toBe(1);
+    expect(summary.completenessWeak).toBe(1);
   });
 
   it("computes avgCoverageScore", () => {
@@ -260,6 +316,14 @@ describe("getDistrictSummaries", () => {
 });
 
 describe("filterCompanies", () => {
+  const baseOpts = (year: 2021 | 2022 | 2023 | 2024 = 2023): FilterOptions => ({
+    search: "",
+    countries: [],
+    incompleteOnly: false,
+    industries: [],
+    reportYear: year,
+  });
+
   const companies = [
     makeCompany({ id: "c1", name: "Alpha Corp", country: "Singapore", city: "Marina Bay" }),
     makeCompany({
@@ -269,7 +333,10 @@ describe("filterCompanies", () => {
       city: "Jurong East",
       derived: {
         ...makeCompany().derived,
-        plausibilityBand: "Review",
+        completeness: {
+          ...makeCompany().derived.completeness,
+          meetsGreenThreshold: false,
+        },
       },
     }),
     makeCompany({
@@ -279,58 +346,44 @@ describe("filterCompanies", () => {
       city: "Changi",
       derived: {
         ...makeCompany().derived,
-        plausibilityBand: "Watch",
+        completeness: {
+          ...makeCompany().derived.completeness,
+          meetsGreenThreshold: true,
+        },
       },
     }),
   ];
 
   it("returns all companies with no filters", () => {
-    const opts: FilterOptions = {
-      search: "",
-      countries: [],
-      plausibilityBands: [],
-      incompleteOnly: false,
-      industries: [],
-    };
-    expect(filterCompanies(companies, opts)).toHaveLength(3);
+    expect(filterCompanies(companies, baseOpts())).toHaveLength(3);
+  });
+
+  it("filters by report year", () => {
+    const mixed = [
+      ...companies,
+      makeCompany({
+        id: "c4",
+        name: "Year Co",
+        reportYear: 2024,
+      }),
+    ];
+    const r = filterCompanies(mixed, { ...baseOpts(2024), search: "" });
+    expect(r).toHaveLength(1);
+    expect(r[0].id).toBe("c4");
   });
 
   it("filters by search term (name)", () => {
-    const opts: FilterOptions = {
-      search: "alpha",
-      countries: [],
-      plausibilityBands: [],
-      incompleteOnly: false,
-      industries: [],
-    };
-    const result = filterCompanies(companies, opts);
+    const result = filterCompanies(companies, { ...baseOpts(), search: "alpha" });
     expect(result).toHaveLength(1);
     expect(result[0].id).toBe("c1");
   });
 
-  it("filters by plausibility band", () => {
-    const opts: FilterOptions = {
-      search: "",
-      countries: [],
-      plausibilityBands: ["Review"],
-      incompleteOnly: false,
-      industries: [],
-    };
-    const result = filterCompanies(companies, opts);
-    expect(result).toHaveLength(1);
-    expect(result[0].id).toBe("c2");
-  });
-
-  it("filters by multiple plausibility bands", () => {
-    const opts: FilterOptions = {
-      search: "",
-      countries: [],
-      plausibilityBands: ["Good", "Watch"],
-      incompleteOnly: false,
-      industries: [],
-    };
-    const result = filterCompanies(companies, opts);
-    expect(result).toHaveLength(2);
+  it("filters incomplete only (below 6/12)", () => {
+    const result = filterCompanies(companies, {
+      ...baseOpts(),
+      incompleteOnly: true,
+    });
+    expect(result.map((c) => c.id).sort()).toEqual(["c2"]);
   });
 
   it("filters by single industry", () => {
@@ -340,14 +393,10 @@ describe("filterCompanies", () => {
       makeCompany({ id: "c3", name: "Gamma Inc", industry: "Utilities" }),
       makeCompany({ id: "c4", name: "Delta Co", industry: undefined }),
     ];
-    const opts: FilterOptions = {
-      search: "",
-      countries: [],
-      plausibilityBands: [],
-      incompleteOnly: false,
+    const result = filterCompanies(companiesWithIndustries, {
+      ...baseOpts(),
       industries: ["Utilities"],
-    };
-    const result = filterCompanies(companiesWithIndustries, opts);
+    });
     expect(result.map((c) => c.id).sort()).toEqual(["c1", "c3"]);
   });
 
@@ -357,14 +406,10 @@ describe("filterCompanies", () => {
       makeCompany({ id: "c2", name: "Beta Ltd", industry: "Financials" }),
       makeCompany({ id: "c3", name: "Gamma Inc", industry: "Industrials" }),
     ];
-    const opts: FilterOptions = {
-      search: "",
-      countries: [],
-      plausibilityBands: [],
-      incompleteOnly: false,
+    const result = filterCompanies(companiesWithIndustries, {
+      ...baseOpts(),
       industries: ["Utilities", "Industrials"],
-    };
-    const result = filterCompanies(companiesWithIndustries, opts);
+    });
     expect(result.map((c) => c.id).sort()).toEqual(["c1", "c3"]);
   });
 
@@ -373,15 +418,42 @@ describe("filterCompanies", () => {
       makeCompany({ id: "c1", name: "Alpha Corp", industry: "Utilities" }),
       makeCompany({ id: "c2", name: "Beta Ltd", industry: undefined }),
     ];
-    const opts: FilterOptions = {
-      search: "",
-      countries: [],
-      plausibilityBands: [],
-      incompleteOnly: false,
+    const result = filterCompanies(companiesWithIndustries, {
+      ...baseOpts(),
       industries: ["Utilities"],
-    };
-    const result = filterCompanies(companiesWithIndustries, opts);
+    });
     expect(result.map((c) => c.id)).toEqual(["c1"]);
+  });
+});
+
+describe("getAvailableReportYears", () => {
+  it("returns sorted unique years", () => {
+    const companies = [
+      makeCompany({ reportYear: 2024 }),
+      makeCompany({ reportYear: 2022 }),
+      makeCompany({ reportYear: 2024 }),
+    ];
+    expect(getAvailableReportYears(companies)).toEqual([2022, 2024]);
+  });
+
+  it("returns empty array for empty input", () => {
+    expect(getAvailableReportYears([])).toEqual([]);
+  });
+});
+
+describe("getDefaultReportYear", () => {
+  it("prefers 2024 when present", () => {
+    const companies = [makeCompany({ reportYear: 2022 }), makeCompany({ reportYear: 2024 })];
+    expect(getDefaultReportYear(companies)).toBe(2024);
+  });
+
+  it("uses latest year when 2024 is absent", () => {
+    const companies = [makeCompany({ reportYear: 2021 }), makeCompany({ reportYear: 2023 })];
+    expect(getDefaultReportYear(companies)).toBe(2023);
+  });
+
+  it("returns 2024 when dataset is empty", () => {
+    expect(getDefaultReportYear([])).toBe(2024);
   });
 });
 
@@ -394,6 +466,30 @@ describe("calculateKpis", () => {
     const kpis = calculateKpis(companies);
     expect(kpis.totalCompanies).toBe(2);
     expect(kpis.totalScope12).toBe(300);
+  });
+
+  it("counts reporting complete using 6/12 threshold", () => {
+    const strong = makeCompany({
+      id: "a",
+      derived: {
+        ...makeCompany().derived,
+        completeness: {
+          ...makeCompany().derived.completeness,
+          meetsGreenThreshold: true,
+        },
+      },
+    });
+    const weak = makeCompany({
+      id: "b",
+      derived: {
+        ...makeCompany().derived,
+        completeness: {
+          ...makeCompany().derived.completeness,
+          meetsGreenThreshold: false,
+        },
+      },
+    });
+    expect(calculateKpis([strong, weak]).reportingComplete).toBe(1);
   });
 
   it("returns null for scope12 when no values", () => {
@@ -500,13 +596,19 @@ describe("calcWasteDiversion", () => {
 });
 
 describe("calcCompleteness", () => {
-  it("returns score 4 when all fields present", () => {
+  it("returns score 4 when all MVP fields present", () => {
     const result = calcCompleteness(makeCompany());
     expect(result.score).toBe(4);
     expect(result.hasScope1).toBe(true);
     expect(result.hasScope2).toBe(true);
     expect(result.hasWasteGenerated).toBe(true);
     expect(result.hasWasteRecycled).toBe(true);
+  });
+
+  it("returns score12 and green when enough overview fields are filled", () => {
+    const result = calcCompleteness(makeCompany());
+    expect(result.score12).toBeGreaterThanOrEqual(COMPLETENESS_GREEN_MIN);
+    expect(result.meetsGreenThreshold).toBe(true);
   });
 
   it("returns lower score for missing fields", () => {
@@ -527,6 +629,24 @@ describe("calcCompleteness", () => {
   });
 });
 
+describe("getCompletenessBadgeClass", () => {
+  it("returns green classes when threshold met", () => {
+    expect(getCompletenessBadgeClass(true)).toContain("emerald");
+  });
+
+  it("returns red classes when threshold not met", () => {
+    expect(getCompletenessBadgeClass(false)).toContain("red");
+  });
+});
+
+describe("getCompletenessFieldRows", () => {
+  it("returns 12 rows aligned with labels", () => {
+    const rows = getCompletenessFieldRows(makeCompany());
+    expect(rows).toHaveLength(12);
+    expect(rows[0]?.label).toBe("Scope 1");
+  });
+});
+
 describe("calcTrust", () => {
   it("returns ok when no groups failed", () => {
     const result = calcTrust(makeCompany());
@@ -539,29 +659,6 @@ describe("calcTrust", () => {
       meta: { ...makeCompany().meta, groupsFailed: 2 },
     });
     expect(calcTrust(company).extractionOk).toBe(false);
-  });
-});
-
-describe("calcRiskBand", () => {
-  it("returns Good for complete high-quality data", () => {
-    expect(calcRiskBand(makeCompany())).toBe("Good");
-  });
-
-  it("returns Review for incomplete data", () => {
-    const company = makeCompany({
-      emissions: {
-        ...makeCompany().emissions,
-        scope1: { value: null, unit: null },
-      },
-    });
-    expect(calcRiskBand(company)).toBe("Review");
-  });
-
-  it("returns Review for low data quality score", () => {
-    const company = makeCompany({
-      meta: { ...makeCompany().meta, dataQualityScore: 30 },
-    });
-    expect(calcRiskBand(company)).toBe("Review");
   });
 });
 
@@ -644,12 +741,6 @@ describe("getIndustries", () => {
       makeCompany({ industry: undefined }),
     ];
     expect(getIndustries(companies)).toEqual(["Financials", "Utilities"]);
-  });
-});
-
-describe("getPlausibilityBands", () => {
-  it("returns all three bands", () => {
-    expect(getPlausibilityBands()).toEqual(["Good", "Watch", "Review"]);
   });
 });
 

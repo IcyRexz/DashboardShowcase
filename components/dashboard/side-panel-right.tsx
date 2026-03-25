@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import {
   type KpiData,
   type SustainabilityCompany,
-  type PlausibilityBand,
+  type Year,
   fmtPct,
 } from "@/data/sustainability";
 
@@ -30,24 +30,15 @@ function fmtCompact(value: number | null): string {
 interface SidePanelRightProps {
   kpis: KpiData;
   companies: SustainabilityCompany[];
+  reportYear: Year;
 }
 
 export function SidePanelRight({
   kpis,
   companies,
+  reportYear,
 }: SidePanelRightProps) {
   const [isCollapsed, setIsCollapsed] = useState(true);
-
-  const band = (c: SustainabilityCompany) =>
-    c.derived.plausibilityBand ?? c.derived.riskBand;
-  const plausibilityBreakdown = companies.reduce(
-    (acc, company) => {
-      const b = band(company);
-      acc[b] = (acc[b] || 0) + 1;
-      return acc;
-    },
-    {} as Record<PlausibilityBand, number>,
-  );
 
   const sectorBreakdown = useMemo(() => {
     const map = new Map<string, { count: number; avgCoverage: number; totalCov: number }>();
@@ -91,18 +82,15 @@ export function SidePanelRight({
       .slice(0, 5);
   }, [companies]);
 
-  const getPlausibilityColor = (b: PlausibilityBand): string => {
-    switch (b) {
-      case "Good":
-        return "bg-emerald-500";
-      case "Watch":
-        return "bg-amber-500";
-      case "Review":
-        return "bg-red-500";
-      default:
-        return "bg-gray-400";
+  const completenessBreakdown = useMemo(() => {
+    let green = 0;
+    let red = 0;
+    for (const c of companies) {
+      if (c.derived.completeness.meetsGreenThreshold) green += 1;
+      else red += 1;
     }
-  };
+    return { green, red };
+  }, [companies]);
 
   if (isCollapsed) {
     return (
@@ -155,7 +143,7 @@ export function SidePanelRight({
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-semibold text-gray-900">
-            Overview (2024)
+            Overview ({reportYear})
           </h2>
           <Button
             variant="ghost"
@@ -211,7 +199,7 @@ export function SidePanelRight({
                     ? "text-emerald-600"
                     : kpis.avgWasteDiversion !== null &&
                         kpis.avgWasteDiversion < 0.3
-                      ? "text-amber-600"
+                      ? "text-red-600"
                       : "text-gray-900"
                 }`}
               >
@@ -270,29 +258,35 @@ export function SidePanelRight({
           </div>
         </div>
 
-        {/* Data Plausibility Distribution */}
+        {/* Data completeness (6+/12 overview fields) */}
         <div className="space-y-3">
           <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Data Plausibility
+            Data Completeness
           </h3>
           <div className="space-y-2">
-            {(["Good", "Watch", "Review"] as PlausibilityBand[]).map((b) => {
-              const count = plausibilityBreakdown[b] || 0;
+            {(
+              [
+                { key: "green", label: "At least 6 / 12 fields", count: completenessBreakdown.green },
+                { key: "red", label: "Below 6 / 12 fields", count: completenessBreakdown.red },
+              ] as const
+            ).map(({ key, label, count }) => {
               const percentage =
                 companies.length > 0
                   ? Math.round((count / companies.length) * 100)
                   : 0;
               return (
-                <div key={b} className="space-y-1">
+                <div key={key} className="space-y-1">
                   <div className="flex items-center justify-between text-xs min-w-0">
-                    <span className="text-gray-500 shrink-0">{b}</span>
+                    <span className="text-gray-500 shrink-0">{label}</span>
                     <span className="text-gray-700 truncate ml-2">
                       {count} ({percentage}%)
                     </span>
                   </div>
                   <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                     <div
-                      className={`h-full ${getPlausibilityColor(b)} rounded-full transition-all duration-500`}
+                      className={`h-full rounded-full transition-all duration-500 ${
+                        key === "green" ? "bg-emerald-500" : "bg-red-500"
+                      }`}
                       style={{ width: `${percentage}%` }}
                     />
                   </div>

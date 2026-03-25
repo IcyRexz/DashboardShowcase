@@ -2,7 +2,7 @@
 /**
  * Build script to parse all country_year.csv files and generate sustainability.generated.ts
  * - Canonical unit normalization (emissions, energy kWh, water m³, waste tonnes)
- * - Data plausibility (industry-based percentiles + consistency checks) with reasons
+ * - Data completeness (12 overview fields; green when ≥6 filled)
  *
  * Run with: npx tsx scripts/build-sustainability-data.ts
  */
@@ -15,7 +15,27 @@ import {
   normalizeWaterToM3,
   normalizeWasteToTonnes,
 } from "../lib/units";
-import type { Year } from "../data/sustainability";
+import {
+  COMPLETENESS_GREEN_MIN,
+  type Completeness,
+  type Year,
+} from "../data/sustainability";
+
+const ALLOWED_REPORT_YEARS: readonly Year[] = [2021, 2022, 2023, 2024];
+
+/** Ignore bogus CSV years (e.g. parsed from company names like "Trek 2000"); use file year instead. */
+function resolveReportYear(
+  fromCsv: number | null,
+  inferredFromFileName: number,
+): Year {
+  const fallback = inferredFromFileName as Year;
+  if (fromCsv == null) {
+    return fallback;
+  }
+  return ALLOWED_REPORT_YEARS.includes(fromCsv as Year)
+    ? (fromCsv as Year)
+    : fallback;
+}
 
 // ============================================================================
 // CSV PARSING
@@ -371,19 +391,22 @@ function calcWasteDiversion(
   return Math.min(1, Math.max(0, rate));
 }
 
-interface Completeness {
-  hasScope1: boolean;
-  hasScope2: boolean;
-  hasWasteGenerated: boolean;
-  hasWasteRecycled: boolean;
-  score: number;
-}
-
 function calcCompleteness(
   scope1: number | null,
   scope2: number | null,
+  scope3: number | null,
+  scope12Total: number | null,
   wasteGenerated: number | null,
   wasteRecycled: number | null,
+  wasteDisposed: number | null,
+  wasteDiversionRate: number | null,
+  waterWithdrawal: number | null,
+  waterConsumption: number | null,
+  waterWithdrawalM3: number | null,
+  waterConsumptionM3: number | null,
+  totalEnergy: number | null,
+  totalEnergyKwh: number | null,
+  fuelConsumption: number | null,
 ): Completeness {
   const hasScope1 = scope1 !== null;
   const hasScope2 = scope2 !== null;
@@ -397,189 +420,43 @@ function calcCompleteness(
     hasWasteRecycled,
   ].filter(Boolean).length;
 
+  const hasScope3 = scope3 !== null;
+  const hasScope12 = scope12Total !== null;
+  const hasWasteDisposed = wasteDisposed !== null;
+  const hasDiversion = wasteDiversionRate !== null;
+  const hasWaterWithdrawal =
+    waterWithdrawal !== null || waterWithdrawalM3 !== null;
+  const hasWaterConsumption =
+    waterConsumption !== null || waterConsumptionM3 !== null;
+  const hasEnergy = totalEnergy !== null || totalEnergyKwh !== null;
+  const hasFuel = fuelConsumption !== null;
+
+  const score12 = [
+    hasScope1,
+    hasScope2,
+    hasScope3,
+    hasScope12,
+    hasWasteGenerated,
+    hasWasteRecycled,
+    hasWasteDisposed,
+    hasDiversion,
+    hasWaterWithdrawal,
+    hasWaterConsumption,
+    hasEnergy,
+    hasFuel,
+  ].filter(Boolean).length;
+
+  const meetsGreenThreshold = score12 >= COMPLETENESS_GREEN_MIN;
+
   return {
     hasScope1,
     hasScope2,
     hasWasteGenerated,
     hasWasteRecycled,
     score,
+    score12,
+    meetsGreenThreshold,
   };
-}
-
-type PlausibilityBand = "Good" | "Watch" | "Review";
-
-const MIN_PEERS_FOR_PERCENTILE = 10;
-
-/** Sorted ascending; return value at percentile (0-100). */
-function percentile(sorted: number[], p: number): number {
-  if (sorted.length === 0) return 0;
-  const index = (p / 100) * (sorted.length - 1);
-  const lower = Math.floor(index);
-  const upper = Math.ceil(index);
-  if (lower === upper) return sorted[lower];
-  return sorted[lower] + (index - lower) * (sorted[upper] - sorted[lower]);
-}
-
-/** Consistency checks (hard rules). Returns list of reason strings if any. */
-function consistencyReasons(
-  scope1: number | null,
-  scope2: number | null,
-  wasteGen: number | null,
-  wasteRec: number | null,
-  waterWith: number | null,
-  waterRec: number | null,
-  groupsFailed: number | null,
-  completenessScore: number,
-  dataQualityScore: number | null,
-): string[] {
-  const reasons: string[] = [];
-  if (wasteGen != null && wasteRec != null && wasteRec > wasteGen) {
-    reasons.push("Waste recycled exceeds waste generated");
-  }
-  if (waterWith != null && waterRec != null && waterRec > waterWith) {
-    reasons.push("Water recycled exceeds water withdrawal");
-  }
-  if (
-    (scope1 != null && scope1 < 0) ||
-    (scope2 != null && scope2 < 0) ||
-    (wasteGen != null && wasteGen < 0) ||
-    (wasteRec != null && wasteRec < 0)
-  ) {
-    reasons.push("Negative value in key metric");
-  }
-  if (groupsFailed != null && groupsFailed > 0) {
-    reasons.push("Extraction had failed groups");
-  }
-  if (completenessScore < 4) {
-    const missing: string[] = [];
-    if (scope1 === null) missing.push("Scope 1");
-    if (scope2 === null) missing.push("Scope 2");
-    if (wasteGen === null) missing.push("Waste generated");
-    if (wasteRec === null) missing.push("Waste recycled");
-    reasons.push(`Incomplete reporting: missing ${missing.join(", ")}`);
-  }
-  if (dataQualityScore != null && dataQualityScore < 50) {
-    reasons.push("Data quality score below 50");
-  }
-  return reasons;
-}
-
-/** Assign plausibility band and reasons using percentiles (global cohort) and consistency. */
-function calcPlausibility(
-  company: {
-    normalized?: {
-      scope1TCO2e: number | null;
-      scope2TCO2e: number | null;
-      scope3TCO2e: number | null;
-      totalEnergyKwh: number | null;
-      waterWithdrawalM3: number | null;
-      wasteGeneratedTonnes: number | null;
-    };
-    derived: {
-      scope12Total: number | null;
-      wasteDiversionRate: number | null;
-      completeness: Completeness;
-      trust: { extractionOk: boolean; dataQualityScore: number | null };
-    };
-    meta: { groupsFailed: number | null };
-    water: { withdrawal: QuantityRaw; recycled: QuantityRaw };
-  },
-  stats: {
-    scope12P95: number;
-    energyP95: number;
-    waterP95: number;
-    wasteP95: number;
-    diversionP10: number;
-    cohortSize: number;
-  },
-): { band: PlausibilityBand; reasons: string[] } {
-  const reasons: string[] = [];
-  const scope12 = company.derived.scope12Total;
-  const scope1 = company.normalized?.scope1TCO2e ?? null;
-  const scope2 = company.normalized?.scope2TCO2e ?? null;
-  const wasteGen = company.normalized?.wasteGeneratedTonnes ?? null;
-  const wasteRec =
-    company.normalized?.wasteRecycledTonnes ??
-    company.waste?.recycled?.value ??
-    null;
-  const waterWith =
-    company.normalized?.waterWithdrawalM3 ??
-    company.water?.withdrawal?.value ??
-    null;
-  const waterRec =
-    company.normalized?.waterRecycledM3 ??
-    company.water?.recycled?.value ??
-    null;
-
-  const consistency = consistencyReasons(
-    scope1,
-    scope2,
-    wasteGen,
-    wasteRec,
-    waterWith,
-    waterRec,
-    company.meta.groupsFailed,
-    company.derived.completeness.score,
-    company.derived.trust.dataQualityScore ?? null,
-  );
-  if (consistency.length > 0) {
-    return { band: "Review", reasons: consistency };
-  }
-
-  // Review: extraction failed or completeness < 4 (already in consistency)
-  if (!company.derived.trust.extractionOk) {
-    return { band: "Review", reasons: ["Extraction had failed groups"] };
-  }
-  if (company.derived.completeness.score < 4) {
-    return {
-      band: "Review",
-      reasons: [
-        "Incomplete reporting: missing one or more of Scope 1, Scope 2, Waste generated, Waste recycled",
-      ],
-    };
-  }
-  if (
-    company.derived.trust.dataQualityScore != null &&
-    company.derived.trust.dataQualityScore < 50
-  ) {
-    return { band: "Review", reasons: ["Data quality score below 50"] };
-  }
-
-  // Watch: high outlier or low diversion (only when enough peers)
-  const n = stats.cohortSize;
-  if (n >= MIN_PEERS_FOR_PERCENTILE) {
-    if (scope12 !== null && scope12 >= stats.scope12P95) {
-      reasons.push("Scope 1+2 emissions at or above 95th percentile in cohort");
-    }
-    const energy = company.normalized?.totalEnergyKwh;
-    if (energy !== null && energy >= stats.energyP95) {
-      reasons.push("Total energy at or above 95th percentile in cohort");
-    }
-    const water = company.normalized?.waterWithdrawalM3;
-    if (water !== null && water >= stats.waterP95) {
-      reasons.push("Water withdrawal at or above 95th percentile in cohort");
-    }
-    const waste = company.normalized?.wasteGeneratedTonnes;
-    if (waste !== null && waste >= stats.wasteP95) {
-      reasons.push("Waste generated at or above 95th percentile in cohort");
-    }
-    const div = company.derived.wasteDiversionRate;
-    if (div !== null && (div <= stats.diversionP10 || div < 0.2)) {
-      reasons.push(
-        div < 0.2
-          ? "Waste diversion rate below 20%"
-          : "Waste diversion at or below 10th percentile in cohort",
-      );
-    }
-  } else {
-    const div = company.derived.wasteDiversionRate;
-    if (div !== null && div < 0.2) {
-      reasons.push("Waste diversion rate below 20%");
-    }
-  }
-
-  if (reasons.length > 0) return { band: "Watch", reasons };
-  return { band: "Good", reasons: [] };
 }
 
 // ============================================================================
@@ -647,8 +524,7 @@ function buildSustainabilityData(): void {
       const locationInfo = getCoordinates(rawName, inferredCountry);
 
       const reportYearNumber = parseNumber(getRow(row, "report_year"));
-      const reportYear: Year =
-        (reportYearNumber as Year | null) ?? (inferredYear as Year);
+      const reportYear = resolveReportYear(reportYearNumber, inferredYear);
 
       const scope1Value = parseNumber(getRow(row, "scope_1_value"));
       const scope1Unit = parseString(getRow(row, "scope_1_unit"));
@@ -665,6 +541,9 @@ function buildSustainabilityData(): void {
       const wasteDisposedUnit = parseString(getRow(row, "waste_disposed_unit"));
       const wasteRecycledValue = parseNumber(getRow(row, "waste_recycled_value"));
       const wasteRecycledUnit = parseString(getRow(row, "waste_recycled_unit"));
+      const fuelConsumptionValue = parseNumber(
+        getRow(row, "fuel_total_value", "fuel_consumption_value"),
+      );
 
       const groupsFailed = parseNumber(getRow(row, "total_groups_failed"));
       const dataQualityScore = parseNumber(getRow(row, "data_quality_score"));
@@ -699,12 +578,6 @@ function buildSustainabilityData(): void {
       const scope2: QuantityRaw = { value: scope2Value, unit: scope2Unit };
       const scope12Total = calcScope12(scope1, scope2);
       const wasteDiversionRate = calcWasteDiversion(
-        wasteGeneratedValue,
-        wasteRecycledValue,
-      );
-      const completeness = calcCompleteness(
-        scope1Value,
-        scope2Value,
         wasteGeneratedValue,
         wasteRecycledValue,
       );
@@ -755,6 +628,24 @@ function buildSustainabilityData(): void {
         wasteRecycledTonnes,
         wasteDisposedTonnes,
       };
+
+      const completeness = calcCompleteness(
+        scope1Value,
+        scope2Value,
+        scope3Value,
+        scope12Total,
+        wasteGeneratedValue,
+        wasteRecycledValue,
+        wasteDisposedValue,
+        wasteDiversionRate,
+        waterWithdrawalValue,
+        waterConsumptionValue,
+        normalized.waterWithdrawalM3,
+        normalized.waterConsumptionM3,
+        totalEnergyValue,
+        normalized.totalEnergyKwh,
+        fuelConsumptionValue,
+      );
 
       const sectorSsic = parseString(getRow(row, "sector_ssic"));
       const industry = sectorSsic && sectorSsic.trim() ? sectorSsic.trim() : "General";
@@ -826,7 +717,7 @@ function buildSustainabilityData(): void {
 
       fuel: {
         consumption: {
-          value: parseNumber(getRow(row, "fuel_total_value", "fuel_consumption_value")),
+          value: fuelConsumptionValue,
           unit: parseString(getRow(row, "fuel_total_unit", "fuel_consumption_unit")),
         },
         breakdown: parseString(getRow(row, "fuel_type_breakdown", "fuel_breakdown")),
@@ -883,8 +774,6 @@ function buildSustainabilityData(): void {
           dataQualityScore,
           verifiedByHuman: parseBoolean(getRow(row, "verified_by_human")),
         },
-        plausibilityBand: "Good" as PlausibilityBand,
-        plausibilityReasons: [] as string[],
         coverageScore,
         coverageRank: csvSectorRank !== null ? Math.round(csvSectorRank) : (null as number | null),
         coveragePercentile: csvSectorPercentile !== null ? Math.round(csvSectorPercentile * 100) / 100 : (null as number | null),
@@ -921,75 +810,6 @@ function buildSustainabilityData(): void {
     }
   }
 
-  // Compute global cohort percentiles (industry = General for all)
-  type CompanyRow = {
-    derived: { scope12Total: number | null; wasteDiversionRate: number | null };
-    normalized?: {
-      totalEnergyKwh: number | null;
-      waterWithdrawalM3: number | null;
-      wasteGeneratedTonnes: number | null;
-    };
-  };
-  const scope12Arr = (companies as CompanyRow[])
-    .map((c) => c.derived.scope12Total)
-    .filter((v): v is number => v !== null && v > 0);
-  const energyArr = (companies as CompanyRow[])
-    .map((c) => c.normalized?.totalEnergyKwh)
-    .filter((v): v is number => v !== null && v > 0);
-  const waterArr = (companies as CompanyRow[])
-    .map((c) => c.normalized?.waterWithdrawalM3)
-    .filter((v): v is number => v !== null && v > 0);
-  const wasteArr = (companies as CompanyRow[])
-    .map((c) => c.normalized?.wasteGeneratedTonnes)
-    .filter((v): v is number => v !== null && v > 0);
-  const diversionArr = (companies as CompanyRow[])
-    .map((c) => c.derived.wasteDiversionRate)
-    .filter((v): v is number => v !== null);
-
-  scope12Arr.sort((a, b) => a - b);
-  energyArr.sort((a, b) => a - b);
-  waterArr.sort((a, b) => a - b);
-  wasteArr.sort((a, b) => a - b);
-  diversionArr.sort((a, b) => a - b);
-
-  const stats = {
-    scope12P95: scope12Arr.length > 0 ? percentile(scope12Arr, 95) : Infinity,
-    energyP95: energyArr.length > 0 ? percentile(energyArr, 95) : Infinity,
-    waterP95: waterArr.length > 0 ? percentile(waterArr, 95) : Infinity,
-    wasteP95: wasteArr.length > 0 ? percentile(wasteArr, 95) : Infinity,
-    diversionP10: diversionArr.length > 0 ? percentile(diversionArr, 10) : 0,
-    cohortSize: companies.length,
-  };
-
-  // Assign plausibility band and reasons to each company
-  for (const c of companies as unknown[]) {
-    const company = c as {
-      normalized?: {
-        scope1TCO2e: number | null;
-        scope2TCO2e: number | null;
-        waterWithdrawalM3: number | null;
-        waterRecycledM3: number | null;
-        wasteGeneratedTonnes: number | null;
-        wasteRecycledTonnes: number | null;
-        totalEnergyKwh: number | null;
-      };
-      derived: {
-        scope12Total: number | null;
-        wasteDiversionRate: number | null;
-        completeness: Completeness;
-        trust: { extractionOk: boolean; dataQualityScore: number | null };
-        plausibilityBand: PlausibilityBand;
-        plausibilityReasons: string[];
-      };
-      meta: { groupsFailed: number | null };
-      water: { withdrawal: QuantityRaw; recycled: QuantityRaw };
-      waste: { recycled: QuantityRaw };
-    };
-    const { band, reasons } = calcPlausibility(company, stats);
-    company.derived.plausibilityBand = band;
-    company.derived.plausibilityReasons = reasons;
-  }
-
   // Generate TypeScript output
   const output = `// ============================================================================
 // GENERATED FILE - DO NOT EDIT MANUALLY
@@ -1001,7 +821,13 @@ function buildSustainabilityData(): void {
 
 import type { SustainabilityCompany } from "./sustainability";
 
-export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = ${JSON.stringify(companies, null, 2)};
+// Use JSON.parse to avoid TypeScript trying to represent an enormous union type
+// when the generated dataset is inlined as a huge literal.
+const __rawCompaniesJson = ${JSON.stringify(
+    JSON.stringify(companies, null, 2),
+  )} as string;
+export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] =
+  JSON.parse(__rawCompaniesJson) as SustainabilityCompany[];
 `;
 
   // Write output
@@ -1014,23 +840,18 @@ export const SUSTAINABILITY_COMPANIES: SustainabilityCompany[] = ${JSON.stringif
   console.log(`Generated ${outputPath}`);
 
   // Print summary
-  const bandCounts = (
-    companies as { derived: { plausibilityBand: string } }[]
-  ).reduce(
-    (acc, c) => {
-      const b = c.derived.plausibilityBand;
-      acc[b] = (acc[b] || 0) + 1;
-      return acc;
-    },
-    {} as Record<string, number>,
-  );
+  let completenessGreen = 0;
+  let completenessRed = 0;
+  for (const c of companies as { derived: { completeness: Completeness } }[]) {
+    if (c.derived.completeness.meetsGreenThreshold) completenessGreen += 1;
+    else completenessRed += 1;
+  }
 
   console.log("\nSummary:");
   console.log(`  Total companies: ${companies.length}`);
-  console.log(`  Data plausibility distribution:`);
-  console.log(`    Good: ${bandCounts["Good"] || 0}`);
-  console.log(`    Watch: ${bandCounts["Watch"] || 0}`);
-  console.log(`    Review: ${bandCounts["Review"] || 0}`);
+  console.log(
+    `  Data completeness (≥${COMPLETENESS_GREEN_MIN}/12 fields): ${completenessGreen} green, ${completenessRed} red`,
+  );
 }
 
 // Run

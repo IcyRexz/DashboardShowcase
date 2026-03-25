@@ -24,14 +24,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Switch } from "@/components/ui/switch";
 import {
   type SustainabilityCompany,
-  type PlausibilityBand,
   type FilterOptions,
   type UnitView,
   getCountries,
-  getPlausibilityBands,
   getIndustries,
   fmtTCO2e,
   fmtPct,
+  getCompletenessBadgeClass,
 } from "@/data/sustainability";
 
 interface SidePanelLeftProps {
@@ -55,12 +54,10 @@ export function SidePanelLeft({
 }: SidePanelLeftProps) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [showCountryFilter, setShowCountryFilter] = useState(false);
-  const [showPlausibilityFilter, setShowPlausibilityFilter] = useState(false);
   const [showIndustryFilter, setShowIndustryFilter] = useState(false);
   const listContainerRef = useRef<HTMLDivElement>(null);
 
   const countries = getCountries(allCompanies);
-  const plausibilityBands = getPlausibilityBands();
   const industries = getIndustries(allCompanies);
 
   useEffect(() => {
@@ -96,13 +93,6 @@ export function SidePanelLeft({
     onFiltersChange({ ...filters, countries: newCountries });
   };
 
-  const handlePlausibilityToggle = (band: PlausibilityBand) => {
-    const next = filters.plausibilityBands.includes(band)
-      ? filters.plausibilityBands.filter((r) => r !== band)
-      : [...filters.plausibilityBands, band];
-    onFiltersChange({ ...filters, plausibilityBands: next });
-  };
-
   const handleIncompleteToggle = (checked: boolean) => {
     onFiltersChange({ ...filters, incompleteOnly: checked });
   };
@@ -121,13 +111,6 @@ export function SidePanelLeft({
     });
   };
 
-  const handleRemovePlausibility = (band: PlausibilityBand) => {
-    onFiltersChange({
-      ...filters,
-      plausibilityBands: filters.plausibilityBands.filter((r) => r !== band),
-    });
-  };
-
   const handleRemoveIndustry = (industry: string) => {
     onFiltersChange({
       ...filters,
@@ -139,37 +122,22 @@ export function SidePanelLeft({
     onFiltersChange({
       search: "",
       countries: [],
-      plausibilityBands: [],
       incompleteOnly: false,
       industries: [],
+      reportYear: filters.reportYear,
     });
   };
 
   const hasActiveFilters =
     filters.search ||
     filters.countries.length > 0 ||
-    filters.plausibilityBands.length > 0 ||
     filters.incompleteOnly ||
     filters.industries.length > 0;
 
   const hasActiveFilterChips =
     filters.countries.length > 0 ||
-    filters.plausibilityBands.length > 0 ||
     filters.incompleteOnly ||
     filters.industries.length > 0;
-
-  const getPlausibilityColor = (band: PlausibilityBand): string => {
-    switch (band) {
-      case "Good":
-        return "bg-emerald-100 text-emerald-700 border-emerald-300";
-      case "Watch":
-        return "bg-amber-100 text-amber-700 border-amber-300";
-      case "Review":
-        return "bg-red-100 text-red-700 border-red-300";
-      default:
-        return "bg-gray-100 text-gray-600 border-gray-300";
-    }
-  };
 
   if (isCollapsed) {
     return (
@@ -217,7 +185,7 @@ export function SidePanelLeft({
   }
 
   return (
-    <div className="w-72 h-full panel-glass rounded-lg flex flex-col transition-all duration-300">
+    <div className="w-72 h-full panel-glass rounded-lg flex flex-col transition-all duration-300 min-h-0">
       {/* Header */}
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between mb-3">
@@ -281,28 +249,10 @@ export function SidePanelLeft({
                 </button>
               </Badge>
             ))}
-            {filters.plausibilityBands.map((band) => (
-              <Badge
-                key={`plausibility-${band}`}
-                variant="outline"
-                className={`h-6 px-2 text-xs cursor-pointer flex items-center gap-1 ${getPlausibilityColor(band)}`}
-              >
-                {band}
-                <button
-                  type="button"
-                  onClick={() => handleRemovePlausibility(band)}
-                  className="ml-0.5 hover:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-current rounded"
-                  aria-label={`Remove ${band} plausibility filter`}
-                  title={`Remove ${band} filter`}
-                >
-                  <X className="h-3 w-3" />
-                </button>
-              </Badge>
-            ))}
             {filters.incompleteOnly && (
               <Badge
                 variant="outline"
-                className="h-6 px-2 text-xs cursor-pointer flex items-center gap-1 border-amber-300 text-amber-700 bg-amber-50"
+                className="h-6 px-2 text-xs cursor-pointer flex items-center gap-1 border-red-300 text-red-700 bg-red-50"
               >
                 <AlertCircle className="h-3 w-3" />
                 Incomplete
@@ -331,285 +281,236 @@ export function SidePanelLeft({
         )}
       </div>
 
-      {/* Filters */}
-      <div className="p-3 border-b border-gray-200 space-y-2">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Filters
-          </span>
-          {hasActiveFilters && !hasActiveFilterChips && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={clearFilters}
-              className="h-6 px-2 text-xs text-gray-500 hover:text-gray-900"
-              aria-label="Clear all filters"
-            >
-              Clear all
-            </Button>
-          )}
-        </div>
-
-        {/* Country Filter */}
-        <Collapsible
-          open={showCountryFilter}
-          onOpenChange={setShowCountryFilter}
-        >
-          <CollapsibleTrigger asChild>
-            <Button
-              variant="ghost"
-              className="w-full justify-between h-8 px-2 text-xs text-gray-700 hover:bg-gray-100"
-              aria-expanded={showCountryFilter}
-            >
-              <span className="flex items-center gap-2">
-                Country
-                {filters.countries.length > 0 && (
-                  <Badge
-                    variant="secondary"
-                    className="h-5 px-1.5 text-xs bg-gray-200"
-                  >
-                    {filters.countries.length}
-                  </Badge>
-                )}
-              </span>
-              <ChevronRight
-                className={`h-3 w-3 transition-transform ${
-                  showCountryFilter ? "rotate-90" : ""
-                }`}
-              />
-            </Button>
-          </CollapsibleTrigger>
-          <CollapsibleContent className="pt-2 space-y-1">
-            {countries.map((country) => (
-              <label
-                key={country}
-                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-100 cursor-pointer"
+      <ScrollArea className="flex-1 min-h-0">
+        {/* Filters */}
+        <div className="p-3 border-b border-gray-200 space-y-2">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Filters
+            </span>
+            {hasActiveFilters && !hasActiveFilterChips && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={clearFilters}
+                className="h-6 px-2 text-xs text-gray-500 hover:text-gray-900"
+                aria-label="Clear all filters"
               >
-                <Checkbox
-                  checked={filters.countries.includes(country)}
-                  onCheckedChange={() => handleCountryToggle(country)}
-                  className="border-gray-300 data-[state=checked]:bg-gray-900 data-[state=checked]:border-gray-900"
-                  aria-label={`Filter by ${country}`}
-                />
-                <span className="text-xs text-gray-700">{country}</span>
-              </label>
-            ))}
-          </CollapsibleContent>
-        </Collapsible>
+                Clear all
+              </Button>
+            )}
+          </div>
 
-        {/* Industry Filter */}
-        <Collapsible
-          open={showIndustryFilter}
-          onOpenChange={setShowIndustryFilter}
-        >
-          <CollapsibleTrigger asChild>
-            <Button
-              variant="ghost"
-              className="w-full justify-between h-8 px-2 text-xs text-gray-700 hover:bg-gray-100"
-              aria-expanded={showIndustryFilter}
-            >
-              <span className="flex items-center gap-2">
-                Industry
-                {filters.industries.length > 0 && (
-                  <Badge
-                    variant="secondary"
-                    className="h-5 px-1.5 text-xs bg-gray-200"
-                  >
-                    {filters.industries.length}
-                  </Badge>
-                )}
-              </span>
-              <ChevronRight
-                className={`h-3 w-3 transition-transform ${
-                  showIndustryFilter ? "rotate-90" : ""
-                }`}
-              />
-            </Button>
-          </CollapsibleTrigger>
-          <CollapsibleContent className="pt-2 space-y-1">
-            {industries.map((industry) => (
-              <label
-                key={industry}
-                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-100 cursor-pointer"
-              >
-                <Checkbox
-                  checked={filters.industries.includes(industry)}
-                  onCheckedChange={() => handleIndustryToggle(industry)}
-                  className="border-gray-300 data-[state=checked]:bg-gray-900 data-[state=checked]:border-gray-900"
-                  aria-label={`Filter by ${industry} industry`}
-                />
-                <span className="text-xs text-gray-700">{industry}</span>
-              </label>
-            ))}
-          </CollapsibleContent>
-        </Collapsible>
-
-        {/* Data Plausibility Filter */}
-        <Collapsible
-          open={showPlausibilityFilter}
-          onOpenChange={setShowPlausibilityFilter}
-        >
-          <CollapsibleTrigger asChild>
-            <Button
-              variant="ghost"
-              className="w-full justify-between h-8 px-2 text-xs text-gray-700 hover:bg-gray-100"
-              aria-expanded={showPlausibilityFilter}
-            >
-              <span className="flex items-center gap-2">
-                Data Plausibility
-                {filters.plausibilityBands.length > 0 && (
-                  <Badge
-                    variant="secondary"
-                    className="h-5 px-1.5 text-xs bg-gray-200"
-                  >
-                    {filters.plausibilityBands.length}
-                  </Badge>
-                )}
-              </span>
-              <ChevronRight
-                className={`h-3 w-3 transition-transform ${
-                  showPlausibilityFilter ? "rotate-90" : ""
-                }`}
-              />
-            </Button>
-          </CollapsibleTrigger>
-          <CollapsibleContent className="pt-2 space-y-1">
-            {plausibilityBands.map((band) => (
-              <label
-                key={band}
-                className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-100 cursor-pointer"
-              >
-                <Checkbox
-                  checked={filters.plausibilityBands.includes(band)}
-                  onCheckedChange={() => handlePlausibilityToggle(band)}
-                  className="border-gray-300 data-[state=checked]:bg-gray-900 data-[state=checked]:border-gray-900"
-                  aria-label={`Filter by ${band} plausibility`}
-                />
-                <span className="text-xs text-gray-700">{band}</span>
-              </label>
-            ))}
-          </CollapsibleContent>
-        </Collapsible>
-
-        {/* Incomplete Only Toggle */}
-        <div className="flex items-center justify-between px-2 py-1.5">
-          <label
-            htmlFor="incomplete-toggle"
-            className="text-xs text-gray-700 cursor-pointer flex items-center gap-2"
+          {/* Country Filter */}
+          <Collapsible
+            open={showCountryFilter}
+            onOpenChange={setShowCountryFilter}
           >
-            <AlertCircle className="h-3 w-3 text-amber-600" />
-            Incomplete only
-          </label>
-          <Switch
-            id="incomplete-toggle"
-            checked={filters.incompleteOnly}
-            onCheckedChange={handleIncompleteToggle}
-            className="data-[state=checked]:bg-amber-500"
-            aria-label="Show only companies with incomplete data"
-          />
-        </div>
-      </div>
+            <CollapsibleTrigger asChild>
+              <Button
+                variant="ghost"
+                className="w-full justify-between h-8 px-2 text-xs text-gray-700 hover:bg-gray-100"
+                aria-expanded={showCountryFilter}
+              >
+                <span className="flex items-center gap-2">
+                  Country
+                  {filters.countries.length > 0 && (
+                    <Badge
+                      variant="secondary"
+                      className="h-5 px-1.5 text-xs bg-gray-200"
+                    >
+                      {filters.countries.length}
+                    </Badge>
+                  )}
+                </span>
+                <ChevronRight
+                  className={`h-3 w-3 transition-transform ${
+                    showCountryFilter ? "rotate-90" : ""
+                  }`}
+                />
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="pt-2 space-y-1">
+              {countries.map((country) => (
+                <label
+                  key={country}
+                  className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-100 cursor-pointer"
+                >
+                  <Checkbox
+                    checked={filters.countries.includes(country)}
+                    onCheckedChange={() => handleCountryToggle(country)}
+                    className="border-gray-300 data-[state=checked]:bg-gray-900 data-[state=checked]:border-gray-900"
+                    aria-label={`Filter by ${country}`}
+                  />
+                  <span className="text-xs text-gray-700">{country}</span>
+                </label>
+              ))}
+            </CollapsibleContent>
+          </Collapsible>
 
-      {/* Company List */}
-      <div className="flex-1 overflow-hidden">
+          {/* Industry Filter */}
+          <Collapsible
+            open={showIndustryFilter}
+            onOpenChange={setShowIndustryFilter}
+          >
+            <CollapsibleTrigger asChild>
+              <Button
+                variant="ghost"
+                className="w-full justify-between h-8 px-2 text-xs text-gray-700 hover:bg-gray-100"
+                aria-expanded={showIndustryFilter}
+              >
+                <span className="flex items-center gap-2">
+                  Industry
+                  {filters.industries.length > 0 && (
+                    <Badge
+                      variant="secondary"
+                      className="h-5 px-1.5 text-xs bg-gray-200"
+                    >
+                      {filters.industries.length}
+                    </Badge>
+                  )}
+                </span>
+                <ChevronRight
+                  className={`h-3 w-3 transition-transform ${
+                    showIndustryFilter ? "rotate-90" : ""
+                  }`}
+                />
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="pt-2 space-y-1">
+              {industries.map((industry) => (
+                <label
+                  key={industry}
+                  className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-100 cursor-pointer"
+                >
+                  <Checkbox
+                    checked={filters.industries.includes(industry)}
+                    onCheckedChange={() => handleIndustryToggle(industry)}
+                    className="border-gray-300 data-[state=checked]:bg-gray-900 data-[state=checked]:border-gray-900"
+                    aria-label={`Filter by ${industry} industry`}
+                  />
+                  <span className="text-xs text-gray-700">{industry}</span>
+                </label>
+              ))}
+            </CollapsibleContent>
+          </Collapsible>
+
+          {/* Incomplete Only Toggle */}
+          <div className="flex items-center justify-between px-2 py-1.5">
+            <label
+              htmlFor="incomplete-toggle"
+              className="text-xs text-gray-700 cursor-pointer flex items-center gap-2"
+            >
+              <AlertCircle className="h-3 w-3 text-red-600" />
+              Below 6/12 fields
+            </label>
+            <Switch
+              id="incomplete-toggle"
+              checked={filters.incompleteOnly}
+              onCheckedChange={handleIncompleteToggle}
+              className="data-[state=checked]:bg-red-500"
+              aria-label="Show only companies below the 6 of 12 overview completeness threshold"
+            />
+          </div>
+        </div>
+
+        {/* Company List */}
         <div className="p-3 pb-1">
           <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
             Companies ({companies.length})
           </span>
         </div>
-        <ScrollArea className="h-[calc(100%-32px)] px-3 pb-3">
-          <div ref={listContainerRef} className="space-y-1">
-            {companies.map((company) => {
-              const plausibilityBand =
-                company.derived.plausibilityBand ?? company.derived.riskBand;
-              return (
-                <button
-                  type="button"
-                  key={company.id}
-                  data-company-id={company.id}
-                  onClick={() => onSelectCompany(company)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      onSelectCompany(company);
-                    }
-                  }}
-                  className={`w-full flex items-start gap-3 p-2.5 rounded-md text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-1 focus-visible:ring-offset-white ${
+
+        <div ref={listContainerRef} className="space-y-1 px-3 pb-3">
+          {companies.map((company) => {
+            const comp = company.derived.completeness;
+            return (
+              <button
+                type="button"
+                key={company.id}
+                data-company-id={company.id}
+                onClick={() => onSelectCompany(company)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    onSelectCompany(company);
+                  }
+                }}
+                className={`w-full flex items-start gap-3 p-2.5 rounded-md text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-1 focus-visible:ring-offset-white ${
+                  selectedCompany?.id === company.id
+                    ? "bg-gray-900 text-white"
+                    : "hover:bg-gray-100 text-gray-900"
+                }`}
+              >
+                <Building2
+                  className={`h-4 w-4 mt-0.5 shrink-0 ${
                     selectedCompany?.id === company.id
-                      ? "bg-gray-900 text-white"
-                      : "hover:bg-gray-100 text-gray-900"
+                      ? "text-gray-300"
+                      : "text-gray-400"
                   }`}
-                >
-                  <Building2
-                    className={`h-4 w-4 mt-0.5 shrink-0 ${
+                />
+                <div className="flex-1 min-w-0">
+                  <p
+                    className={`text-sm font-medium truncate ${
                       selectedCompany?.id === company.id
-                        ? "text-gray-300"
-                        : "text-gray-400"
+                        ? "text-white"
+                        : "text-gray-900"
                     }`}
-                  />
-                  <div className="flex-1 min-w-0">
-                    <p
-                      className={`text-sm font-medium truncate ${
-                        selectedCompany?.id === company.id
-                          ? "text-white"
-                          : "text-gray-900"
-                      }`}
+                  >
+                    {company.name}
+                  </p>
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
+                    <Badge
+                      variant="outline"
+                      className={`text-[10px] px-1.5 py-0 h-4 ${getCompletenessBadgeClass(comp.meetsGreenThreshold)}`}
+                      title="Data completeness (overview fields)"
                     >
-                      {company.name}
-                    </p>
-                    <div className="flex items-center gap-2 mt-1 flex-wrap">
-                      <Badge
-                        variant="outline"
-                        className={`text-[10px] px-1.5 py-0 h-4 ${getPlausibilityColor(plausibilityBand)}`}
-                        title="Data plausibility"
+                      {comp.score12}/12
+                    </Badge>
+                    {company.derived.coverageScore != null && (
+                      <span
+                        className={`text-[10px] ${
+                          selectedCompany?.id === company.id
+                            ? "text-gray-400"
+                            : "text-gray-500"
+                        }`}
+                        title="Coverage score (key ESG fields present)"
                       >
-                        {plausibilityBand}
-                      </Badge>
-                      {company.derived.coverageScore != null && (
-                        <span
-                          className={`text-[10px] ${
-                            selectedCompany?.id === company.id
-                              ? "text-gray-400"
-                              : "text-gray-500"
-                          }`}
-                          title="Coverage score (key ESG fields present)"
-                        >
-                          {company.derived.coverageScore}% cov
-                          {company.derived.coverageRank != null &&
-                            ` · #${company.derived.coverageRank}`}
-                        </span>
-                      )}
-                      {company.derived.scope12Total !== null && (
-                        <span
-                          className={`text-[10px] ${
-                            selectedCompany?.id === company.id
-                              ? "text-gray-400"
-                              : "text-gray-500"
-                          }`}
-                        >
-                          {fmtTCO2e(company.derived.scope12Total)}
-                        </span>
-                      )}
-                    </div>
-                    {company.derived.wasteDiversionRate !== null && (
-                      <p
-                        className={`text-[10px] mt-0.5 ${
+                        {company.derived.coverageScore}% cov
+                        {company.derived.coverageRank != null &&
+                          ` · #${company.derived.coverageRank}`}
+                      </span>
+                    )}
+                    {company.derived.scope12Total !== null && (
+                      <span
+                        className={`text-[10px] ${
                           selectedCompany?.id === company.id
                             ? "text-gray-400"
                             : "text-gray-500"
                         }`}
                       >
-                        {fmtPct(company.derived.wasteDiversionRate)} waste
-                        diverted
-                      </p>
+                        {fmtTCO2e(company.derived.scope12Total)}
+                      </span>
                     )}
                   </div>
-                </button>
-              );
-            })}
-          </div>
-        </ScrollArea>
-      </div>
+                  {company.derived.wasteDiversionRate !== null && (
+                    <p
+                      className={`text-[10px] mt-0.5 ${
+                        selectedCompany?.id === company.id
+                          ? "text-gray-400"
+                          : "text-gray-500"
+                      }`}
+                    >
+                      {fmtPct(company.derived.wasteDiversionRate)} waste
+                      diverted
+                    </p>
+                  )}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </ScrollArea>
     </div>
   );
 }
