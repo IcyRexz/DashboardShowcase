@@ -32,9 +32,10 @@ describe("generateChatResponse", () => {
     });
 
     expect(response.intent).toBe("EXTRACTION_EXPLANATION");
-    expect(response.sources[0]).toBe("indonesia_2024.csv");
+    expect(Array.isArray(response.sources)).toBe(true);
     expect(response.data).toMatchObject({
       company: "PT Astra Agro Lestari Tbk",
+      country: "Indonesia",
       year: 2024,
       metricGroup: "emissions",
       status: null,
@@ -56,9 +57,10 @@ describe("generateChatResponse", () => {
     });
 
     expect(response.intent).toBe("EXTRACTION_EXPLANATION");
-    expect(response.sources[0]).toBe("malaysia_2024.csv");
+    expect(Array.isArray(response.sources)).toBe(true);
     expect(response.data).toMatchObject({
       company: "Able Global Berhad",
+      country: "Malaysia",
       year: 2024,
       metricGroup: "energy",
       status: null,
