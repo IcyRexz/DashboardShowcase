@@ -101,7 +101,7 @@ export function RawPdfTabContent({ company }: RawPdfTabContentProps) {
         </div>
       ) : pdfUrl ? (
         <>
-          <div className="flex items-center justify-between gap-3 border-b border-gray-200 bg-white/80 px-4 py-2 text-xs text-gray-500">
+          {/* <div className="flex items-center justify-between gap-3 border-b border-gray-200 bg-white/80 px-4 py-2 text-xs text-gray-500">
             <div className="min-w-0">
               <div className="truncate">Source: {sourceFile}</div>
               <div className="truncate">S3 Key: {s3Key}</div>
@@ -112,7 +112,7 @@ export function RawPdfTabContent({ company }: RawPdfTabContentProps) {
                 Open
               </a>
             </Button>
-          </div>
+          </div> */}
           <iframe
             src={pdfUrl}
             title={`${company.name} sustainability report PDF`}

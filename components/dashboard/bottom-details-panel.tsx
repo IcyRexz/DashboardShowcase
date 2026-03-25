@@ -85,7 +85,7 @@ export function BottomDetailsPanel({
       if (!resizeState) return;
 
       const deltaY = resizeState.startY - event.clientY;
-      const maxHeight = Math.round(window.innerHeight * 0.82);
+      const maxHeight = Math.round(window.innerHeight * 0.9);
       const nextHeight = Math.min(
         Math.max(resizeState.startHeight + deltaY, 360),
         maxHeight,
@@ -859,9 +859,8 @@ function FieldCheckItem({
   const missingSoft = !isPresent && softMissing;
   return (
     <div
-      className={`flex items-center gap-2 p-2 rounded-md ${
-        isPresent ? "bg-emerald-50" : missingSoft ? "bg-gray-100" : "bg-red-50"
-      }`}
+      className={`flex items-center gap-2 p-2 rounded-md ${isPresent ? "bg-emerald-50" : missingSoft ? "bg-gray-100" : "bg-red-50"
+        }`}
     >
       {isPresent ? (
         <Check className="h-4 w-4 text-emerald-600" />
@@ -871,13 +870,12 @@ function FieldCheckItem({
         />
       )}
       <span
-        className={`text-xs ${
-          isPresent
-            ? "text-emerald-700"
-            : missingSoft
-              ? "text-gray-600"
-              : "text-red-700"
-        }`}
+        className={`text-xs ${isPresent
+          ? "text-emerald-700"
+          : missingSoft
+            ? "text-gray-600"
+            : "text-red-700"
+          }`}
       >
         {label}
       </span>

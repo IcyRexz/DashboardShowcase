@@ -309,7 +309,6 @@ function buildExtractionAnswer(
   country: string,
   year: number,
   metricGroup: MetricGroup,
-  sourceFile: string,
 ) {
   const config = METRIC_CONFIG[metricGroup];
   const calculation = readValue(row, config.calculationCol);
@@ -341,7 +340,7 @@ function buildExtractionAnswer(
   return {
     intent: "EXTRACTION_EXPLANATION" as const,
     answer: sections.join("\n\n"),
-    sources: [sourceFile],
+    sources: [],
     data: {
       company,
       country,
@@ -363,7 +362,6 @@ function buildAnomalyAnswer(
   row: CsvRow,
   company: string,
   tickerSymbol: string,
-  sourceFile: string,
   year?: number,
 ) {
   const anomalyFlag = readValue(row, "anomaly_flag");
@@ -395,14 +393,7 @@ function buildAnomalyAnswer(
   return {
     intent: "ANOMALY_EXPLANATION" as const,
     answer: sections.join("\n\n"),
-    sources: [
-      sourceFile,
-      ANOMALY_TICKER_COL,
-      "anomaly_flag",
-      "anomaly_score",
-      "anomaly_types",
-      "anomaly_explanation",
-    ],
+    sources: [],
     data: {
       company,
       year: year ?? null,
@@ -457,7 +448,7 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
       );
     }
 
-    const { rows, sourceFile } = await loadExtractionRows(country, year);
+    const { rows } = await loadExtractionRows(country, year);
     const row = rows.find(
       (entry) =>
         normalize(readValue(entry, EXTRACTION_COMPANY_COL)) === normalize(context.company) &&
@@ -492,11 +483,9 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
       country,
       year,
       metricGroup,
-      sourceFile,
     );
 
-    response.sources =
-      pageSources.length > 0 ? [sourceFile, ...pageSources] : [sourceFile];
+    response.sources = pageSources;
     return response;
   }
 
@@ -525,5 +514,5 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
     );
   }
 
-  return buildAnomalyAnswer(row, context.company, tickerSymbol, sourceFile, year);
+  return buildAnomalyAnswer(row, context.company, tickerSymbol, year);
 }
