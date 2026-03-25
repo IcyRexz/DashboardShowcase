@@ -24,7 +24,7 @@ function normalizeCountryForTrimmedPng(country: string) {
 }
 
 function getAwsConfig() {
-  const region = process.env.AWS_S3_REGION ?? process.env.AWS_REGION;
+  const region = process.env.AWS_REGION;
   const bucket = process.env.AWS_S3_BUCKET_NAME;
   const accessKeyId = process.env.AWS_ACCESS_KEY_ID ?? process.env.AWS_ACCESS_KEY;
   const secretAccessKey =
