@@ -42,6 +42,7 @@ import {
   getPeerStrategyExamples,
 } from "@/data/sustainability";
 import { CompanyAiChatPanel } from "@/components/dashboard/company-ai-chat-panel";
+import { RawPdfTabContent } from "@/components/dashboard/raw-pdf-tab-content";
 
 interface BottomDetailsPanelProps {
   company: SustainabilityCompany | null;
@@ -49,14 +50,6 @@ interface BottomDetailsPanelProps {
   unitView?: UnitView;
   allCompanies?: SustainabilityCompany[];
 }
-
-const RAW_PDF_PATHS: Record<string, string> = {
-  "LS 2 Holdings Limited": "/reports/ls-2-holdings-limited.pdf",
-  "YKGI Limited": "/reports/ykgi-limited.pdf",
-  "Midas Holdings Limited": "/reports/midas-holdings-limited.pdf",
-  "NetLink NBN Trust": "/reports/netlink-nbn-trust.pdf",
-  "CapitaLand Investment Limited": "/reports/capitaland-investment-limited.pdf",
-};
 
 export function BottomDetailsPanel({
   company,
@@ -159,7 +152,6 @@ export function BottomDetailsPanel({
     allCompanies.length > 0
       ? getPeerStrategyExamples(company, allCompanies)
       : [];
-  const rawPdfPath = RAW_PDF_PATHS[company.name] ?? null;
 
   if (isMinimized) {
     return (
@@ -909,24 +901,7 @@ export function BottomDetailsPanel({
             </TabsContent>
 
             <TabsContent value="raw-pdf" className="m-0 h-full overflow-y-auto p-4">
-              <div className="flex h-full min-h-[320px] flex-col rounded-lg border border-gray-200 bg-gray-50">
-
-                {rawPdfPath ? (
-                  <iframe
-                    src={rawPdfPath}
-                    title={`${company.name} sustainability report PDF`}
-                    className="min-h-0 flex-1 rounded-b-lg bg-white"
-                  />
-                ) : (
-                  <div className="flex flex-1 items-center justify-center px-6 text-center">
-                    <div>
-                      <p className="text-sm font-medium text-gray-700">
-                        No PDF uploaded for this company yet.
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
+              <RawPdfTabContent company={company} />
             </TabsContent>
           </Tabs>
         </div>

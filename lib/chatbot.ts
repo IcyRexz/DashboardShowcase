@@ -1,4 +1,5 @@
 import { loadCsv } from "@/lib/csv";
+import { getExtractionPageSources, type MetricGroup as ExtractionPageMetricGroup } from "@/lib/extraction-pages";
 
 export type ChatIntent = "EXTRACTION_EXPLANATION" | "ANOMALY_EXPLANATION";
 
@@ -297,6 +298,7 @@ function formatMetricSnapshot(
 function buildExtractionAnswer(
   row: CsvRow,
   company: string,
+  country: string,
   year: number,
   metricGroup: MetricGroup,
   sourceFile: string,
@@ -331,14 +333,10 @@ function buildExtractionAnswer(
   return {
     intent: "EXTRACTION_EXPLANATION" as const,
     answer: sections.join("\n\n"),
-    sources: [
-      sourceFile,
-      config.calculationCol,
-      config.notesCol,
-      config.statusCol,
-    ],
+    sources: [sourceFile],
     data: {
       company,
+      country,
       year,
       metricGroup,
       reportName: reportName || undefined,
@@ -464,13 +462,33 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
       );
     }
 
-    return buildExtractionAnswer(
+    const sourceImagesPrefix = readValue(row, "source_images_prefix");
+    let pageSources: string[] = [];
+
+    if (sourceImagesPrefix) {
+      try {
+        pageSources = await getExtractionPageSources({
+          country,
+          year,
+          sourceImagesPrefix,
+          metricGroup: metricGroup as ExtractionPageMetricGroup,
+        });
+      } catch {
+        pageSources = [];
+      }
+    }
+
+    const response = buildExtractionAnswer(
       row,
       readValue(row, EXTRACTION_COMPANY_COL),
+      country,
       year,
       metricGroup,
       sourceFile,
     );
+
+    response.sources = pageSources;
+    return response;
   }
 
   const tickerSymbol = context.tickerSymbol?.trim();
