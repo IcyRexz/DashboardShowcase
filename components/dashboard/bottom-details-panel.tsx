@@ -15,7 +15,6 @@ import {
   ShieldX,
   Clock,
   Target,
-  FileJson,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -51,6 +50,92 @@ interface BottomDetailsPanelProps {
   allCompanies?: SustainabilityCompany[];
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function humanizeKey(key: string): string {
+  const withSpaces = key
+    .replace(/_/g, " ")
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .trim();
+  return withSpaces.charAt(0).toUpperCase() + withSpaces.slice(1);
+}
+
+function toReadableText(value: unknown, indent = 0): string[] {
+  const pad = " ".repeat(indent);
+
+  if (value === null || value === undefined) {
+    return [`${pad}-`];
+  }
+
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
+    return [`${pad}${String(value)}`];
+  }
+
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      return [`${pad}None`];
+    }
+
+    const lines: string[] = [];
+    value.forEach((entry, index) => {
+      if (isRecord(entry)) {
+        const objectLines = toReadableText(entry, indent + 2);
+        lines.push(`${pad}Item ${index + 1}`);
+        lines.push(...objectLines);
+      } else {
+        const primitive = toReadableText(entry, 0)[0] ?? "-";
+        lines.push(`${pad}- ${primitive}`);
+      }
+    });
+    return lines;
+  }
+
+  if (isRecord(value)) {
+    const entries = Object.entries(value).filter(([, v]) => {
+      if (v === null || v === undefined) return false;
+      if (typeof v === "string" && v.trim().length === 0) return false;
+      return true;
+    });
+
+    if (entries.length === 0) {
+      return [`${pad}No details available`];
+    }
+
+    const lines: string[] = [];
+    entries.forEach(([key, entryValue]) => {
+      const label = humanizeKey(key);
+
+      if (
+        typeof entryValue === "string" ||
+        typeof entryValue === "number" ||
+        typeof entryValue === "boolean"
+      ) {
+        lines.push(`${pad}${label}: ${String(entryValue)}`);
+      } else {
+        lines.push(`${pad}${label}:`);
+        lines.push(...toReadableText(entryValue, indent + 2));
+      }
+    });
+    return lines;
+  }
+
+  return [`${pad}${String(value)}`];
+}
+
+function formatPossiblyJsonText(value: string | null | undefined): string {
+  const text = value?.trim();
+  if (!text) return "";
+
+  try {
+    const parsed = JSON.parse(text) as unknown;
+    return toReadableText(parsed).join("\n");
+  } catch {
+    return text;
+  }
+}
+
 export function BottomDetailsPanel({
   company,
   onClear,
@@ -58,7 +143,6 @@ export function BottomDetailsPanel({
   allCompanies = [],
 }: BottomDetailsPanelProps) {
   const [isMinimized, setIsMinimized] = useState(true);
-  const [showTargets, setShowTargets] = useState(false);
   const [showStrategy, setShowStrategy] = useState(false);
   const [expandedPeerId, setExpandedPeerId] = useState<string | null>(null);
   const [isAiOpen, setIsAiOpen] = useState(false);
@@ -699,46 +783,8 @@ export function BottomDetailsPanel({
                       <CollapsibleContent>
                         <div className="px-3 pb-3">
                           <p className="text-xs text-gray-500 whitespace-pre-wrap max-h-[200px] overflow-y-auto">
-                            {company.strategy.summary}
+                            {formatPossiblyJsonText(company.strategy.summary)}
                           </p>
-                        </div>
-                      </CollapsibleContent>
-                    </div>
-                  </Collapsible>
-                )}
-
-                {company.targets.json && company.targets.json !== "[]" && (
-                  <Collapsible open={showTargets} onOpenChange={setShowTargets}>
-                    <div className="bg-gray-50 rounded-md overflow-hidden">
-                      <CollapsibleTrigger asChild>
-                        <button className="w-full flex items-center justify-between p-3 text-left hover:bg-gray-100 transition-colors">
-                          <div className="flex items-center gap-2">
-                            <FileJson className="h-4 w-4 text-gray-400" />
-                            <h4 className="text-sm font-medium text-gray-700">
-                              Targets Data
-                            </h4>
-                          </div>
-                          <ChevronDown
-                            className={`h-4 w-4 text-gray-400 transition-transform ${showTargets ? "rotate-180" : ""
-                              }`}
-                          />
-                        </button>
-                      </CollapsibleTrigger>
-                      <CollapsibleContent>
-                        <div className="px-3 pb-3">
-                          <pre className="text-xs text-gray-600 overflow-x-auto bg-white p-2 rounded border border-gray-200 max-h-[200px] overflow-y-auto">
-                            {(() => {
-                              try {
-                                return JSON.stringify(
-                                  JSON.parse(company.targets.json),
-                                  null,
-                                  2,
-                                );
-                              } catch {
-                                return company.targets.json;
-                              }
-                            })()}
-                          </pre>
                         </div>
                       </CollapsibleContent>
                     </div>
@@ -748,7 +794,7 @@ export function BottomDetailsPanel({
                 {!company.emissions.notes &&
                   !company.waste.notes &&
                   !company.strategy.summary &&
-                  (!company.targets.json || company.targets.json === "[]") && (
+                  (
                     <div className="flex items-center justify-center h-24 text-gray-400">
                       <span className="text-sm">
                         No notes or strategy data available
