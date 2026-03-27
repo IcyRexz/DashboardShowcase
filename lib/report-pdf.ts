@@ -40,16 +40,42 @@ function getReportStemFromSourceImagesPrefix(sourceImagesPrefix: string) {
   return stem;
 }
 
+function getCompanyFolderFromSourceImagesPrefix(sourceImagesPrefix: string) {
+  const segments = sourceImagesPrefix.split("/").filter(Boolean);
+  const companyFolder = segments.at(-2);
+
+  if (!companyFolder) {
+    throw new Error("Could not derive company folder from source_images_prefix.");
+  }
+
+  return companyFolder;
+}
+
+function normalizeReportStemYear(reportStem: string, year: number) {
+  return reportStem.replace(
+    /_\d{4}_(secondary_)?sustainability_report$/,
+    `_${year}_$1sustainability_report`,
+  );
+}
+
 export function buildS3ReportKey(
   country: string,
   year: number,
   sourceImagesPrefix: string,
 ) {
   const countryFolder = normalizeCountryForS3(country);
-  const reportStem = getReportStemFromSourceImagesPrefix(sourceImagesPrefix);
+  const companyFolder = getCompanyFolderFromSourceImagesPrefix(sourceImagesPrefix);
+  const reportStem = normalizeReportStemYear(
+    getReportStemFromSourceImagesPrefix(sourceImagesPrefix),
+    year,
+  );
   const yearFolder = String(year);
 
   if (countryFolder === "Singapore") {
+    if (year === 2023) {
+      return `Webscrapping/${countryFolder}/600_companies_reports/${yearFolder}/${companyFolder}/${reportStem}.pdf`;
+    }
+
     return `Webscrapping/${countryFolder}/600_companies_reports/${yearFolder}/${reportStem}.pdf`;
   }
 

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, GetObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { resolveReportPdfForCompany } from "@/lib/report-pdf";
 
@@ -14,10 +14,11 @@ const schema = z.object({
 });
 
 function getAwsConfig() {
-  const region = process.env.AWS_REGION;
+  const region = process.env.AWS_S3_REGION ?? process.env.AWS_REGION;
   const bucket = process.env.AWS_S3_BUCKET_NAME;
-  const accessKeyId = process.env.AWS_ACCESS_KEY ?? process.env.AWS_ACCESS_KEY_ID;
-  const secretAccessKey = process.env.AWS_SECRET_KEY ??  process.env.AWS_SECRET_ACCESS_KEY;
+  const accessKeyId = process.env.AWS_ACCESS_KEY_ID ?? process.env.AWS_ACCESS_KEY;
+  const secretAccessKey =
+    process.env.AWS_SECRET_ACCESS_KEY ?? process.env.AWS_SECRET_KEY;
 
   if (!region || !bucket || !accessKeyId || !secretAccessKey) {
     throw new Error("Missing AWS S3 environment variables for report PDF access.");
@@ -26,7 +27,6 @@ function getAwsConfig() {
   return {
     region,
     bucket,
-    endpoint: `https://s3.${region}.amazonaws.com/`,
     credentials: {
       accessKeyId,
       secretAccessKey,
@@ -52,10 +52,16 @@ export async function GET(req: Request) {
     const report = await resolveReportPdfForCompany(parsed.data);
     const client = new S3Client({
       region: awsConfig.region,
-      endpoint: awsConfig.endpoint,
       forcePathStyle: false,
       credentials: awsConfig.credentials,
     });
+
+    await client.send(
+      new HeadObjectCommand({
+        Bucket: awsConfig.bucket,
+        Key: report.s3Key,
+      }),
+    );
 
     const command = new GetObjectCommand({
       Bucket: awsConfig.bucket,
@@ -73,9 +79,20 @@ export async function GET(req: Request) {
       sourceFile: report.sourceFile,
     });
   } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Failed to generate report URL.";
+    const normalized = message.toLowerCase();
+    const notFound =
+      normalized.includes("nosuchkey") ||
+      normalized.includes("not found") ||
+      normalized.includes("notfound") ||
+      normalized.includes("404");
+
     return NextResponse.json(
       {
-        error: error instanceof Error ? error.message : "Failed to generate report URL.",
+        error: notFound
+          ? "Sustainability report PDF not found for this company yet."
+          : message,
       },
       { status: 404 },
     );

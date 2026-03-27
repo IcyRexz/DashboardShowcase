@@ -90,7 +90,16 @@ const METRIC_CONFIG: Record<
     statusCol: "emissions_status",
     valueFields: [
       { label: "Scope 1", valueCol: "scope_1_value", unitCol: "scope_1_unit" },
-      { label: "Scope 2", valueCol: "scope_2_value", unitCol: "scope_2_unit" },
+      {
+        label: "Scope 2 (location-based)",
+        valueCol: "scope_2_location_value",
+        unitCol: "scope_2_location_unit",
+      },
+      {
+        label: "Scope 2 (market-based)",
+        valueCol: "scope_2_market_value",
+        unitCol: "scope_2_market_unit",
+      },
       { label: "Scope 3", valueCol: "scope_3_value", unitCol: "scope_3_unit" },
     ],
   },

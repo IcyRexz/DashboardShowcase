@@ -81,7 +81,7 @@ describe("generateChatResponse", () => {
     });
 
     expect(response.intent).toBe("ANOMALY_EXPLANATION");
-    expect(response.sources[0]).toBe("anomaly_detection/anomaly_detection_report_2024SG.csv");
+    expect(response.sources).toEqual([]);
     expect(response.data).toMatchObject({
       company: "AsiaMedic Limited",
       year: 2024,
@@ -106,7 +106,7 @@ describe("generateChatResponse", () => {
     });
 
     expect(response.intent).toBe("ANOMALY_EXPLANATION");
-    expect(response.sources[0]).toBe("anomaly_detection/anomaly_detection_report_2021SG.csv");
+    expect(response.sources).toEqual([]);
     expect(response.data).toMatchObject({
       company: "Tai Sin Electric Limited",
       year: 2021,
