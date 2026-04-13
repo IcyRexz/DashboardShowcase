@@ -523,7 +523,5 @@ export async function generateChatResponse(context: ChatContext): Promise<ChatRe
     );
   }
 
-  const response = buildAnomalyAnswer(row, context.company, tickerSymbol, year);
-  response.sources = [sourceFile];
-  return response;
+  return buildAnomalyAnswer(row, context.company, tickerSymbol, year);
 }
