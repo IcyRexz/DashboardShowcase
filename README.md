@@ -4,11 +4,11 @@ A map-centric dashboard for viewing ESG (Environmental, Social, Governance) metr
 
 ## What it does
 
-- Displays ~3,500 companies on an interactive map, colored by **data plausibility** (Good / Watch / Review)
-- Lets you search and filter across countries, industries, and plausibility bands, then inspect detailed sustainability metrics per company
+- Displays ~3,500 company-year records on an interactive map, colored by **data completeness** (green/red against a 6-of-12 threshold)
+- Lets you search and filter across countries, industries, and incomplete records, then inspect detailed sustainability metrics per company
 - Shows emissions (tCO₂e), energy (kWh), water (m³), and waste (tonnes) with a toggle between canonical and raw units
 - Provides peer strategy examples from similar companies in the dataset
-- All data is static and build-time generated — no backend or API required
+- Core dashboard data is static and build-time generated; optional API routes support PDF preview and explanation chat
 
 ## Architecture
 
@@ -34,17 +34,15 @@ data/sustainability.generated.ts       ← typed dataset (auto-generated)
         ▼
 app/dashboard/page.tsx                 ← single-page client-side app
         │
-        ├── MapView          (Leaflet map with plausibility-colored markers)
+        ├── MapView          (Leaflet map with completeness-colored markers)
         ├── SidePanelLeft     (search, filters, company list, industry filter)
-        ├── SidePanelRight    (summary stats, plausibility & completeness breakdowns)
+        ├── SidePanelRight    (summary stats, coverage & completeness breakdowns)
         └── BottomDetailsPanel (detailed metrics, peer examples, targets, strategy)
 ```
 
-**Data pipeline:** All country-year CSVs under `Data for CSV/` (`country_year.csv`) → build script → generated TypeScript → in-memory runtime. No database, no API calls.
+**Data pipeline:** All country-year CSVs under `Data for CSV/` (`country_year.csv`) → build script → generated TypeScript → in-memory runtime.
 
 **Unit normalization** (`lib/units.ts`) converts raw extracted values into canonical units at build time. Both raw and normalized values are stored so the UI can switch between them.
-
-**Plausibility bands** are computed at build time using consistency checks, completeness scoring, and percentile comparisons across the full cohort; see [Plausibility bands](#plausibility-bands-good--watch--review) below.
 
 ## Tech stack
 
@@ -103,7 +101,6 @@ components/dashboard/
   side-panel-left.tsx       — search, filters, company list, industry filter
   side-panel-right.tsx      — overview breakdowns
   bottom-details-panel.tsx  — company detail view
-  kpi-row.tsx               — KPI cards (available but not mounted)
 Data for CSV/
   country_year.csv — canonical multi-country/year sources
 data/
@@ -125,37 +122,13 @@ scripts/
 - **Waste generated** (value non-null) → 1 point  
 - **Waste recycled** (value non-null) → 1 point  
 
-A score of **4** means all four metrics are present. This score is used for the “Incomplete only” filter and as an input to plausibility: companies with score &lt; 4 are always marked **Review**.
+A score of **4** means all four metrics are present. This legacy score is retained in the model, while the UI primarily uses the 12-field completeness score and threshold.
 
-**Trust metrics** (from extraction metadata) are also used in plausibility:
+**Trust metrics** (from extraction metadata) are retained for QA and drilldown:
 
-- **extractionOk** — `true` when no extraction groups failed (`groupsFailed === 0`). If any group failed, the company is marked **Review**.
-- **dataQualityScore** — optional 0–100 score from the extraction pipeline. If present and &lt; 50, the company is marked **Review**.
+- **extractionOk** — `true` when no extraction groups failed (`groupsFailed === 0`).
+- **dataQualityScore** — optional 0–100 score from the extraction pipeline.
 - **verifiedByHuman** — optional flag; stored but not used to assign bands.
-
-## Plausibility bands (Good / Watch / Review)
-
-The build script (`scripts/build-sustainability-data.ts`) assigns each company a **plausibility band** using normalized metrics, completeness, trust, and cohort percentiles.
-
-**Inputs:** Normalized values from `lib/units.ts` (Scope 1/2/3 in tCO₂e, total energy in kWh, water in m³, waste in tonnes), plus derived `scope12Total`, `wasteDiversionRate`, completeness score, and trust metrics.
-
-**Review** — Assigned when any of the following hold:
-
-- **Consistency failures:** waste recycled &gt; waste generated; water recycled &gt; water withdrawal; or any negative value in Scope 1, Scope 2, waste generated, or waste recycled.
-- **Incomplete reporting:** completeness score &lt; 4 (one or more of Scope 1, Scope 2, waste generated, waste recycled missing).
-- **Extraction issues:** `groupsFailed &gt; 0` (extraction had failed groups).
-- **Low data quality:** `dataQualityScore` present and &lt; 50.
-
-**Watch** — Assigned when the data passes the consistency and trust checks above but is flagged as an outlier (only when the cohort has enough peers, currently ≥ 10). The script computes global percentiles across the full dataset:
-
-- **95th percentile** for Scope 1+2 emissions, total energy, water withdrawal, and waste generated. If a company is at or above the 95th on any of these, it gets a Watch reason.
-- **10th percentile** for waste diversion rate. If diversion is at or below the 10th percentile, or below **20%** (a fixed floor applied even when percentiles are not used), it gets a Watch reason.
-
-**Watch** means “unusual relative to the cohort but internally consistent,” not necessarily wrong.
-
-**Good** — Assigned when there are no consistency or trust failures and no outlier flags from the percentile logic.
-
-The build script stores **human-readable reasons** (`plausibilityReasons`) for each Watch or Review company; the UI can show these in the company detail view.
 
 ## Scripts
 

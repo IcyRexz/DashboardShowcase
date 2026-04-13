@@ -318,7 +318,7 @@ function buildExtractionAnswer(
   country: string,
   year: number,
   metricGroup: MetricGroup,
-) {
+): ChatResponse {
   const config = METRIC_CONFIG[metricGroup];
   const calculation = readValue(row, config.calculationCol);
   const notes = readValue(row, config.notesCol);
@@ -372,7 +372,7 @@ function buildAnomalyAnswer(
   company: string,
   tickerSymbol: string,
   year?: number,
-) {
+): ChatResponse {
   const anomalyFlag = readValue(row, "anomaly_flag");
   const anomalyScore = formatAnomalyScore(readValue(row, "anomaly_score"));
   const anomalyTypes = readValue(row, "anomaly_types");

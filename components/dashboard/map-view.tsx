@@ -280,7 +280,7 @@ export function MapView({
           style={{
             left: Math.min(
               popupPosition.x + 15,
-              (mapRef.current?.clientWidth ?? 1200) - 360,
+              840,
             ),
             top: popupPosition.y - 10,
             transform: "translateY(-50%)",

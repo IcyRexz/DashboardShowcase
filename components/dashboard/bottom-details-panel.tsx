@@ -146,22 +146,22 @@ export function BottomDetailsPanel({
   const [showStrategy, setShowStrategy] = useState(false);
   const [expandedPeerId, setExpandedPeerId] = useState<string | null>(null);
   const [isAiOpen, setIsAiOpen] = useState(false);
-  const [panelHeight, setPanelHeight] = useState(560);
+  const [panelHeight, setPanelHeight] = useState(() => {
+    if (typeof window === "undefined") return 560;
+    const nextHeight = Math.round(window.innerHeight * 0.66);
+    return Math.min(Math.max(nextHeight, 420), Math.round(window.innerHeight * 0.82));
+  });
   const resizeStateRef = useRef<{ startY: number; startHeight: number } | null>(
     null,
   );
 
   useEffect(() => {
     if (company) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- open panel when a company is selected.
       setIsMinimized(false);
       setIsAiOpen(false);
     }
   }, [company]);
-
-  useEffect(() => {
-    const nextHeight = Math.round(window.innerHeight * 0.66);
-    setPanelHeight(Math.min(Math.max(nextHeight, 420), Math.round(window.innerHeight * 0.82)));
-  }, []);
 
   useEffect(() => {
     function handlePointerMove(event: PointerEvent) {

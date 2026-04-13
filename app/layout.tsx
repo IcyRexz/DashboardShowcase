@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Power Plant Monitoring Dashboard',
-  description: 'Real-time electricity power plant monitoring dashboard for Indonesia',
+  title: 'Sustainability Monitoring Dashboard',
+  description: 'Map-centric dashboard for multi-country ESG sustainability metrics',
   generator: 'v0.app',
   icons: {
     icon: [
